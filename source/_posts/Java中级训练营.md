@@ -5,13 +5,16 @@ updated: 2021-03-12
 group: ongoing
 tags: [Java]
 categories: 代码人生
+references:
+  - title: Spring Boot 2.5.x开发实战
+    url: https://developer.aliyun.com/learning/course/71
 ---
 
 >本期训练营是继[Java新手训练营](/Java初级训练营)后的第2期，课程由阿里云开发者社区提供，同样采用5天不间断直播授课的形式，主要内容为Spring Boot 2.5自动化配置原理、实战开发REST API、MySQL数据库、Redis高并发缓存、MQ消息队列Kafka、安全机制、Docker容器等，本篇日志主要记录实战Spring Boot2.5开发中的一些常用知识点，以[训练](https://github.com/Bezhuang/LearnCS/tree/main/Java中级训练营)和熟悉特性为主。
 
 <!--more-->
 
-![](https://ucc-image.oss-cn-beijing.aliyuncs.com/credential/22/87e768f5aca640b3ad57813564f6cdb8.png)
+
 
 ### Java Spring企业级开发平台
 
@@ -39,9 +42,12 @@ categories: 代码人生
 
 - [在线创建Spring项目](start.spring.io)
 
-- Eclipse需要添加Spring Tools 4插件，IDEA自带，使用 `start.alibaba.com` 源
+- 开发环境：Open JDK，Eclipse需要添加Spring Tools 4插件，IDEA自带
 
-- Spring Web（Tomcat）：http://localhost:8080/hello
+  - `start.spring.io` 连接失败可使用 `start.alibaba.com` 源替代
+  - Spring Web（Tomcat）：http://localhost:8080/hello
+
+- REST API
 
   ```java
   @RestController
@@ -55,4 +61,98 @@ categories: 代码人生
   }
   ```
 
-  
+- 修改端口和context path（`appilcation.properties`文件）
+
+  ```properties
+  spring.application.name='JavaSpringBoot212'
+  server.servlet.contextPath=/SpringBoot
+  server.host='localhost'
+  server.port='8080'
+  ```
+
+### 自动化配置Autoconfig底层原理
+
+- Spring Boot auto configuration根据`classpath`的jar依赖自动配置Spring应用
+- @SpringBootApplication注解
+  - 等于三大注解：`@EnableAutoConfiguration` + `@ComponentScan` + `@Configuration`之和
+  - `@Configuration`将该注解类标记为应用程序上下文的bean来源
+  - `@EnableAutoConfiguration`告诉Spring Boot自动配置添加bean
+  - 通常手动为Spring MVC应用程序添加`@EnableWebMvc`，但Spring Boot会在类路径上看到spring-webmvc时自动添加该注解，为Web应用添加并启用关键特性，例如设置DispatcherServlet
+  - `@ComponentScan`告诉Spring扫描组件，配置和服务，控制器
+- Auto-configuration is non-invasive 非侵入式
+- 自动配置也可以被禁用
+- 自动化配置机制核心：`spring-boot-autoconfigure.jar` + `spring.factories`
+- Springboot启动（依赖、配置）-> 自动化依赖（解析、加载）-> 自动化配置（工厂模式创建Bean、依赖注入）-> 自动化服务器（内置Web Server、监听）
+- `AutoConfigurationPackages.Registrar` 注册存储客户端配置包列表的bean，可通过`AutoConfigurationPackages.get`（BeanFactory）静态方法访问
+- ImportSelector导入选择器负责引导自动配置机制：`@Import(EnableAutoConfigurationImportSelector.class)`
+- `spring.autoconfigure.exclude` 属性控制要排除的自动配置类列表
+- 监控自动注入的Bean
+
+  ```java
+  @Bean
+  	public CommandLineRunner commandLineRunner(ApplicationContext ctx){
+          return args -> {
+              System.out.println("监控Spring Boot 2.0自动注入的Bean:");
+              String[] beanNames =ctx.getBeanDefinitionNames();
+              Arrays.sort(beanNames);
+              for (String beanName : beanNames){
+                  System.out.println("Spring自动注入Bean:"+beanName);}
+          };}
+  ```
+
+### 使用Spring Data连接MySQL数据库
+
+- Spring Data快速数据访问框架、强大的repository仓储和自定义对象映射ORM抽象，提供统一的编程模型
+- 通过JavaConfig和自定义XML命名空间轻松实现Spring集成与Spring MVC控制器的高级集成，实验支持跨库持久性
+
+- Spring Boot实战MySQL
+  - Spring JDBC and JdbcTemplate
+  - Spring Data简化连接不同的数据库
+  - Spring Data JPA连接MySQL，默认底层使用Hibernate framework，支持Repository仓储模式
+  - 引入最重要的两个包：`spring-boot-starter-data-jpa`和`mysql-connector-jave`
+- Spring Data JPA框架
+  - Spring Data JPA简化数据访问层的开发工作，基于Spring和JPA构建存储库的完美支持
+  - 支持Querydsl谓词，从而支持类型安全的JPA查询，在引导时验证`@Query`带注释的查询
+  - 支持Domain类的透明审核，分页支持，动态查询执行，集成自定义数据访问代码的能力
+  - 支持基于XML的实体映射，引入`@EnableJpaRepositories`，基于`JavaConfig`的存储库配置
+
+### MongoDB 4.0数据库
+
+- [阿里巴巴MongoDB高级实战](https://edu.aliyun.com/workshop/3/course/1044)
+
+- NoSQL排名第一的分布式数据库，由C++语言编写，特点是高性能、高并发、易部署、易使用、存储数据非常方便（灵活的数据模型），旨在为Web应用提供可扩展的高性能数据存储解决方案
+
+- MongoDB开源、跨平台，支持Windows、Linux、OS X和Solaris系统，集成内存缓存，自动分片储存，支持分布式查询和跨文档事务，便于横向扩展
+
+- Repository仓储层代码
+
+  ```java
+  public interface BlogRepository extends MongoRepository<Blog, ObjectId>{
+      public Blog findById(ObjextId id);
+      public void delete(ObjectId id);
+      public List<Blog> findAll();}
+  ```
+
+- 启动命令：`.\mongod.exe --port 27017 --dbpath="../data" --logpath="../log/mongo.log"`
+
+- 命令行控制
+
+  ```bash
+  show dbs
+  use database
+  db.users.insert({"key1":"value1","key2":"value2"})
+  db.users.find()
+  ```
+
+- 可视化管理工具：Compass、Robo 3T（Robomongo）
+
+### Redis分布式缓存6.0
+
+- 三层架构+高并发缓存：前端（UI界面）-> 后台（API接口+Services业务逻辑+DAO数据访问）-> 数据（MongoDB+MySQL/Oracle/SQLServer+Redis）
+- Redis API：`org.springframework.data.redis.connection`包，`RedisConnection`，`RedisConnectionFactory Interface`
+- RedisConnection解析为Redis通信提供核心组件，处理与Redis服务器后端的通信
+- 配置参数：RedisConnectionFactory工厂模式，RedisTemplate：RedisConnection对象，Repository：Connection Pool
+- RedisTemplate Interface：GeoOperations，HashOperations，HyperLogLogOperations，ListOperations，SetOperations，ValueOperations，ZSetOperations
+- Redis默认接口：6379（最好安装在Linux系统）
+- Redis6.0配置文件`redis.conf`里默认的IP配置，要改掉才能远程链接（改成 bind 0.0.0.0）
+
