@@ -1,7 +1,7 @@
 ---
 title: Data Analysis With Python
 date: 2021-02-17
-updated: 2021-03-17
+updated: 2021-03-26
 pin: true
 group: going
 tags: [Python]
@@ -385,12 +385,45 @@ categories: 人工智能与大数据
   ```
 
 - Model Selection: y(x)+noise
+
 - Underfitting: Where the model is too simple to fit the data.
+
 - Overfitting: Where the model is too flexible and fits the noise rather than the function
+
 - Ridge regression
   - A regression that is employed in a Multiple regression model when Multicollinearity occurs
   - Multicollinearity is when there is a strong relationship among the independent variables
   - Ridge regression is very common with polynomial regression
+  
+  ```python
+  from sklearn.linear_model import Ridge
+  RidgeModel=Ridge(alpha=0.1)
+  RidgeModel.fit(X,y)
+  Yhat=RidgeModel.predict(X)
+  ```
+  
+- Grid Search allows us to scan through multiple free parameters with few lines of code.
+
+  - Hyperparameters: Parameters that are not part of the fitting or training process. (eg. Ridge regression)
+  - Scikit-learn has a means of automatically iterating over these hyperparameters using cross-validation called Grid Search
+  - Training data、Validation data、Test data
+
+  ```python
+  from sklearn.linear_model import Ridge
+  from sklearn.model_selection import GridSearchCV
+  parameters1=[{'alpha':[0.001,0.1,1,10,100,1000,10000,100000,1000000]}]
+  parameters2=[{'alpha':[0.001,0.1,1,10,100],'normalize':[True,False]}]
+  RR=Ridge()
+  Grid1=GridSearchCV(rr,parameters1,cv=4)
+  Grid1.fit(x_data[['horsepower','curb-weight','engine-size','highway-mpg']],y_data)
+  Grid.best_estimator_
+  scores=Grid.cv_results_
+  scores['mean_test_score']
+  ```
+
+### Project Case
+
+- Determining the market price of a house given a set of features
 
 ### Codes
 
