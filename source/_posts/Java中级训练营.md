@@ -1,8 +1,7 @@
 ---
 title: 2021阿里Java训练营第二期
 date: 2021-03-12
-updated: 2021-03-12
-group: ongoing
+updated: 2021-03-15
 tags: [Java]
 categories: 代码人生
 references:
@@ -10,11 +9,11 @@ references:
     url: https://developer.aliyun.com/learning/course/71
 ---
 
->本期训练营是继[Java新手训练营](/Java初级训练营)后的第2期，课程由阿里云开发者社区提供，同样采用5天不间断直播授课的形式，主要内容为Spring Boot 2.5自动化配置原理、实战开发REST API、MySQL数据库、Redis高并发缓存、MQ消息队列Kafka、安全机制、Docker容器等，本篇日志主要记录实战Spring Boot2.5开发中的一些常用知识点，以[训练](https://github.com/Bezhuang/LearnCS/tree/main/Java中级训练营)和熟悉特性为主。
+>本期训练营是继[Java新手训练营](/Java初级训练营)后的第2期，课程由阿里云开发者社区提供，同样采用5天不间断直播授课的形式，主要内容为Spring Boot 2.5自动化配置原理、实战开发REST API、MySQL数据库、Redis高并发缓存、MQ消息队列Kafka、安全机制、Docker容器等，本篇日志主要记录实战Spring Boot2.5开发中的一些常用知识点，附[实战代码](https://github.com/Bezhuang/LearnCS/tree/main/Java中级训练营)。
 
 <!--more-->
 
-
+![](https://ucc-image.oss-cn-beijing.aliyuncs.com/credential/26/f6c8aefac0a44ad78108e5a9935fb5a9.png)
 
 ### Java Spring企业级开发平台
 
@@ -155,4 +154,48 @@ references:
 - RedisTemplate Interface：GeoOperations，HashOperations，HyperLogLogOperations，ListOperations，SetOperations，ValueOperations，ZSetOperations
 - Redis默认接口：6379（最好安装在Linux系统）
 - Redis6.0配置文件`redis.conf`里默认的IP配置，要改掉才能远程链接（改成 bind 0.0.0.0）
+
+### 安全机制
+
+- 自定义实现安全验证
+- Spring Security开源框架
+  - 专注于身份验证和授权，保护Spring应用系统的安全标准
+  - 提供安全认证服务的框架
+  - Authetication验证和Authorization收起
+- Apache Shiro开源框架
+  - 简单易用的开源Java安全框架，可应用于Web和非Web环境
+- Basic、Form、OAuth、LDAP、Kerberos、X509、Token验证
+- WebSecurityConfig：配置安全规则，默认启用basic验证
+- 全站安全验证配置
+
+### REST API帮助文档Swagger
+
+- Spring REST Docs（离线，不好用）
+- Swagger自动化文档工具
+  - 一个完整的API生态，工具，规范，代码规范
+
+- Swagger依赖：springfox-swagger2，
+
+### 应用程序性能监控（Admin&Actuator）
+
+- 环境、bean、版本、内存、日志、指标、配置、JVM、GC
+- 性能监控和管理组件Actuator
+  - 使用HTTP Endpoint或JMX，运行状态指标数据收集
+  - 默认监控EndPoint：http://localhost:8080/Actuator
+  - `management.endpoints.web.exposure.include=*`
+- Micrometer：多维度指标收集器，语言中立的API（可采集数据图形）
+- Spring Boot Admin Server：开发监控服务端
+  - `management.endpoints.health.show-details`
+
+### Docker容器
+
+- Spring Boot Docker Hub
+
+- 阿里云Docker镜像仓库（国内第一）提供Docker Images镜像加速
+
+- DockerFIle：Docker镜像配置文件
+
+- Build Docker Image with Maven：`mvn clean package dockerfile:build` 
+
+  
 

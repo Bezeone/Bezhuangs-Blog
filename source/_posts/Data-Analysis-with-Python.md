@@ -1,7 +1,8 @@
 ---
 title: Data Analysis With Python
 date: 2021-02-17
-updated: 2021-03-09
+updated: 2021-03-17
+pin: true
 group: going
 tags: [Python]
 mathjax: true
@@ -338,6 +339,58 @@ categories: 人工智能与大数据
   - Comparing MLR and SLR: A lower Mean Square Error does not necessarily imply better fit
   - Mean Square Error for a Multiple Linear Regression Model will be smaller than the Mean Square Error for a Simple Linear Regression model, since the errors of the data will decrease when more variables are included in the model
   - Polynomial regression will also have a smaller Mean Square Error than the linear regular regression
+
+### Model Evaluation and Refinement
+
+- In-sample evaluation tells us how well our model will fit the data used to train it
+
+- Build and train the model with a training set (70% dataset)
+
+- Use testing set to access the performance of a predictive model (30% dataset)
+
+- Function `train_test_split()`: Split data into random train and test subsets
+
+  - x_data: features or independent variables, y_data: dataset target (`df['price']`)
+  - x_train, y_train: parts of available data as training set
+
+  ```python
+  from sklearn.model_selection import train_test_split
+  x_train,x_test,y_train,y_test=train_test_split(x_data,y_data,test_size=0.3,random_state=0)
+  ```
+
+- Generalization error is measure of how well our data does at predicting previously unseen data, the error we obtain using our testing data is an approximation of this error.
+
+-  Lots of training data
+
+- Cross Validation
+
+  - Most common out-of-sample evaluation metrics
+  - More effective use of data (each observation is used for both training and testing)
+
+- Function `cross_val_score()`
+
+  ```python
+  from sklearn.model_selection import cross_val_score
+  scores=cross_val_score(lr,x_data,y_data,cv=3)
+  np.mean(scores)
+  ```
+
+- Function `cross_val_predict()`
+
+  - It returns the prediction that was obtained for each element when it was in the test set
+
+  ```python
+  from sklearn.model_selection import cross_val_score  #Has a similar interface to cross_cal_score()
+  scores=cross_val_score(lr,x_data,y_data,cv=3)
+  ```
+
+- Model Selection: y(x)+noise
+- Underfitting: Where the model is too simple to fit the data.
+- Overfitting: Where the model is too flexible and fits the noise rather than the function
+- Ridge regression
+  - A regression that is employed in a Multiple regression model when Multicollinearity occurs
+  - Multicollinearity is when there is a strong relationship among the independent variables
+  - Ridge regression is very common with polynomial regression
 
 ### Codes
 
