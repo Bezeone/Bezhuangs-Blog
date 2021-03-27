@@ -37,7 +37,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: http://picture.ik123.com/uploads/allimg/170712/4-1FG2100I9.jpg
+  background: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%A3%81%E7%BA%B82.jpg
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 庄之皓 · Bezhuang
   subtitle: 欢迎访问我的博客！Welcome to my blog!
