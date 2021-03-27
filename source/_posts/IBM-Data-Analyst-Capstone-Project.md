@@ -1,7 +1,7 @@
 ---
 title: IBM Data Analyst Capstone Project
-date: 2021-03-26
-updated: 2021-03-26
+date: 2021-03-27
+updated: 2021-03-27
 group: going
 tags: [Python]
 categories: 人工智能与大数据
