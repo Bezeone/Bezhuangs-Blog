@@ -16,6 +16,6 @@ comments: false
 </div>
 
 ## 项目仓库
-| {% ghcard Bezhuang/Pikachu-rainbow-fart%} | {% ghcard Bezhuang/Blogsite %} |
+| {% ghcard Bezhuang/Pikachu-rainbow-fart%} | {%  ghcard Bezhuang/RSSHub %} |
 |  --  |  --  |
-|  {%  ghcard Bezhuang/RSSHub %}  |  --  |
+|    |  --  |

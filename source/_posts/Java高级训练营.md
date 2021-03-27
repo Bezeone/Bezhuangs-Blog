@@ -3,6 +3,7 @@ title: 2021阿里Java训练营第三期
 date: 2021-03-26
 updated: 2021-03-26
 tags: [Java]
+group: going
 categories: 代码人生
 references:
   - title: Spring Cloud微服务架构设计与开发实战
@@ -63,4 +64,18 @@ references:
 - Spring Cloud Netflix Greenwich以上（2.1.X）版本相对成熟，企业使用多，容易落地架构
 - Spring Cloud Alibaba相对成熟，部分组件可以替换
 - 新版本2020（aka Ilford）可以作为拓展学习，基于Spring Boot2.4及以上版本，Bootstrap默认禁用，慎重选择新版本
+
+### 开发Spring Cloud微服务API
+
+- 配置Eureka客户端项目
+
+  ```properties
+  spring.application.name=order-microservice
+  server.port=8001
+  eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+  eureka.client.fetch-registry=false
+  eureka.client.register-with-eureka=true
+  ```
+
+  
 

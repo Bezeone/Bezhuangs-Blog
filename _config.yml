@@ -104,7 +104,8 @@ ignore:
 theme: volantis
 
 # hexo-blog-encrypt
-encrypt: 
+encrypt:
+  enable: false 
   abstract: 这里有东西被加密了，需要输入密码查看哦。
   message: 您好, 这里需要密码.
 #  tags:
@@ -117,11 +118,11 @@ encrypt:
 feed:
 type: atom
 path: atom.xml
-limit: 20
+limit: 50
 
 #看板娘
 live2d:
-  enable: true
+  enable: false
   scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
@@ -142,4 +143,4 @@ live2d:
 deploy:
   type: git
   repo:
-    - https://github.com/Bezhuang/Blogsite.git
+    - https://gitee.com/Bezhuang/blog.git

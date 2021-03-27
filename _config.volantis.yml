@@ -37,7 +37,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://wallpaperplay.com/walls/full/9/6/0/99676.jpg
+  background: http://picture.ik123.com/uploads/allimg/170712/4-1FG2100I9.jpg
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 庄之皓 · Bezhuang
   subtitle: 欢迎访问我的博客！Welcome to my blog!
@@ -46,7 +46,7 @@ cover:
     - name: 简历
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4dd.svg
-      url: /404
+      url: /resume
     - name: 相册
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4f7.svg

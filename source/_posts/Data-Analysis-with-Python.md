@@ -1,9 +1,7 @@
 ---
 title: Data Analysis With Python
 date: 2021-02-17
-updated: 2021-03-26
-pin: true
-group: going
+updated: 2021-03-27
 tags: [Python]
 mathjax: true
 categories: 人工智能与大数据
@@ -12,6 +10,8 @@ categories: 人工智能与大数据
 > This Data Analysis with Python course provided by IBM is designed to teach future data analysts how to prepare data for analysis, perform simple statistical analysis, create meaningful data visualizations, predict future trends from data through a number of lecture, lab, and assignments using Python libraries. The following are the notes I took during this course.
 
 <!--more-->
+
+{%pdf /pdf/Coursera-Data-Analysis-with-py.pdf %}
 
 ### Importing Datasets
 
@@ -424,6 +424,7 @@ categories: 人工智能与大数据
 ### Project Case
 
 - Determining the market price of a house given a set of features
+- [Assignment notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/178b3007-1e92-4946-97ed-f22763f254d2/view?access_token=6f0d33f3dd579324e58eac3e6416508d2f47372218c970f98d418bc68133d33c)
 
 ### Codes
 
