@@ -7,7 +7,7 @@ sidebar: []
 comments: false
 ---
 
-{% span center code huge, 项目内容及文档索引 %}
+{% span center code huge, 项目内容索引 %}
 
 ## 开源贡献
 
@@ -16,6 +16,6 @@ comments: false
 </div>
 
 ## 项目仓库
-| {% ghcard Bezhuang/Pikachu-rainbow-fart%} | {%  ghcard Bezhuang/RSSHub %} |
+| {% ghcard Bezhuang/Pikachu-rainbow-fart%} | {%  ghcard Bezhuang/Hexo-blog %} |
 |  --  |  --  |
-|    |  --  |
+| {%  ghcard Bezhuang/RSSHub %} |  --  |

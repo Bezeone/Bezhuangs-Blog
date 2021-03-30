@@ -4,7 +4,7 @@ date: 2021-01-31
 updated: 2021-02-05
 tags: [ACM]
 group: going
-categories: 代码人生
+categories: 算法与数据结构
 references:
   - title: 杭电OJ参与者：Bezhuang
     url: http://acm.hdu.edu.cn/userstatus.php?user=Bezhuang

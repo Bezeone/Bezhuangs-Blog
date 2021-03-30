@@ -364,7 +364,7 @@ site_footer:
   # site copyright
   copyright: Copyright © 2020-2021 Bezhuang. All rights reserved
   # You can add your own property here. (Support markdown, for example: br: '<br>')
-  # br: '<br>'
+  br: 沪ICP备2021008939号
 ############################### Site Footer ############################### > end
 
 ############################### Plugins ############################### > start
@@ -579,7 +579,7 @@ rightmenu:
   source_docs:
     name: 本站源码
     icon: fa fa-code-branch
-    url: https://github.com/Bezhuang/Blogsite
+    url: https://github.com/Bezhuang/Hexo-blog
   source_theme:
     name: 主题源码
     icon: fa fa-code-branch

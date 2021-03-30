@@ -143,4 +143,4 @@ live2d:
 deploy:
   type: git
   repo:
-    - https://gitee.com/Bezhuang/blog.git
+    - git@github.com:Bezhuang/Hexo-blog.git
