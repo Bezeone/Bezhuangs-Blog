@@ -41,15 +41,23 @@ categories: 人工智能与大数据
   import os 
   from PIL import Image
   from IPython.display import IFrame
-  url='https://www.ibm.com/'  #GET request //# Use single quotation marks for defining string
+  #GET request //# Use single quotation marks for defining string
+  url='https://www.ibm.com/'  
   r=requests.get(url)
-  r.status_code  #status of the request
-  print(r.request.headers)  #view request headers //r.request.body
-  header=r.headers  #HTTP response header
-  header['date']  #obtain the date
-  header['Content-Type']  #obtain the type of data
+  #status of the request
+  r.status_code  
+  #view request headers //r.request.body
+  print(r.request.headers)  
+  #HTTP response header
+  header=r.headers  
+  #obtain the date
+  header['date']  
+  #obtain the type of data
+  header['Content-Type']  
   r.encoding
-  r.text[0:100]  #view text
+  #view text
+  r.text[0:100]  
+  #write content(image)
   path=os.path.join(os.getcwd(),'image.png')
   with open(path,'wb') as f:
       f.write(r.content)
@@ -62,10 +70,12 @@ categories: 人工智能与大数据
 
   ```python
   url_get='http://httpbin.org/get'
-  payload={"name":"Joseph","ID":"123"}  #To create a Query string, add a dictionary.
+  #To create a Query string, add a dictionary.
+  payload={"name":"Joseph","ID":"123"}  
   r=requests.get(url_get,params=payload)
   r.url  #'http://httpbin.org/get?name=Joseph&ID=123'
-  r.json()['args']  #key args in JSON format
+  #key args in JSON format
+  r.json()['args']  
   ```
 
 - Post Requests
@@ -88,11 +98,15 @@ categories: 人工智能与大数据
   from bs4 import BeautifulSoup  # this module helps in web scrapping.
   import requests  # this module helps us to download a web page
   url = "http://www.ibm.com"
-  data  = requests.get(url).text  # get the contents of the webpage in text format and store in a variable called data
-  soup = BeautifulSoup(data,"html5lib")  # create a soup object using the variable 'data'
-  for link in soup.find_all('a'):  # in html anchor/link is represented by the tag <a>
+  # get the contents of the webpage in text format and store in a variable called data
+  data  = requests.get(url).text  
+  # create a soup object using the variable 'data'
+  soup = BeautifulSoup(data,"html5lib")  
+  # in html anchor/link is represented by the tag <a>
+  for link in soup.find_all('a'):  
       print(link.get('href'))
-  for link in soup.find_all('img'):# in html image is represented by the tag <img>
+  # in html image is represented by the tag <img>
+  for link in soup.find_all('img'):
       print(link.get('src'))
   ```
 
@@ -100,13 +114,19 @@ categories: 人工智能与大数据
 
   ```python
   url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/labs/datasets/HTMLColorCodes.html"
-  data  = requests.get(url).text  # get the contents of the webpage in text format and store in a variable called data
+  # get the contents of the webpage in text format and store in a variable called data
+  data  = requests.get(url).text  
   soup = BeautifulSoup(data,"html5lib")
-  table = soup.find('table') # in html table is represented by the tag <table>
-  for row in table.find_all('tr'): # in html table row is represented by the tag <tr>
-      cols = row.find_all('td') # in html a column is represented by the tag <td>
-      color_name = cols[2].getText() # store the value in column 3 as color_name
-      color_code = cols[3].getText() # store the value in column 4 as color_code
+  # in html table is represented by the tag <table>
+  table = soup.find('table') 
+  # in html table row is represented by the tag <tr>
+  for row in table.find_all('tr'): 
+      # in html a column is represented by the tag <td>
+      cols = row.find_all('td') 
+      # store the value in column 3 as color_name
+      color_name = cols[2].getText() 
+      # store the value in column 4 as color_code
+      color_code = cols[3].getText() 
       print("{}--->{}".format(color_name,color_code))
   ```
 
@@ -123,75 +143,208 @@ categories: 人工智能与大数据
 - Explore the dataset
 
   ```python
-  df.head()  #Display the top 5 rows and columns from your dataset
+  #Display the top & bottom 5 rows and columns from your dataset
+  df.head()  
   df.tail()
-  df.shape[0]  #The number of rows in the dataset.
-  df.shape[1]  #The number of columns in the dataset.
-  df.dtypes  #Print the datatype of all columns.
-  df["Age"].mean()  #Print the mean age of the survey participants.
-  df["Country"].nunique()  #Print how many unique countries are there in the Country column.
+  #The number of rows in the dataset.
+  df.shape[0]  
+  #The number of columns in the dataset.
+  df.shape[1]  
+  #Print the datatype of all columns.
+  df.dtypes  
+  #Print the mean age of the survey participants.
+  df["Age"].mean()
+  #Print how many unique countries are there in the Country column.
+  df["Country"].nunique()  
   ```
 
-### Module 2: Data Wrangling
+### Data Wrangling
 
-- Finding Duplicates
+- Load the dataset
 
   ```python
   import pandas as pd
   df = pd.read_csv("https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/LargeData/m1_survey_data.csv")
-  df.duplicated(keep='first').sum()  #Find how many duplicate rows exist in the dataframe.
-  duplicateRows = df[df.duplicated()]  #Show duplicated rows
+  ```
+  
+- Finding Duplicates
+
+  ```python
+  #Find how many duplicate rows exist in the dataframe.
+  df.duplicated(keep='first').sum()  
+  #Show duplicated rows
+  duplicateRows = df[df.duplicated()]  
   duplicateRows  
-  df["Respondent"].duplicated(keep='first').sum()  #numbers of duplicate values in the column Respondent
+  #numbers of duplicate values in the column Respondent
+  df["Respondent"].duplicated(keep='first').sum()  
   ```
 
 - Removing Duplicates
 
   ```python
-  df.drop_duplicates(ignore_index=True, inplace=True)  #Remove the duplicate rows from the dataframe.
-  df.duplicated(keep='first').sum()  #Verify if duplicates were actually dropped.
-  df.shape  #number of rows and columns left
-  df["Respondent"].nunique  #numbers of unique rows left in the column Respondent
+  #Remove the duplicate rows from the dataframe.
+  df.drop_duplicates(ignore_index=True, inplace=True)  
+  #Verify if duplicates were actually dropped.
+  df.duplicated(keep='first').sum()  
+  #number of rows and columns left
+  df.shape  
+  #numbers of unique rows left in the column Respondent
+  df["Respondent"].nunique  
   ```
 
 - Finding Missing Values
 
   ```python
-  df.isnull().sum()  #Find the missing values for all columns.
-  df["EdLevel"].isnull().sum()  #Find out how many rows are missing in the column EdLevel
+  #Find the missing values for all columns.
+  df.isnull().sum()  
+  #Find out how many rows are missing in the column EdLevel
+  df["EdLevel"].isnull().sum()  
   ```
 
 - Determine Missing Values
 
   ```python
-  df["WorkLoc"].value_counts()  #Find the value counts for the column WorkLoc.
-  df["WorkLoc"].fillna(value="Office",inplace=True)  #Impute (replace) all the empty rows in the column WorkLoc with the value that you have identified as majority.
-  df["WorkLoc"].isnull().sum()  #After imputation there should ideally not be any empty rows in the WorkLoc column.
+  #Find the value counts for the column WorkLoc.
+  df["WorkLoc"].value_counts()  
+  #Impute (replace) all the empty rows in the column WorkLoc with the value that you have identified as majority.
+  df["WorkLoc"].fillna(value="Office",inplace=True)  
+  #After imputation there should ideally not be any empty rows in the WorkLoc column.
+  df["WorkLoc"].isnull().sum()  
   ```
 
 - Normalizing Data
 
   ```python
-  df["CompFreq"].unique()  #List out the various categories in the column 'CompFreq'
-  df["CompFreq"].replace(to_replace="Yearly",value=1,inplace=True)  #If the CompFreq is Yearly then use the exising value in CompTotal
-  df["CompFreq"].replace(to_replace="Monthly",value=12,inplace=True)  #If the CompFreq is Monthly then multiply the value in CompTotal with 12 (months in an year)
-  df["CompFreq"].replace(to_replace="Weekly",value=52,inplace=True)  #If the CompFreq is Weekly then multiply the value in CompTotal with 52 (weeks in an year)
+  #List out the various categories in the column 'CompFreq'
+  df["CompFreq"].unique()  
+  #If the CompFreq is Yearly then use the exising value in CompTotal
+  df["CompFreq"].replace(to_replace="Yearly",value=1,inplace=True)  
+  #If the CompFreq is Monthly then multiply the value in CompTotal with 12 (months in an year)
+  df["CompFreq"].replace(to_replace="Monthly",value=12,inplace=True)  
+  #If the CompFreq is Weekly then multiply the value in CompTotal with 52 (weeks in an year)
+  df["CompFreq"].replace(to_replace="Weekly",value=52,inplace=True)  
   df["CompFreq"].unique()
   df["CompFreq"].value_counts()
-  df['NormalizedAnnualCompensation'] = df["CompTotal"] * df["CompFreq"]  #it makes comparison of salaries easy.
+  #it makes comparison of salaries easy.
+  df['NormalizedAnnualCompensation'] = df["CompTotal"] * df["CompFreq"]  
   df["Respondent"].nunique()
   df["ConvertedComp"].describe()
   df["ConvertedComp"].hist(figsize=(15,4))
   df['NormalizedAnnualCompensation'].median()
   ```
 
-### Module 3: Exploratory Data Analysis
+### Exploratory Data Analysis
 
-- Distribution
+- Import necessary modules
+
+  ```python
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+  %matplotlib inline
+  df = pd.read_csv("https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/LargeData/m2_survey_data.csv")
+  ```
+
+- Distribution: Determine how the data is distributed
+  
+```python
+  #Plot the distribution curve for the column ConvertedComp
+  plt.figure(figsize=(10,5))
+  sns.distplot(a=df["ConvertedComp"],bins=20,hist=False)
+  plt.show()
+  #Plot the histogram for the column ConvertedComp
+  plt.figure(figsize=(10,5))
+  sns.distplot(a=df["ConvertedComp"],bins=20,kde=False)
+  plt.show()
+  #the median of the column ConvertedComp
+  df["ConvertedComp"].median()
+  #number of responders identified themselves only as a Man
+  df["Gender"].value_counts()
+  #the median number of ConvertedComp of responders identified themselves only as a Woman
+  woman = df[df["Gender"] == "Woman"]
+  woman["ConvertedComp"].median()
+  #five number summary for the column Age
+  df["Age"].describe()
+  ```
+  
 - Outliers
-- Correlation
 
-### Module 4: Data Visualization
+  ```python
+  #Find out if outliers exist in the column ConvertedComp using a box plot
+  plt.figure(figsize=(10,5))
+  sns.boxplot(x=df.ConvertedComp, data=df)
+  plt.show()
+  #Find out the Inter Quartile Range for the column ConvertedComp
+  df["ConvertedComp"].describe()
+  #Find out the upper and lower bounds.
+  Q1 = df["ConvertedComp"].quantile(0.25)
+  Q3 = df["ConvertedComp"].quantile(0.75)
+  IQR = Q3 - Q1
+  print(IQR)
+  #Identify how many outliers are there in the ConvertedComp column
+  outliers = (df["ConvertedComp"] < (Q1 - 1.5 * IQR)) | (df["ConvertedComp"] > (Q3 + 1.5 * IQR))
+  outliers.value_counts()
+  less = (df["ConvertedComp"] < (Q1 - 1.5 * IQR))
+  less.value_counts()
+  more = (df["ConvertedComp"] > (Q3 + 1.5 * IQR))
+  more.value_counts()
+  #Create a new dataframe by removing the outliers from the ConvertedComp column
+  RemoveConvertedcomp = df[~(df["ConvertedComp"] > (Q3 + 1.5 * IQR))]
+  RemoveConvertedcomp.head()
+  RemoveConvertedcomp["ConvertedComp"].median()
+  RemoveConvertedcomp["ConvertedComp"].mean()
+  ```
+
+- Correlation: Find the correlation between all numerical columns
+
+  ```python
+  df.corr()
+  ```
+
+### Data Visualization
+
+- Work with Database
+
+  ```python
+  !wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/LargeData/m4_survey_data.sqlite
+  import sqlite3
+  import pandas as pd
+  # open a database connection
+  conn = sqlite3.connect("m4_survey_data.sqlite") 
+  # print how many rows are there in the table named 'master'
+  QUERY = """
+  SELECT COUNT(*)
+  FROM master
+  """
+  # the read_sql_query runs the sql query and returns the data as a dataframe
+  df = pd.read_sql_query(QUERY,conn)
+  df.head()
+  # print all the tables names in the database
+  QUERY = """
+  SELECT name as Table_Name FROM
+  sqlite_master WHERE
+  type = 'table'
+  """
+  # the read_sql_query runs the sql query and returns the data as a dataframe
+  pd.read_sql_query(QUERY,conn)
+  #run a group by query
+  QUERY = """
+  SELECT Age,COUNT(*) as count
+  FROM master
+  group by age
+  order by age
+  """
+  pd.read_sql_query(QUERY,conn)
+  #Describe a table
+  table_name = 'master'  # the table you wish to describe
+  QUERY = """
+  SELECT sql FROM sqlite_master
+  WHERE name= '{}'
+  """.format(table_name)
+  df = pd.read_sql_query(QUERY,conn)
+  print(df.iat[0,0])
+  ```
 
 - Visualizing Distribution of Data
 - Relationship
