@@ -3,7 +3,7 @@ title: 搭建LAMP环境安装部署Wordpress
 date: 2021-03-29
 updated: 2021-03-29
 tags: [ECS]
-categories: 云计算与运用开发
+categories: 云计算与应用开发
 references:
   - title: 基于ECS搭建云上博客
     url: https://developer.aliyun.com/adc/scenario/fdecd528be6145dcbe747f0206e361f3

@@ -1,8 +1,7 @@
 ---
 title: IBM Data Analyst Capstone Project
 date: 2021-03-27
-updated: 2021-03-27
-group: going
+updated: 2021-04-03
 tags: [Python]
 categories: 人工智能与大数据
 ---
@@ -10,6 +9,10 @@ categories: 人工智能与大数据
 > In this course provided by IBM, I will assume the role of an Associate Data Analyst who has recently joined the organization and be presented with a business challenge that requires data analysis to be performed on real-world datasets. The capstone project will culminate with a presentation of your data analysis report, with an executive summary for the various stakeholders in the organization. I believe this project is a great opportunity to showcase Data Analytics skills, and demonstrate proficiency to potential employers. The following are the notes I took during this course.
 
 <!--more-->
+
+{% pdf /pdf/IBM-Data-Analyst.pdf %}
+
+{% pdf /pdf/Coursera-Data-Analyst-Capstone-Project.pdf %}
 
 ### Data Collection
 
@@ -248,26 +251,26 @@ categories: 人工智能与大数据
 
 - Distribution: Determine how the data is distributed
   
-```python
-  #Plot the distribution curve for the column ConvertedComp
-  plt.figure(figsize=(10,5))
-  sns.distplot(a=df["ConvertedComp"],bins=20,hist=False)
-  plt.show()
-  #Plot the histogram for the column ConvertedComp
-  plt.figure(figsize=(10,5))
-  sns.distplot(a=df["ConvertedComp"],bins=20,kde=False)
-  plt.show()
-  #the median of the column ConvertedComp
-  df["ConvertedComp"].median()
-  #number of responders identified themselves only as a Man
-  df["Gender"].value_counts()
-  #the median number of ConvertedComp of responders identified themselves only as a Woman
-  woman = df[df["Gender"] == "Woman"]
-  woman["ConvertedComp"].median()
-  #five number summary for the column Age
-  df["Age"].describe()
-  ```
-  
+    ```python
+      #Plot the distribution curve for the column ConvertedComp
+      plt.figure(figsize=(10,5))
+      sns.distplot(a=df["ConvertedComp"],bins=20,hist=False)
+      plt.show()
+      #Plot the histogram for the column ConvertedComp
+      plt.figure(figsize=(10,5))
+      sns.distplot(a=df["ConvertedComp"],bins=20,kde=False)
+      plt.show()
+      #the median of the column ConvertedComp
+      df["ConvertedComp"].median()
+      #number of responders identified themselves only as a Man
+      df["Gender"].value_counts()
+      #the median number of ConvertedComp of responders identified themselves only as a Woman
+      woman = df[df["Gender"] == "Woman"]
+      woman["ConvertedComp"].median()
+      #five number summary for the column Age
+      df["Age"].describe()
+    ```
+
 - Outliers
 
   ```python
@@ -351,10 +354,40 @@ categories: 人工智能与大数据
 - Composition
 - Comparison
 
-### Module 5: Dashboard Creation
+### Dashboard Creation
 
-- Dashboards
+- IBM Cognos Dashboard Embedded (CDE) is an AI-fueled business intelligence service that supports the entire data analytics cycle, from discovery to operationalization. It provides users with data discovery capabilities to visually explore and interact with their data to identify the key insights for improving data driven decisions. Users can perform data discovery and then quickly assemble that information into interactive, visually appealing dashboards; all without the need of formal training.
+- Add a Cognos Dashboard Embedded (CDE) service and upload external data files to your project (supports CSV file only)
+- General navigation around the CDE user interface (UI), start a new dashboard with a template in CDE, populate it with a data visualization as well as save the dashboard.
 
-### Module 6: Presentation of Findings
+### Presentation of Findings
+
+- Data collected, cleaned and organized -> Report (paper style report or slideshow presentation)
+
+- Elements Of A Successful Data Findings Report
+
+  - Outline
+  - Cover Page
+  - Executive Summary: briefly explain the details of the project and should be considered a stand-alone document
+  - Table of Contents
+  - Introduction: explains the nature of the analysis, states the problem, and gives the questions that were to be answered by performing the analysis
+  - Methodology: explains the data sources that were used in the analysis and outlines the plan for the collected data
+  - Results: goes into the detail of the data collection, how it was organized, and how it was analyzed,  also contain the charts and graphs that would substantiate the results and call attention to the more complex or crucial findings
+  - Discussion: engage the audience with a discussion of your implications that were drawn from the research
+  - Conclusion: reiterate the problem given in the introduction and gives an overall summary of the findings, also state the outcome of the analysis and if any other steps would be taken in the future
+  - Appendix: contain information that really didn’t fit in the main body of the report, but you deemed it was still important enough to include
+
+- Factors to remember in accurately conveying your message
+
+  - Make sure charts and graphs are not too small and are clearly labeled
+  - Use the data only as supporting evidence
+  - Share only one point from each chart
+  - Eliminate data that does not support the key message
 
 - Final Presentation
+
+  <iframe src="https://onedrive.live.com/embed?cid=5B712C0081A6168C&amp;resid=5B712C0081A6168C%21873&amp;authkey=ALfYamiV2mOnskw&amp;em=2&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">这是嵌入 <a target="_blank" href="https://office.com">Microsoft Office</a> 演示文稿，由 <a target="_blank" href="https://office.com/webapps">Office</a> 提供支持。</iframe>
+  
+### Codes
+
+- [Please Open with Jupyter Lab](https://github.com/Bezhuang/LearnCS/tree/main/Data%20Analyst%20Capstone%20Project)
