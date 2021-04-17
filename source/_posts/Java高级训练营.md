@@ -1,9 +1,8 @@
 ---
 title: 2021阿里Java训练营第三期
 date: 2021-03-26
-updated: 2021-03-27
+updated: 2021-04-17
 tags: [Java]
-group: going
 categories: 代码人生
 references:
   - title: Spring Cloud微服务架构设计与开发实战
@@ -77,5 +76,65 @@ references:
   eureka.client.register-with-eureka=true
   ```
 
-  
+### 声明式调用客户端Feign
+
+- 调用方，简化微服务API调用
+
+- Feign是一种声明式、模板化的HTTP客户端，简化HTTP客户端开发
+
+- 只需要创建一个接口 + `@注解`（Feign注解和JAX-RS注解）
+
+- Feign支持可插拔的编码器和解码器，默认集成了Ribbon，并和Eureka结合
+
+- Eureka Server、Eureka Client + Feign，mvn package打包
+
+- `@EnableFeignClients`
+
+- 调用方FeignClient代理接口代码
+
+  ```java
+  @FeignClient(value="microservice")
+  public interface GreetingClient{
+      @RequestMapping("/greeting")
+      public String greeting();
+  }
+  ```
+
+- 调用方Feign配置
+
+  ```properties
+  spring.application.name=FeignClient
+  server.port=9000
+  eureka.client.enabled=true
+  eureka.client.register-with-eureka=true
+  eureka.client.fetch-registry=true
+  eureka.instance.non-secure-port-enabled=true
+  eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+  ```
+
+- 调用方测试代码
+
+  ```java
+  @RestController
+  public class TestController {
+  	@Autowired
+  	private GreetingClient clientproxy;
+  	@RequestMapping("/hi")
+  	public String hi() {
+  		return clientproxy.hi();
+  	}
+  }
+  ```
+
+### Ribbon负载均衡算法
+
+- Spring Cloud客户端负载均衡器Ribbon是Netflix发布的开源项目，主要功能是提供客户端的软件负载均衡算法
+- Ribbon将Netflix的中间层服务连接在一起
+- Ribbon客户端组件提供许多配置如连接超时、重试等
+- 配置文件中列出后台所有的机器，Ribbon会自动去连接这些机器（如简单轮询、随即连接等）
+- Spring Cloud使用Ribbon实现自定义的负载均衡算法
+- 默认规则：简单轮询负载均衡RoundRobin
+- 随机负载均衡Random随机选择UP的Server
+- 加权响应时间负载均衡WeightResponseTime
+- 区域感知轮询负载均衡ZoneAware
 
