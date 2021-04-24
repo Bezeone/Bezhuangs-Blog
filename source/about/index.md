@@ -16,12 +16,13 @@ valine:
 
 ---
 
+</br>
 {% span center small, 手机：13818993049 %}
-
+</br>
 {% span center small, 本科专业阿拉伯语，业余刷题打代码 %}
-
+</br>
 {% span center small, 彩六新进，糖豆国小萌新，GTA看云玩家 %}
-
+</br>
 {% span center small, 喜爱篮球、电影，偶尔看看电影、写写博客 %}
 
 

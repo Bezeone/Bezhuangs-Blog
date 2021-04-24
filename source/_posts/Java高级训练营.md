@@ -1,7 +1,7 @@
 ---
 title: 2021阿里Java训练营第三期
 date: 2021-03-26
-updated: 2021-04-17
+updated: 2021-04-18
 tags: [Java]
 categories: 代码人生
 references:
@@ -32,7 +32,7 @@ references:
 - 敏捷开发、敏捷运维DevOps
 - 微服务典型应用场景：淘宝、支付宝、微信、微博、IOT、游戏、导航
 
-### Spring Cloud微服务注册与发现
+### Eureka微服务注册与发现
 
 - 服务注册与发现：Service Registry and Discovery
   - 大规模微服务集群架构，拥有许多服务实例，客户端要找到自己调用的服务
@@ -64,7 +64,7 @@ references:
 - Spring Cloud Alibaba相对成熟，部分组件可以替换
 - 新版本2020（aka Ilford）可以作为拓展学习，基于Spring Boot2.4及以上版本，Bootstrap默认禁用，慎重选择新版本
 
-### 开发Spring Cloud微服务API
+### 开发微服务API
 
 - 配置Eureka客户端项目
 
@@ -76,7 +76,7 @@ references:
   eureka.client.register-with-eureka=true
   ```
 
-### 声明式调用客户端Feign
+### Feign声明式调用客户端
 
 - 调用方，简化微服务API调用
 
@@ -138,3 +138,85 @@ references:
 - 加权响应时间负载均衡WeightResponseTime
 - 区域感知轮询负载均衡ZoneAware
 
+### Hystrix微服务监控
+
+- Netflix Hystrix熔断器框架保护系统，通过控制那些访问远程系统、服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力，防止服务器过载、系统雪崩
+
+- Fallback灾备操作，出错以后返回的值
+
+- Hystrix中，主要通过线程池来实现资源隔离，Hystrix的信号模式Semaphores隔离资源，熔断代码，`@EnableHystrix`
+
+- Hystrix支持dashoboard控制面板监控信息：独立部署http://localhost:9001/hystrix，也可以Zuul，`@EnableHystrixDashboard`
+
+- 监控数据源：http://localhost:9001/actuator/hystrux.stream
+
+- Feign可以和Hystrix结合使用，也可以独立使用
+
+- Pom依赖：`spring-cloud-starter-hystrix`、`spring-cloud-starter-hystrix-dashboard` 
+
+- Spring Cloud Hoxton版本后需要特殊配置
+
+- Hystrix底层原理：使用命令模式对命令对象抽象了两个抽象类：HystrixCommand和HystrixObservableCommand
+
+  ```properties
+  #启用监控熔断限流
+  feign.hystrix.enabled=true
+  #暴露监控数据源地址
+  management.endpoints.web.exposure.include=*
+  #info,health,thread
+  #允许展示监控服务器
+  hystrix.dashboard.proxy-stream-allow-list=localhost,192.168.1.101
+  ```
+
+- Hystrix核心参数
+  - 请求最大次数（默认20个请求）circuitBreaker.requestVolumnThreshold
+  - 滚动窗口（默认10秒）metrics.rollingStats.timeInMilliseconds
+  - 失败百分比（默认>50%）circuitBreaker.errorThreasholdPercentage
+
+### Zuul网关
+
+- [Zuul](http://github.com/Netflix/zuul)是Netflix开源的微服务网关工具，可以和Eureka、Ribbon、Hystrix等组件配合使用
+- Spring Cloud对Zuul进行了整合与增强，旨在实现动态路由、监视、弹性和安全性
+- 默认使用Apache HTTP Client作为HTTP客户端，也可以使用RestClient或okhttp3.OkHttpClient
+- Zuul默认会为Eureka注册的服务创建动态路由
+- Zuul在2.x/3.x的分支中已经引入netty
+- Zuul网关特性
+  - 验证和安全 Authentication and Security
+  - 跟踪、统计和监控 Insights and Monitoring
+  - 动态路由消息到后台集群 Dynamic Routing
+  - 压力测试主机递增 Stress Testing
+  - 过载保护 Load Shedding
+  - 静态消息处理，无需后台集群服务器处理 Static Response handling
+  - 多区域弹性伸缩，跨AWS区域路由请求，分散压力，请求处理更接近调用者 Multiregion Resiliency
+- Zuul依赖 `spring-cloud-starter-zuul`、`spring-cloud-starter-eureka`
+- 添加注解 `@EnableZuulProxy`，Zuul内部使用Ribbon实现客户端负载均衡
+- Spring Cloud Gateway替代Zuul
+
+### Nacos服务注册与发现
+
+- Dynamic Naming and Configuration Service
+- Nacos关键特性：服务发现和服务健康监测、动态配置服务、动态DNS服务、服务及其元数据管理
+- 相对于Eureka：同时支持AP和CP模型、跨中心同步、k8s基成、分组管理、权重设置
+- 三种部署模式：单机模式、集群模式、多集群模式
+
+- Alibaba微服务组件：Sentinel、Nacos、RocketMQ、Dubbo、Seata
+
+### Sentinel熔断限流
+
+- 分布式系统的流量防卫兵，流量控制、熔断降级、系统负载保护等多维度保护服务的稳定性
+
+-  相对于Hystrix支持基于调用关系的限流、流量整形、系统负载保护
+
+  ```properties
+  spring.application.name: nacos-feign-sentinel
+  #服务器端口
+  server.port:9001
+  spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
+  #sentinel
+  spring.cloud.sentinel.transport.dashboard=127.0.0.1:8080
+  feign.sentinel.enabled=true
+  #监控数据源要暴露地址
+  management.endpoints.web.exposure.include=*
+  ```
+
+  

@@ -42,21 +42,26 @@ references:
 - 多条 SQL 语句必须以分号（`;`）分隔
 - 处理 SQL 语句时，所有空格都被忽略，SQL 语句可以写成一行，也可以分写为多行
 - 一行 SQL 语句
-```SQL
-UPDATE user SET username='robot', password='robot' WHERE username = 'root';
-```
+
+    ```SQL
+    UPDATE user SET username='robot', password='robot' WHERE username = 'root';
+    ```
+
 - 多行 SQL 语句
-```SQL
-UPDATE user
-SET username='robot', password='robot'
-WHERE username = 'root';
-```
+
+    ```SQL
+    UPDATE user
+    SET username='robot', password='robot'
+    WHERE username = 'root';
+    ```
+
 - SQL 支持三种注释
-```mysql
-## 注释1
--- 注释2
-/* 注释3 */
-```
+
+    ```mysql
+    ##注释1
+    -- 注释2
+    /* 注释3 */
+    ```
 
 #### SQL 分类
 - 数据定义语言（DDL）
@@ -83,47 +88,55 @@ WHERE username = 'root';
 #### 插入数据
 - `INSERT INTO` 语句用于向表中插入新记录
 - 插入完整的行
-```SQL
-INSERT INTO user
-VALUES (10, 'root', 'root', 'xxxx@163.com');
-```
+
+    ```SQL
+    INSERT INTO user
+    VALUES (10, 'root', 'root', 'xxxx@163.com');
+    ```
+
 - 插入行的一部分
 
-```SQL
-INSERT INTO user(username, password, email)
-VALUES ('admin', 'admin', 'xxxx@163.com');
-```
+    ```SQL
+    INSERT INTO user(username, password, email)
+    VALUES ('admin', 'admin', 'xxxx@163.com');
+    ```
 
 - 插入查询出来的数据
 
-```SQL
-INSERT INTO user(username)
-SELECT name
-FROM account;
-```
+    ```SQL
+    INSERT INTO user(username)
+    SELECT name
+    FROM account;
+    ```
 
 #### 更新数据
 - `UPDATE` 语句用于更新表中的记录
-```SQL
-UPDATE user
-SET username='robot', password='robot'
-WHERE username = 'root';
-```
+
+    ```SQL
+    UPDATE user
+    SET username='robot', password='robot'
+    WHERE username = 'root';
+    ```
 
 #### 删除数据
 - `DELETE` 语句用于删除表中的记录
-```SQL
-TRUNCATE TABLE  ##可以清空表，也就是删除所有行
-```
+
+    ```SQL
+    TRUNCATE TABLE  ##可以清空表，也就是删除所有行
+    ```
+
 - 删除表中的指定数据
-```SQL
-DELETE FROM user
-WHERE username = 'robot';
-```
+
+    ```SQL
+    DELETE FROM user
+    WHERE username = 'robot';
+    ```
+
 - 清空表中的数据
-```SQL
-TRUNCATE TABLE user;
-```
+
+    ```SQL
+    TRUNCATE TABLE user;
+    ```
 
 #### 查询数据
 - `SELECT` 语句用于从数据库中查询数据
@@ -132,71 +145,70 @@ TRUNCATE TABLE user;
 - `ASC` ：升序（默认）
 - `DESC` ：降序
 - 查询单列
-```SQL
-SELECT prod_name
-FROM products;
-```
+
+    ```SQL
+    SELECT prod_name
+    FROM products;
+    ```
+
 - 查询多列
-```SQL
-SELECT prod_id, prod_name, prod_price
-FROM products;
-```
+
+    ```SQL
+    SELECT prod_id, prod_name, prod_price
+    FROM products;
+    ```
+
 - 查询所有列
-```SQL
-ELECT *
-FROM products;
-```
+
+    ```SQL
+    ELECT *
+    FROM products;
+    ```
+
 - 查询不同的值
-```SQL
-SELECT DISTINCT
-vend_id FROM products;
-```
+
+    ```SQL
+    SELECT DISTINCT
+    vend_id FROM products;
+    ```
+
 - 限制查询结果
-```SQL
--- 返回前 5 行
-SELECT * FROM mytable LIMIT 5;
-SELECT * FROM mytable LIMIT 0, 5;
--- 返回第 3 ~ 5 行
-SELECT * FROM mytable LIMIT 2, 3;
-```
+
+    ```SQL
+    -- 返回前 5 行
+    SELECT * FROM mytable LIMIT 5;
+    SELECT * FROM mytable LIMIT 0, 5;
+    -- 返回第 3 ~ 5 行
+    SELECT * FROM mytable LIMIT 2, 3;
+    ```
 
 ### 子查询
 
 - 子查询是嵌套在较大查询中的 SQL 查询
 - 子查询也称为内部查询或内部选择，而包含子查询的语句也称为外部查询或外部选择
 - 子查询可以嵌套在 `SELECT`，`INSERT`，`UPDATE` 或 `DELETE` 语句内或另一个子查询中
-
-
 - 子查询通常会在另一个 `SELECT` 语句的 `WHERE` 子句中添加
-
-
 - 您可以使用比较运算符，如 >，<，或 =，比较运算符也可以是多行运算符，如 `IN`，`ANY` 或 `ALL`
-
-- 
-  子查询必须被 `()` 括起来
-
+- 子查询必须被 `()` 括起来
 - 内部查询首先在其父查询之前执行，以便可以将内部查询的结果传递给外部查询
-
 
 #### 子查询的子查询
 
-```SQL
-SELECT cust_name, cust_contact
-FROM customers
-WHERE cust_id IN (SELECT cust_id
-                  FROM orders
-                  WHERE order_num IN (SELECT order_num
-                                      FROM orderitems
-                                      WHERE prod_id = 'RGAN01'));
-```
+    ```SQL
+    SELECT cust_name, cust_contact
+    FROM customers
+    WHERE cust_id IN (SELECT cust_id
+                      FROM orders
+                      WHERE order_num IN (SELECT order_num
+                                          FROM orderitems
+                                          WHERE prod_id = 'RGAN01'));
+    ```
 
 #### WHERE
 
 - `WHERE` 子句用于过滤记录，即缩小访问数据的范围
 - `WHERE` 后跟一个返回 `true` 或 `false` 的条件
-
 - `WHERE` 可以与 `SELECT`，`UPDATE` 和 `DELETE` 一起使用
-
 - `WHERE` 子句中使用的操作符
 
 
@@ -214,100 +226,92 @@ WHERE cust_id IN (SELECT cust_id
 
 #### SELECT 语句中的 WHERE 子句
 
-```SQL
-SELECT * FROM Customers
-WHERE cust_name = 'Kids Place';
-```
+    ```SQL
+    SELECT * FROM Customers
+    WHERE cust_name = 'Kids Place';
+    ```
 
 #### UPDATE 语句中的 WHERE 子句
 
-```SQL
-UPDATE Customers
-SET cust_name = 'Jack Jones'
-WHERE cust_name = 'Kids Place';
-```
+    ```SQL
+    UPDATE Customers
+    SET cust_name = 'Jack Jones'
+    WHERE cust_name = 'Kids Place';
+    ```
 
 #### DELETE 语句中的 WHERE 子句
 
-```SQL
-DELETE FROM Customers
-WHERE cust_name = 'Kids Place';
-```
+    ```SQL
+    DELETE FROM Customers
+    WHERE cust_name = 'Kids Place';
+    ```
 
 #### IN 和 BETWEEN
-
 - `IN` 操作符在 `WHERE` 子句中使用，作用是在指定的几个特定值中任选一个值
 
-
-```SQL
-SELECT *
-FROM products
-WHERE vend_id IN ('DLL01', 'BRS01');
-```
+    ```SQL
+    SELECT *
+    FROM products
+    WHERE vend_id IN ('DLL01', 'BRS01');
+    ```
 
 - `BETWEEN` 操作符在 `WHERE` 子句中使用，作用是选取介于某个范围内的值
 
-```SQL
-SELECT *
-FROM products
-WHERE prod_price BETWEEN 3 AND 5;
-```
+    ```SQL
+    SELECT *
+    FROM products
+    WHERE prod_price BETWEEN 3 AND 5;
+    ```
 
 #### AND、OR、NOT
 
 - `AND`、`OR`、`NOT` 是用于对过滤条件的逻辑处理指令
 - `AND` 优先级高于 `OR`，为了明确处理顺序，可以使用 `()`
-
 - `AND` 操作符表示左右条件都要满足
 
-
-```SQL
-SELECT prod_id, prod_name, prod_price
-FROM products
-WHERE vend_id = 'DLL01' AND prod_price <= 4;
-```
+    ```SQL
+    SELECT prod_id, prod_name, prod_price
+    FROM products
+    WHERE vend_id = 'DLL01' AND prod_price <= 4;
+    ```
 
 - `OR` 操作符表示左右条件满足任意一个即可
 
-```SQL
-SELECT prod_id, prod_name, prod_price
-FROM products
-WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
-```
+    ```SQL
+    SELECT prod_id, prod_name, prod_price
+    FROM products
+    WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
+    ```
 
 - `NOT` 操作符用于否定一个条件
 
-```SQL
-SELECT *
-FROM products
-WHERE prod_price NOT BETWEEN 3 AND 5;
-```
+    ```SQL
+    SELECT *
+    FROM products
+    WHERE prod_price NOT BETWEEN 3 AND 5;
+    ```
 
 #### LIKE
 
 - `LIKE` 操作符在 `WHERE` 子句中使用，作用是确定字符串是否匹配模式
 - 只有字段是文本值时才使用 `LIKE`
-
 - LIKE 支持两个通配符匹配选项：`%` 和 `_`
-
 - 不要滥用通配符，通配符位于开头处匹配会非常慢
-
 - `%` 表示任何字符出现任意次数
 
-
-```SQL
-SELECT prod_id, prod_name, prod_price
-FROM products
-WHERE prod_name LIKE '%bean bag%';
-```
+    ```SQL
+    SELECT prod_id, prod_name, prod_price
+    FROM products
+    WHERE prod_name LIKE '%bean bag%';
+    ```
 
 - `_` 表示任何字符出现一次
 
-```SQL
-SELECT prod_id, prod_name, prod_price
-FROM products
-WHERE prod_name LIKE '__ inch teddy bear';
-```
+    ```SQL
+    SELECT prod_id, prod_name, prod_price
+    FROM products
+    WHERE prod_name LIKE '__ inch teddy bear';
+    ```
 
 ### 连接和组合
 
@@ -315,50 +319,47 @@ WHERE prod_name LIKE '__ inch teddy bear';
 
 - 如果一个 `JOIN` 至少有一个公共字段并且它们之间存在关系，则该 `JOIN` 可以在两个或多个表上工作
 - 连接用于连接多个表，使用 `JOIN` 关键字，并且条件语句使用 `ON` 而不是 `WHERE`
-
 - `JOIN` 保持基表（结构和数据）不变
-
 - `JOIN` 有两种连接类型：内连接和外连接
-
 - 内连接又称等值连接，使用 `INNER JOIN` 关键字，在没有条件语句的情况下返回笛卡尔积
 
-```SQL
-SELECT vend_name, prod_name, prod_price
-FROM vendors INNER JOIN products
-ON vendors.vend_id = products.vend_id;
-```
+    ```SQL
+    SELECT vend_name, prod_name, prod_price
+    FROM vendors INNER JOIN products
+    ON vendors.vend_id = products.vend_id;
+    ```
 
 - 自连接可以看成内连接的一种，只是连接的表是自身而已
 
-```SQL
-SELECT c1.cust_id, c1.cust_name, c1.cust_contact
-FROM customers c1, customers c2WHERE c1.cust_name = c2.cust_name
-AND c2.cust_contact = 'Jim Jones';
-```
+    ```SQL
+    SELECT c1.cust_id, c1.cust_name, c1.cust_contact
+    FROM customers c1, customers c2WHERE c1.cust_name = c2.cust_name
+    AND c2.cust_contact = 'Jim Jones';
+    ```
 
 - 自然连接（`NATURAL JOIN`）是把同名列通过 `=` 测试连接起来的，同名列可以有多个
 
-```SQL
-SELECT *
-FROM Products
-NATURAL JOIN Customers;
-```
+    ```SQL
+    SELECT *
+    FROM Products
+    NATURAL JOIN Customers;
+    ```
 
 - 左外连接（LEFT JOIN）就是保留左表没有关联的行
 
-```SQL
-SELECT customers.cust_id, orders.order_num
-FROM customers LEFT JOIN orders
-ON customers.cust_id = orders.cust_id;
-```
+    ```SQL
+    SELECT customers.cust_id, orders.order_num
+    FROM customers LEFT JOIN orders
+    ON customers.cust_id = orders.cust_id;
+    ```
 
 - 右外连接（RIGHT JOIN）就是保留右表没有关联的行
 
-```SQL
-SELECT customers.cust_id, orders.order_num
-FROM customers RIGHT JOIN orders
-ON customers.cust_id = orders.cust_id;
-```
+    ```SQL
+    SELECT customers.cust_id, orders.order_num
+    FROM customers RIGHT JOIN orders
+    ON customers.cust_id = orders.cust_id;
+    ```
 
 - 内连接 vs 自然连接
   - 内连接提供连接的列，而自然连接自动连接所有同名列
@@ -380,16 +381,15 @@ ON customers.cust_id = orders.cust_id;
   - 对一个表执行多个查询，按一个查询返回数据
 - 组合查询
 
-
-```SQL
-SELECT cust_name, cust_contact, cust_email
-FROM customers
-WHERE cust_state IN ('IL', 'IN', 'MI')
-UNION
-SELECT cust_name, cust_contact, cust_email
-FROM customers
-WHERE cust_name = 'Fun4All';
-```
+    ```SQL
+    SELECT cust_name, cust_contact, cust_email
+    FROM customers
+    WHERE cust_state IN ('IL', 'IN', 'MI')
+    UNION
+    SELECT cust_name, cust_contact, cust_email
+    FROM customers
+    WHERE cust_name = 'Fun4All';
+    ```
 
 - `JOIN` vs `UNION`
   - `JOIN` 中连接表的列可能不同，但在 `UNION` 中，所有查询的列数和列顺序必须相同
@@ -412,11 +412,11 @@ WHERE cust_name = 'Fun4All';
 
 -  `SOUNDEX()` 可以将一个字符串转换为描述其语音表示的字母数字模式
 
-```SQL
-SELECT *
-FROM mytable
-WHERE SOUNDEX(col1) = SOUNDEX('apple')
-```
+    ```SQL
+    SELECT *
+    FROM mytable
+    WHERE SOUNDEX(col1) = SOUNDEX('apple')
+    ```
 
 - 日期和时间处理
   - 日期格式：`YYYY-MM-DD`
@@ -442,10 +442,10 @@ WHERE SOUNDEX(col1) = SOUNDEX('apple')
 | `Time()`        | 返回一个日期时间的时间部分     |
 | `Year()`        | 返回一个日期的年份部分         |
 
-```mysql
-mysql> SELECT NOW();
-2020-11-14 20:11:11
-```
+    ```mysql
+    mysql> SELECT NOW();
+    2020-11-14 20:11:11
+    ```
 
 - 数值处理
 
@@ -474,11 +474,10 @@ mysql> SELECT NOW();
 
 - 使用 `DISTINCT` 可以让汇总函数值汇总不同的值
 
-
-```mysql
-SELECT AVG(DISTINCT col1) AS avg_col
-FROM mytable
-```
+    ```mysql
+    SELECT AVG(DISTINCT col1) AS avg_col
+    FROM mytable
+    ```
 
 ### 排序和分组
 
@@ -486,66 +485,55 @@ FROM mytable
 
 - `ORDER BY` 用于对结果集进行排序
 - `ASC` ：升序（默认）
-
 - `DESC` ：降序
-
 - `ORDER BY` 可以按多个列进行排序，并且为每个列指定不同的排序方式
-
 - `ORDER BY` 指定多个列的排序方向
 
-
-```SQL
-SELECT * FROM products
-ORDER BY prod_price DESC, prod_name ASC;
-```
+    ```SQL
+    SELECT * FROM products
+    ORDER BY prod_price DESC, prod_name ASC;
+    ```
 
 #### GROUP BY
 
 - `GROUP BY` 子句将记录分组到汇总行中
 - `GROUP BY` 为每个组返回一个记录
-
 - `GROUP BY` 通常还涉及聚合：`COUNT`，`MAX`，`SUM`，`AVG` 等
-
 - `GROUP BY` 可以按一列或多列进行分组
-
 - `GROUP BY` 按分组字段进行排序后，`ORDER BY` 可以以汇总字段来进行排序
 
 - 分组
 
-
-```sql
-SELECT cust_name, COUNT(cust_address) AS addr_num
-FROM Customers GROUP BY cust_name;
-```
+    ```sql
+    SELECT cust_name, COUNT(cust_address) AS addr_num
+    FROM Customers GROUP BY cust_name;
+    ```
 
 - 分组后排序
 
-```sql
-SELECT cust_name, COUNT(cust_address) AS addr_num
-FROM Customers GROUP BY cust_name
-ORDER BY cust_name DESC;
-```
+    ```sql
+    SELECT cust_name, COUNT(cust_address) AS addr_num
+    FROM Customers GROUP BY cust_name
+    ORDER BY cust_name DESC;
+    ```
 
 #### HAVING
 
 - `HAVING` 用于对汇总的 `GROUP BY` 结果进行过滤
 - `HAVING` 要求存在一个 `GROUP BY` 子句
-
 - `WHERE` 和 `HAVING` 可以在相同的查询中
-
 - `HAVING` vs `WHERE`
   - `WHERE` 和 `HAVING` 都是用于过滤
   - `HAVING` 适用于汇总的组记录；而 `WHERE` 适用于单个记录
 - 使用 `WHERE` 和 `HAVING` 过滤数据
 
-
-```sql
-SELECT cust_name, COUNT(*) AS num
-FROM Customers
-WHERE cust_email IS NOT NULL
-GROUP BY cust_name
-HAVING COUNT(*) >= 1;
-```
+    ```sql
+    SELECT cust_name, COUNT(*) AS num
+    FROM Customers
+    WHERE cust_email IS NOT NULL
+    GROUP BY cust_name
+    HAVING COUNT(*) >= 1;
+    ```
 
 ### 数据定义（ DDL 语句用法）
 
@@ -555,21 +543,21 @@ HAVING COUNT(*) >= 1;
 
 - 创建数据库
 
-```sql
-CREATE DATABASE test;
-```
+    ```sql
+    CREATE DATABASE test;
+    ```
 
 - 删除数据库
 
-```sql
-DROP DATABASE test;
-```
+    ```sql
+    DROP DATABASE test;
+    ```
 
 - 选择数据库
 
-```mysql
-USE test;
-```
+    ```mysql
+    USE test;
+    ```
 
 #### 数据表（TABLE）
 
@@ -577,64 +565,64 @@ USE test;
 
 - 普通创建
 
-```sql
-CREATE TABLE user (
-  id int(10) unsigned NOT NULL COMMENT 'Id',
-  username varchar(64) NOT NULL DEFAULT 'default' COMMENT '用户名',
-  password varchar(64) NOT NULL DEFAULT 'default' COMMENT '密码',
-  email varchar(64) NOT NULL DEFAULT 'default' COMMENT '邮箱'
-) COMMENT='用户表';
-```
+    ```sql
+    CREATE TABLE user (
+      id int(10) unsigned NOT NULL COMMENT 'Id',
+      username varchar(64) NOT NULL DEFAULT 'default' COMMENT '用户名',
+      password varchar(64) NOT NULL DEFAULT 'default' COMMENT '密码',
+      email varchar(64) NOT NULL DEFAULT 'default' COMMENT '邮箱'
+    ) COMMENT='用户表';
+    ```
 
 - 根据已有的表创建新表
 
-```sql
-CREATE TABLE vip_user AS
-SELECT * FROM user;
-```
+    ```sql
+    CREATE TABLE vip_user AS
+    SELECT * FROM user;
+    ```
 
 - 删除数据表
 
-```sql
-DROP TABLE user;
-```
+    ```sql
+    DROP TABLE user;
+    ```
 
 - 修改数据表
 
 - 添加列
 
-```sql
-ALTER TABLE user
-ADD age int(3);
-```
+    ```sql
+    ALTER TABLE user
+    ADD age int(3);
+    ```
 
 - 删除列
 
-```sql
-ALTER TABLE user
-DROP COLUMN age;
-```
+    ```sql
+    ALTER TABLE user
+    DROP COLUMN age;
+    ```
 
 - 修改列
 
-```sql
-ALTER TABLE `user`
-MODIFY COLUMN age tinyint;
-```
+    ```sql
+    ALTER TABLE `user`
+    MODIFY COLUMN age tinyint;
+    ```
 
 - 添加主键
 
-```sql
-ALTER TABLE user
-ADD PRIMARY KEY (id);
-```
+    ```sql
+    ALTER TABLE user
+    ADD PRIMARY KEY (id);
+    ```
 
 - 删除主键
 
-```sql
-ALTER TABLE user
-DROP PRIMARY KEY;
-```
+    ```sql
+    ALTER TABLE user
+    DROP PRIMARY KEY;
+    ```
 
 #### 视图（VIEW）
 
@@ -642,22 +630,20 @@ DROP PRIMARY KEY;
 - 视图是虚拟的表，本身不包含数据，也就不能对其进行索引操作
 - 对视图的操作和对普通表的操作一样
 - 视图的作用：简化复杂的 SQL 操作，比如复杂的联结；只使用实际表的一部分数据；通过只给用户访问视图的权限，保证数据的安全性；更改数据格式和表示
-
-
 - 创建视图
 
-```sql
-CREATE VIEW top_10_user_view AS
-SELECT id, username
-FROM user
-WHERE id < 10;
-```
+    ```sql
+    CREATE VIEW top_10_user_view AS
+    SELECT id, username
+    FROM user
+    WHERE id < 10;
+    ```
 
 - 删除视图
 
-```sql
-DROP VIEW top_10_user_view;
-```
+    ```sql
+    DROP VIEW top_10_user_view;
+    ```
 
 - 索引（INDEX）
 - 通过索引可以更加快速高效地查询数据
@@ -666,31 +652,29 @@ DROP VIEW top_10_user_view;
 - 唯一索引表明此索引的每一个索引值只对应唯一的数据记录
 - 创建索引
 
-```sql
-CREATE INDEX user_index
-ON user (id);
-```
+    ```sql
+    CREATE INDEX user_index
+    ON user (id);
+    ```
 
 - 创建唯一索引
 
-```sql
-CREATE UNIQUE INDEX user_index
-ON user (id);
-```
+    ```sql
+    CREATE UNIQUE INDEX user_index
+    ON user (id);
+    ```
 
 - 删除索引
 
-```sql
-ALTER TABLE user
-DROP INDEX user_index;
-```
+    ```sql
+    ALTER TABLE user
+    DROP INDEX user_index;
+    ```
 
 - 约束
 - SQL 约束用于规定表中的数据规则
 - 如果存在违反约束的数据行为，行为会被约束终止
-
 - 约束可以在创建表时规定（通过 `CREATE TABLE` 语句）或者在表创建之后规定（通过 `ALTER TABLE` 语句）
-
 - 约束类型
   - `NOT NULL`：指示某列不能存储 `NULL` 值
   - `UNIQUE`：保证某列的每行必须有唯一的值
@@ -701,17 +685,16 @@ DROP INDEX user_index;
   - `DEFAULT`：规定没有给列赋值时的默认值
 - 创建表时使用约束条件：
 
-
-```sql
-CREATE TABLE Users (
-  Id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '自增Id',
-  Username VARCHAR(64) NOT NULL UNIQUE DEFAULT 'default' COMMENT '用户名',
-  Password VARCHAR(64) NOT NULL DEFAULT 'default' COMMENT '密码',
-  Email VARCHAR(64) NOT NULL DEFAULT 'default' COMMENT '邮箱地址',
-  Enabled TINYINT(4) DEFAULT NULL COMMENT '是否有效',
-  PRIMARY KEY (Id)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
-```
+    ```sql
+    CREATE TABLE Users (
+      Id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '自增Id',
+      Username VARCHAR(64) NOT NULL UNIQUE DEFAULT 'default' COMMENT '用户名',
+      Password VARCHAR(64) NOT NULL DEFAULT 'default' COMMENT '密码',
+      Email VARCHAR(64) NOT NULL DEFAULT 'default' COMMENT '邮箱地址',
+      Enabled TINYINT(4) DEFAULT NULL COMMENT '是否有效',
+      PRIMARY KEY (Id)
+    ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+    ```
 
 ### 事务处理（ TCL 语句用法）
 
@@ -722,40 +705,40 @@ CREATE TABLE Users (
 - `autocommit` 标记是针对每个连接而不是针对服务器的
 - `START TRANSACTION` 指令用于标记事务的起始点，开始事务
 
-```mysql
-START TRANSACTION;
-```
+    ```mysql
+    START TRANSACTION;
+    ```
 
 - `AINSERT INTO user` 插入操作 
 
-```mysql
-VALUES (1, 'root1', 'root1', 'xxxx@163.com');
-```
+    ```mysql
+    VALUES (1, 'root1', 'root1', 'xxxx@163.com');
+    ```
 
 - `SAVEPOINT` 指令用于创建保留点 `updateA`
 
-```mysql
-SAVEPOINT updateA;
-```
+    ```mysql
+    SAVEPOINT updateA;
+    ```
 
 - 插入操作 B
 
-```mysql
-INSERT INTO `user`
-VALUES (2, 'root2', 'root2', 'xxxx@163.com');
-```
+    ```mysql
+    INSERT INTO `user`
+    VALUES (2, 'root2', 'root2', 'xxxx@163.com');
+    ```
 
 - `ROLLBACK TO` 指令用于回滚到指定的保留点 `updateA`；如果没有设置保留点，则回退到 `START TRANSACTION` 语句处
 
-```mysql
-ROLLBACK TO updateA;
-```
+    ```mysql
+    ROLLBACK TO updateA;
+    ```
 
 - 提交事务，只有操作 A 生效
 
-```mysql
-COMMIT;
-```
+    ```mysql
+    COMMIT;
+    ```
 
 ### 权限控制（DCL 语句用法）
 
@@ -766,61 +749,57 @@ COMMIT;
   - 特定的列
   - 特定的存储过程
 - 新创建的账户没有任何权限
-
 - 账户用 `username@host` 的形式定义，`username@%` 使用的是默认主机名
-
 - `MySQL` 的账户信息保存在 `mysql` 这个数据库中
 
-
-```mysql
-USE mysql;
-SELECT user FROM user;
-```
+    ```mysql
+    USE mysql;
+    SELECT user FROM user;
+    ```
 
 - 复制代码
-
 - 创建账户
 
-```mysql
-CREATE USER myuser IDENTIFIED BY 'mypassword';
-```
+    ```mysql
+    CREATE USER myuser IDENTIFIED BY 'mypassword';
+    ```
 
 - 修改账户名
 
-```mysql
-UPDATE user SET user='newuser' WHERE user='myuser';
-FLUSH PRIVILEGES;
-```
+    ```mysql
+    UPDATE user SET user='newuser' WHERE user='myuser';
+    FLUSH PRIVILEGES;
+    ```
 
 - 删除账户
 
-```sql
-DROP USER myuser;
-```
+    ```sql
+    DROP USER myuser;
+    ```
 
 - 查看权限
 
-```mysql
-SHOW GRANTS FOR myuser;
-```
+    ```mysql
+    SHOW GRANTS FOR myuser;
+    ```
 
 - 授予权限
 
-```mysql
-GRANT SELECT, INSERT ON *.* TO myuser;
-```
+    ```mysql
+    GRANT SELECT, INSERT ON *.* TO myuser;
+    ```
 
 - 删除权限
 
-```mysql
-REVOKE SELECT, INSERT ON *.* FROM myuser;
-```
+    ```mysql
+    REVOKE SELECT, INSERT ON *.* FROM myuser;
+    ```
 
 - 更改密码
 
-```mysql
-SET PASSWORD FOR myuser = 'mypass';
-```
+    ```mysql
+    SET PASSWORD FOR myuser = 'mypass';
+    ```
 
 ### 存储过程
 
@@ -835,29 +814,29 @@ SET PASSWORD FOR myuser = 'mypass';
 
 - 创建存储过程，包含 `in`、`out` 和 `inout` 三种参数
 
-```mysql
-DROP PROCEDURE IF EXISTS `proc_adder`;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_adder`(IN a int, IN b int, OUT sum int)
-BEGIN
-    DECLARE c int;
-    if a is null then set a = 0;
+    ```mysql
+    DROP PROCEDURE IF EXISTS `proc_adder`;
+    DELIMITER ;;
+    CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_adder`(IN a int, IN b int, OUT sum int)
+    BEGIN
+        DECLARE c int;
+        if a is null then set a = 0;
+        end if;
+    if b is null then set b = 0;
     end if;
-if b is null then set b = 0;
-end if;
-set sum  = a + b;
-END
-;;
-DELIMITER ;
-```
+    set sum  = a + b;
+    END
+    ;;
+    DELIMITER ;
+    ```
 
 - 使用存储过程
 
-```mysql
-set @b=5;
-call proc_adder(2,@b,@s);
-select @s as sum;
-```
+    ```mysql
+    set @b=5;
+    call proc_adder(2,@b,@s);
+    select @s as sum;
+    ```
 
 ### 游标
 
@@ -872,40 +851,40 @@ select @s as sum;
   - 取出数据
   - 关闭游标
 
-```mysql
-DELIMITER $
-CREATE  PROCEDURE getTotal()
-BEGIN
-    DECLARE total INT;
-    -- 创建接收游标数据的变量
-    DECLARE sid INT;
-    DECLARE sname VARCHAR(10);
-    -- 创建总数变量
-    DECLARE sage INT;
-    -- 创建结束标志变量    DECLARE done INT DEFAULT false;
-    -- 创建游标
-    DECLARE cur CURSOR FOR SELECT id,name,age from cursor_table where age>30;
-    -- 指定游标循环结束时的返回值
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = true;
-    SET total = 0;
-    OPEN cur;
-    FETCH cur INTO sid, sname, sage;
-    WHILE(NOT done)
-    DO
-        SET total = total + 1;
+    ```mysql
+    DELIMITER $
+    CREATE  PROCEDURE getTotal()
+    BEGIN
+        DECLARE total INT;
+        -- 创建接收游标数据的变量
+        DECLARE sid INT;
+        DECLARE sname VARCHAR(10);
+        -- 创建总数变量
+        DECLARE sage INT;
+        -- 创建结束标志变量    DECLARE done INT DEFAULT false;
+        -- 创建游标
+        DECLARE cur CURSOR FOR SELECT id,name,age from cursor_table where age>30;
+        -- 指定游标循环结束时的返回值
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = true;
+        SET total = 0;
+        OPEN cur;
         FETCH cur INTO sid, sname, sage;
-    END WHILE;
-    CLOSE cur;
-    SELECT total;
-END $
-DELIMITER ;
-```
+        WHILE(NOT done)
+        DO
+            SET total = total + 1;
+            FETCH cur INTO sid, sname, sage;
+        END WHILE;
+        CLOSE cur;
+        SELECT total;
+    END $
+    DELIMITER ;
+    ```
 
 - 调用存储过程
 
-```mysql
-call getTotal();
-```
+    ```mysql
+    call getTotal();
+    ```
 
 ### 触发器
 
@@ -931,17 +910,16 @@ call getTotal();
 - 使用方法： `NEW.columnName` （`columnName` 为相应数据表某一列名）
 - `CREATE TRIGGER` 指令用于创建触发器
 
-
-```mysql
-CREATE TRIGGER trigger_name
-trigger_time
-trigger_event
-ON table_name
-FOR EACH ROW
-BEGIN
-  trigger_statements
-END;
-```
+    ```mysql
+    CREATE TRIGGER trigger_name
+    trigger_time
+    trigger_event
+    ON table_name
+    FOR EACH ROW
+    BEGIN
+      trigger_statements
+    END;
+    ```
 
 - `trigger_name`：触发器名
 - `trigger_time`: 触发器的触发时机，取值为 `BEFORE` 或 `AFTER`
@@ -950,19 +928,19 @@ END;
 - `FOR EACH ROW`: 行级监视，`Mysql` 固定写法，与其他 `DBMS` 不同
 - `trigger_statements`: 触发器执行动作，是一条或多条  `SQL` 语句的列表，列表内的每条语句都必须用 `;` 来结尾
 
-```mysql
-DELIMITER $
-CREATE TRIGGER `trigger_insert_user`
-AFTER INSERT ON `user`
-FOR EACH ROW
-BEGIN
-    INSERT INTO `user_history`(user_id, operate_type, operate_time)
-    VALUES (NEW.id, 'add a user',  now());
-END $
-DELIMITER ;
-查看触发器
-SHOW TRIGGERS;
-删除触发器
-DROP TRIGGER IF EXISTS trigger_insert_user;
-```
+    ```mysql
+    DELIMITER $
+    CREATE TRIGGER `trigger_insert_user`
+    AFTER INSERT ON `user`
+    FOR EACH ROW
+    BEGIN
+        INSERT INTO `user_history`(user_id, operate_type, operate_time)
+        VALUES (NEW.id, 'add a user',  now());
+    END $
+    DELIMITER ;
+    查看触发器
+    SHOW TRIGGERS;
+    删除触发器
+    DROP TRIGGER IF EXISTS trigger_insert_user;
+    ```
 

@@ -1,7 +1,7 @@
 ---
 title: What is Data Science?
 date: 2021-04-14
-updated: 2021-04-13
+updated: 2021-04-24
 tags: []
 categories: 人工智能与大数据
 ---
@@ -24,38 +24,50 @@ categories: 人工智能与大数据
 
 ### What Do Data Scientists Do?
 
-- A day in the Life of a Data Scientist
+- A day in the Life of a Data Scientist: to discover optimum solutions to existing problems
 - Old problems, new problems, Data Science solutions
+  - Identify the problem and establish a clear understanding of it. 
+  - Gather the data for analysis. 
+  - Identify the right tools to use.
+  - Develop a data strategy. 
+  - Case studies are also helpful in customizing a potential solution.
 - Data Science Topics and Algorithms
-- What is the cloud?
-- What Makes Someone a Data Scientist?
+  - Regression、Data visualization、Artificial neural networks、Structured data
+  - Using complicated machine learning algorithms does not always guarantee achieving a better performance.
+- Accessing algorithms, tools, and data through the Cloud enables Data Scientists to stay up-to-date and collaborate easily.
 
-### Data Science Topics  
+### Big Data and Data Mining 
 
 - Foundations of Big Data
-- How Big Data is Driving Digital Transformation
-- What is Hadoop?
+  - Big Data refers to the dynamic, large and disparate volumes of data being created by people, tools, and machines. 
+  - It requires new, innovative, and scalable technology to collect, host, and analytically process the vast amount of data gathered in order to derive real-time business insights that relate to consumers, risk, profit, performance, productivity management, and enhanced shareholder value.
+  - The V's of Big Data: Velocity、Volume、Variety、Veracity、Value
+- Hadoop and other tools, combined with distributed computing power, are used to handle the demands of Big Data.
+- Big Data is driving digital transformation
+- Most of the components of data science, such as probability, statistics, linear algebra, and programming, have been around for many decades but now we have the computational capabilities to apply combine them and come up with new techniques and learning algorithms.
 - Data Science Skills & Big Data
-- Data Scientists at New York University
-- Data Mining
-- Quiz: Data Mining
+- Data Mining: the process of automatically searching and analyzing data, discovering previously unrevealed patterns. It involves preprocessing the data to prepare it and transforming it into an appropriate format.
 
 ### Deep Learning and Machine Learning
 
-- What's the difference?
-- Neural Networks and Deep Learning
-- Applications of Machine Learning
+- Data Science is the process and method for extracting knowledge and insights from large volumes of disparate data, it's a broad term encompass the entire data processing methodology.
+- AI includes everything that allows computers to learn how to solve problems and make intelligent decisions.
+- Machine learning is a subset of AI that uses computer algorithms to analyze data and make intelligent decisions based on what it is learned without being explicitly programmed.
+- Machine learning algorithms are trained with large sets of data and they learn from examples. They do not follow rules-based algorithms.
+- Machine learning is what enables machines to solve problems on their own and make accurate predictions using the provided data.
+- Deep learning is a specialized subset of machine learning that uses layered neural networks to simulate human decision-making.
+- Deep learning algorithms can label and categorize information and identify patterns. It is what enables AI systems to continuously learn on the job and improve the quality and accuracy of results by determining whether decisions were correct.
+- A neural network in AI is a collection of small computing units called neurons that take incoming data and learn to make decisions over time. 
+- Neural networks are often layer-deep and are the reason deep learning algorithms become more efficient as the data sets increase in volume, as opposed to other machine learning algorithms that may plateau as data increases.
+- Machine Learning has many applications, from recommender systems that provide relevant choices for customers on commercial websites, to detailed analysis of financial markets. (Predictive analytics、Decision trees、Bayesian Analysis、Naive Bayes、Recommendations)
 - Regression
-- Quiz: Regression
 
 ### Data Science in Business
 
+- Data Science helps physicians provide the best treatment for their patients, and helps meteorologists predict the extent of local weather events, and can even help predict natural disasters like earthquakes and tornadoes.
+- That companies can start on their data science journey by capturing data. Once they have data, they can begin analyzing it.
 - Applications of Data Science
-- How Data Science is Saving Lives
-- How Should Companies Get Started in Data Science?
-- Applications of Data Science
-- The Final Deliverable
-- Quiz: The Final Deliverable
+- The purpose of the final deliverable of a Data Science project is to communicate new information and insights from the data analysis to key decision-makers.
 
 ### Careers and Recruiting in Data Science
 
@@ -67,5 +79,3 @@ categories: 人工智能与大数据
 ### The Report Structure
 
 - The Report Structure
-- Quiz: The Report Structure
-- Final Assignment
