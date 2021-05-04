@@ -1,7 +1,7 @@
 ---
 title: Data Science Methodology
-date: 2021-04-24
-updated: 2021-04-24
+date: 2021-04-27
+updated: 2021-04-27
 tags: []
 categories: 人工智能与大数据
 ---
@@ -12,31 +12,41 @@ categories: 人工智能与大数据
 
 {% pdf /pdf/Data-Science-Methodology.pdf %}
 
-### From Problem to Approach and from Requirements to Collection
+### Data Science Methodologies
+
+- Methodology: a system of methods used in a particular area of study.
+- CRISP-DM: the Cross Industry Process for Data Mining methodology.
+  - The CRISP-DM methodology is a process aimed at increasing the use of data mining over a wide variety of business applications and industries. 
+  - The intent is to take case specific scenarios and general behaviors to make them domain neutral. 
+  - CRISP-DM is comprised of six steps with an entity that has to implement in order to have a reasonable chance of success.
+  - Business Understanding、Data Understanding、Data Preparation、Modeling、Evaluation、Deployment
+  - CRISP-DM is a highly flexible and cyclical model. Flexibility is required at each step along with communication to keep the project on track. 
+  - At any of the six stages, it may be necessary to revisit an earlier stage and make changes. The key point of this process is that it’s cyclical.
+
+### From Problem to Approach
 
 - Business Understanding
 - Analytic Approach
+
+### From Requirements to Collection
+
 - Data Requirements
 - Data Collection
-- Lab: From Problem to Approach
-- Lab: From Requirement to Collection
-- Quiz: From Problem to Approach
-- Quiz: From Requirement to Collection
 
-### From Understanding to Preparation and from Modeling to Evaluation
+### From Understanding to Preparation 
 
 - Data Understanding
+- Data understanding is iterative
 - Data Preparation
+
+### From Modeling to Evaluation
+
 - Modeling
 - Evaluation
-- Lab: From Understanding to Preparation
-- Lab: From Modeling to Evaluation
-- Quiz: From Understanding to Preparation
-- Quiz: From Modeling to Evaluation
 
 ### From Deployment to Feedback
 
 - Deployment
+- The refined model must be redeployed.
+- This process should be repeated as often as necessary.
 - Feedback
-- Quiz: From Deployment to Feedback
-- Peer-review Assignment

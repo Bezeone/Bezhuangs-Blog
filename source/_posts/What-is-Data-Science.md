@@ -1,7 +1,7 @@
 ---
 title: What is Data Science?
 date: 2021-04-14
-updated: 2021-04-24
+updated: 2021-05-02
 tags: []
 categories: 人工智能与大数据
 ---
@@ -66,16 +66,19 @@ categories: 人工智能与大数据
 
 - Data Science helps physicians provide the best treatment for their patients, and helps meteorologists predict the extent of local weather events, and can even help predict natural disasters like earthquakes and tornadoes.
 - That companies can start on their data science journey by capturing data. Once they have data, they can begin analyzing it.
-- Applications of Data Science
+- Applications of Data Science: Recommendation engine、Siri、Google
 - The purpose of the final deliverable of a Data Science project is to communicate new information and insights from the data analysis to key decision-makers.
 
 ### Careers and Recruiting in Data Science
 
-- How Can Someone Become a Data Scientist?
-- Recruiting for Data Science
-- Careers in Data Science
-- High School Students and Data Science Careers
+- Data Scientists need programming, mathematics, and database skills, many of which can be gained through self-learning.
+- Companies recruiting for a Data Science team need to understand the variety of different roles Data Scientists can play, and look for soft skills like storytelling and relationship building as well as technical skills.
+- Curiosity is one of the most important skills that a data scientist should possess.
+- High school students considering a career in Data Science should learn programming, math, databases, and most importantly practice their skills.
 
 ### The Report Structure
 
-- The Report Structure
+- The length and content of the final report will vary depending on the needs of the project.
+- The structure of the final report for a Data Science project should include a cover page, table of contents, executive summary, detailed contents, acknowledgements, references and appendices.
+- The report should present a thorough analysis of the data and communicate the project findings.
+
