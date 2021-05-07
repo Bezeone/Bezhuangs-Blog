@@ -14,12 +14,8 @@ categories: 人工智能与大数据
 
 ### Languages of Data Science
 
-- Data is central to data science and data science requires programming.
-- The language you choose to learn will depend on the things you need to accomplish.
 - Python
-  - Python is a powerhouse language. It is by far the most popular programming language for data science.
-  - General Purpose language
-  - Large standard library
+  - General Purpose language with Large standard library
   - Scientific computing libraries like Pandas, NumPy, SciPy and Matplotlib
   - For artificial intelligence it has PyTorch, TensorFlow, Keras and Scikit-learn
   - Python can be used for Natural Language Processing (NLP) using the Natural Language Toolkit (NLTK)
@@ -32,8 +28,8 @@ categories: 人工智能与大数据
   - R has become the world's largest repository of statistical knowledge
   - Common mathematical operations like matrix multiplication work straight out of the box
   - R has stronger object-oriented programming facilities than most statistical computing languages 
-- SQL
-  - SQL = Structured Query Language
+- SQL (Structured Query Language)
+  - SQL = 
   - SQL was initially developed at IBM, first appeared in 1974
   - Useful in handling structured data, i.e. data incorporating relations among entities and variables
   - The SQL language is subdivided into several language elements, including clauses, expressions, predicates, queries, and statements
@@ -75,16 +71,66 @@ categories: 人工智能与大数据
 
 ### Data Science Tools
 
-- Categories of Data Science Tools
-  - Data Management: process of persisting and retrieving data
-  - Data Integration and Transformation: process of retrieving data from remote data management systems
-  - Data Visualization
-  - Model Building: process of creating a machine learning or deep learning model using an appropriate algorithm
-  - Model Deployment: machine learning or deep learning model available to third-party applications
-  - Model Monitoring and Assessment
-  - Code Asset Management: versioning and other collaborative features to facilitate teamwork
-  - Data Asset Management: supports replication, backup, and access right management
-  - Development Environments (IDE): tools that help the data scientist to implement, execute, test and deploy their work
-  - Execution Environments: tools where data processing, model training and deployment take place
-  - Fully Integrated Visual Tools
+- Data Management tools: persisting and retrieving data
+  - Open Source: MySQL, PostgreSQL, MongoDB, Apache CouchDB, Apache Cassandra, Hadoop File System, Ceph(Cloud File systems), Elasticsearch
+  - Commercial: Oracle Database, Microsoft SQL Server, IBM Db2
+  - SaaS(cloud based): Amazon DynamoDB, Cloudant(based on CouchDB), Db2
+- Data Integration and Transformation tools: ETL(extract, transform, load)
+  - Open Source: Apache AirFlow, KubeFlow, Apache Kafka, Apache Nifi, Apache SparkSQL, NodeRED
+  - Commercial: Informatica, IBM InfoSphere DataStage, Talend
+  - Cloud Based(ELT): Informatica, IBM Data Refinery
+- Data Visualization tools
+  - Open Source: Hue, Kibana, Apache Superset
+  - Commercial: Tableau, Microsoft Power BI, IBM Cognos Analytics
+  - Cloud Based: Datameer, IBM Cognos Analytics
+- Model Building: creating a machine learning or deep learning model using an appropriate algorithm
+  - Commercial: SPSS Modeler, SAS Enterprise Miner
+  - Cloud Based: IBM Watson Machine Learning, Google Cloud
+- Model Deployment tools: make machine learning or deep learning model consumable
+  - Open Source: Apache PredictionIO, Seldon, Mleap, TensorFlow Service, TensorFlow lite
+  - Commercial: SPSS Collaboration and Deployment Service
+- Model Monitoring and Assessment tools: keep track of prediction performance
+  - Open Source: ModelDB, Prometheus, IBM AI Fairness 360 open source toolkit, IBM Adversarial Robustness 360 Toolbox, IBM AI Explainability 360 Toolkit
+  - Cloud Based: Amazon SageMaker Model Monitor, Watson OpenScale
+- Code Asset Management tools: versioning and other collaborative features to facilitate teamwork
+  - Open Source: git, Github, GitLab, Bitbucket
+- Data Asset Management tools: supports replication, backup, and access right management
+  - Open Source: Apache Atlas, ODPi Egeria, Kylo
+  - Commercial: Informatica, IBM InfoSphere Information Governance
+- Development Environments (IDE): help data scientistd to implement, execute, test and deploy their work
+  - Open Source: Jupyter notebook, Jupyter lab, Apache Zeppelin, R Studio, Spyder
+- Execution Environments: where data processing, model training and deployment take place
+  - Open Source: Apache Spark, Apache Flink, Ray
+- Fully Integrated Visual Tools
+  - Open Source: KNIME, Orange
+  - Cloud Based: Watson Studio, Open Scale, Azure Machine Learning, H2O Driverless AI
 
+### Packages, APIs, Data Sets and Models
+
+- Libraries for Data Science
+  - Scientifics Computing Libraries: Pandas, NumPy
+  - Visualization Libraries: Matplotlib, Seaborn
+  - Machine Learning and Deep Learning: Scikit-learn, Keras
+  - Deep Learning Libraries: TensorFlow, PyTorch
+  - Apache Spark
+  - Scala-Libraries: Vegas(statistical data visualization), BigDL
+  - R-Libraries: Ggplot2
+- Application Programming Interfaces (API)
+  - REST APIs (Representational, State, Transfer): used to interact with web services
+  - REST APIs have a set of rules regarding communication, input or request, output or response
+- Data Sets
+  - A data set is a structured collection of data
+  - Tabular data: CSV (comma separated values)
+  - Hierarchical data, Network data
+  - Raw files: images and audio
+- Data Ownership
+  - Private data: Confidential, Private or personal information, Commercially sensitive
+  - Open data: Scientific institutions, Governments, Organizations, Companies, Publicly available
+  - Kaggle, datacatalogs.org, Google data set search
+  - CDLA: Community Data License Agreement
+
+- Data Asset eXchange
+  - Curated collection of data sets
+  - Data Science friendly licences
+- Machine Learning Models
+  - 
