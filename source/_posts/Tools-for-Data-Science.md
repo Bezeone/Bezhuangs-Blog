@@ -128,9 +128,28 @@ categories: 人工智能与大数据
   - Open data: Scientific institutions, Governments, Organizations, Companies, Publicly available
   - Kaggle, datacatalogs.org, Google data set search
   - CDLA: Community Data License Agreement
-
 - Data Asset eXchange
   - Curated collection of data sets
   - Data Science friendly licences
 - Machine Learning Models
-  - 
+  - Data can contain a wealth of information, Machine learning (ML) models identify patterns in data 
+  - A model must be trained on data before it can be used to make predictions 
+  - Supervised, unsupervised and reinforcement learning are types of ML
+  - Supervised Learning: Data is labeled and model trained to make correct predictions 
+    - Regression: Predict real numerical values 
+    - Classification: Classify things into categories 
+  - Unsupervised Learning: Data us not labeled, model tries to identify patterns without external help
+    - Common learning problems: clustering and anomaly detection 
+  - Reinforcement Learning: Conceptually similar to human learning processes
+  - Deep Learning: Tries to loosely emulate how the human brain works
+    - Applications in: Natural Language Processing, Image, audio and video analysis, Time series forecasting
+    - Requires typically very large datasets of labeled data and is compute intensive
+    - TensorFlow, Pytorch, Keras, ONNX model zoo
+- The Model Asset Exchange
+  - MAX use pre-trained or custom-trainable state-of-the-art models reduces time to value
+  - Model-serving microservices expose standardized REST API
+
+### Jupyter Notebook and JupyterLab
+
+- Jupyter Notebook is a tool for recording Data Science experiments, it allows data scientist to combine text and code block in a single file, it generates plots and tables within the file
+- JupyterLab is an interactive environment for Jupyter Notebooks, it allows for real time editing and is compatible with several file formats. It is open source
