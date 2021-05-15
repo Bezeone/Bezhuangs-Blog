@@ -1,7 +1,7 @@
 ---
 title: Tools for Data Science
 date: 2021-04-19
-updated: 2021-05-02
+updated: 2021-05-15
 tags: []
 categories: 人工智能与大数据
 ---
@@ -153,3 +153,140 @@ categories: 人工智能与大数据
 
 - Jupyter Notebook is a tool for recording Data Science experiments, it allows data scientist to combine text and code block in a single file, it generates plots and tables within the file
 - JupyterLab is an interactive environment for Jupyter Notebooks, it allows for real time editing and is compatible with several file formats. It is open source
+- A notebook kernel is a computational engine that executes the code contained in a Notebook file
+- Jupyter implements a two-process model, with a kernel and a client
+  - The client is the interface offering the user the ability to send the code to a kernel. The client is the browser when using a Jupyter notebook.
+  - The kernel executes the code and returns the result to the client for display
+
+### RStudio IDE
+
+- R is a statistical programming language. It is a powerful tool for data processing and manipulation, statistical inference, data analysis, and Machine Learning algorithms.
+
+- R supports importing data from different sources: Flat files, Databases, Web, Statistical software
+
+- Rstudio is an integrated development environment that helps improve and increase productivity with the R language
+
+  ```R
+  library (datasets)
+  data(iris)
+  View(iris) 
+  unique(iris$Species)
+  ```
+
+- Popular R Libraries for Data Science
+
+  - `dplyr` : Data Manipulation
+  - `stringr` : String Manipulation 
+  - `ggplot` : Data Visualization 
+  - `caret` : Machine Learning
+  - `install.packages("package name", repos = "https://cran.r-project.org", type= "source")` : install packages 
+
+- Data Visualization in R
+
+  - `ggplot` - used for data visualizations such as histograms, bar charts, scatterplots etc. It allows adding layers and components on a single visualization
+  - `Plotly` - an R package can be used to create web-based data visualizations that can be displayed or saved as individual HTML files
+  - `Lattice` - a data visualization tool that is used to implement complex, multi-variable data sets, a high-level data visualization library; it can handle many of the typical graphics without needing many customizations
+  - `Leaflet` - very useful in creating interactive plots
+
+- Using the plot function
+
+  ```R
+  # Define the cars vector with 5 values
+  cars <- c(1,4,6,5,10)
+  # Gragh the cars vector with all defaults
+  plot(caars, type="o")
+  # Create a title
+  title(main="Cars vs Index")
+  ```
+
+- Using ggplot
+
+  ```R
+  library(datasets)
+  # Load Data
+  data(mtcars)
+  # View first 5 rows
+  head(mtcars, 5)
+  #load ggplot package
+  library(ggplot2)
+  # create a scatterplot of displacement (disp) and miles per gallon (mpg)
+  ggplot(aes(x=disp,y=mpg,),data=mtcars)+geom_point()
+  # Add a title
+  ggplot(aes(x=disp,y=mpg,),data=mtcars)+geom_point()+ggtitle("displacement vs miles per gallon")
+  # change axis name
+  ggplot(aes(x=disp,y=mpg,),data=mtcars)+geom_point()+ggtitle("displacement vs miles per gallon") + labs(x = "Displacement", y = "Miles per Gallon")
+  #make vs a factor
+  mtcars$vs <- as.factor(mtcars$vs)
+  # create boxplot of the distribution for v-shaped and straight Engine
+  ggplot(aes(x=vs, y=mpg), data = mtcars) + geom_boxplot()
+  # Add color to the boxplots to help differentiate
+  ggplot(aes(x=vs, y=mpg, fill = vs), data = mtcars) + 
+    geom_boxplot(alpha=0.3) +
+    theme(legend.position="none")
+  # reate the histogram of weight wt
+  ggplot(aes(x=wt),data=mtcars) + geom_histogram(binwidth=0.5)
+  # GGally is an extension of ggplot2
+  library(GGally)
+  ggpairs(iris, mapping=ggplot2::aes(colour = Species))
+  ```
+
+### Github
+
+- A version control system allows you to keep track of changes to your documents
+
+- Git is free and open source software distributed under the GNU General Public License
+
+- Git is a distributed version control system and is accessible anywhere in the world
+
+- SSH protocol is a method for secure remote login from one computer to another
+
+- Repository contains project folders that are set up for version control
+
+- Fork is a copy of a repository
+
+- Pull request is the way you request that someone reviews and approves your changes before they become final
+
+- Working directory contains the files and subdirectories on your computer that are associated with a Git repository
+
+- Basic Git Commands
+
+  ```bash
+  git init
+  git add *
+  git status
+  git commit
+  git reset
+  git log
+  git branch
+  git checkout
+  git merge
+  ```
+
+- Working with Branches
+
+  - A branch is a snapshot of your repository to which you can make changes
+  - Master Branch is the official version of the project, The child branch creates a copy of the master branch
+  - Edits and changes are made in the child branch. Tests are done to ensure quality before merging to the Master Branch
+  - Branches allow for simultaneous development and testing by multiple team members 
+
+- Pull Requests (PR) are a way of proposing changes to the main branch. Ideally, another team member reviews the changes and approves it to be merged to the Master branch
+
+### IBM Tools for Data Science
+
+- Watson Studio is an integrated platform of tools, services, and data that helps companies accelerate their shift to become data-driven organizations
+- Watson Knowledge Catalog unites all information assets into a single metadata-rich catalog, based on Watson’s understanding of relationships between assets and how they’re being used and socialized among users in existing projects
+  - Main features: Find data, Catalog data, Govern data, Understand data, Power data Science, Prepare data, Connect data, Deploy anywhere
+- Data refinery simplifies data cleansing, shaping and preparation tasks by providing graphical tools for analyzing and preparing data
+- SPSS based products include easy to use graphical interfaces for wide varieties of statistical and machine learning algorithms and data transformations
+  - SPSS Modeler flows include some data management capabilities, as well as tools for data preparation, visualization, and model building
+  - SPSS Modeler is a data mining and text analytics software application used to build predictive models and conduct other analytics tasks. It has a visual interface that enables users to leverage statistical and data mining algorithms without programming
+  - SPSS Statistics is a statistical and machine learning software application and is widely used in academia, government agencies, and large enterprises used to build predictive models, perform statistical analysis of data, and conduct other analytic tasks. It has a visual interface, which enables users to leverage statistical and data mining algorithms without programming, although the interface is very different from Modeler
+- Model Deployment with Watson Machine Learning
+  - Open standards for model deployment: PMML(Predictive Model Markup Language), PFA(Portable Format for Analytics from DMG)
+  - ONNX: Open Neural Network eXchange
+- Auto AI help simplify an AI lifecycle management, it provides a graphical interface to create and deploy machine learning models with real time visualizations
+- IBM Watson Openscale is a product that includes several important features
+  - Fairness, Explainability, Model Monitoring, Business Impact
+
+
+

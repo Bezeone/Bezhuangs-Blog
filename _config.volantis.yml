@@ -43,18 +43,18 @@ cover:
   subtitle: 欢迎访问我的博客！Welcome to my blog!
   search: search here...
   features:
-    - name: 简历
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4dd.svg
-      url: /resume
     - name: 相册
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4f7.svg
       url: /photos
-    - name: 项目
+    - name: 开源库
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
       url: /projects
+    - name: 计划表
+      icon: #
+      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4dd.svg
+      url: /plans
     - name: 进行中
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/270d-1f3fb.svg

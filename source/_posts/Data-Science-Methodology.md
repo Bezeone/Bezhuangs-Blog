@@ -1,7 +1,7 @@
 ---
 title: Data Science Methodology
 date: 2021-04-27
-updated: 2021-04-27
+updated: 2021-05-15
 tags: []
 categories: 人工智能与大数据
 ---
@@ -26,12 +26,29 @@ categories: 人工智能与大数据
 ### From Problem to Approach
 
 - Business Understanding
+  - Establishing a clearly defined question starts with understanding the goal of the person asking the question
+  - Seek clarification (where is the goal) -> Support the goal -> Get stakeholder "buy-in" and support
+  - Case Study: Apply concepts, Define Goals and objectives, Pilot project kickoff, Identify the business requirements
 - Analytic Approach
+  - Once a strong understanding of the question is established, the analytic approach can be selected. This means identifying what type of patterns will be needed to address the question most effectively
+  - The correct approach depends on business requirements for the model
+  - If the question is to determine probabilities of an action, Use a predictive model 
+  - If the question is to show relationships, Use a descriptive model
+  - if the question requires a yes/no answer, Use a classification model
+  - It is only when the problem to be addressed is defined, that the appropriate analytic approach for the problem can be selected in the context of the business requirements
+  - Case Study: Decision tree classification (Predictive model)
 
 ### From Requirements to Collection
 
 - Data Requirements
+  - The Data Requirements stage of the data science methodology involves identifying the necessary data content, formats and sources for initial data collection.
+  - Prior to undertaking the data collection and data preparation stages of the methodology, it's vital to define the data requirements for decision-tree classification. This includes identifying the necessary data content, formats and sources for initial data collection
+  - Case Study: Select the cohort, Define the data
 - Data Collection
+  - Once the data ingredients are collected, then in the data collection stage, the data scientist will have a good understanding of what they will be working with
+  - Techniques such as descriptive statistics and visualization can be applied to the data set, to assess the content, quality, and initial insights about the data. Gaps in data will be identified and plans to either fill or make substitutions will have to be made
+  - When collecting data, it is alright to defer decisions about unavailable data, and attempt to acquire it at a later stage
+  - Case Study: Gather available data, Merge data
 
 ### From Understanding to Preparation 
 
