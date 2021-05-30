@@ -1,7 +1,7 @@
 ---
 title: Data Science Methodology
 date: 2021-04-27
-updated: 2021-05-15
+updated: 2021-05-25
 tags: []
 categories: 人工智能与大数据
 ---
@@ -11,6 +11,8 @@ categories: 人工智能与大数据
 <!--more-->
 
 {% pdf /pdf/Data-Science-Methodology.pdf %}
+
+{% pdf /pdf/Introduction-to-DS.pdf %}
 
 ### Data Science Methodologies
 
@@ -53,17 +55,46 @@ categories: 人工智能与大数据
 ### From Understanding to Preparation 
 
 - Data Understanding
-- Data understanding is iterative
+  - Descriptive statistics: Univariate statistics, Pairwise correlations, Histogram
+  - Data quality: Missing value, Invalid or misleading values
+  - Iterative data collection and understanding: Refined definition of "CHF admission"
+  - Data understanding is iterative; you learn more about your data the more you study it
+  - Sorting data is not part of the Data Understanding stage
 - Data Preparation
+  - Cleansing data
+  - Transforming data
+  - Feature engineering is the process of using domain knowledge of the data to create features that make the machine learning algorithms work
+  - Feature engineering is critical when machine learning tools are being applied to analyze the data
+  - The Data Preparation stage is in fact the most time-consuming phase of a data science project
+  - Using training sets
 
 ### From Modeling to Evaluation
 
 - Modeling
+  - Descriptive Analytics
+  - Predictive Analytics
+  - A training set is used to build a predictive model
+  - Understand the question at hand -> Select an analytic approach or method to solve the problem -> Obtain, understand, prepare and model the data
 - Evaluation
+  - Diagnostic measures: Predictive model, Descriptive model, Statistical significance
+  - Diagnostic tool for classification model evaluation
+    - Classification model performance 
+    - True-Positive Rate `vs` False-Positive Rate
+    - Optimal model at maximum separation
+  - Model evaluation can have two main phases: a diagnostic measures phase and statistical significance testing
+- The purpose of statistical significance tests: Modeling and evaluation are iterative processes
 
 ### From Deployment to Feedback
 
 - Deployment
-- The refined model must be redeployed.
-- This process should be repeated as often as necessary.
+  - Understand the results
+  - Gather application requirements
+  - After the model is evaluated and the data scientist is confident it will work, it is deployed and put to the ultimate test
+  - The refined model must be redeployed
+  - This process should be repeated as often as necessary
 - Feedback
+  - Assessing model performance
+  - Refine model: Review and refine intervention actions
+  - Redeployment: Continue modeling, deployment, feedback and refinement throughout the life of the Intervention program
+  - The data science methodology is highly iterative, ensuring the refinement at each stage in the game
+

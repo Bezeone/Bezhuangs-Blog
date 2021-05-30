@@ -630,7 +630,7 @@ color_scheme:
   # 亮色主题（默认）
   light:
     # 网站背景色
-    site_bg: '#f4f4f4'
+    site_bg: '#81D4FA'
     # 网站背景上的文字
     site_inner: '#fff'
     # 网站页脚文字
@@ -644,17 +644,17 @@ color_scheme:
     # 区块和代码块背景色
     block: '#f6f6f6'
     # 代码块高亮时的背景色
-    codeblock: '#FFF7EA'
+    codeblock: '#546E7A'
     # 行内代码颜色
-    inlinecode: '#c74f00'
+    inlinecode: '#F50057'
 
     # 文章部分
-    h1: '#3a3a3a'
-    h2: '#3a3a3a'
-    h3: '#333'
+    h1: '#444'
+    h2: '#444'
+    h3: '#444'
     h4: '#444'
-    h5: '#555'
-    h6: '#666'
+    h5: '#444'
+    h6: '#444'
     p: '#444'
 
     # 列表文字
@@ -673,7 +673,7 @@ color_scheme:
     # 网站页脚文字
     site_footer: '#aaa'
     # 卡片背景色
-    card: '#333'
+    card: '#444'
     # 卡片上的普通文字
     text: '#eee'
 
@@ -700,7 +700,7 @@ color_scheme:
     # 辅助性文字
     meta: '#888'
     # 夜间图片亮度
-    brightness: 60%
+    brightness: 70%
 ############################### Color Scheme ############################### > end
 
 ############################### Custom css ############################### > start
@@ -716,7 +716,7 @@ custom_css:
     grab: https://cdn.jsdelivr.net/gh/Chiuye/Coffee-Rabbit-Cursor/Rabbit-Cursor/Rabbit-Aim.cur
   max_width: 1080px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
   scrollbar:
-    size: 4px
+    size: 10px
     border: 2px
     color: '#2196f3'
     hover: '#ff5722'
@@ -739,39 +739,39 @@ custom_css:
       h4: left
       p: justify
   gap:
-    h2: 24px # Spacing above H2 (only px unit)
-    h3: 16px # Spacing above H3 (only px unit)
+    h2: 32px # Spacing above H2 (only px unit)
+    h3: 24px # Spacing above H3 (only px unit)
     h4: 12px # Spacing above H4 (only px unit)
-    p: 1em # Paragraph spacing between paragraphs
-    line_height: normal # normal, 1.5, 1.75, 2 ...
+    p: 1rem # Paragraph spacing between paragraphs
+    line_height: 2 # normal, 1.5, 1.75, 2 ...
   border_radius:
     card: 8px
-    codeblock: 4px
+    codeblock: 8px
     searchbar: 8px
-    button: 4px
+    button: 8px
   fontsize:
     root: 16px
-    h1: 1.5rem # 不推荐用在文章中
-    h2: 1.5rem
-    h3: 1.25rem
-    h4: 1.125rem
-    h5: 1rem
+    h1: 3rem # 不推荐用在文章中
+    h2: 2.5rem
+    h3: 2rem
+    h4: 1.5rem
+    h5: 1.25rem
     h6: 1rem
     list: .9375rem
     meta: .875rem
-    code: .8125rem
+    code: 1rem
     footnote: .78125rem
   fontfamily:
     logofont:
-      fontfamily: '"Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
-      name: 'Microsoft YaHei'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf
+      fontfamily: '"TsukushiARoundGothic", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'TsukushiARoundGothic'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/TsukushiARoundGothic/TsukushiAMaruGothic.ttc
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: 'RobotoMono, UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
-      name: 'PingFang SC'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/RobotoMono/RobotoMono-Regular.ttf
+      fontfamily: '"Ubuntu", "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'Ubuntu'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Ubuntu/Ubuntu-Regular.ttf
       weight: normal
       style: normal
     codefont:
