@@ -3,7 +3,7 @@ title: Git知识点整理
 date: 2020-04-13
 updated: 2020-07-05
 tags: [Git]
-categories: 软件工具
+categories: 编程与开发
 references:
   - title: Git教程
     url: https://www.liaoxuefeng.com/wiki/896043488029600/
