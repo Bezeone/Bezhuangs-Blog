@@ -1,7 +1,7 @@
 ---
 title: 云上搭建基于Anaconda的Jupyter数据科学环境
 date: 2021-05-09
-updated: 2021-05-16
+updated: 2021-06-12
 tags: [ECS]
 categories: 云计算与应用开发
 references:
@@ -113,4 +113,31 @@ references:
 
 - Jupyter Notebook只适用于单用户登录，如果想搭建多用户的Jupyter的话，要使用JupyterHub进行搭建
 - 阿里云默认不打卡8888端口，需要在服务器管理控制台中设置开放端口
+
+### 添加JAVA环境支持
+
+- 安装JDK（过程略）
+
+- 下载 java 内核压缩包`ijava`，[下载地址](https://github.com/SpencerPark/IJava/releases)
+
+- 上传到服务器，使用`unzip`命令解压
+
+- 安装Java内核
+
+  ```bash
+  python install.py --sys-prefix
+  ```
+
+- 查看Jupyter内核支持
+
+  ```python
+  jupyter kernelspec list
+  '''
+  Available kernels:
+    java       /root/anaconda3/share/jupyter/kernels/java
+    python3    /root/anaconda3/share/jupyter/kernels/python3
+  '''
+  ```
+
+  
 
