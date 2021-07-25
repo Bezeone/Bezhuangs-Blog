@@ -6,7 +6,7 @@ tags: [Java]
 categories: 代码人生
 ---
 
->在阿里云开发者社区中看到有[Java新手训练营](https://developer.aliyun.com/learning/trainingcamp/java/1?spm=a2c6h.21110250.J_3925608520.1.73b63c67PXfMgE)（5天突破Java面向对象编程）的课程，采用直播授课的形式，希望能在侠客大佬的指导下有更好的学习效果吧。当然，直播时间有限，所以这篇日志并不是对Java知识点完全系统的梳理，主要记录一些开发中常用的语法和概念和在面试时会遇到的问题，以[训练](https://github.com/Bezhuang/LearnCS/tree/main/Java%E8%AE%AD%E7%BB%83%E8%90%A5)和熟悉特性为主。
+> 在阿里云开发者社区中看到有[Java新手训练营](https://developer.aliyun.com/learning/trainingcamp/java/1?spm=a2c6h.21110250.J_3925608520.1.73b63c67PXfMgE)（5天突破Java面向对象编程）的课程，采用直播授课的形式，希望能在侠客大佬的指导下有更好的学习效果吧。当然，直播时间有限，所以这篇日志并不是对Java知识点完全系统的梳理，主要记录一些开发中常用的语法和概念和在面试时会遇到的问题，以[训练](https://github.com/Bezhuang/LearnCS/tree/main/Java%E8%AE%AD%E7%BB%83%E8%90%A5)和熟悉特性为主。
 
 <!--more-->
 
@@ -447,15 +447,15 @@ public class Dog extends Animal{
 
 #### HashMap 和 HashTable的区别
 
-|HashMap      |Hashtable      |
-| ---- | ---- |
-|非同步synchronized     |同步synchronized      |
-| 不是线程安全 | 线程安全 |
-| 允许1个null key 和多个null 值 | 不允许null key 和null value |
-| JDK 1.2引入 | 早期就有 |
-| 使用Iterator遍历Hashmap | 使用Iterator或Enumeration遍历Hashtable |
-| 继承AbstractMap类 | 继承Dictionary类 |
-| 并发高 | 并发低 |
+| HashMap                       | Hashtable                              |
+| ----------------------------- | -------------------------------------- |
+| 非同步synchronized            | 同步synchronized                       |
+| 不是线程安全                  | 线程安全                               |
+| 允许1个null key 和多个null 值 | 不允许null key 和null value            |
+| JDK 1.2引入                   | 早期就有                               |
+| 使用Iterator遍历Hashmap       | 使用Iterator或Enumeration遍历Hashtable |
+| 继承AbstractMap类             | 继承Dictionary类                       |
+| 并发高                        | 并发低                                 |
 
 #### 其他复杂数据类型
 

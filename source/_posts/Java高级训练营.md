@@ -9,7 +9,7 @@ references:
     url: https://developer.aliyun.com/learning/course/60
 ---
 
->本期训练营是阿里云开发者社区Java训练营的第3期，主要基于最流行的Java Spring Cloud, 结合阿里巴巴淘宝微服务案例，实战模拟淘宝Order微服务，实战演练微服务开发，扩展学习Spring Cloud Alibaba新框架，本篇日志主要记录5天直播Spring cloud微服务开发课中的一些知识点，附[实战代码](https://github.com/Bezhuang/LearnCS/tree/main/Java高级训练营)。
+> 本期训练营是阿里云开发者社区Java训练营的第3期，主要基于最流行的Java Spring Cloud, 结合阿里巴巴淘宝微服务案例，实战模拟淘宝Order微服务，实战演练微服务开发，扩展学习Spring Cloud Alibaba新框架，本篇日志主要记录5天直播Spring cloud微服务开发课中的一些知识点，附[实战代码](https://github.com/Bezhuang/LearnCS/tree/main/Java高级训练营)。
 
 <!--more-->
 

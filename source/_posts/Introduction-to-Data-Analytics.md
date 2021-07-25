@@ -132,12 +132,12 @@ categories: 人工智能与大数据
 
 #### Key Differences Between RDBMS & NoSQL
 
-| **Relational Databases**                                     | **Non-Relational Data Bases**                                |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Relational Databases**                                                                        | **Non-Relational Data Bases**                                                                                       |
+| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | RDBMS schemas rigidly define how all data inserted into the database must be typed and composed | NoSQL databases can be schema-agnostic, allowing unstructured and semi-structured data to be stored and manipulated |
-| Maintaining high-end,commercial relational database management systems can be expensive | Specifically designed for low-cost commodity hardware        |
-| Support ACID-compliance, which ensures reliability of transactions and crash recovery | Most NoSQL databases are not ACID compliant                  |
-| A mature and well-documented technology, which means the risks are more or less perceivable | A relatively newer technology                                |
+| Maintaining high-end,commercial relational database management systems can be expensive         | Specifically designed for low-cost commodity hardware                                                               |
+| Support ACID-compliance, which ensures reliability of transactions and crash recovery           | Most NoSQL databases are not ACID compliant                                                                         |
+| A mature and well-documented technology, which means the risks are more or less perceivable     | A relatively newer technology                                                                                       |
 
 #### Data Marts, Data Lakes, ETL and Data Pipelines
 

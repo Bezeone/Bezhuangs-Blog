@@ -9,7 +9,7 @@ references:
     url: https://developer.aliyun.com/learning/course/71
 ---
 
->本期训练营是继[Java新手训练营](/Java初级训练营)后的第2期，课程由阿里云开发者社区提供，同样采用5天不间断直播授课的形式，主要内容为Spring Boot 2.5自动化配置原理、实战开发REST API、MySQL数据库、Redis高并发缓存、MQ消息队列Kafka、安全机制、Docker容器等，本篇日志主要记录实战Spring Boot2.5开发中的一些常用知识点，附[实战代码](https://github.com/Bezhuang/LearnCS/tree/main/Java中级训练营)。
+> 本期训练营是继[Java新手训练营](/Java初级训练营)后的第2期，课程由阿里云开发者社区提供，同样采用5天不间断直播授课的形式，主要内容为Spring Boot 2.5自动化配置原理、实战开发REST API、MySQL数据库、Redis高并发缓存、MQ消息队列Kafka、安全机制、Docker容器等，本篇日志主要记录实战Spring Boot2.5开发中的一些常用知识点，附[实战代码](https://github.com/Bezhuang/LearnCS/tree/main/Java中级训练营)。
 
 <!--more-->
 

@@ -1,20 +1,16 @@
 ---
-title: C++面向对象程序设计基础
+title: C++基础知识总结
 date: 2020-11-09
 updated: 2021-05-01
 tags: [C/C++]
 group: going
 categories: 编程与开发
 references:
-  - title: C++语言程序设计——从C到C++
-    url: https://www.icourse163.org/course/CAU-432001
-  - title: 程序设计与算法（三）C++面向对象程序设计
-    url: https://www.icourse163.org/course/PKU-1002029030
   - title: C语言中文网
     url: http://c.biancheng.net/cplus/
 ---
 
-> Object Oriented Programming，面向对象的编程的思想是一种对现实世界理解和抽象的方法，其有的封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更灵活和易于维护，对软件开发相当重要。C++是一门面向对象的编程语言，本文包含对于C++语言中类、对象、运算符重载、继承、多态等面向对象的程序设计方法，以及模板、标准模板库STL等泛型程序设计的机制的描述，希望帮助读者能够更好的体会和领悟面向对象程序设计方法和泛型程序设计方法的优势。附上我学慕课和阅读文档时的[练习代码](https://github.com/Bezhuang/LearnCS/tree/main/%E4%BB%8EC%E5%88%B0C%2B%2B)
+> Object Oriented Programming，面向对象的编程的思想是一种对现实世界理解和抽象的方法，其有的封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更灵活和易于维护，对软件开发相当重要。C++是一门面向对象的编程语言，本文包含对于C++语言中类、对象、运算符重载、继承、多态等面向对象的程序设计方法，以及模板、标准模板库STL等泛型程序设计的机制的描述，希望帮助读者能够更好的体会和领悟面向对象程序设计方法和泛型程序设计方法的优势。由于之前已经有了C语言的基础，所以我选择的C++语言程序设计课程是农大的国家精品课：[从C到C++](https://www.icourse163.org/course/CAU-432001)，附上我学慕课和阅读文档时的[练习代码](https://github.com/Bezhuang/LearnCS/tree/main/%E4%BB%8EC%E5%88%B0C%2B%2B)
 
 <!--more-->
 

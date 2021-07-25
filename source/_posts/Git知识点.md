@@ -1,17 +1,15 @@
 ---
-title: Git知识点整理
+title: Git基础知识总结
 date: 2020-04-13
 updated: 2020-07-05
 tags: [Git]
 categories: 编程与开发
 references:
-  - title: Git教程
-    url: https://www.liaoxuefeng.com/wiki/896043488029600/
   - title: 简明Git指南
     url: https://www.runoob.com/manual/git-guide/
 ---
 
-> Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件，是目前世界上最先进的分布式版本控制系统。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。本文是对Git使用方法的一些整理。
+> Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件，是目前世界上最先进的分布式版本控制系统。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。由于Git指令操作简单易上手，所以我选择的是廖雪峰老师的[Git教程](https://www.liaoxuefeng.com/wiki/896043488029600/)，本文是对Git使用方法的一些整理。
 
 <!--more-->
 

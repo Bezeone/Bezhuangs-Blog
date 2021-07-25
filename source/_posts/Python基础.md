@@ -5,15 +5,13 @@ updated: 2020-10-30
 tags: [Python]
 categories: 编程与开发
 references:
-  - title: Python基础教程
-    url: https://www.bilibili.com/video/BV1hW41197sB
   - title: Python教程
     url: https://www.liaoxuefeng.com/wiki/1016959663602400
   - title: Python语言程序设计基础(第2版)
     url: https://book.douban.com/subject/27021033/
 ---
 
-> Python 是由 Guido van Rossum 在八十年代末和九十年代初，在荷兰国家数学和计算机科学研究所设计的一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。在此之前我已经学习了英语版本的Python&计算机导论课程：[Python for everybody](/Python4)，这篇笔记是对Python语言基础的整理，可供参考。
+> Python 是由 Guido van Rossum 在八十年代末和九十年代初，在荷兰国家数学和计算机科学研究所设计的一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。在此之前我已经学习了英语版本的Python&计算机导论课程：[Python for everybody](/Python4)，二刷时我使用的教程则是尚硅谷的[Python基础教程](https://www.bilibili.com/video/BV1hW41197sB)，这篇笔记是对Python语言基础知识的总结，为今后的网站开发、数据分析、机器学习等应用打下基础。
 
 <!--more-->
 
