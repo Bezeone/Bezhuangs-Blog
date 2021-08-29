@@ -1,7 +1,7 @@
 ---
 title: Machine Learning with Python
 date: 2021-06-12
-updated: 2021-06-15
+updated: 2021-08-15
 tags: [Python]
 group: going
 categories: 人工智能与大数据
@@ -31,4 +31,40 @@ categories: 人工智能与大数据
   - AI components: Computer Vision, Language Processing, Creativity, etc
   - Machine learning: Classification, Clustering, Neural Network, etc
   - Revolution in ML: Deep learning
+
+#### Python libraries for machine learning
+
+- NumPy, SciPy, Matplotlib, pandas, Scikit Learn
+- Scikit Learn: Classification, Regression and Clustering algorithms, Works with NumPy and SciPy, Easy to implement
+```python
+from sklearn import preprocessing
+x = preprocessing.StandardScaler().fit(X).transform(X)
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
+
+from sklearn import svm
+clf = svm.SVC(gamma=0.001, C=100.)
+clf.fit(X_train, y_train)
+clf.predict(X_test)
+
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(y_test, yhat, labels=[1,0]))
+
+import pickle
+s = pickle.dump(clf)
+```
+
+#### Supervised vs Unsupervised learning
+
+- Supervised learning: Teach the model with labeled data, then with that knowledge, it can predict unknown or future instances
+- Types of supervised learning: Classification and Regression
+  - Classification is the process of predicting discrete class labels or categories (Classifies labeled data)
+  - Regression is the process of predicting continuous values (Predicts trends using previous labeled data)
+- Unsupervised learning: The model works on its own to discover information
+- Unsupervised learning techniques: Dimension reduction, Density estimation, Market basket analysis, Clustering
+- Clustering is grouping of data points or objects that are somehow similar by Discovering structure, Summarization and Anomaly detection (Finds patterns and groupings from unlabeled data)
+- Supervised Learning has more evaluation methods than unsupervised learning, whereas unsupervised learning is a less controlled environment
+
+### 未完待续
 
