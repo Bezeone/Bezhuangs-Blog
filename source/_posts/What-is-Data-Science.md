@@ -2,7 +2,7 @@
 title: What is Data Science?
 date: 2021-04-14
 updated: 2021-05-02
-tags: []
+tags: [Coursera, Data Science]
 categories: 人工智能与大数据
 ---
 

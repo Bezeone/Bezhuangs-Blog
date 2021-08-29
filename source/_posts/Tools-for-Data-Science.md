@@ -2,7 +2,7 @@
 title: Tools for Data Science
 date: 2021-04-19
 updated: 2021-05-15
-tags: []
+tags: [Coursera, Data Science]
 categories: 人工智能与大数据
 ---
 

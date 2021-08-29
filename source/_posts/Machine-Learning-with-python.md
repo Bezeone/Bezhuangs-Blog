@@ -2,7 +2,7 @@
 title: Machine Learning with Python
 date: 2021-06-12
 updated: 2021-08-15
-tags: [Python]
+tags: [Coursera, Python, ML]
 group: going
 categories: 人工智能与大数据
 ---

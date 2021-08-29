@@ -2,8 +2,8 @@
 title: Data Science Math Skills
 date: 2020-05-03
 updated: 2020-05-25
-tags: [数学]
-categories: 人工智能与大数据
+tags: [Coursera, Data Science]
+categories: 数学
 mathjax: true
 ---
 

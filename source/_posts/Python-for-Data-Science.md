@@ -2,7 +2,7 @@
 title: Python for Data Science, AI & Development
 date: 2021-02-01
 updated: 2021-02-04
-tags: [Python]
+tags: [Python, Coursera, Data Science]
 categories: 人工智能与大数据
 ---
 

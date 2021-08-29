@@ -2,7 +2,7 @@
 title: Marketing Analytics
 date: 2020-06-10
 updated: 2020-06-22
-tags: []
+tags: [Coursera, Data Analysis]
 categories: 经济与商业
 ---
 

@@ -2,7 +2,7 @@
 title: Data Science Methodology
 date: 2021-04-27
 updated: 2021-05-25
-tags: []
+tags: [Coursera, Data Science]
 categories: 人工智能与大数据
 ---
 

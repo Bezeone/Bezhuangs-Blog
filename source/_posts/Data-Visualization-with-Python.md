@@ -2,7 +2,7 @@
 title: Data Visualization With Python
 date: 2021-02-25
 updated: 2021-03-06
-tags: [Python]
+tags: [Python, Coursera, Data Science]
 categories: 人工智能与大数据
 ---
 

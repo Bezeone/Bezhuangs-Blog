@@ -1,17 +1,15 @@
 ---
-title: Py4e学习习题记录
+title: Python for everybody习题记录
 date: 2020-03-25
 updated: 2020-05-15
-tags: [Python, SQL, 爬虫]
+tags: [Coursera, Python, 数据库, 爬虫]
 categories: 计算机专业
 references: 
-  - title: Python for Everybody
-    url: https://www.py4e.com/
   - title: Python学习-PY4E作业
     url: https://blog.csdn.net/u012348774/article/details/78106407
 ---
 
-> The Python for Everybody Specialization provided by UNIVERSITY OF MICHIGAN introduces fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. This note contains all the exercises in the course and my solution (code)
+> The Python for Everybody Specialization provided by UNIVERSITY OF MICHIGAN introduces fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. Python for Everybody is a completely open-source course, you can find all the notes and textbooks on its official [website](https://www.py4e.com/), so this note will only contain my solution to all post-lesson exercises in this course.
 
 <!--more-->
 

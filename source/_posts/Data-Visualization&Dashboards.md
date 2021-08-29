@@ -2,7 +2,7 @@
 title: Data Visualization and Dashboards with Excel and Cognos
 date: 2021-01-20
 updated: 2021-02-02
-tags: [Office]
+tags: [Office, Coursera, Data Science]
 categories: 人工智能与大数据
 ---
 
