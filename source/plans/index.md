@@ -7,40 +7,29 @@ sidebar: []
 comments: false
 ---
 
-{% span center code huge, 学习计划 %}
+{% span center code huge, 100 BOOK CHALLENGE %}
 
-### 更新时间
+### Cumulative savings
 
-- 2021.9
+- 370
 
-### 专业课
+### 数学
 
-- 数据结构
-  - MIT 6.006 Introduction to Algorithms
-- 计算机组成原理
-  - CMU 15-213 Computer Systems: A Programmer's Perspective
-  - 南京大学 ics-pa
-- 操作系统
-  - 操作系统实战45讲
-  - MIT 6.S081 Operating System Engineering
-- 计算机网络
-  - Stanford CS 144 Introduction to Computer Networking
+- 李永乐2022复习全书-基础篇
+- 李永乐2022基础过关660题
+- 汤家凤2022接力题典1800题
+- 张宇2022经典1000题
 
-### 编程开发
+### 计算机
 
-- Java
-- Go
+- 王道2022数据结构+计组+OS+计网
+- 深入理解计算机系统
+- 算法必备100题
 
-### 实践项目
+### 英语
 
-- 网约车：规划中
-- 电商网站：规划中
-
-### 刷题
-
-- LintCode
-- HDOJ
-
+- 何凯文长难句解密
+- 何凯文外刊时文
 
 
 

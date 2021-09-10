@@ -2,7 +2,7 @@
 title: Machine Learning with Python
 date: 2021-06-12
 updated: 2021-08-15
-tags: [Coursera, Python, ML]
+tags: [Coursera, Python, Machine Learning]
 group: going
 categories: 人工智能与大数据
 ---
@@ -66,5 +66,22 @@ s = pickle.dump(clf)
 - Clustering is grouping of data points or objects that are somehow similar by Discovering structure, Summarization and Anomaly detection (Finds patterns and groupings from unlabeled data)
 - Supervised Learning has more evaluation methods than unsupervised learning, whereas unsupervised learning is a less controlled environment
 
-### 未完待续
+### Linear Regression
 
+#### Regression
+
+- Regression is the process of predicting a continuous value
+- Two types of regression model: Simple Regression and Multiple Regression
+- Applications of regression: Sales forecasting, Satisfaction analysis, Price estimation, Employment income, etc.
+- Regression algorithms
+  - Ordinal regression
+  - Poisson regression
+  - Fast forest quantile regression
+  - Linear, Polynomial, Lasso, Stepwise, Ridge regression
+  - Bayesian linear regression
+  - Neural network regression
+  - Decision forest regression
+  - Boosted decision tree regression
+  - KNN (K-nearest neighbors)
+
+#### Simple Linear Regression

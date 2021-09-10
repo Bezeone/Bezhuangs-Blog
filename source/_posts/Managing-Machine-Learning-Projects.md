@@ -2,7 +2,7 @@
 title: Managing Machine Learning Projects with Google Cloud
 date: 2020-06-04
 updated: 2020-06-02
-tags: [Coursera, ML]
+tags: [Coursera, Machine Learning]
 categories: 人工智能与大数据
 ---
 

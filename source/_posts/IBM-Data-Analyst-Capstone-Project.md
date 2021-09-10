@@ -2,7 +2,7 @@
 title: IBM Data Analyst Capstone Project
 date: 2021-03-27
 updated: 2021-04-03
-tags: [Python, Coursera, Data Analysis]
+tags: [Python, Coursera, Data Science]
 categories: 人工智能与大数据
 ---
 

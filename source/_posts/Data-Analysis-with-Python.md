@@ -2,7 +2,7 @@
 title: Data Analysis With Python
 date: 2021-02-17
 updated: 2021-03-27
-tags: [Python, Coursera, Data Analysis]
+tags: [Python, Coursera, Data Science]
 mathjax: true
 categories: 人工智能与大数据
 ---
