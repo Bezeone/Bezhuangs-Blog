@@ -2,7 +2,7 @@
 title: 听林纳斯大神聊聊Linux背后的思想
 date: 2021-02-10
 updated: 2021-02-13
-tags: []
+tags: [Linux]
 categories: 代码人生
 ---
 

@@ -2,7 +2,7 @@
 title: SQL基础知识总结
 date: 2020-05-26
 updated: 2020-11-27
-tags: [数据库]
+tags: [Databases]
 categories: 编程与开发
 references:
   - title: SQL语法速成手册

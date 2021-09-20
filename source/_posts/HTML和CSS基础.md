@@ -2,7 +2,7 @@
 title: HTML/CSS相关基础知识总结
 date: 2020-09-10
 updated: 2021-01-22
-tags: [前端]
+tags: [Frontend]
 categories: 编程与开发
 references: 
   - title: 前端学习路线图

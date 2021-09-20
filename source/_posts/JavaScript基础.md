@@ -2,7 +2,8 @@
 title: JavaScript基础知识总结
 date: 2020-10-05
 updated: 2021-01-22
-tags: [前端]
+tags: [Frontend]
+group: todo
 categories: 编程与开发
 references: 
   - title: 前端学习路线图
