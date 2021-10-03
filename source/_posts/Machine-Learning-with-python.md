@@ -1,7 +1,7 @@
 ---
 title: Machine Learning with Python
-date: 2021-06-12
-updated: 2021-08-15
+date: 2021-10-12
+updated: 2021-10-15
 tags: [Coursera, Python, Machine Learning]
 group: todo
 categories: 人工智能与大数据

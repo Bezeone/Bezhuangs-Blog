@@ -58,11 +58,11 @@ cover:
     - name: 进行中
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/270d-1f3fb.svg
-      url: /ongoing
+      url: /todo
     - name: 留言板
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4ac.svg
-      url: /shuoshuo
+      url: /guestbook
 
 pages:
   # 友链页面配置
@@ -345,16 +345,24 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, social, license, analytics, br, copyright]
+  layout: [aplayer, copyright, br, analytics]
   social:
-    - icon: 
-      url: 
+    - avatar: fa-id-card-o
+      url: https://zhuangzhihao.top
+    - avatar: fa-linkedin-square
+      url: https://www.linkedin.com/in/zhuangzhihao/
+    - avatar: fa-youtube-play
+      url: https://space.bilibili.com/30593492
+    - avatar: fa-instagram
+      url: https://www.instagram.com/bezhuang312/
+    - avatar: fa-twitter
+      url: https://twitter.com/Bezhuang
     # or
-    - img:
-      url:
+    #- img:
+    #  url:
     # or
-    - avatar:
-      url:
+    #- icon:
+    #  url:
   # site source
   source: https://github.com/volantis-x/volantis-docs/
   # analytics using leancloud
@@ -364,7 +372,7 @@ site_footer:
   # site copyright
   copyright: Copyright © 2020-2021 Bezhuang. All rights reserved
   # You can add your own property here. (Support markdown, for example: br: '<br>')
-  br: 沪ICP备2021008939号
+  br: 沪ICP备2021008938号 <br> 由阿里云和Github Pages提供技术支持
 ############################### Site Footer ############################### > end
 
 ############################### Plugins ############################### > start
@@ -479,9 +487,9 @@ plugins:
       aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js
       meting: https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
     # Required
-    server: netease   # netease, tencent, kugou, xiami, baidu
+    server: tencent   # netease, tencent, kugou, xiami, baidu
     type: playlist    # song, playlist, album, search, artist
-    id: 3005573371    # song id / playlist id / album id / search keyword
+    id: 5192584153   # song id / playlist id / album id / search keyword
     # Optional
     fixed: false     # enable fixed mode
     theme: '#1BCDFC'  # main color

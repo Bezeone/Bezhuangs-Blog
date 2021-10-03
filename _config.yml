@@ -121,7 +121,7 @@ limit: 50
 
 #看板娘
 live2d:
-  enable: false
+  enable: true
   scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
@@ -143,3 +143,4 @@ deploy:
   type: git
   repo:
     - git@github.com:Bezhuang/Hexo-blog.git
+    - root@106.15.200.147:/home/git/hexoBlog
