@@ -5,6 +5,7 @@ updated: 2021-10-24
 tags: [Forage]
 group: todo
 categories: 实战项目
+password: Zzh990312
 ---
 
 > Virtual work experience programs replicate work at top companies, and connect students to the companies themselves. Throughout this virtual experience provided by JP Morgan, I'm introduced to JPMorgan Chase frameworks and thus apply technical skills to a hypothetical request from the firm’s trading floor to analyze and visualize data. The following are the notes I took during this virtual experience.
