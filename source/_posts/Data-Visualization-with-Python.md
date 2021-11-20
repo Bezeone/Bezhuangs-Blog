@@ -373,7 +373,6 @@ categories: 人工智能与大数据
       app.run_server(port=8002,host='127.0.0.1',debug=True)
   ```
 
+### Assignments
 
-### Codes
-
-- [Please Open with Jupyter Lab](https://github.com/Bezhuang/LearnCS/tree/main/Data%20Visualization%20With%20Python)
+- Visit my [Github Repository](https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Data%20Visualization%20With%20Python)

@@ -2,7 +2,7 @@
 title: IntelliJ IDEA的配置与使用总结
 date: 2021-05-20
 updated: 2021-09-01
-tags: [Java]
+tags: [Java, IDEA]
 categories: 编程与开发
 ---
 

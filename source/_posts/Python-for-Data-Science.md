@@ -489,6 +489,6 @@ C.T # Get the transposed of C
 
   ![Unemployment stats & GDP](https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/Python-for-DS&AI.png)
 
-### Codes
+### Assignments
 
-- [Please Open with Jupyter Lab](https://github.com/Bezhuang/LearnCS/tree/main/Python%20for%20Data%20Science%20and%20AI)
+- Visit my [Github Repository](https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Python%20for%20Data%20Science%20and%20AI)

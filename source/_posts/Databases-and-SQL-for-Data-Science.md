@@ -2,7 +2,7 @@
 title: Databases and SQL for Data Science with Python
 date: 2021-02-06
 updated: 2021-02-09
-tags: [Coursera, Databases, Python, Data Science]
+tags: [Coursera, SQL, Python, Data Science]
 categories: 人工智能与大数据
 ---
 
@@ -394,6 +394,6 @@ plot = sns.jointplot(x='per_capita_income_',y='hardship_index', data=income_vs_h
 - Load the 3 datasets into 3 tables in a Db2 database
 - Execute SQL queries to answer assignment questions
 
-### Codes
+### Assignments
 
-- [Please Open with Jupyter Lab](https://github.com/Bezhuang/LearnCS/tree/main/Databases%20and%20SQL%20for%20Data%20Science%20with%20Python)
+- Visit my [Github Repository](https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Databases%20and%20SQL%20for%20Data%20Science%20with%20Python)

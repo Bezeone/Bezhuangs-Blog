@@ -424,8 +424,8 @@ categories: 人工智能与大数据
 ### Project Case
 
 - Determining the market price of a house given a set of features
-- [Assignment notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/178b3007-1e92-4946-97ed-f22763f254d2/view?access_token=6f0d33f3dd579324e58eac3e6416508d2f47372218c970f98d418bc68133d33c)
+- [Final Assignment Notebook Url](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/178b3007-1e92-4946-97ed-f22763f254d2/view?access_token=6f0d33f3dd579324e58eac3e6416508d2f47372218c970f98d418bc68133d33c) (May not be accessible from Mainland China)
 
-### Codes
+### Assignments
 
-- [Please Open with Jupyter Lab](https://github.com/Bezhuang/LearnCS/tree/main/Data%20Analysis%20with%20Python)
+- Visit my [Github Repository](https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Data%20Analysis%20with%20Python)

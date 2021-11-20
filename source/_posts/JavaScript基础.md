@@ -2,7 +2,7 @@
 title: JavaScript基础知识总结
 date: 2020-10-05
 updated: 2021-01-22
-tags: [Frontend]
+tags: [前端, JavaScript]
 categories: 编程与开发
 references: 
   - title: learn x in y minutes

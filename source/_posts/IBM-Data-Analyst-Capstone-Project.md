@@ -388,7 +388,7 @@ categories: 人工智能与大数据
 
   <iframe src="https://onedrive.live.com/embed?resid=5B712C0081A6168C%21873&amp;authkey=%21ALfYamiV2mOnskw&amp;em=2&amp;wdAr=1.7777777777777777" width="1186px" height="691px" frameborder="0">这是嵌入 <a target="_blank" href="https://office.com">Microsoft Office</a> 演示文稿，由 <a target="_blank" href="https://office.com/webapps">Office</a> 提供支持。</iframe>
 
-### Codes
+### Assignments
 
-- [Please Open with Jupyter Lab](https://github.com/Bezhuang/LearnCS/tree/main/Data%20Analyst%20Capstone%20Project)
+- Visit my [Github Repository](https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Data%20Analyst%20Capstone%20Project)
 

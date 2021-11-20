@@ -82,6 +82,6 @@ categories: 人工智能与大数据
 
 - [Project Notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/ad8810db-e61c-4227-997d-f26c1ec0ad49/view?access_token=6a4d4d444262c5dc0cc25bee7ed55437e3bde917b8c6218d9f24f68053e99955)
 
-### Codes
+### Assignments 
 
-- [Please Open with Jupyter Lab](https://github.com/Bezhuang/LearnCS/tree/main/Python%20Project%20for%20Data%20Science)
+- Visit my [Github Repository](https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Python%20Project%20for%20Data%20Science) 

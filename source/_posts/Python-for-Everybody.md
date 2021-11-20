@@ -1,8 +1,8 @@
 ---
-title: Python for everybody习题记录
+title: Python for everybody
 date: 2020-03-25
 updated: 2020-05-15
-tags: [Coursera, Python, Databases]
+tags: [Coursera, Python, SQL]
 categories: 计算机专业
 references: 
   - title: Python学习-PY4E作业

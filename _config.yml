@@ -136,4 +136,3 @@ deploy:
   type: git
   repo:
     - git@github.com:Bezhuang/Hexo-blog.git
-    - root@106.15.200.147:/home/git/hexoBlog

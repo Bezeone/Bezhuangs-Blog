@@ -24,7 +24,7 @@
   
   <title>SQL基础知识总结 - Bezhuang&#39;s Blog</title>
   
-    <meta name="keywords" content="Databases">
+    <meta name="keywords" content="SQL">
   
 
   
@@ -577,7 +577,7 @@ WHERE username = &#39;root&#39;;</code></pre>
 </li>
 <li>根据不同的 DBMS 以及不同的安全性实体，其支持的权限控制也有所不同</li>
 </ul>
-<h3 id="增删改查（以下为-DML-语句用法）"><a href="#增删改查（以下为-DML-语句用法）" class="headerlink" title="增删改查（以下为 DML 语句用法）"></a>增删改查（以下为 DML 语句用法）</h3><ul>
+<h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><ul>
 <li><p>增删改查，又称为 CRUD，数据库基本操作中的基本操作</p>
 <h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4></li>
 <li><p><code>INSERT INTO</code> 语句用于向表中插入新记录</p>
@@ -651,29 +651,38 @@ SELECT * FROM mytable LIMIT 2, 3;</code></pre>
 </li>
 </ul>
 <h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><ul>
-<li>子查询是嵌套在较大查询中的 SQL 查询</li>
-<li>子查询也称为内部查询或内部选择，而包含子查询的语句也称为外部查询或外部选择</li>
-<li>子查询可以嵌套在 <code>SELECT</code>，<code>INSERT</code>，<code>UPDATE</code> 或 <code>DELETE</code> 语句内或另一个子查询中</li>
-<li>子查询通常会在另一个 <code>SELECT</code> 语句的 <code>WHERE</code> 子句中添加</li>
-<li>您可以使用比较运算符，如 &gt;，&lt;，或 =，比较运算符也可以是多行运算符，如 <code>IN</code>，<code>ANY</code> 或 <code>ALL</code></li>
-<li>子查询必须被 <code>()</code> 括起来</li>
-<li>内部查询首先在其父查询之前执行，以便可以将内部查询的结果传递给外部查询</li>
-</ul>
-<h4 id="子查询的子查询"><a href="#子查询的子查询" class="headerlink" title="子查询的子查询"></a>子查询的子查询</h4><pre><code>```SQL
-SELECT cust_name, cust_contact
+<li><p>子查询是嵌套在较大查询中的 SQL 查询</p>
+</li>
+<li><p>子查询也称为内部查询或内部选择，而包含子查询的语句也称为外部查询或外部选择</p>
+</li>
+<li><p>子查询可以嵌套在 <code>SELECT</code>，<code>INSERT</code>，<code>UPDATE</code> 或 <code>DELETE</code> 语句内或另一个子查询中</p>
+</li>
+<li><p>子查询通常会在另一个 <code>SELECT</code> 语句的 <code>WHERE</code> 子句中添加</p>
+</li>
+<li><p>您可以使用比较运算符，如 &gt;，&lt;，或 =，比较运算符也可以是多行运算符，如 <code>IN</code>，<code>ANY</code> 或 <code>ALL</code></p>
+</li>
+<li><p>子查询必须被 <code>()</code> 括起来</p>
+</li>
+<li><p>内部查询首先在其父查询之前执行，以便可以将内部查询的结果传递给外部查询</p>
+</li>
+<li><p>子查询的子查询</p>
+<pre><code class="SQL">SELECT cust_name, cust_contact
 FROM customers
 WHERE cust_id IN (SELECT cust_id
                   FROM orders
                   WHERE order_num IN (SELECT order_num
                                       FROM orderitems
-                                      WHERE prod_id = &#39;RGAN01&#39;));
-```</code></pre>
-<h4 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h4><ul>
-<li><code>WHERE</code> 子句用于过滤记录，即缩小访问数据的范围</li>
-<li><code>WHERE</code> 后跟一个返回 <code>true</code> 或 <code>false</code> 的条件</li>
-<li><code>WHERE</code> 可以与 <code>SELECT</code>，<code>UPDATE</code> 和 <code>DELETE</code> 一起使用</li>
-<li><code>WHERE</code> 子句中使用的操作符</li>
+                                      WHERE prod_id = &#39;RGAN01&#39;));</code></pre>
+</li>
 </ul>
+<h4 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h4><ul>
+<li><p><code>WHERE</code> 子句用于过滤记录，即缩小访问数据的范围</p>
+</li>
+<li><p><code>WHERE</code> 后跟一个返回 <code>true</code> 或 <code>false</code> 的条件</p>
+</li>
+<li><p><code>WHERE</code> 可以与 <code>SELECT</code>，<code>UPDATE</code> 和 <code>DELETE</code> 一起使用</p>
+</li>
+<li><p><code>WHERE</code> 子句中使用的操作符</p>
 <table>
 <thead>
 <tr>
@@ -718,19 +727,21 @@ WHERE cust_id IN (SELECT cust_id
 <td>指定针对某个列的多个可能值</td>
 </tr>
 </tbody></table>
-<h4 id="SELECT-语句中的-WHERE-子句"><a href="#SELECT-语句中的-WHERE-子句" class="headerlink" title="SELECT 语句中的 WHERE 子句"></a>SELECT 语句中的 WHERE 子句</h4><pre><code>```SQL
-SELECT * FROM Customers
-WHERE cust_name = &#39;Kids Place&#39;;
-```</code></pre>
-<h4 id="UPDATE-语句中的-WHERE-子句"><a href="#UPDATE-语句中的-WHERE-子句" class="headerlink" title="UPDATE 语句中的 WHERE 子句"></a>UPDATE 语句中的 WHERE 子句</h4><pre><code>```SQL
-UPDATE Customers
+</li>
+<li><p>SELECT 语句中的 WHERE 子句</p>
+<pre><code class="SQL">SELECT * FROM Customers
+WHERE cust_name = &#39;Kids Place&#39;;</code></pre>
+</li>
+<li><p>UPDATE 语句中的 WHERE 子句</p>
+<pre><code class="SQL">UPDATE Customers
 SET cust_name = &#39;Jack Jones&#39;
-WHERE cust_name = &#39;Kids Place&#39;;
-```</code></pre>
-<h4 id="DELETE-语句中的-WHERE-子句"><a href="#DELETE-语句中的-WHERE-子句" class="headerlink" title="DELETE 语句中的 WHERE 子句"></a>DELETE 语句中的 WHERE 子句</h4><pre><code>```SQL
-DELETE FROM Customers
-WHERE cust_name = &#39;Kids Place&#39;;
-```</code></pre>
+WHERE cust_name = &#39;Kids Place&#39;;</code></pre>
+</li>
+<li><p>DELETE 语句中的 WHERE 子句</p>
+<pre><code class="SQL">DELETE FROM Customers
+WHERE cust_name = &#39;Kids Place&#39;;</code></pre>
+</li>
+</ul>
 <h4 id="IN-和-BETWEEN"><a href="#IN-和-BETWEEN" class="headerlink" title="IN 和 BETWEEN"></a>IN 和 BETWEEN</h4><ul>
 <li><p><code>IN</code> 操作符在 <code>WHERE</code> 子句中使用，作用是在指定的几个特定值中任选一个值</p>
 <pre><code class="SQL">SELECT *
@@ -862,11 +873,7 @@ WHERE cust_name = &#39;Fun4All&#39;;</code></pre>
 </ul>
 </li>
 </ul>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
-<li>注意：不同数据库的函数往往各不相同，因此不可移植</li>
-<li>本章函数以 <code>Mysql</code> 的函数为例</li>
-</ul>
-<h4 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h4><table>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h4><table>
 <thead>
 <tr>
 <th>函数</th>
@@ -904,8 +911,6 @@ WHERE SOUNDEX(col1) = SOUNDEX(&#39;apple&#39;)</code></pre>
 <ul>
 <li>日期格式：<code>YYYY-MM-DD</code></li>
 <li>时间格式：<code>HH:MM:SS</code></li>
-</ul>
-</li>
 </ul>
 <table>
 <thead>
@@ -983,13 +988,10 @@ WHERE SOUNDEX(col1) = SOUNDEX(&#39;apple&#39;)</code></pre>
 <td>返回一个日期的年份部分</td>
 </tr>
 </tbody></table>
-<pre><code>```mysql
-mysql&gt; SELECT NOW();
-2020-11-14 20:11:11
-```</code></pre>
-<ul>
-<li>数值处理</li>
-</ul>
+<pre><code class="mysql">mysql&gt; SELECT NOW();
+2020-11-14 20:11:11</code></pre>
+</li>
+<li><p>数值处理</p>
 <table>
 <thead>
 <tr>
@@ -1034,9 +1036,8 @@ mysql&gt; SELECT NOW();
 <td>随机数</td>
 </tr>
 </tbody></table>
-<ul>
-<li>汇总</li>
-</ul>
+</li>
+<li><p>汇总</p>
 <table>
 <thead>
 <tr>
@@ -1069,7 +1070,7 @@ mysql&gt; SELECT NOW();
 <td>会忽略 <code>NULL</code> 行</td>
 </tr>
 </tbody></table>
-<ul>
+</li>
 <li><p>使用 <code>DISTINCT</code> 可以让汇总函数值汇总不同的值</p>
 <pre><code class="mysql">SELECT AVG(DISTINCT col1) AS avg_col
 FROM mytable</code></pre>
@@ -1287,7 +1288,7 @@ VALUES (2, &#39;root2&#39;, &#39;root2&#39;, &#39;xxxx@163.com&#39;);</code></pr
 <pre><code class="mysql">COMMIT;</code></pre>
 </li>
 </ul>
-<h3 id="权限控制（DCL-语句用法）"><a href="#权限控制（DCL-语句用法）" class="headerlink" title="权限控制（DCL 语句用法）"></a>权限控制（DCL 语句用法）</h3><ul>
+<h3 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h3><ul>
 <li><p><code>GRANT</code> 和 <code>REVOKE</code> 可在几个层次上控制访问权限：</p>
 <ul>
 <li>整个服务器，使用 <code>GRANT ALL</code> 和 <code>REVOKE ALL</code></li>
@@ -1541,7 +1542,7 @@ DROP TRIGGER IF EXISTS trigger_insert_user;</code></pre>
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Databases/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Databases</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SQL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>SQL</p></a></div>
 
 
         
@@ -1703,7 +1704,7 @@ Data Science Math Skills course provided by DUKE UNIVERSITY is designed to teach
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%AF%E8%AF%AD"><span class="toc-text">数据库术语</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E8%AF%AD%E6%B3%95"><span class="toc-text">SQL 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84"><span class="toc-text">SQL 语法结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-%E8%AF%AD%E6%B3%95%E8%A6%81%E7%82%B9"><span class="toc-text">SQL 语法要点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-%E5%88%86%E7%B1%BB"><span class="toc-text">SQL 分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%EF%BC%88%E4%BB%A5%E4%B8%8B%E4%B8%BA-DML-%E8%AF%AD%E5%8F%A5%E7%94%A8%E6%B3%95%EF%BC%89"><span class="toc-text">增删改查（以下为 DML 语句用法）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-text">更新数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="toc-text">查询数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">子查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">子查询的子查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WHERE"><span class="toc-text">WHERE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SELECT-%E8%AF%AD%E5%8F%A5%E4%B8%AD%E7%9A%84-WHERE-%E5%AD%90%E5%8F%A5"><span class="toc-text">SELECT 语句中的 WHERE 子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UPDATE-%E8%AF%AD%E5%8F%A5%E4%B8%AD%E7%9A%84-WHERE-%E5%AD%90%E5%8F%A5"><span class="toc-text">UPDATE 语句中的 WHERE 子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DELETE-%E8%AF%AD%E5%8F%A5%E4%B8%AD%E7%9A%84-WHERE-%E5%AD%90%E5%8F%A5"><span class="toc-text">DELETE 语句中的 WHERE 子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IN-%E5%92%8C-BETWEEN"><span class="toc-text">IN 和 BETWEEN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AND%E3%80%81OR%E3%80%81NOT"><span class="toc-text">AND、OR、NOT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LIKE"><span class="toc-text">LIKE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%BB%84%E5%90%88"><span class="toc-text">连接和组合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%EF%BC%88JOIN%EF%BC%89"><span class="toc-text">连接（JOIN）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%90%88%EF%BC%88UNION%EF%BC%89"><span class="toc-text">组合（UNION）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-text">文本处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E5%92%8C%E5%88%86%E7%BB%84"><span class="toc-text">排序和分组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ORDER-BY"><span class="toc-text">ORDER BY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GROUP-BY"><span class="toc-text">GROUP BY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HAVING"><span class="toc-text">HAVING</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%EF%BC%88-DDL-%E8%AF%AD%E5%8F%A5%E7%94%A8%E6%B3%95%EF%BC%89"><span class="toc-text">数据定义（ DDL 语句用法）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88DATABASE%EF%BC%89"><span class="toc-text">数据库（DATABASE）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%88TABLE%EF%BC%89"><span class="toc-text">数据表（TABLE）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%EF%BC%88VIEW%EF%BC%89"><span class="toc-text">视图（VIEW）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%EF%BC%88-TCL-%E8%AF%AD%E5%8F%A5%E7%94%A8%E6%B3%95%EF%BC%89"><span class="toc-text">事务处理（ TCL 语句用法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%EF%BC%88DCL-%E8%AF%AD%E5%8F%A5%E7%94%A8%E6%B3%95%EF%BC%89"><span class="toc-text">权限控制（DCL 语句用法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">存储过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%A0%87"><span class="toc-text">游标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">触发器</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%AF%E8%AF%AD"><span class="toc-text">数据库术语</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E8%AF%AD%E6%B3%95"><span class="toc-text">SQL 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84"><span class="toc-text">SQL 语法结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-%E8%AF%AD%E6%B3%95%E8%A6%81%E7%82%B9"><span class="toc-text">SQL 语法要点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-%E5%88%86%E7%B1%BB"><span class="toc-text">SQL 分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-text">更新数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="toc-text">查询数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">子查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#WHERE"><span class="toc-text">WHERE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IN-%E5%92%8C-BETWEEN"><span class="toc-text">IN 和 BETWEEN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AND%E3%80%81OR%E3%80%81NOT"><span class="toc-text">AND、OR、NOT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LIKE"><span class="toc-text">LIKE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%BB%84%E5%90%88"><span class="toc-text">连接和组合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%EF%BC%88JOIN%EF%BC%89"><span class="toc-text">连接（JOIN）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%90%88%EF%BC%88UNION%EF%BC%89"><span class="toc-text">组合（UNION）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-text">文本处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E5%92%8C%E5%88%86%E7%BB%84"><span class="toc-text">排序和分组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ORDER-BY"><span class="toc-text">ORDER BY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GROUP-BY"><span class="toc-text">GROUP BY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HAVING"><span class="toc-text">HAVING</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%EF%BC%88-DDL-%E8%AF%AD%E5%8F%A5%E7%94%A8%E6%B3%95%EF%BC%89"><span class="toc-text">数据定义（ DDL 语句用法）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88DATABASE%EF%BC%89"><span class="toc-text">数据库（DATABASE）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%88TABLE%EF%BC%89"><span class="toc-text">数据表（TABLE）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%EF%BC%88VIEW%EF%BC%89"><span class="toc-text">视图（VIEW）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%EF%BC%88-TCL-%E8%AF%AD%E5%8F%A5%E7%94%A8%E6%B3%95%EF%BC%89"><span class="toc-text">事务处理（ TCL 语句用法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="toc-text">权限控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">存储过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%A0%87"><span class="toc-text">游标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">触发器</span></a></li></ol>
     </div>
   </section>
 
