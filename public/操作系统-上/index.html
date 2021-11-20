@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+  <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="preload" href="/css/first.css" as="style">
+  
+
+  <!-- 页面元数据 -->
+  
+  <title>操作系统（上） - Bezhuang&#39;s Blog</title>
+  
+
+  
+    <meta name="description" content="
+ 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持...">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Bezhuang's Blog" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+  
+
+<script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+
+
+</head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js"></script>
+    
+
+<header id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            Bezhuang's Blog
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于我
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友情链接
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>暗黑模式
+                </a>
+              <li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于我
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友情链接
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>暗黑模式
+                </a>
+              <li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
+          
+            <div class='cover-bg' style='background-image:url(https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%A3%81%E7%BA%B82.jpg)'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">庄之皓 · Bezhuang</p>
+    
+    
+      <p class="subtitle">欢迎访问我的博客！Welcome to my blog!</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/photos"
+              
+              
+              id="photos">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4f7.svg'><p>相册</p>
+            </a>
+          
+            <a href="/projects"
+              
+              
+              id="projects">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>开源库</p>
+            </a>
+          
+            <a href="/plans"
+              
+              
+              id="plans">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4dd.svg'><p>计划表</p>
+            </a>
+          
+            <a href="/todo"
+              
+              
+              id="todo">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/270d-1f3fb.svg'><p>进行中</p>
+            </a>
+          
+            <a href="/guestbook"
+              
+              
+              id="guestbook">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4ac.svg'><p>留言板</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+      <div id="safearea">
+        <div class="body-wrapper" id="pjax-container">
+          
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        操作系统（上）
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A/">计算机专业</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年6月12日</p>
+  </a>
+</div>
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-20T00:00:00+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年9月20日</p>
+  </a>
+</div>
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  
+  <blockquote>
+<p> 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/SUDA-1001752241">国家精品课</a>和汤子瀛版教材，以下为所记课堂笔记上半部分，包含计算机操作系统概述、处理器管理的知识点，可供参考。下半部分笔记请访问<a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8B">操作系统（下）</a></p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h3><h4 id="操作系统基本概念"><a href="#操作系统基本概念" class="headerlink" title="操作系统基本概念"></a>操作系统基本概念</h4><ul>
+<li>冯诺依曼模型：运算器、存储器、控制器、输入设备和输出设备</li>
+<li>引入操作系统的目的：提供一个计算机用户与计算机硬件系统之间的接口、有效的控制和管理计算机系统中的各种硬件和软件资源、合理地组织计算机系统的工作流程</li>
+<li>操作系统是计算机系统的资源管理程序</li>
+<li>操作系统的核心是控制和协调进程的运行，解决进程之间的通信</li>
+<li>操作系统的发展：无操作系统阶段 -&gt; 单道批处理系统 -&gt; 多道批处理系统</li>
+</ul>
+<h4 id="操作系统的特征"><a href="#操作系统的特征" class="headerlink" title="操作系统的特征"></a>操作系统的特征</h4><ul>
+<li>并行性：2个或多个事件在同一时刻发生</li>
+<li>并发性：2个或多个事件在同一时间间隔内发生</li>
+<li>并发和共享是操作系统的2个最基本的特征，二者之间互为存在条件</li>
+<li>资源共享方式：互斥共享、同时访问</li>
+<li>虚拟是指把一个物理上的实体变为若干个逻辑上的对应物</li>
+<li>异步性</li>
+</ul>
+<h4 id="操作系统的功能和服务"><a href="#操作系统的功能和服务" class="headerlink" title="操作系统的功能和服务"></a>操作系统的功能和服务</h4><ul>
+<li>处理器管理：进程控制、进程同步、进程通信、进程调度</li>
+<li>存储器管理：内存分配、内存保护、内存扩充</li>
+<li>设备管理：设备分配、设备传输控制、设备独立性</li>
+<li>文件管理：文件存储空间的管理、目录管理、文件操作管理、文件保护</li>
+<li>用户接口：命令接口、程序接口、图形接口<ul>
+<li>联机命令接口又称交互式命令结构</li>
+<li>脱机命令接口又称批处理命令接口</li>
+</ul>
+</li>
+<li>操作系统3种基本类型：批处理操作系统、分时操作系统、实时操作系统</li>
+<li>其他操作系统：嵌入式操作系统、集群系统、网络操作系统、分布式操作系统</li>
+</ul>
+<h4 id="操作系统的运行环境"><a href="#操作系统的运行环境" class="headerlink" title="操作系统的运行环境"></a>操作系统的运行环境</h4><ul>
+<li>处理器的执行状态分为核心态与用户态<ul>
+<li>核心态是操作系统管理程序执行时机器所处的状态</li>
+<li>用户态是用户程序执行时机器所处的状态</li>
+</ul>
+</li>
+<li>特权指令是只能由操作系统内核部分使用，不允许用户直接使用的指令，如I/O指令、设置中断屏蔽指令、清内存指令、存储保护指令和设置时钟指令</li>
+<li>内核的指令操作工作在核心态<ul>
+<li>时钟管理</li>
+<li>中断机制</li>
+<li>原语</li>
+<li>系统控制的数据结构及处理</li>
+</ul>
+</li>
+<li>异常，也称内中断，是由错误引起的</li>
+<li>通常异常会引起中断，而中断未必是由异常引起的</li>
+<li>系统调用（API）：进程控制、文件系统控制、系统控制、内存管理、网络管理、socket 管控、制用户管理以及进程间通信</li>
+</ul>
+<h4 id="操作系统的体系结构"><a href="#操作系统的体系结构" class="headerlink" title="操作系统的体系结构"></a>操作系统的体系结构</h4><ul>
+<li>操作系统的体系结构主要包括模块组合结构、层次结构和微内核结构</li>
+<li>模块组合结构<ul>
+<li>接口简单直接，系统的效率相对较高</li>
+<li>系统结构不清晰、可扩展性差、可适应性差</li>
+</ul>
+</li>
+<li>层次结构<ul>
+<li>按功能的调用次序排列成若干层</li>
+<li>组织和依赖关系清晰明了，可读性、可适应性及可靠性都得到了增强</li>
+<li>通常要将为进程提供服务的系统调用模块放在系统的内层。</li>
+</ul>
+</li>
+<li>微内核结构<ul>
+<li>客户服务器模式（C/S 模式）</li>
+<li>每个服务进程运行在独立的用户进程中，可靠性好，灵活性好，便于维护</li>
+<li>适合分布式处理的计算环境</li>
+<li>效率不高，尤其是通信频繁的系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><ul>
+<li><p>在计算机操作系统中，进程是资源分配的基本单位，也是独立运行的基本单位</p>
+<ul>
+<li>程序顺序执行时的特征：顺序性，封闭性，可再现性</li>
+<li>程序的并发执行的特征：间断性，失去封闭性，不可再现性</li>
+</ul>
+</li>
+<li><p>程序并发执行且其结果具有可再现性的条件（Bernstein 条件）</p>
+<ul>
+<li>R(p1) ∩ W(p2) = ∅</li>
+<li>R(p2) ∩ W(p1) = ∅</li>
+<li>W(p1) ∩ W(p2) = ∅</li>
+</ul>
+</li>
+<li><p>进程的特征：动态性、并发性、独立性、异步性、结构特征（程序段、数据段和进程控制块）</p>
+</li>
+<li><p>进程和程序的关系</p>
+<ul>
+<li>进程和程序的关系程序是静止的</li>
+<li>进程是暂时的，程序是永久的</li>
+<li>进程的组成包括程序段、数据块和进程控制块（Process Control Block）</li>
+<li>通过多次执行，一个程序可以产生多个不同的进程，通过调用关系，一个进程可以执行多个程序</li>
+<li>进程可创建其他进程，而程序不能形成新的程序</li>
+</ul>
+</li>
+<li><p>由程序段、相关数据段和PCB三部分构成的是进程映像，也叫进程实体</p>
+<ul>
+<li>映像是静态的，进程是动态的，进程是进程实体的运行过程</li>
+</ul>
+</li>
+<li><p>进程和作业的区别</p>
+<ul>
+<li>作业是用户需要计算机完成某项任务而要求计算机所做的工作的集合</li>
+<li>作业提交、作业收容、作业执行、作业完成</li>
+<li>进程是已提交完毕的作业的执行过程，是资源分配的基本单位</li>
+<li>作业是用户向计算机提交任务的任务实体，而进程是完成用户任务的执行实体</li>
+<li>这个作业可由多个进程组成，而必须至少由一个进程组成，但一个进程不能构成多个作业</li>
+</ul>
+</li>
+<li><p>进程的组成</p>
+<ul>
+<li>进程控制块（PCB）：标识进程的存在，刻画执行瞬间特征的数据机构</li>
+<li>其他组成部分：程序段、数据段、进程标识符（PID）、进程当前状态、进程队列指针、程序和数据地址，进程优先级、CPU 现场保护区、通信信息、家族联系、占有资源清单</li>
+</ul>
+</li>
+<li><p>PCB 是进程存在的唯一标志</p>
+<ul>
+<li>PCB 存在是为了保证程序的并发执行</li>
+<li>创建进程实质上是创建进程的 PCB，而撤销进程实质上是撤销进程的 PCB</li>
+<li>系统总是通过 PCB 对进程进行控制的</li>
+</ul>
+</li>
+<li><p>进程的5种基本状态：就续状态、执行状态、阻塞状态、创建状态、结束状态</p>
+<ul>
+<li>执行状态只能由就绪状态转换，而无法由阻塞状态直接转换</li>
+<li>不能从就绪状态变为阻塞状态</li>
+<li>进程状态是唯一的</li>
+</ul>
+</li>
+<li><p>进程的创建</p>
+<ul>
+<li>进程创建是通过创建原语实现的</li>
+<li>申请一个空闲 PCB，并指定唯一的 PID -&gt; 分配必要的资源 -&gt; 将新进程的PCB初始化 -&gt; 插入到就绪队列</li>
+<li>导致进程创建的事件：用户登录、作业调度和请求服务</li>
+</ul>
+</li>
+<li><p>撤销一个进程：撤销原语</p>
+<ul>
+<li>找到被撤销进程的PCB -&gt; 停止该进程的执行 -&gt; 回收被撤销进程所占用的资源 -&gt; 回收PCB</li>
+</ul>
+</li>
+<li><p>进程的阻塞与唤醒：两条低级进程通讯原语</p>
+<ul>
+<li>阻塞原语（P 原语）的功能是将进行进程由执行状态转为阻塞状态</li>
+<li>唤醒原语（V 原语）的功能是将进程由阻塞状态变为就绪状态</li>
+<li>一个进程由执行状态变为阻塞状态，是由这个进程自己调用阻塞原语去完成的</li>
+<li>进程由阻塞状态变为就绪状态，是由另一个发现者进程调用唤醒原语去实现的。一般这个发现者进程与被唤醒进程是合作的并发进程</li>
+</ul>
+</li>
+<li><p>调度是决定将系统资源分配给哪个进程，进程切换是实际分配系统资源</p>
+<ul>
+<li>进程切换一定会产生中断，但处理器模式切换不一定产生进程切换</li>
+</ul>
+</li>
+<li><p>进程的互斥与同步就是一种进程间的通信方式</p>
+<ul>
+<li>高级进程通信方式：共享存储器系、消息传递系统、管道（共享文件）通信系统</li>
+</ul>
+</li>
+</ul>
+<h4 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h4><ul>
+<li>线程是进程内一个相对独立的可调度的执行单元<ul>
+<li>内核级线程依赖于内核，一个内核级线程由于 I/O 操作而阻塞时不会影响其他线程的运行</li>
+<li>用户级线程不依赖于操作系统核心，由于操作系统内核不了解用户线程的存在，当一个线程阻塞时，整个进程必须等待</li>
+</ul>
+</li>
+<li>进程与线程<ul>
+<li>线程谁独立调度的基本单位，进程是拥有资源的基本单位</li>
+<li>线程不拥有资源，但线程可以访问其隶属进程的系统资源</li>
+<li>进程之间可以并发执行，同一进程内的多个线程之间也可以并发执行</li>
+<li>多线程之间的同步与通信非常容易实现</li>
+</ul>
+</li>
+<li>多线程模型：多对一模型，一对一模型，多对多模型（将多个用户级线程映射到多个内核级线程）</li>
+</ul>
+<h4 id="处理器的三级调度"><a href="#处理器的三级调度" class="headerlink" title="处理器的三级调度"></a>处理器的三级调度</h4><ul>
+<li>高级调度（作业调度）：从外存上处于后备状态的作业中选择一个或多个，给他们分配内存等必要资源并建立相应的进程，以便该作业具有获得竞争处理器的权利<ul>
+<li>作业调度每次要接纳多少个作业进入内存取决于多道程序的并发程度</li>
+<li>多道程序的并发程度应根据系统的规模和运算速度来决定</li>
+<li>应将哪些作业从外存调入内存取决于所采取的调度算法</li>
+</ul>
+</li>
+<li>中级调度（交换调度）：按照给定的原则和策略，将处于外存对换区中具备运行条件的进程调入内存，并将其状态修改为就绪状态，挂在就绪队列上等待</li>
+<li>低级调度（进程调度）：按照某种策略和方法，从就绪队列中选取一个进程，将处理器先分配给他<ul>
+<li>进程调度的运行频率很高</li>
+<li>作业调度的结果是为作业创造进程，而进程调度的结果是进程被执行</li>
+</ul>
+</li>
+<li>衡量调度算法的性能： CPU利用率、系统吞吐量、响应时间、周转时间<ul>
+<li>作业的周转时间 = 作业的完成时间 - 作业的提交时间</li>
+<li>平均周转时间：多个作业周转时间的平均值</li>
+<li>带权周转时间是作业周转时间与运行时间的比</li>
+</ul>
+</li>
+</ul>
+<h4 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h4><ul>
+<li>处理器分配的任务由进程调度程序完成</li>
+<li>进程调度的功能：记录系统中所有进程的有关情况以及状态特征，选择获得处理器的进程和处理器分配</li>
+<li>引起进程调度的原因<ul>
+<li>当前运行进程运行结束</li>
+<li>当前运行进程因某种原因从运行状态进入阻塞状态</li>
+<li>执行完系统调用等系统程序后返回用户进程</li>
+<li>在采用抢占调度方式的系统中，一个更高优先级的进程要求使用处理器</li>
+<li>在分时系统中分配给该进程的时间片已用完</li>
+</ul>
+</li>
+<li>不能进行进程调度的情况<ul>
+<li>处理中断的过程中</li>
+<li>在操作系统内核程序临界区中</li>
+<li>其他需要完全屏蔽中断的原子操作过程中</li>
+</ul>
+</li>
+<li>进程调度的方式：抢占方式、非抢占方式</li>
+</ul>
+<h4 id="常见调度算法"><a href="#常见调度算法" class="headerlink" title="常见调度算法"></a>常见调度算法</h4><ul>
+<li>先来先服务调度算法（作业调度、进程调度）<ul>
+<li>FCFS：按照进程进入就绪队列的先后次序来分配处理器</li>
+</ul>
+</li>
+<li>短作业优先调度算法（作业调度、进程调度）<ul>
+<li>SJF：把处理器分配给最快完成的作业或进程</li>
+</ul>
+</li>
+<li>优先级调度算法（作业调度、进程调度）<ul>
+<li>静态优先级是在创建进程时确定的，确定之后整个进程运行期间不再改变</li>
+<li>按进程类、作业的资源要求、用户类型和要求确定静态优先级</li>
+<li>动态优先级是指在创建进程时根据进程的特点及相关情况确定一个优先级</li>
+<li>根据进程占有CPU时间的长短和就绪进程等待CPU时间的长短确定动态优先级</li>
+<li>基于优先级的调度算法还可按调度方式的不同，分为非抢占优先级调度算法和抢占优先级调度算法</li>
+<li>在优先级相同的情况下，通常按照先来先服务或者短作业优先的顺序执行</li>
+</ul>
+</li>
+<li>时间片轮转调度算法（进程调度）<ul>
+<li>分时系统必须满足系统对响应时间的要求</li>
+<li>就绪队列中的进程数与时间片的大小成反比</li>
+<li>系统的处理能力决定时间片的大小</li>
+</ul>
+</li>
+<li>高响应比优先调度算法（作业调度）<ul>
+<li>响应比 = 作业响应时间 / 估计运行时间</li>
+<li>作业响应时间 = 作业等待时间 + 估计运行时间</li>
+</ul>
+</li>
+<li>多级反馈队列调度算法（作业调度）<ul>
+<li>时间片轮转调度算法和优先级调度算法的综合与发展</li>
+</ul>
+</li>
+</ul>
+<h4 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h4><ul>
+<li><p>互斥是间接相互制约关系，而同步是直接相互制约关系</p>
+</li>
+<li><p>只要是同类进程即为互斥关系，不同类进程即为同步关系</p>
+</li>
+<li><p>临界资源：同时仅允许一个进程使用的资源</p>
+<ul>
+<li>进入区、临界区、退出区、剩余区</li>
+<li>临界区：进程中用于访问临界资源的代码，又称临界段</li>
+<li>临界资源是必须互斥访问的资源，这种资源同时只能被一个进程所使用，但需要这种资源的进程不止一个，因此需要对使用临界资源的进程进行管理</li>
+<li>每个进程的临界区代码可以不相同</li>
+</ul>
+</li>
+<li><p>互斥的要求：空闲让进，忙则等待，有限等待，让权等待</p>
+</li>
+<li><p>互斥实现方法</p>
+<ul>
+<li>软件实现方法</li>
+<li>互斥实现的硬件方法：中断屏蔽、硬件指令</li>
+<li>硬件方法适用范围广，支持多个临界区，但不能实现让权等待</li>
+</ul>
+</li>
+</ul>
+<h4 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h4><ul>
+<li>信号量 <code>(s,q)</code> 及同步原语<ul>
+<li>整型变量 s 表示系统中某类资源的数目，q 是一个初始状态为空的队列</li>
+<li>信号量的值仅能由 P 操作（wait）操作和 V 操作（signal）操作改变，操作系统利用它的状态对进程和资源进行管理</li>
+<li> P 操作相当于申请资源，V 操作相当于释放资源</li>
+</ul>
+</li>
+<li>信号量分为整型信号量和记录型信号量（资源信号量）<ul>
+<li>记录型信号量添加了链表结构用于链接所有等待该资源的进程，解决忙等的问题</li>
+</ul>
+</li>
+<li>信号量可以用来实现进程互斥和描述前趋关系</li>
+</ul>
+<h4 id="经典同步问题"><a href="#经典同步问题" class="headerlink" title="经典同步问题"></a>经典同步问题</h4><ul>
+<li>生产者-消费者问题<ul>
+<li>P(full) / P(empty) 与 P(mutex) 的顺序不可倒，必须先对资源信号量进行 P 操作，再对互斥信号量进行 P 操作。否则会导致死锁</li>
+<li>互斥信号量就是给同类进程准备的</li>
+</ul>
+</li>
+<li>读者写者问题（许多进程共享数据区）<ul>
+<li>读者不互斥，写者必须互斥</li>
+<li>读者优先，公平情况和写者优先三种不同算法</li>
+</ul>
+</li>
+<li>哲学家进餐问题<ul>
+<li>最多允许4个哲学家同时进餐</li>
+<li>仅当一个哲学家左右两边的筷子同时可用时，他才可以拿起筷子</li>
+<li>将哲学家编号要求奇数号的哲学家先拿左边筷子，偶数号的哲学家先拿右边筷子</li>
+</ul>
+</li>
+<li>理发师问题</li>
+<li>信号量机制问题的解题步骤分析<ul>
+<li>关系分析</li>
+<li>确定临界资源</li>
+<li>整理思路</li>
+</ul>
+</li>
+<li>实现同步互斥的 P、V 操作必须成对出现，先进行 P 操作进入临界区，后进行 V 操作退出临界区</li>
+<li> P、V操作要分别紧靠临界区的头尾部</li>
+<li>通常用于互斥的信号量初值设为 1</li>
+</ul>
+<h4 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h4><ul>
+<li>管程定义了一个数据结构和能为并发进程所执行的一组操作<ul>
+<li>局部于管程的数据只能被局部于管程内的过程所访问</li>
+<li>一个进程只有通过调用管程内的过程才能进入管程访问共享数据</li>
+<li>每次仅允许一个进程在管程内执行某个内部过程，即进程互斥地通过调用内部过程进入管程</li>
+</ul>
+</li>
+<li>管程的互斥访问完全由编译程序在编译时自动添加</li>
+<li>为实现进程间的同步，管程还必须包含若干用于同步的设施<ul>
+<li>局限于管程并仅能从管程内进行访问的若干变量，用于区别各种不同的等待原因</li>
+<li>在条件变量上进行操作的两个函数过程，wait 和 signal</li>
+</ul>
+</li>
+</ul>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><ul>
+<li>死锁的概念<ul>
+<li>参死锁的进程至少有两个</li>
+<li>每个参与死锁的进程均等待资源</li>
+<li>参与死锁的进程中至少有两个进程占有资源</li>
+<li>死锁进程是系统中当前进程集合的一个子集</li>
+</ul>
+</li>
+<li>死锁产生的原因是竞争资源<ul>
+<li>一个资源是否属于可剥夺资源，完全取决于资源本身的性质</li>
+</ul>
+</li>
+<li>死锁产生的必要条件<ul>
+<li>互斥条件</li>
+<li>不剥夺条件</li>
+<li>请求于保持条件：可采用预先静态分配方法</li>
+<li>环路等待条件：可采用有序资源分配法</li>
+</ul>
+</li>
+<li>处理死锁的方法：鸵鸟算法、预防死锁、避免死锁、检测及解除死锁（被动）<ul>
+<li>死锁预防对系统加的限制条件通常很严格，对系统的并发性会产生很大的副作用</li>
+<li>死锁避免往往在资源被分配出去之前，要计算分配之后系统是否安全</li>
+</ul>
+</li>
+<li>死锁的避免<ul>
+<li>系统在进行资源分配之前，先计算资源分配的安全性（安全序列）</li>
+<li>并非所有不安全状态都是死锁状态，死锁是不安全状态的真子集</li>
+<li>银行家算法</li>
+</ul>
+</li>
+<li>死锁的检测和解除<ul>
+<li>系统资源分配图（system resource allocation graph）可定义为一个二元组</li>
+<li><code>SRAG = (V,E)</code></li>
+<li>死锁定理：不同简化顺序将得到相同的不可简化图。系统状态 S 为死锁状态的条件是当且仅当 S 状态的资源分配图是不可完全简化的</li>
+<li>死锁检测算法：available、allocation、request、临时变量（work与finish）</li>
+<li>死锁解除：剥夺资源，撤销进程，进程回退</li>
+</ul>
+</li>
+<li>进程与饿死<ul>
+<li>当等待时间给进程推进和响应带来明显影响时，发生进程饥饿</li>
+<li>当饥饿到一定程度，进程所赋予的任务即使完成也不再具有实际意义时，进程被饿死</li>
+<li>活锁：在忙时等待条件下发生的饥饿</li>
+<li>饥饿和饿死与资源分配策略有关，因而可从公平性方面考虑防止饥饿与饿死</li>
+</ul>
+</li>
+</ul>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' href="/about" rel="nofollow">
+    <img no-lazy src="https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&cdv=1&dpr=2&pid=16.1">
+    <p>Bezhuang</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：5.1k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：17分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8A/&title=操作系统（上） - Bezhuang's Blog&summary=
+ 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记上半部分，包含计算机操作系统概述、处理器管理的知识点，可供参考。下半部分笔记请访问操作系统（下）
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8A/&title=操作系统（上） - Bezhuang's Blog&summary=
+ 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记上半部分，包含计算机操作系统概述、处理器管理的知识点，可供参考。下半部分笔记请访问操作系统（下）
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8A/&title=操作系统（上） - Bezhuang's Blog&summary=
+ 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记上半部分，包含计算机操作系统概述、处理器管理的知识点，可供参考。下半部分笔记请访问操作系统（下）
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEZUlEQVR42u3aQVLEMAwEwP3/p+EFVKSR7ADVvrHESdzOwZrS58s4Mj4IwII1wIIFa4C9AvsJx0/zyy8Q3udp3tN9fpq/5gEWLFiwYMGCBQv2KuwU5On66UZVf9+6X+wBFixYsGDBggUL9hXY6otWD/bdF32alxYI2wUIWLBgwYIFCxYs2L8N2wVOC4oUflrwgAULFixYsGDBgv2fsNOGje2N6D4XLFiwYMGCBQsW7P+ATQPo6oK3Gz5OBeevd8KABQsWLFiwYMGCLcF2Rzco/mt/xx5gwYIFCxYsWLBgr8BujSf47sF7+/lbBcHje4AFCxYsWLBgwYK9AlttmOgGzlXgrSC7e78qcLuBAyxYsGDBggULFuwV2O6Be7qQ6oak87sfTBd2XHmBBQsWLFiwYMGCPQpbBewuaLqB1QVPC4BuoQMWLFiwYMGCBQv2Lmz6wOn104P49ENIg/jHdYMFCxYsWLBgwYK9Ansq2O4G6O3GiOGBfxpslysvsGDBggULFixYsEdg0waJbkNyumHbhcD2BoMFCxYsWLBgwYJ9B3YaHKcgaWEyLTymH0476AYLFixYsGDBggV7BHatUSEsJFLobuCdzm8XTmDBggULFixYsGCvwJ46SKcNFtsbuzWvXPCABQsWLFiwYMGCvQKbBtdp0L0VMG8F8FsbCxYsWLBgwYIFC/Z3waYLTgPm6kF+WkBsB/NgwYIFCxYsWLBg78JOF77dGLFVYEw3sLtBYMGCBQsWLFiwYH8XbPqi6fztYLxbAHSD7cdOGLBgwYIFCxYsWLBHYcc3bDY+fMKRbnx1/jTYBwsWLFiwYMGCBXsHNn1gupCtoLwL89Uc6XywYMGCBQsWLFiwd2HjG4ULTA/8aSDdbdyIPwCwYMGCBQsWLFiwV2DThVYBvsIxLQC6hcdWIwdYsGDBggULFizYd2CnB+9uwTENoreAqu//+H+wYMGCBQsWLFiwV2CnhUD3xaYbkoKmz4kLBLBgwYIFCxYsWLBHYacjLSimgfmpBoxPOMCCBQsWLFiwYMHehd1qzIhfpPjcNCiPA+tmQA4WLFiwYMGCBQv2d8BWF9RtjEgh44U2C5BxAwpYsGDBggULFizYV2BPB8hTgK1C5lRgDhYsWLBgwYIFC/Yd2HTh1cJh2tCxFZBvNWqABQsWLFiwYMGC/R2w3YaM7oH6VADdLVi2QMGCBQsWLFiwYMG+AzsdpwPkNIifFirdwggsWLBgwYIFCxbsXdjxgbi50DTY3i4M0sLk8X5gwYIFCxYsWLBgr8J2C4LpgXzr4H9rI8seYMGCBQsWLFiwYF+B7RYE3caKFDy9/tR8sGDBggULFixYsP8Dtvr71gamjRVb1/04DyxYsGDBggULFuyfgE0Xfio43wq0Xy8QwIIFCxYsWLBgwR5t2Jg2VnTvXy1Apo0ncSEDFixYsGDBggUL9irsVuPD9AC+3QCSBt3pBoIFCxYsWLBgwYK9A2vsDrBgwRpgwYI1wB4d34PQU2ewUUPiAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+      
+        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
+          
+            target="_blank" href="https://t.me/share/url?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8A/&text=操作系统（上） - Bezhuang's Blog"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/Java%E5%9F%BA%E7%A1%80/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Java基础编程总结</p>
+          <p class='content'>
+Java 语言是 SUN(Stanford University Network) 公司于1995年推出的一门高级编程语言，舍弃了 C 语言中容易引起错误的指针（以引用取代）、运算符重载（op...</p>
+        </a>
+      
+      
+        <a class='next' href='/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%8A/'>
+          <p class='title'>计算机网络（上）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+计算机网络是计算机专业必修的重要课程之一，与现实世界结合得相当紧密，也是考研408计算机学科专业基础综合考试中的一门课程。计算机网络学习的核心内容就是网络协议的学习。网络协议是为计算机网络中进...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-text">操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">操作系统基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">操作系统的特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E6%9C%8D%E5%8A%A1"><span class="toc-text">操作系统的功能和服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">操作系统的运行环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">操作系统的体系结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-text">进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-text">进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B"><span class="toc-text">线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E4%B8%89%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="toc-text">处理器的三级调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6"><span class="toc-text">进程调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">常见调度算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5"><span class="toc-text">同步与互斥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">信号量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98"><span class="toc-text">经典同步问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%A1%E7%A8%8B"><span class="toc-text">管程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%BB%E9%94%81"><span class="toc-text">死锁</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+		  
+		  <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="操作系统（上）";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        </div>
+        
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        
+          <div><p>Copyright © 2021 Zhihao Zhuang. All rights reserved</p>
+</div>
+        
+      
+    
+      
+        
+          <div><p><span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | </span> <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次</span></p>
+</div>
+        
+      
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.2'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='320px'
+      server='tencent'
+      type='playlist'
+      id='5192584153'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+  </footer>
+
+
+        <a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/styles/solarized-light.min.css", window.volantis.loadcss);
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+  
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>复制文本</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+        <hr id='hr-src'>
+      </li>
+      
+        <li class='navigation'>
+          <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+        </li>
+      
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://www.zhuangzhihao.top
+        
+        
+        
+        
+          id="https:wwwzhuangzhihaotop"
+        >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 返回主页
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/Bezhuang/Hexo-blog
+        
+        
+        
+        
+          id="https:githubcomBezhuangHexo-blog"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if ('true' == true && ('home,contributors,source_docs,hr,print,hr,music'||[]).includes('music')) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+
+
+<script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+	
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/issues.min.js');
+	
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
+
+
+
+
+
+  
+  
+    <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+   <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+  var checkScrollReveal = setInterval(function () {
+    if ($("#safearea").css("display")!="block") return
+    if (typeof ScrollReveal=="undefined") return
+    clearInterval(checkScrollReveal)
+	pjax_scrollrebeal();
+  }, 100)
+  });
+</script>
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5192584153';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.2';
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+  // APlayer 需要在  MetingJS 之前加载
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+  window.volantis.LoadMetingJS=0
+  var checkAPlayer = setInterval(function () {
+    if (!window.APlayer) return
+    clearInterval(checkAPlayer)
+	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
+	  window.LoadMetingJS=1
+      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
+	  }
+  }, 2500)
+
+  
+    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/aplayer.min.js');
+  
+
+</script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/valine.min.js"></script>
+
+
+<script>
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+    var valine = new Valine();
+    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI","appKey":"j5I5paEqIfWfOlCg13vU2vNq","meta":["nick","mail","link"],"requiredFields":["nick"],"enableQQ":true,"recordIP":true,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":true}, {
+      el: '#valine_container',
+      path: path,
+      placeholder: pagePlaceholder,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps,
+    }))
+  }
+  $(function () {
+    pjax_valine();
+  });
+  pjax_comment=pjax_valine;
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/app.min.js"></script>
+
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/search/hexo.min.js',setSearchService);
+	
+})
+
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+function setSearchService() {
+	listenSearch();
+	
+}
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI',
+    app_key: 'j5I5paEqIfWfOlCg13vU2vNq',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://blog.zhuangzhihao.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://blog.zhuangzhihao.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://blog.zhuangzhihao.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+ 
+	   
+	    
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/artitalk/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      
+      $("#wrapper .toggle-mode-btn").unbind('click');
+      
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+       
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+          pjax_scrollrebeal();
+        
+        if (typeof IssuesAPI == "undefined") {
+          loadIssuesJS();
+        }
+        
+          pjax_initCopyCode();
+        
+		
+          try{pjax_comment();} catch (e) {}
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+ 
+	  
+    </div>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!--对话-->
+<script type="text/javascript" src="https://popupsmart.com/freechat.js"></script><script> window.start.init({ title: "Hi there ✌️", message: "How may I help you? Just send me a message now to get assistance.", color: "#1C86FA", position: "right", placeholder: "Enter your message", withText: "Write with", viaWhatsapp: "Or write us directly via Whatsapp", gty: "Go to your", awu: "and write us", connect: "Connect now", button: "Write us", device: "everywhere", logo: "https://d2r80wdbkwti6l.cloudfront.net/Z3rWix3AvX8njshTNh20uLCi6x6r1TlR.jpg", person: "https://d2r80wdbkwti6l.cloudfront.net/0Mil3unJ0Por6LywOeq6jDv4eaNGGf5A.jpg", services: [{"name":"whatsapp","content":"+8613818993049"},{"name":"mail","content":"bezhuang@outlook.com"}]})</script>
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--浏览器搞笑标题-->
+<!--<script type="text/javascript" src="/js/FunnyTitle.js"></script>-->
+<!-- 数字雨 -->
+<canvas id="canvas" width="1440" height="900" ></canvas>
+<script type="text/javascript" src="/js/DigitalRain.js"></script>
