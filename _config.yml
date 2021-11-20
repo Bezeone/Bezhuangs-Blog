@@ -105,8 +105,6 @@ theme: volantis
 # hexo-blog-encrypt
 encrypt:
   enable: true
-  default_abstract: 这是一篇加密文章，请输入密码查看
-  default_message: 输入密码。。。
 
 #Feed Atom
 feed:
@@ -127,8 +125,8 @@ live2d:
     use: live2d-widget-model-shizuku
   display:
     position: left
-    width: 200
-    height: 400
+    width: 150
+    height: 300
   mobile:
     show: false
 

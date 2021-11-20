@@ -98,7 +98,7 @@ article:
       # ----------------
       # 参考资料、相关资料等 (for layout: post/docs)
       references:
-        title: 参考资料
+        title: References
         icon: fas fa-quote-left
         # 在 front-matter 中:
         #   references:
@@ -119,10 +119,10 @@ article:
       # 版权声明组件 (for layout: post)
       copyright:
         enable: true
-        permalink: '本文永久链接是：'
+        permalink: 本文永久地址：'
         content:
-          - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
-          - permalink
+          - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+          # - permalink
       # ----------------
       # 打赏组件 (for layout: post)
       donate:
@@ -345,7 +345,7 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, copyright, br, analytics]
+  layout: [br, analytics, aplayer]
   social:
     - avatar: fa-id-card-o
       url: https://zhuangzhihao.top
@@ -367,12 +367,12 @@ site_footer:
   source: https://github.com/volantis-x/volantis-docs/
   # analytics using leancloud
   analytics: >
-    <span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
-    <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
+    <span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | </span>
+    <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次</span>
   # site copyright
-  copyright: Copyright © 2020-2021 Bezhuang. All rights reserved
+  copyright: Copyright © Zhihao Zhuang. All rights reserved
   # You can add your own property here. (Support markdown, for example: br: '<br>')
-  br: 沪ICP备2021008938号 <br> 由阿里云和Github Pages提供技术支持
+  br: Copyright © 2021 Zhihao Zhuang. All rights reserved
 ############################### Site Footer ############################### > end
 
 ############################### Plugins ############################### > start
@@ -396,7 +396,7 @@ plugins:
   # 图片懒加载
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
-    enable: true
+    enable: false
     js: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js
     onlypost: false
     loadingImg: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg
@@ -545,7 +545,7 @@ plugins:
     pageSize: 50 #每页说说的显示数量
     shuoPla: 在编辑说说的输入框中的占位符
     avatarPla: 自定义头像url的输入框的占位符
-    motion: 1 #加载动画的开关，1为开，0为关，默认为开
+    motion: 0 #加载动画的开关，1为开，0为关，默认为开
     bgImg: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg #说说输入框背景图片url
     # color1: #说说背景颜色1&按钮颜色1
     # color2: #说说背景颜色2&按钮颜色2
@@ -555,7 +555,7 @@ plugins:
   # Tidio聊天功能
   # https://www.tidio.com/
   tidio:
-    enable: true
+    enable: false
     id: tu8j8vmfuovtkhsj4lgr7sub986gd1ku
 
 ############################### Plugins ############################### > end
@@ -650,9 +650,9 @@ color_scheme:
     text: '#444'
 
     # 区块和代码块背景色
-    block: '#f6f6f6'
+    block: '#B9C4C9'
     # 代码块高亮时的背景色
-    codeblock: '#546E7A'
+    codeblock: '#B9C4C9'
     # 行内代码颜色
     inlinecode: '#F50057'
 
