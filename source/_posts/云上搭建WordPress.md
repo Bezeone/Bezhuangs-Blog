@@ -1,7 +1,7 @@
 ---
 title: 搭建LAMP环境安装部署Wordpress
-date: 2021-03-29
-updated: 2021-03-29
+date: 2021-05-01
+updated: 2021-05-29
 tags: [云服务器, 博客]
 categories: 云计算与应用开发
 references:

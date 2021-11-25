@@ -1,9 +1,9 @@
 ---
 title: 使用Python程序画画
-date: 2021-05-23
-updated: 2021-05-23
+date: 2021-06-01
+updated: 2021-06-01
 tags: [Python]
-categories: 实战项目
+categories: 编程与开发
 references:
   - title: Posts from Ankur Gajurel
     url: https://copyassignment.com/author/ankur/
