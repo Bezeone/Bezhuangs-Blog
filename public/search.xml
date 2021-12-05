@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>微分学重点</title>
+      <link href="%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/"/>
+      <url>%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点的补充，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。</p></blockquote><a id="more"></a><h3 id="极限和连续"><a href="#极限和连续" class="headerlink" title="极限和连续"></a>极限和连续</h3><ul><li>极限定义：当 $n\rightarrow \infty$ 时，$a_{n}\rightarrow A$</li><li>洛必达法则：假设 $f(x)$ 和 $g(x)$ 都收敛于 0<ul><li>$\dfrac{f\left( x\right) }{g\left( x\right) }=\dfrac{\dfrac{\Delta f}{\Delta x}}{\dfrac{\Delta g}{\Delta x}}\rightarrow \dfrac{s}{t}$</li></ul></li><li>可导必然连续，连续不一定可导</li><li>连续定义：对任取 $\varepsilon$，都能找到 $\delta$，满足如果 $\left| x-a\right| &lt;\delta$，则 $\left| f\left( x\right) -f\left( a\right) \right| &lt;\varepsilon$</li></ul><h3 id="sinx-和-cosx-的导数"><a href="#sinx-和-cosx-的导数" class="headerlink" title="$sinx$ 和 $cosx$ 的导数"></a>$sinx$ 和 $cosx$ 的导数</h3><ul><li></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> OpenCourseWare </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微积分重点</title>
+      <link href="%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B9/"/>
+      <url>%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B9/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>微积分重点（Highlights of Calculus）是 MIT 数学教授 Gilbert Strang 对于微积分中的精华和重点出的一个生动、简短的课程，帮助我们重新审视微积分，课程主要涉及单变量微积分的总览，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。</p></blockquote><a id="more"></a><h3 id="微积分总览"><a href="#微积分总览" class="headerlink" title="微积分总览"></a>微积分总览</h3><ul><li>微积分是函数（1）和函数（2）之间的桥梁<ul><li>距离 $f\left( t\right)$ 、速度 $\dfrac{df}{dt}$</li><li>高度 $y\left( x\right)$ 、斜率 $\dfrac{dy}{dx}$</li></ul></li><li>匀速情况下，$速度=\dfrac{距离}{时间}$，即 $斜率=\dfrac{垂直}{水平}$，即 $s=\dfrac{f}{t}$<ul><li>若要求中间一段时间或距离的速度，$s=\dfrac{\Delta f}{\Delta t}$</li></ul></li><li>匀变速情况下，函数图像均为曲线<ul><li>微分学就是已知 $距离-时间$ 函数求 $速度-时间$ 函数</li><li>积分学就是已知 $速度-时间$ 函数求 $距离-时间$ 函数</li><li> $速度-时间$ 函数 $s=at$ 下面积 $\dfrac{1}{2}t\left( at\right)$ 就是 $距离-时间$ 函数 $\dfrac{1}{2}at^{2}$</li><li>速度 $s=\dfrac{df}{dt}$ 就是 $f=\int s\left( t\right) dt$ 的导数</li></ul></li></ul><h3 id="导数总览"><a href="#导数总览" class="headerlink" title="导数总览"></a>导数总览</h3><ul><li>已知距离 $f\left( t\right)$  如何求速度 $\dfrac{df}{dt}$，即已知高度 $y\left( x\right)$  如何求斜率 $\dfrac{dy}{dx}$</li><li>三个重要函数的斜率<ul><li>幂函数 $y=x^{n}$ ：$\dfrac{dy}{dx}=nx^{n-1}$</li><li>三角函数 $y=\sin x$ ：$\dfrac{dy}{dx}=\cos x$</li><li>指数函数 $y=e^{x}$ ：$\dfrac{dy}{dx}=e^{x}$</li></ul></li><li>$y=x^2$ 斜率的含义<ul><li>$平均斜率\dfrac{\left( \Delta x\right) ^{2}}{\Delta x}$，即 $\dfrac{\Delta y}{\Delta x}$ $\rightarrow$ $瞬时斜率\dfrac{dy}{dx}$</li><li>$\dfrac{\Delta y}{\Delta x}=\dfrac{\left( x+\Delta x\right) ^{2}}{\Delta x}\dfrac{-x^{2}}{}=\dfrac{2xax+\left( \Delta x\right) ^{2}}{\Delta x}=2x+\Delta x$</li><li>求导：$\dfrac{dy}{dx}=\lim\dfrac{\Delta y}{\Delta x}=2x$</li></ul></li><li>任意 $x$ 处，$y=\sin x 的斜率\rightarrow \dfrac{dy}{dx}=\cos x$</li></ul><h3 id="极值及二阶导数"><a href="#极值及二阶导数" class="headerlink" title="极值及二阶导数"></a>极值及二阶导数</h3><ul><li><p>二阶导数：导数的导数</p><ul><li>一阶导数用于确认极值点，二阶导数表明曲线弯曲方向</li></ul></li><li><p>二阶导数的例子：加速度</p><ul><li>距离 $f\left( t\right)$ 、速度 $\dfrac{df}{dt}$、加速度 $\dfrac{d^{2}f}{dt^{2}}$</li><li>高度 $y=x^2$ 、斜率 $\dfrac{dy}{dx}=2x$、弯曲性 $\dfrac{d^{2}f}{dt^{2}}=2$</li><li>$sinx$ 的二阶导数为 $-sinx$</li></ul></li><li><p>凸函数和凹函数：$f’’ &gt;0$ 为凸，表示向上弯曲，相对的凹为 $f’’ &lt;0$</p></li><li><p>拐点：二阶导数为 0 的点，表示弯曲方向改变</p></li><li><p>对于函数 $y=x^{3}-x^{2}$ $\rightarrow$ $y’=3x^{2}-2x$，$y’’=6x-2$</p><ul><li>求极值点：令 $y’=3x^{2}-2x=0$，$x= 0或x=\dfrac{2}{3}$</li><li>$x=0$ 处，二阶导数为负，取局部最大值（极大值）</li><li>$x=\dfrac{2}{3}$ 处，二阶导数为正，取局部最小值（极小值）</li></ul></li><li><p>应用：上班的最短时间</p><ul><li><p>设高速总长 $b$，家垂直上高速距离为 $a$，没走的高速距离为 $x$</p></li><li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B901.png" style="zoom: 33%;"></li><li><p>$时间t=\dfrac{b-x}{60}+\dfrac{\sqrt{a^{2}+x^{2}}}{30}$</p></li><li><p>取时间方程的导数，然后令导数为 0 来求最小值</p></li><li><p>$f’=-\dfrac{1}{60}+\dfrac{1}{30}\cdot \dfrac{1}{2}\cdot \dfrac{2x}{\sqrt{a^{2}+x^{2}}}=0$ $\rightarrow$ $x=\dfrac{a}{\sqrt{3}}$</p></li></ul></li><li><p>最值的一般求法：比较所有驻点（$f’=0$）处及边界点函数值，得到最大或最小值即函数最值</p></li><li><p>$f’’$ 的符号可通过 $f’$ 的单调性求出：$x&gt;0$ 时，$f’(x)&gt;f’(0)$ ，斜率变化率为正，$f’’&gt;0$</p></li></ul><h3 id="指数函数-e-x"><a href="#指数函数-e-x" class="headerlink" title="指数函数 $e^x$"></a>指数函数 $e^x$</h3><ul><li>最简单的微分方程：$y=\dfrac{dy}{dx}$</li><li>指数函数：通过微积分构造的函数<ul><li>重要性质一：指数函数的导数就是其自身</li><li>函数初始点：$y=e^{0}=1$</li><li>$\dfrac{x^{n}}{n!}$ 斜率的导数为 $\dfrac{x^{n-1}}{\left( n-1\right) !}$</li><li>指数级数：$e^{x}=1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+\ldots +\dfrac{x^{n}}{n!}+\ldots$</li><li>重要性质二：$e^{x}\cdot e^{X}=e^{x+X}$</li><li>$e$ 等于 $x=1$ 时指数级数的值：$e=1+1+\dfrac{1}{2}+\dfrac{1}{6}+\ldots \dfrac{1}{n!}+\ldots\approx 2.71828\ldots$</li></ul></li><li>指数函数的图像<ul><li>由重要性质二可得：$e^{-x}=\dfrac{1}{e^{x}}$</li><li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B902.png" style="zoom:50%;"></li></ul></li><li>应用：计算存款复利<ul><li>假设利率为 100%，1 美元存一年得到 2 美元或更多</li><li>将一年分为 n 份付利息，得到 $\left( 1+\dfrac{1}{n}\right) ^{n}$，$n\rightarrow \infty$ 时最终趋近于 $e$</li><li>解常微分方程：$\dfrac{dy}{dx}=cy$ $\rightarrow$ $y\left( x\right) =e^{cx}$</li></ul></li></ul><h3 id="积分总览"><a href="#积分总览" class="headerlink" title="积分总览"></a>积分总览</h3><ul><li>函数二 $\dfrac{dy}{dx}=nx^{n-1}$ 是函数一 $y=x^{n}$ 的导数</li><li>函数一 $y=\dfrac{x^{n+1}}{n+1}$ 是函数二 $\dfrac{dy}{dx}=x^{n}$ 的积分</li><li>求原函数：$y\left( x\right) =\int s\left( x\right) dx$</li><li>求积分方法A：反过来看什么函数的导数能得到要积分的函数</li><li>例：通过代数方法求函数一<ul><li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B903.png" style="zoom:67%;"></li><li>相加求和：$\sum \Delta y=y_{终}-y_{始}$</li></ul></li><li>例：通过微积分方法求函数一<ul><li>同时乘除 $\Delta x$：$\sum \left( \dfrac{\Delta y}{\Delta x}\right) \Delta x=y_{终}-y_{始}$</li><li>在 $\Delta x\rightarrow 0$ 的极限情况下，求和转化为积分：$\int \dfrac{dy}{dx}dx$</li></ul></li><li>求积分方法B：$积分=函数一=函数二图像下的面积$<ul><li>斜率为 $s=2-2x$，对应的高度 $y=2x-x^2$</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> OpenCourseWare </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Machine Learning with Python</title>
       <link href="Machine-Learning-with-Python/"/>
       <url>Machine-Learning-with-Python/</url>

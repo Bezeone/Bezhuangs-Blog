@@ -6,7 +6,7 @@
   <link href="http://blog.zhuangzhihao.top/atom.xml" rel="self"/>
   
   <link href="http://blog.zhuangzhihao.top/"/>
-  <updated>2021-12-14T16:00:00.000Z</updated>
+  <updated>2021-12-10T16:00:00.000Z</updated>
   <id>http://blog.zhuangzhihao.top/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微分学重点</title>
+    <link href="http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/"/>
+    <id>http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/</id>
+    <published>2021-12-04T16:00:00.000Z</published>
+    <updated>2021-12-10T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点的补充，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。</p></blockquote><a id="more"></a><h3 id="极限和连续"><a href="#极限和连续" class="headerlink" title="极限和连续"></a>极限和连续</h3><ul><li>极限定义：当 $n\rightarrow \infty$ 时，$a_{n}\rightarrow A$</li><li>洛必达法则：假设 $f(x)$ 和 $g(x)$ 都收敛于 0<ul><li>$\dfrac{f\left( x\right) }{g\left( x\right) }=\dfrac{\dfrac{\Delta f}{\Delta x}}{\dfrac{\Delta g}{\Delta x}}\rightarrow \dfrac{s}{t}$</li></ul></li><li>可导必然连续，连续不一定可导</li><li>连续定义：对任取 $\varepsilon$，都能找到 $\delta$，满足如果 $\left| x-a\right| &lt;\delta$，则 $\left| f\left( x\right) -f\left( a\right) \right| &lt;\varepsilon$</li></ul><h3 id="sinx-和-cosx-的导数"><a href="#sinx-和-cosx-的导数" class="headerlink" title="$sinx$ 和 $cosx$ 的导数"></a>$sinx$ 和 $cosx$ 的导数</h3><ul><li></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点的补充，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="http://blog.zhuangzhihao.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="OpenCourseWare" scheme="http://blog.zhuangzhihao.top/tags/OpenCourseWare/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微积分重点</title>
+    <link href="http://blog.zhuangzhihao.top/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B9/"/>
+    <id>http://blog.zhuangzhihao.top/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B9/</id>
+    <published>2021-11-20T16:00:00.000Z</published>
+    <updated>2021-12-04T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>微积分重点（Highlights of Calculus）是 MIT 数学教授 Gilbert Strang 对于微积分中的精华和重点出的一个生动、简短的课程，帮助我们重新审视微积分，课程主要涉及单变量微积分的总览，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。</p></blockquote><a id="more"></a><h3 id="微积分总览"><a href="#微积分总览" class="headerlink" title="微积分总览"></a>微积分总览</h3><ul><li>微积分是函数（1）和函数（2）之间的桥梁<ul><li>距离 $f\left( t\right)$ 、速度 $\dfrac{df}{dt}$</li><li>高度 $y\left( x\right)$ 、斜率 $\dfrac{dy}{dx}$</li></ul></li><li>匀速情况下，$速度=\dfrac{距离}{时间}$，即 $斜率=\dfrac{垂直}{水平}$，即 $s=\dfrac{f}{t}$<ul><li>若要求中间一段时间或距离的速度，$s=\dfrac{\Delta f}{\Delta t}$</li></ul></li><li>匀变速情况下，函数图像均为曲线<ul><li>微分学就是已知 $距离-时间$ 函数求 $速度-时间$ 函数</li><li>积分学就是已知 $速度-时间$ 函数求 $距离-时间$ 函数</li><li> $速度-时间$ 函数 $s=at$ 下面积 $\dfrac{1}{2}t\left( at\right)$ 就是 $距离-时间$ 函数 $\dfrac{1}{2}at^{2}$</li><li>速度 $s=\dfrac{df}{dt}$ 就是 $f=\int s\left( t\right) dt$ 的导数</li></ul></li></ul><h3 id="导数总览"><a href="#导数总览" class="headerlink" title="导数总览"></a>导数总览</h3><ul><li>已知距离 $f\left( t\right)$  如何求速度 $\dfrac{df}{dt}$，即已知高度 $y\left( x\right)$  如何求斜率 $\dfrac{dy}{dx}$</li><li>三个重要函数的斜率<ul><li>幂函数 $y=x^{n}$ ：$\dfrac{dy}{dx}=nx^{n-1}$</li><li>三角函数 $y=\sin x$ ：$\dfrac{dy}{dx}=\cos x$</li><li>指数函数 $y=e^{x}$ ：$\dfrac{dy}{dx}=e^{x}$</li></ul></li><li>$y=x^2$ 斜率的含义<ul><li>$平均斜率\dfrac{\left( \Delta x\right) ^{2}}{\Delta x}$，即 $\dfrac{\Delta y}{\Delta x}$ $\rightarrow$ $瞬时斜率\dfrac{dy}{dx}$</li><li>$\dfrac{\Delta y}{\Delta x}=\dfrac{\left( x+\Delta x\right) ^{2}}{\Delta x}\dfrac{-x^{2}}{}=\dfrac{2xax+\left( \Delta x\right) ^{2}}{\Delta x}=2x+\Delta x$</li><li>求导：$\dfrac{dy}{dx}=\lim\dfrac{\Delta y}{\Delta x}=2x$</li></ul></li><li>任意 $x$ 处，$y=\sin x 的斜率\rightarrow \dfrac{dy}{dx}=\cos x$</li></ul><h3 id="极值及二阶导数"><a href="#极值及二阶导数" class="headerlink" title="极值及二阶导数"></a>极值及二阶导数</h3><ul><li><p>二阶导数：导数的导数</p><ul><li>一阶导数用于确认极值点，二阶导数表明曲线弯曲方向</li></ul></li><li><p>二阶导数的例子：加速度</p><ul><li>距离 $f\left( t\right)$ 、速度 $\dfrac{df}{dt}$、加速度 $\dfrac{d^{2}f}{dt^{2}}$</li><li>高度 $y=x^2$ 、斜率 $\dfrac{dy}{dx}=2x$、弯曲性 $\dfrac{d^{2}f}{dt^{2}}=2$</li><li>$sinx$ 的二阶导数为 $-sinx$</li></ul></li><li><p>凸函数和凹函数：$f’’ &gt;0$ 为凸，表示向上弯曲，相对的凹为 $f’’ &lt;0$</p></li><li><p>拐点：二阶导数为 0 的点，表示弯曲方向改变</p></li><li><p>对于函数 $y=x^{3}-x^{2}$ $\rightarrow$ $y’=3x^{2}-2x$，$y’’=6x-2$</p><ul><li>求极值点：令 $y’=3x^{2}-2x=0$，$x= 0或x=\dfrac{2}{3}$</li><li>$x=0$ 处，二阶导数为负，取局部最大值（极大值）</li><li>$x=\dfrac{2}{3}$ 处，二阶导数为正，取局部最小值（极小值）</li></ul></li><li><p>应用：上班的最短时间</p><ul><li><p>设高速总长 $b$，家垂直上高速距离为 $a$，没走的高速距离为 $x$</p></li><li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B901.png" style="zoom: 33%;"></li><li><p>$时间t=\dfrac{b-x}{60}+\dfrac{\sqrt{a^{2}+x^{2}}}{30}$</p></li><li><p>取时间方程的导数，然后令导数为 0 来求最小值</p></li><li><p>$f’=-\dfrac{1}{60}+\dfrac{1}{30}\cdot \dfrac{1}{2}\cdot \dfrac{2x}{\sqrt{a^{2}+x^{2}}}=0$ $\rightarrow$ $x=\dfrac{a}{\sqrt{3}}$</p></li></ul></li><li><p>最值的一般求法：比较所有驻点（$f’=0$）处及边界点函数值，得到最大或最小值即函数最值</p></li><li><p>$f’’$ 的符号可通过 $f’$ 的单调性求出：$x&gt;0$ 时，$f’(x)&gt;f’(0)$ ，斜率变化率为正，$f’’&gt;0$</p></li></ul><h3 id="指数函数-e-x"><a href="#指数函数-e-x" class="headerlink" title="指数函数 $e^x$"></a>指数函数 $e^x$</h3><ul><li>最简单的微分方程：$y=\dfrac{dy}{dx}$</li><li>指数函数：通过微积分构造的函数<ul><li>重要性质一：指数函数的导数就是其自身</li><li>函数初始点：$y=e^{0}=1$</li><li>$\dfrac{x^{n}}{n!}$ 斜率的导数为 $\dfrac{x^{n-1}}{\left( n-1\right) !}$</li><li>指数级数：$e^{x}=1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+\ldots +\dfrac{x^{n}}{n!}+\ldots$</li><li>重要性质二：$e^{x}\cdot e^{X}=e^{x+X}$</li><li>$e$ 等于 $x=1$ 时指数级数的值：$e=1+1+\dfrac{1}{2}+\dfrac{1}{6}+\ldots \dfrac{1}{n!}+\ldots\approx 2.71828\ldots$</li></ul></li><li>指数函数的图像<ul><li>由重要性质二可得：$e^{-x}=\dfrac{1}{e^{x}}$</li><li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B902.png" style="zoom:50%;"></li></ul></li><li>应用：计算存款复利<ul><li>假设利率为 100%，1 美元存一年得到 2 美元或更多</li><li>将一年分为 n 份付利息，得到 $\left( 1+\dfrac{1}{n}\right) ^{n}$，$n\rightarrow \infty$ 时最终趋近于 $e$</li><li>解常微分方程：$\dfrac{dy}{dx}=cy$ $\rightarrow$ $y\left( x\right) =e^{cx}$</li></ul></li></ul><h3 id="积分总览"><a href="#积分总览" class="headerlink" title="积分总览"></a>积分总览</h3><ul><li>函数二 $\dfrac{dy}{dx}=nx^{n-1}$ 是函数一 $y=x^{n}$ 的导数</li><li>函数一 $y=\dfrac{x^{n+1}}{n+1}$ 是函数二 $\dfrac{dy}{dx}=x^{n}$ 的积分</li><li>求原函数：$y\left( x\right) =\int s\left( x\right) dx$</li><li>求积分方法A：反过来看什么函数的导数能得到要积分的函数</li><li>例：通过代数方法求函数一<ul><li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B903.png" style="zoom:67%;"></li><li>相加求和：$\sum \Delta y=y_{终}-y_{始}$</li></ul></li><li>例：通过微积分方法求函数一<ul><li>同时乘除 $\Delta x$：$\sum \left( \dfrac{\Delta y}{\Delta x}\right) \Delta x=y_{终}-y_{始}$</li><li>在 $\Delta x\rightarrow 0$ 的极限情况下，求和转化为积分：$\int \dfrac{dy}{dx}dx$</li></ul></li><li>求积分方法B：$积分=函数一=函数二图像下的面积$<ul><li>斜率为 $s=2-2x$，对应的高度 $y=2x-x^2$</li></ul></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;微积分重点（Highlights of Calculus）是 MIT 数学教授 Gilbert Strang 对于微积分中的精华和重点出的一个生动、简短的课程，帮助我们重新审视微积分，课程主要涉及单变量微积分的总览，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="http://blog.zhuangzhihao.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="OpenCourseWare" scheme="http://blog.zhuangzhihao.top/tags/OpenCourseWare/"/>
+    
+  </entry>
   
   <entry>
     <title>Machine Learning with Python</title>
@@ -431,56 +477,6 @@
     
     
     <category term="Python" scheme="http://blog.zhuangzhihao.top/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IntelliJ IDEA的配置与使用总结</title>
-    <link href="http://blog.zhuangzhihao.top/IDEA%E9%85%8D%E7%BD%AE/"/>
-    <id>http://blog.zhuangzhihao.top/IDEA%E9%85%8D%E7%BD%AE/</id>
-    <published>2021-05-19T16:00:00.000Z</published>
-    <updated>2021-08-31T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>IntelliJ IDEA 被公认为是最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、Ant、JUnit、CVS 整合、代码审查、创新的GUI 设计等方面的功能可以说是超常的。相较于 Eclipse 而言，IDEA 增加了强大的整合能力、好用的快捷键和代码模板以及精准搜索，一些新的特性非常有必要学习熟悉。我目前使用的是 IDEA Ultimate 2021.2 版本，本篇笔记也是对最新版 IDEA 项目的创建、模板的使用、断点调试、数据库的关联、插件的下载、Maven及版本控制工具的配置等内容的一些总结。</p></blockquote><a id="more"></a><h3 id="安装目录"><a href="#安装目录" class="headerlink" title="安装目录"></a>安装目录</h3><ul><li><code>bin</code>：容器，执行文件和启动参数等<ul><li><code>idea.exe.vmoptions</code>：VM 配置文件</li><li><code>idea.properties</code>：IDEA 属性配置文件</li></ul></li><li><code>help</code>：快捷键文档和其他帮助文档</li><li><code>jre64</code>：64 位 java 运行环境 </li><li><code>lib</code>：IDEA 依赖的类库 </li><li><code>license</code>：各个插件许可 </li><li><code>plugin</code>：插件</li></ul><h3 id="设置目录"><a href="#设置目录" class="headerlink" title="设置目录"></a>设置目录</h3><h4 id="config-目录"><a href="#config-目录" class="headerlink" title="config 目录"></a>config 目录</h4><ul><li>IDE 主要配置功能、自定义的代码模板、自定义的文件模板、自定义的快捷键、Project 的 tasks 记录等个性化配置</li></ul><h4 id="system-目录"><a href="#system-目录" class="headerlink" title="system 目录"></a>system 目录</h4><ul><li>缓存、索引、容器文件输出等</li></ul><h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><ul><li>IntelliJ IDEA 没有类似 Eclipse 的工作空间的概念（ Workspaces），最大单元就是 Project</li><li>Eclipse 中 Workspace 相当于 IDEA 中的 Project</li><li>Project 下的 <code>src</code> 类似于 Eclipse 下的 <code>src</code> 目录，用于存放代码</li><li>Project 下的 <code>.idea</code> 和 <code>projectname.iml</code> 文件都是 IDEA 工程特有的，类似于 Eclipse 工程下的 <code>.settings</code>、<code>.classpath</code>、<code>.project</code> 等</li></ul><h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><ul><li>Eclipse 中 Project 相当于 IDEA 中的 Module</li><li>在 IntelliJ IDEA 中 Project 是最顶级的级别，次级别是 Module</li><li>一个 Project 可以有多个 Module。目前主流的大型项目都是分布式部署的， 结构都是类似这种多 Module 结构</li></ul><h3 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h3><ul><li><p>Editor -&gt; General</p><ul><li>Change font size with <code>Ctrl</code> + Mouse Wheel</li></ul></li><li><p>Editor -&gt; General -&gt; Auto Import</p><ul><li><p>Add unambiguous imports on the fly</p></li><li><p>Optimize imports on the fly</p></li></ul></li><li><p>Editor -&gt; General -&gt; Appearance</p><ul><li>Show line numbers</li><li>Show method separators</li></ul></li><li><p>Editor -&gt; General -&gt; Code Completion</p><ul><li>取消 Match Case</li></ul></li><li><p>Editor -&gt; General -&gt; Editor Tabs</p><ul><li>取消 Show tabs in one row </li></ul></li><li><p>Editor -&gt; File and Code Templates -&gt; Includes</p><pre><code class="java">/** @author Bezhuang@create $&#123;YEAR&#125;-$&#123;MONTH&#125;-$&#123;DAY&#125; $&#123;TIME&#125; */ </code></pre></li><li><p>Editor -&gt; File Encodings</p><ul><li>Global / Project / Default encoding: <code>UTF-8</code></li><li>Transparent native-to-ascii conversion</li></ul></li><li><p>Build, Execution, Deployment -&gt; Compiler</p><ul><li>Build project automatically（如果电脑带不动取消）</li><li>Compile independent modules in parallel</li></ul></li></ul><h3 id="Keymap"><a href="#Keymap" class="headerlink" title="Keymap"></a>Keymap</h3><table><thead><tr><th>快捷键</th><th>实现效果</th></tr></thead><tbody><tr><td>Ctrl + X</td><td>删除当前行</td></tr><tr><td>Ctrl +D</td><td>复制当前行</td></tr><tr><td>Alt+Insert（右键Generate）</td><td>get、set方法，构造函数等</td></tr><tr><td>Ctrl+Alt+T</td><td><code>try catch</code>（Alt+enter选择）</td></tr><tr><td>CTRL+ALT+T</td><td>把选中的代码放在 <code>TRY&#123;&#125;</code> <code>IF&#123;&#125;</code> <code>ELSE&#123;&#125;</code> 里</td></tr><tr><td>Ctr+shift+U</td><td>大小写之间转化</td></tr><tr><td>ALT+回车</td><td>导入包，自动修正</td></tr><tr><td>CTRL+ALT+L</td><td>格式化代码</td></tr><tr><td>CTRL+ALT+I</td><td>自动缩进</td></tr><tr><td>CTRL+E</td><td>最近更改的代码</td></tr><tr><td>Alt + 左右键</td><td>多窗口</td></tr><tr><td>Ctrl + 鼠标点击</td><td>快速找到成员变量的出处</td></tr><tr><td>Shift+F6</td><td>重构/重命名 (包、类、方法、变量、甚至注释等)</td></tr><tr><td>CTRL+Q</td><td>查看当前方法的声明</td></tr><tr><td>Ctrl+Alt+V</td><td><code>new 对象();</code>（自动创建变量）</td></tr><tr><td>Ctrl+O</td><td>重写方法</td></tr><tr><td>Ctrl+I</td><td>实现方法</td></tr><tr><td>ALT+/</td><td>代码提示</td></tr><tr><td>Ctrl+Shift+R</td><td>在当前项目中替换指定内容</td></tr><tr><td>Ctrl+E</td><td>最近编辑的文件列表</td></tr><tr><td>Ctrl+P</td><td>显示方法参数信息</td></tr><tr><td>Ctrl+Shift+Insert</td><td>查看历史复制记录</td></tr></tbody></table><h3 id="Templates"><a href="#Templates" class="headerlink" title="Templates"></a>Templates</h3><ul><li><p>Live Templates 可以自定义，而 Postfix Completion 不可以</p></li><li><p>psvm -&gt; <code>public static void main(String[] args)</code></p></li><li><p>sout -&gt; <code>System.out.println()</code> </p><ul><li>soutp -&gt; <code>System.out.println(&quot;方法形参名 = &quot; + 形参名);</code></li><li>soutv -&gt; <code>System.out.println(&quot;变量名 = &quot; + 变量);</code></li><li>soutm -&gt; <code>System.out.println(&quot;当前类名.当前方法&quot;);</code></li><li>“abc”.sout -&gt; <code>System.out.println(&quot;abc&quot;);</code></li></ul></li><li><p>fori -&gt; for 循环</p><ul><li>iter -&gt; 增强 for 循环</li><li>itar -&gt; 普通 for 循环</li></ul></li><li><p>list -&gt; <code>List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code></p><ul><li>list.for -&gt; <code>for(String s:list)&#123;&#125;</code></li></ul></li></ul><ul><li><p>list.fori -&gt; 正序遍历</p></li><li><p>list.forr -&gt; 倒序遍历</p></li><li><p>ifn -&gt; <code>if(xxx = null)</code></p><ul><li>inn -&gt; <code>if(xxx != null)</code></li><li>xxx.nn</li><li>xxx.null</li></ul></li><li><p>prsf -&gt; <code>private static final</code></p><ul><li>psf -&gt; <code>public static final</code></li><li>psfi -&gt; <code>public static final int</code></li><li>psfs -&gt; <code>public static final String</code></li></ul></li></ul><h3 id="创建-Java-Web"><a href="#创建-Java-Web" class="headerlink" title="创建 Java Web"></a>创建 Java Web</h3><ul><li>Module 右键 -&gt; add Framework Support</li><li>配置本地 Tomcat 环境变量<ul><li>系统环境变量中新建 <code>CATALINA_HOME</code> 环境变量</li><li>修改 <code>Path</code> ： <code>%CATALINA_HOME%\lib</code>、<code>%CATALINA_HOME%\bin</code>、<code>%CATALINA_HOME%\lib\servlet-api.jar</code></li><li>Tomcat 文件夹下打开 Terminal：<code>catalina run</code> 启动 Tomcat</li></ul></li></ul><h3 id="关联数据库"><a href="#关联数据库" class="headerlink" title="关联数据库"></a>关联数据库</h3><ul><li>IDEA 的 Database 对于常使用的 ORM 框架，如 Hibernate、 Mybatis有很好的支持，比如配置好了 Database 之后，IDEA 会自动识别 domain 对象与数据表的关系，也可以通过 Database 的数据表直接生成 domain 对象等</li></ul><h3 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h3><ul><li>IntelliJ IDEA 对版本控制的支持是以插件化的方式来实现的</li><li>IntelliJ IDEA 自带了 Github 插件，方便 Checkout 和管理 Github 项目</li><li>File -&gt; Setting -&gt; VCS (version control system)</li><li>VCS -&gt; Get from Version Control</li></ul><h3 id="断点调试"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试</h3><h4 id="Debug-的设置"><a href="#Debug-的设置" class="headerlink" title="Debug 的设置"></a>Debug 的设置</h4><ul><li>File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Debugger<ul><li>Java -&gt; Transport: Shared memory</li></ul></li></ul><h4 id="断点调试快捷键"><a href="#断点调试快捷键" class="headerlink" title="断点调试快捷键"></a>断点调试快捷键</h4><ul><li>step over：进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</li><li>step into：进入下一步，如果当前行断点是一个方法，则进入当前方法体内</li><li>force step into：进入下一步，如果当前行断点是一个方法，则进入当前方法体内</li><li>step out：跳出</li><li>resume program：恢复程序运行，但如果该断点下面代码还有断点则停在下一个断点上</li><li>stop：停止</li><li>mute breakpoints：点中，使得所有的断点失效</li><li>view breakpoints：查看所有断点</li></ul><h4 id="条件断点"><a href="#条件断点" class="headerlink" title="条件断点"></a>条件断点</h4><ul><li>调试的时候，在循环里增加条件判断，可以极大的提高效率</li><li>在断点处右击调出条件断点，可以在满足某个条件下，实施断点</li><li>选择行后 CTRL + u，可以在查看框中输入编写代码时的其他方法</li></ul><h3 id="配置-Maven"><a href="#配置-Maven" class="headerlink" title="配置 Maven"></a>配置 Maven</h3><ul><li>自动化构建工具：Make -&gt; Ant -&gt; Maven -&gt; Gradle </li><li>Maven 使用了一个标准的目录结构和一个默认的构建生命周期，用于自动化构建和依赖管理</li><li>构建环节<ul><li>清理：表示在编译代码前将之前生成的内容删除</li><li>编译：将源代码编译为字节码</li><li>测试：运行单元测试用例程序</li><li>报告：测试程序的结果</li><li>打包：将 java 项目打成 jar 包，或将 Web 项目打成 war 包</li><li>安装：将 jar 或 war 生成到 Maven 仓库中</li><li>部署：将 jar 或 war 从 Maven 仓库中部署到 Web 服务器上运行</li></ul></li><li>File -&gt; Settings -&gt; Maven：选择自己Maven 的目录和 settings 文件，然后配置自己的本地仓库 repository</li><li>Maven 目录下有对应的生命周期，其中常用的是：clean、compile、package、install</li></ul><h3 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h3><ul><li>生成 javadoc<ul><li>Tools -&gt; Generate JavaDoc</li><li>Locale（输入语言类型）：zh_CN </li><li>Other command line arguments: <code>-encoding UTF-8 -charset UTF-8</code></li></ul></li><li>缓存和索引的清理<ul><li>IntelliJ IDEA 首次加载项目的时候，都会创建索引，而创建索引的时间跟项目的文件多少成正比</li><li>IntelliJ IDEA 的缓存和索引主要是用来加快文件查询，从而加快各种查找、代码提示等操作的速度</li><li>某些特殊条件下，IntelliJ IDEA 的缓存和索引文件也是会损坏的，可以清理缓存和索引</li><li>File -&gt; Invalidate Caches / Restart</li></ul></li><li>插件<ul><li>File -&gt; Settings -&gt; Plugins</li><li><a href="https://plugins.jetbrains.com/">https://plugins.jetbrains.com/</a> </li></ul></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;IntelliJ IDEA 被公认为是最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、Ant、JUnit、CVS 整合、代码审查、创新的GUI 设计等方面的功能可以说是超常的。相较于 Eclipse 而言，IDEA 增加了强大的整合能力、好用的快捷键和代码模板以及精准搜索，一些新的特性非常有必要学习熟悉。我目前使用的是 IDEA Ultimate 2021.2 版本，本篇笔记也是对最新版 IDEA 项目的创建、模板的使用、断点调试、数据库的关联、插件的下载、Maven及版本控制工具的配置等内容的一些总结。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="编程与开发" scheme="http://blog.zhuangzhihao.top/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="Java" scheme="http://blog.zhuangzhihao.top/tags/Java/"/>
-    
-    <category term="IDEA" scheme="http://blog.zhuangzhihao.top/tags/IDEA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>云上搭建基于Anaconda的Jupyter数据科学环境</title>
-    <link href="http://blog.zhuangzhihao.top/%E4%BA%91%E4%B8%8A%E6%90%AD%E5%BB%BAJupyter%20Notebook/"/>
-    <id>http://blog.zhuangzhihao.top/%E4%BA%91%E4%B8%8A%E6%90%AD%E5%BB%BAJupyter%20Notebook/</id>
-    <published>2021-05-08T16:00:00.000Z</published>
-    <updated>2021-06-11T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Jupyter Notebook是基于浏览器网页的用于交互计算的应用程序，支持Python、R、Julia和Scala等多种语言，在数据科学相关领域有着非常大的用途。JupyterLab是基于web的集成开发环境，包含了Jupyter Notebook所有功能的同时还支持操作终端、编辑markdown文本、打开交互模式、查看csv文件及图片等功能，最近在学习的IBM数据科学专项课程也都是基于Jupyter Lab的，在阿里云主机上部署Jupyter环境也能使研究和学习更加方便。本篇笔记是在多次踩坑后总结的适用于CentOS7.6系统的过程记录。</p></blockquote><a id="more"></a><h3 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h3><ul><li><p>通过清华源安装最新版本Anaconda</p><pre><code class="bash">wget http://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2020.11-Linux-x86_64.shbash Anaconda3-2020.11-Linux-x86_64.sh# 狂按Enter&gt;&gt;yes&gt;&gt;继续狂按Enter安装</code></pre></li><li><p>Anaconda默认安装在<code>/root/anaconda3</code>目录下</p></li><li><p>配置环境变量</p><pre><code class="bash">vim ~/.bashrc# 添加下面两行内容#added by Anaconda3 4.4.0 installerexport PATH=&quot;/root/anaconda3/bin:$PATH&quot;</code></pre></li><li><p>激活Anaconda环境并测试</p><pre><code class="bash">source ~/.bashrcconda --version</code></pre></li><li><p>添加清华镜像源，并搜索时显示通道地址</p><pre><code class="bash">conda config --add channels &#39;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/&#39;conda config --set show_channel_urls yes</code></pre></li><li><p>创建jupyter notebook运行环境</p><pre><code class="bash">conda create -n jupyter_notebook python=3# source activate jupyter_notebook 激活环境# source deactivate 退出环境</code></pre></li></ul><h3 id="安装配置Jupyter"><a href="#安装配置Jupyter" class="headerlink" title="安装配置Jupyter"></a>安装配置Jupyter</h3><ul><li><p>通过Anaconda安装Jupyter Notebook</p><pre><code class="bash">conda install jupyter notebook# 输入jupyter notebook --ip=127.0.0.1 --allow-root 可运行则为安装成功</code></pre></li><li><p>生成Jupyter Notebook配置文件</p><pre><code class="bash">jupyter notebook --generate-config</code></pre></li><li><p>设置Jupyter Notebook密码</p><pre><code class="bash">ipythonIn [1]: from notebook.auth import passwdIn [2]: passwd()Enter password: Verify password: Out[2]: &#39;加密字符串&#39;</code></pre></li><li><p>修改配置文件</p><pre><code class="bash">vim /root/.jupyter/jupyter_notebook_config.py#修改如下行c.NotebookApp.ip = &#39;*&#39;c.NotebookApp.password = &#39;加密字符串&#39;c.NotebookApp.open_browser = Falsec.NotebookApp.allow_root = True</code></pre></li><li><p>启动Jupyter Notebook</p><pre><code class="bash">jupyter notebook</code></pre></li><li><p>访问<a href="http://106.15.200.147:8888/">云服务器公网ip地址:8888</a></p></li><li><p>启动Jupyter Lab</p><pre><code class="bash">jupyter lab</code></pre></li><li><p>访问<a href="http://106.15.200.147:8888/">云服务器公网ip地址:8888</a></p></li></ul><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul><li>Jupyter Notebook只适用于单用户登录，如果想搭建多用户的Jupyter的话，要使用JupyterHub进行搭建</li><li>阿里云默认不打卡8888端口，需要在服务器管理控制台中设置开放端口</li></ul><h3 id="添加JAVA环境支持"><a href="#添加JAVA环境支持" class="headerlink" title="添加JAVA环境支持"></a>添加JAVA环境支持</h3><ul><li><p>安装JDK（过程略）</p></li><li><p>下载 java 内核压缩包<code>ijava</code>，<a href="https://github.com/SpencerPark/IJava/releases">下载地址</a></p></li><li><p>上传到服务器，使用<code>unzip</code>命令解压</p></li><li><p>安装Java内核</p><pre><code class="bash">python install.py --sys-prefix</code></pre></li><li><p>查看Jupyter内核支持</p><pre><code class="python">jupyter kernelspec list&#39;&#39;&#39;Available kernels:  java       /root/anaconda3/share/jupyter/kernels/java  python3    /root/anaconda3/share/jupyter/kernels/python3&#39;&#39;&#39;</code></pre></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Jupyter Notebook是基于浏览器网页的用于交互计算的应用程序，支持Python、R、Julia和Scala等多种语言，在数据科学相关领域有着非常大的用途。JupyterLab是基于web的集成开发环境，包含了Jupyter Notebook所有功能的同时还支持操作终端、编辑markdown文本、打开交互模式、查看csv文件及图片等功能，最近在学习的IBM数据科学专项课程也都是基于Jupyter Lab的，在阿里云主机上部署Jupyter环境也能使研究和学习更加方便。本篇笔记是在多次踩坑后总结的适用于CentOS7.6系统的过程记录。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="云计算与应用开发" scheme="http://blog.zhuangzhihao.top/categories/%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B8%8E%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="Data Science" scheme="http://blog.zhuangzhihao.top/tags/Data-Science/"/>
-    
-    <category term="云服务器" scheme="http://blog.zhuangzhihao.top/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
