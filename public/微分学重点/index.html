@@ -508,16 +508,428 @@
 <a id="more"></a>
 
 <h3 id="极限和连续"><a href="#极限和连续" class="headerlink" title="极限和连续"></a>极限和连续</h3><ul>
-<li>极限定义：当 $n\rightarrow \infty$ 时，$a_{n}\rightarrow A$</li>
-<li>洛必达法则：假设 $f(x)$ 和 $g(x)$ 都收敛于 0<ul>
-<li>$\dfrac{f\left( x\right) }{g\left( x\right) }=\dfrac{\dfrac{\Delta f}{\Delta x}}{\dfrac{\Delta g}{\Delta x}}\rightarrow \dfrac{s}{t}$</li>
+<li><p> 极限定义：当 $n\rightarrow \infty$ 时，$a_{n}\rightarrow A$</p>
+</li>
+<li><p>洛必达法则：假设 $f(x)$ 和 $g(x)$ 都收敛于 0</p>
+<ul>
+<li> $\dfrac{f\left( x\right) }{g\left( x\right) }=\dfrac{\dfrac{\Delta f}{\Delta x}}{\dfrac{\Delta g}{\Delta x}}\rightarrow \dfrac{s}{t}$</li>
 </ul>
 </li>
-<li>可导必然连续，连续不一定可导</li>
-<li>连续定义：对任取 $\varepsilon$，都能找到 $\delta$，满足如果 $\left| x-a\right| &lt;\delta$，则 $\left| f\left( x\right) -f\left( a\right) \right| &lt;\varepsilon$</li>
+<li><p> 可导必然连续，连续不一定可导</p>
+</li>
+<li><p> 连续定义：对任取 $\varepsilon$，都能找到 $\delta$，满足如果 $\left| x-a\right| &lt;\delta$，则 $\left| f\left( x\right) -f\left( a\right) \right| &lt;\varepsilon$</p>
+</li>
 </ul>
 <h3 id="sinx-和-cosx-的导数"><a href="#sinx-和-cosx-的导数" class="headerlink" title="$sinx$ 和 $cosx$ 的导数"></a>$sinx$ 和 $cosx$ 的导数</h3><ul>
-<li></li>
+<li><p>用 $sin$ 和 $cos$ 表示勾股定理</p>
+<ul>
+<li><p>$a^2+b^2=c^2$ $\rightarrow$ $\dfrac{a^{2}}{c^{2}}+\dfrac{b^{2}}{c^{2}}=1$ </p>
+</li>
+<li><p>$\left( \cos \theta \right) ^{2}+\left( \sin \theta \right) ^{2}=1$</p>
+</li>
+</ul>
+</li>
+<li><p>$\dfrac{d}{dx}\sin x=\dfrac{\Delta \left( \sin x\right) }{\Delta x}=\dfrac{\sin \left( x+\Delta x\right) -\sin x}{\Delta x}$</p>
+<ul>
+<li><p>因为 $\sin \left( x+\Delta x\right) =\sin x\cos \Delta x+\cos x\sin \Delta x$</p>
+</li>
+<li><p>所以原式 = $\dfrac{sinx\left( \cos \Delta x-1\right) }{\Delta x}+\dfrac{\cos x\sin \Delta x}{\Delta x}$</p>
+</li>
+<li><p>又因为 $\dfrac{\cos \left( \Delta x-1\right) }{\Delta x}\rightarrow 0$ 且 $\dfrac{\sin \Delta x}{\Delta x}\rightarrow 1$</p>
+</li>
+<li><p>所以 $\dfrac{d}{dx}\sin x=\cos x$</p>
+</li>
+</ul>
+</li>
+<li><p>$\dfrac{d}{dx}\cos x=\dfrac{\Delta \left( \cos x\right) }{\Delta x}=\dfrac{\cos \left( x+\Delta x\right) -\cos x}{\Delta x}$</p>
+<ul>
+<li><p>因为 $\cos \left( x+\Delta x\right) =\cos x\cos \Delta x-\sin x\sin \Delta x$</p>
+</li>
+<li><p>所以原式 = $\dfrac{cos\left( \cos \Delta x-1\right) }{\Delta x}-\dfrac{\sin x\sin \Delta x}{\Delta x}$</p>
+</li>
+<li><p>所以 $\dfrac{d}{dx}\cos x=-\sin x$</p>
+</li>
+</ul>
+</li>
+<li><p>$sinx$ 和 $cosx$ 的导数</p>
+<ul>
+<li><p>$\dfrac{d}{dx}\sin x=\cos x$</p>
+</li>
+<li><p>$\dfrac{d}{dx}\cos x=-\sin x$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="乘法法则和除法法则"><a href="#乘法法则和除法法则" class="headerlink" title="乘法法则和除法法则"></a>乘法法则和除法法则</h3><ul>
+<li><p>$p(x)=f(x)g(x)$</p>
+<ul>
+<li><p>$\dfrac{\Delta p}{\Delta x}=\dfrac{f\Delta g}{\Delta x}+\dfrac{g\Delta f}{\Delta x}+\dfrac{\Delta f{\Delta }g}{\Delta x}$</p>
+</li>
+<li><p>乘法法则：$\dfrac{dp}{dx}=f\left( x\right) \dfrac{dg}{dx}+g\left( x\right) \dfrac{df}{dx}$</p>
+</li>
+<li><p>$\dfrac{d}{dx}x^{n}=nx^{n-1}$</p>
+</li>
+<li><p>$y=x^2sinx$：$\dfrac{dy}{dx}=x^{2}\cos x+2xsinx$</p>
+</li>
+</ul>
+</li>
+<li><p>$q(x)=\dfrac{f(x)}{g(x)}$</p>
+<ul>
+<li><p>$f(x)=g(x)q(x)$</p>
+</li>
+<li><p>$\dfrac{df}{dx}=g\left( x\right) \dfrac{dq}{dx}+q\left( x\right) \dfrac{dg}{dx}=g\left( x\right) \dfrac{dq}{dx}+\dfrac{f\left( x\right) }{g\left( x\right) }\dfrac{dg}{dx}$</p>
+</li>
+<li><p>$g\left( x\right) \dfrac{df}{dx}-f\left( x\right) \dfrac{dg}{dx}=g(x)^{2}\dfrac{dq}{dx}$</p>
+</li>
+<li><p>除法法则：$\dfrac{dq}{dx}=\dfrac{g\left( x\right) \dfrac{df}{dx}-f\left( x\right) \dfrac{dg}{dx}}{g\left( x\right) ^{2}}$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="链式法则"><a href="#链式法则" class="headerlink" title="链式法则"></a>链式法则</h3><ul>
+<li><p>函数链（复合函数）：$y=g(x)$，$z=f(y)$</p>
+<ul>
+<li>求导：$\dfrac{dz}{dx}=\dfrac{dz}{dy}\dfrac{dy}{dx}$</li>
+</ul>
+</li>
+<li><p>$sin(3x)$ 的导数：$3cos(3x)$</p>
+</li>
+<li><p>$\dfrac{1}{\sqrt{1-x^{2}}}$ 的导数：$\left( -\dfrac{1}{2}\left( 1-x^{2}\right) ^{-3}\right) -2x=x\left( 1-x^{2}\right) ^{-\dfrac{3}{2}}$</p>
+</li>
+<li><p>$e^{-\dfrac{x^{2}}{2}}$ 的导数：$-x\cdot e^{-\dfrac{x^{2}}{2}}$</p>
+<ul>
+<li>二阶导数：$\left( -x\right) \left( -xe^{-\dfrac{x^{2}}{2}}\right) +\left( e^{-\dfrac{x^{2}}{2}}\right) \left( -1\right)=(x^2-1)\cdot e^{-\dfrac{x^{2}}{2}}$</li>
+</ul>
+</li>
+</ul>
+<h3 id="反函数-f-1-left-y-right-与对数函数-x-lny"><a href="#反函数-f-1-left-y-right-与对数函数-x-lny" class="headerlink" title="反函数 $f^{-1}\left( y\right)$ 与对数函数 $x=lny$"></a>反函数 $f^{-1}\left( y\right)$ 与对数函数 $x=lny$</h3><ul>
+<li><p>$y=f(x)$ 的反函数：$x=f^{-1}(y)$，原函数和反函数关于 $y=x$ 对称</p>
+</li>
+<li><p>$y=e^{x}$ 的反函数：$x=lny$</p>
+</li>
+<li><p>对数函数的性质</p>
+<ul>
+<li><p>$\ln(xy) =\ln x+\ln y$</p>
+</li>
+<li><p>$ln(y^n)=nlny$</p>
+</li>
+</ul>
+</li>
+<li><p>$\dfrac{d}{dy}\left( \ln y\right) =\dfrac{1}{y}$</p>
+</li>
+</ul>
+<h3 id="对数函数-lny-和反三角函数-sin-1-y-的导数"><a href="#对数函数-lny-和反三角函数-sin-1-y-的导数" class="headerlink" title="对数函数 $lny$ 和反三角函数 $sin^{-1}(y)$ 的导数"></a>对数函数 $lny$ 和反三角函数 $sin^{-1}(y)$ 的导数</h3><ul>
+<li><p>令 $y=e^x$</p>
+<ul>
+<li><p>$\ln \left( e^{x}\right) =x$ 两边求导 $\dfrac{d}{dy}\left( \ln y\right) e^{x}=1$</p>
+</li>
+<li><p>$\dfrac{d}{dy}\left( \ln y\right) =\dfrac{1}{e^{x}}=\dfrac{1}{y}$</p>
+</li>
+</ul>
+</li>
+<li><p>$x=\sin ^{-1}y=\arcsin y$</p>
+<ul>
+<li><p>$y=\sin \left( \sin ^{-1}y\right)$ 两边求导 $1=\cos \left( \sin ^{-1}y\right) \dfrac{d\sin ^{-1}y}{dy}$</p>
+</li>
+<li><p>$1=\sqrt{1-y^{2}}\dfrac{d}{dy}\sin ^{-1}y$</p>
+</li>
+<li><p>$\dfrac{d}{dy}\sin ^{-1}y=\dfrac{1}{\sqrt{1-y^{2}}}$</p>
+</li>
+</ul>
+</li>
+<li><p>同理：$\dfrac{d}{dy}\cos ^{-1}y=\dfrac{-1}{\sqrt{1-y^{2}}}$，$\dfrac{d}{dy}\tan ^{-1}\left( y\right) =\dfrac{1}{1+y^{2}}$</p>
+</li>
+</ul>
+<h3 id="增长率和对数图"><a href="#增长率和对数图" class="headerlink" title="增长率和对数图"></a>增长率和对数图</h3><ul>
+<li><p>线性增长：$cx,x^{2},x^{3},\ldots$</p>
+</li>
+<li><p>指数增长：$2^{x},e^{x},10^{x},\ldots$</p>
+</li>
+<li><p>阶乘：$2^{x},e^{x},10^{x},\ldots$</p>
+</li>
+<li><p>对数图</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/微积分重点04.png" style="zoom: 50%;">
+</li>
+</ul>
+</li>
+<li><p>线性拟合</p>
+<ul>
+<li><p>$y=Ax^{n}\rightarrow \log y=\log A+n\log x$</p>
+</li>
+<li><p>$y=B\cdot 10^{cx}\rightarrow \log y=\log B+cx$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="线性近似和牛顿法"><a href="#线性近似和牛顿法" class="headerlink" title="线性近似和牛顿法"></a>线性近似和牛顿法</h3><ul>
+<li><p>取 $x=a$，已知 $\dfrac{df}{dx}=f’\left( a\right) =\lim _{x\rightarrow a}\dfrac{f\left( x\right) -f\left( a\right) }{x-a}$，求 $f(x)$</p>
+</li>
+<li><p>线性近似：函数在 a 点一阶泰勒展开</p>
+<ul>
+<li><p>$f’\left( a\right) \approx \dfrac{f\left( x\right) -f\left( a\right) }{x-a}$</p>
+</li>
+<li><p>$f\left( x\right) \approx f\left( a\right) +\left( x-a\right) f’\left( a\right)$</p>
+</li>
+</ul>
+</li>
+<li><p>牛顿法</p>
+<ul>
+<li><p>令 $F(x)=0$</p>
+</li>
+<li><p>$x-a\approx \dfrac{-F\left( a\right) }{F’\left( a\right) }$</p>
+</li>
+</ul>
+</li>
+<li><p>近似法求 $\sqrt{9.06}$</p>
+<ul>
+<li><p>$f\left( x\right) =\sqrt{x}=x^{\dfrac{1}{2}}$</p>
+</li>
+<li><p>$f’\left( x\right) =\dfrac{1}{2}x^{-\dfrac{1}{2}}=\dfrac{1}{\sqrt[2] {x}}$</p>
+</li>
+<li><p>取 $a=9$，$f(a)=\sqrt9=3$，$f’(a)=\dfrac{1}{6}$</p>
+</li>
+<li><p>$\sqrt{9.06}\approx 3+\left( 9.06-9\right) \dfrac{1}{6}=3.01$</p>
+</li>
+</ul>
+</li>
+<li><p>近似法求 $e^{0.01}$</p>
+<ul>
+<li><p>$f\left( x\right) =e^{x}$（$x=0.01$）</p>
+</li>
+<li><p>取 $a=0$，$f(a)=e^0=1$，$f’(a)=e^0=1$</p>
+</li>
+<li><p>$e^{x}=e^{0=01}=1+\left( 0.d-0\right) \cdot 1=1.01=1+x$</p>
+</li>
+</ul>
+</li>
+<li><p>牛顿法求 $\sqrt{9.06}$</p>
+<ul>
+<li><p>$F\left( x\right) =x^{2}-9.06=0$</p>
+</li>
+<li><p>取 $a=3$，$F(a)=9-9.06=-0.06$，$F’(a)=2a=6$</p>
+</li>
+<li><p>$x-3\approx \dfrac{0.06}{6}=0.01$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="幂级数和欧拉公式"><a href="#幂级数和欧拉公式" class="headerlink" title="幂级数和欧拉公式"></a>幂级数和欧拉公式</h3><ul>
+<li><p>泰勒级数：$f\left( x\right) =f\left( 0\right) +f’\left( 0\right) \dfrac{x}{1}+f’’\left( 0\right) \dfrac{x^{2}}{2}+\ldots +f^{\left( n\right) }\left( 0\right) \dfrac{x^{n}}{n!}$</p>
+<ul>
+<li>$x^n$ 的 n 阶导：$n!$</li>
+</ul>
+</li>
+<li><p>使用泰勒级数展开的幂级数</p>
+<ul>
+<li><p>$e^{x}=1+x+\dfrac{1}{2}x^{2}+\dfrac{1}{6}x^{3}+\ldots +\dfrac{1}{n!}x^{n}$</p>
+</li>
+<li><p>$\sin x=x-\dfrac{x^{3}}{3!}+\dfrac{x^{5}}{5!}\ldots$ 奇级数</p>
+</li>
+<li><p>$\cos x=1-\dfrac{x^{2}}{2!}+\dfrac{x^{4}}{4!}\ldots$ 偶级数</p>
+</li>
+</ul>
+</li>
+<li><p>欧拉公式：将 $e^x$ 级数中的 $x$ 考虑为虚数 $i$</p>
+<ul>
+<li><p>$e^{ix}=1+ix+\dfrac{1}{2!}\left( ix\right) ^{2}+\dfrac{1}{3!}\left( ix\right) ^{3}+\ldots$</p>
+</li>
+<li><p>实数、虚数分离：$e^{ix}=\left( 1-\dfrac{1}{2!}x^{2}+\ldots \right) +i\left( x-\dfrac{1}{3!}x^{3}+\ldots \right)$</p>
+</li>
+<li><p>因此：$e^{ix}=\cos x+i\sin x$</p>
+</li>
+<li><p>同理：$e^{-ix}=\cos x-i\sin x$</p>
+</li>
+</ul>
+</li>
+<li><p>几何级数：$\dfrac{1}{1-x}=1+x+x^{2}+x^{3}+\ldots ( \left| x\right| &lt; 1)$</p>
+</li>
+<li><p>将几何级数逐项积分：$-ln \left( 1-x\right) =x+\dfrac{x^{2}}{2}+\dfrac{x^{3}}{3}+\dfrac{x^{4}}{4}+\ldots ( \left| x\right| &lt; 1)$</p>
+</li>
+</ul>
+<h3 id="关于运动的微分方程"><a href="#关于运动的微分方程" class="headerlink" title="关于运动的微分方程"></a>关于运动的微分方程</h3><ul>
+<li><p>微分方程就是函数的导数和函数本身之间存在的关系</p>
+</li>
+<li><p>常系数二阶线性微分方程：$m\dfrac{d^{2}y}{dt^{2}}+2r\dfrac{dy}{dt}+ky=0$</p>
+<ul>
+<li><p>$m=0$ 时，$\dfrac{dy}{dt}=ay\rightarrow y=ce^{at}$</p>
+</li>
+<li><p>$r=0$ 时，$\dfrac{d^{2}y}{dt^{2}}=-\omega ^{2}y$ （$\omega ^{2}= \dfrac{k}{m}$）$\rightarrow y=C\cos \omega t+D\sin \omega t$</p>
+</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B905.png" style="zoom: 50%;">
+</li>
+</ul>
+</li>
+<li><p>令 $y=e^{\lambda t}$ 满足方程 $m\lambda ^{2}e^{\lambda t}+2r\lambda e^{\lambda t}+ke^{\lambda t}=0$</p>
+<ul>
+<li><p>$m\lambda ^{2}+2r\lambda +k=0$</p>
+</li>
+<li><p>$\lambda =\dfrac{-r\pm \sqrt{r^{2}-km}}{m}$</p>
+</li>
+<li><p>$y=Ce^{\lambda _{1}t}+De^{\lambda _{2}t}$</p>
+</li>
+<li><p>若 $\lambda _{1}=\lambda _{2}$，$y=Ce^{\lambda t}+Dte^{\lambda t}$</p>
+</li>
+</ul>
+</li>
+<li><p>当 $m=1,r=3,k=10$ 时，$1y’’+6y’+10y=0$</p>
+<ul>
+<li><p>$\lambda ^{2}+6\lambda +10=0$</p>
+</li>
+<li><p>$\lambda =-3\pm i$</p>
+</li>
+<li><p>$y\left( t\right) =Ce^{\left( -3+i\right) t}+De^{\left( -3-i\right) t}$</p>
+</li>
+<li><p>由欧拉公式：$y\left( t\right) =Ae^{-3t}\cos t+Be^{-3t}\sin t$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="关于增长的微分方程"><a href="#关于增长的微分方程" class="headerlink" title="关于增长的微分方程"></a>关于增长的微分方程</h3><ul>
+<li><p>微分方程 $\dfrac{dy}{dt}=cy$，对于任意 A 有解 $y\left( t\right) =Ae^{ct}$</p>
+<ul>
+<li>$y\left( t\right) =y\left( 0\right) e^{ct}$</li>
+</ul>
+</li>
+<li><p>增加初始常数：$\dfrac{dy}{dt}=cy+s$</p>
+<ul>
+<li><p>$\dfrac{d}{dt}\left( y+\dfrac{s}{c}\right) =c\left( y+\dfrac{s}{c}\right)$</p>
+</li>
+<li><p>$y\left( t\right) =-\dfrac{s}{c}+\left( y\left( 0\right) +\dfrac{s}{c}\right) e^{ct}$</p>
+</li>
+</ul>
+</li>
+<li><p>人口增长方程：$\dfrac{dP}{dt}=cP-sP^{2}$，$c$ 为增长率而 $s$ 为竞争因素</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B906.png" style="zoom: 50%;">
+</li>
+<li><p>令 $y=\dfrac{1}{P}$，$\dfrac{dy}{dt}=-\dfrac{\dfrac{dP}{dt}}{P^{2}}=\dfrac{\left( cP+sP^{2}\right) }{P^{2}}=s-cP=s-cy$</p>
+</li>
+<li><p>$y\left( t\right) =\dfrac{s}{c}+Ae^{-ct}=\dfrac{s}{c}+\left( y\left( 0\right) -\dfrac{s}{c}\right) e^{-ct}$</p>
+</li>
+<li><p>$\dfrac{1}{p\left( t\right) }-\dfrac{s}{c}=\left( \dfrac{1}{p(0)}-\dfrac{s}{c}\right) e^{-ct}$</p>
+</li>
+</ul>
+</li>
+<li><p>人口增长方程二阶导数：$\dfrac{d^{2}P}{dt^{2}}=\dfrac{d}{dt}\left( cP-sP^{2}\right) =\left( c-2sP\right) \dfrac{dP}{dt}$</p>
+<ul>
+<li>$p=\dfrac{c}{2s}$ 时，$\dfrac{d^{2}P}{dt^{2}}=0$（拐点，增长率开始放缓）</li>
+</ul>
+</li>
+</ul>
+<h3 id="微分学总结"><a href="#微分学总结" class="headerlink" title="微分学总结"></a>微分学总结</h3><h4 id="六函数"><a href="#六函数" class="headerlink" title="六函数"></a>六函数</h4><table>
+<thead>
+<tr>
+<th align="center">积分</th>
+<th align="center"></th>
+<th align="center">导数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$\dfrac{x^{n+1}}{\left( n+1\right) },n\neq -1$</td>
+<td align="center">$x^n$</td>
+<td align="center">$nx^{n-1}$</td>
+</tr>
+<tr>
+<td align="center">$-cosx$</td>
+<td align="center">$sinx$</td>
+<td align="center">$cosx$</td>
+</tr>
+<tr>
+<td align="center">$sinx$</td>
+<td align="center">$cosx$</td>
+<td align="center">$-sinx$</td>
+</tr>
+<tr>
+<td align="center">$\dfrac{e^{cx}}{c}$</td>
+<td align="center">$e^{cx}$</td>
+<td align="center">$ce^{cx}$</td>
+</tr>
+<tr>
+<td align="center">$x\ln x-x$</td>
+<td align="center">$lnx$</td>
+<td align="center">$\dfrac{1}{x}$</td>
+</tr>
+<tr>
+<td align="center">斜坡函数</td>
+<td align="center">分段函数</td>
+<td align="center">$\delta$ 函数</td>
+</tr>
+</tbody></table>
+<h4 id="六法则"><a href="#六法则" class="headerlink" title="六法则"></a>六法则</h4><ul>
+<li><p>加法法则：和的导数等于导数的和</p>
+<ul>
+<li>$af\left( x\right) +bg\left( x\right) \rightarrow a\dfrac{df}{dx}+b\dfrac{dg}{dx}$</li>
+</ul>
+</li>
+<li><p>乘法法则：上乘下导加下乘上导</p>
+<ul>
+<li>$f\left( x\right) g\left( x\right) \rightarrow f\left( x\right) \dfrac{dg}{dx}+g\left( x\right) \dfrac{df}{dx}$</li>
+</ul>
+</li>
+<li><p>除法法则：下平方分之下乘上导减上乘下导</p>
+<ul>
+<li>$\dfrac{f\left( x\right) }{g\left( x\right) }\rightarrow  \dfrac{g\left( x\right) \dfrac{df}{dx}-f\left( x\right) \dfrac{dg}{dx}}{g\left( x\right) ^{2}}$</li>
+</ul>
+</li>
+<li><p>链式法则</p>
+<ul>
+<li>$f\left( g\left( x\right) \right) \rightarrow \dfrac{df}{dy}\dfrac{dy}{dx}$</li>
+</ul>
+</li>
+<li><p>反函数的导数等于原函数的导数分之一</p>
+<ul>
+<li>$x=f^{-1}\left( y\right) \rightarrow \dfrac{dx}{dy}=\dfrac{1}{\dfrac{dy}{dx}}$</li>
+</ul>
+</li>
+<li><p>洛必达法则：$\dfrac{0}{0}$ 或 $\dfrac{\infty }{\infty }$</p>
+<ul>
+<li>$\dfrac{f\left( x\right) }{g\left( x\right) }\rightarrow \dfrac{\dfrac{dt}{dx}}{\dfrac{dg}{dx}}$</li>
+</ul>
+</li>
+</ul>
+<h4 id="六定理"><a href="#六定理" class="headerlink" title="六定理"></a>六定理</h4><ul>
+<li><p>微积分基本定理</p>
+<ul>
+<li><p>如果函数 $f(x)=\int _{a}^{x}s\left( t\right) dt$，那么函数的导数为 $\dfrac{df}{dx}=s\left( x\right) $</p>
+</li>
+<li><p>如果函数的导数为 $\dfrac{df}{dx}=s\left( x\right) $，那么导数的积分（原函数）为 $\int _{a}^{b}s\left( x\right) dx=f\left( b\right) -f\left( a\right) $</p>
+</li>
+</ul>
+</li>
+<li><p>介值定理（全值定理）</p>
+<ul>
+<li><p>对于 $a\leq x\leq b$ 区间上的连续函数</p>
+</li>
+<li><p>一定能取到最大值 $M$ 和最小值 $m$，使得 $[M,m]$ 中的任意值都存在函数上的点与之对应</p>
+</li>
+<li><p>连续函数的一个区间内的函数值肯定介于最大值 $M$ 和最小值 $m$之间</p>
+</li>
+</ul>
+</li>
+<li><p>中值定理</p>
+<ul>
+<li>如果函数 $f(x)$ 在闭区间 $[a,b]$ 上连续，在开区间 $(a,b)$ 内可导，那么在 $(a,b)$ 内至少有一点 $\varepsilon $，使 $f\left( b\right) -f\left( a\right) =f\left( \varepsilon \right) \left( b-a\right) $ 成立</li>
+</ul>
+</li>
+<li><p>泰勒级数</p>
+<ul>
+<li><p>$f\left( x\right) =f\left( a\right) +f’\left( a\right) \left( x-a\right) +\dfrac{1}{2}f’’\left( a\right) \left( x-a\right) ^{2}+\ldots =\sum ^{\infty }_{n=0}\dfrac{1}{n!}f^{\left( n\right) }\left( a\right) \left( x-a\right) ^{n}$</p>
+</li>
+<li><p>若级数截断于 $\left( x-a\right) ^{n}$ 项，余项为：$\dfrac{1}{\left( n+1\right) !}f^{\left( n+1\right) }\left( c\right) \left( x-a\right) ^{\left( n+1\right) }$</p>
+</li>
+<li><p>当 $a=0$ 时，$f\left( x\right)=\sum ^{\infty }_{n=0}\dfrac{1}{n!}f^{\left( n\right) }\left( 0\right) \left( x\right) ^{n}$</p>
+</li>
+</ul>
+</li>
+<li><p>二项式定理</p>
+<ul>
+<li><p>帕斯卡三角：<img src="https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B907.png" style="zoom:80%;"></p>
+</li>
+<li><p>$(1+x)^p=1+px+\dfrac{P\left( p-1\right) }{\left( 2\right) \left( 1\right) }x^{2}+\dfrac{p\left( p-1\right) \left( p-2\right) }{\left( 3\right) \left( 2\right) \left( 1\right) }x^{3}+\ldots $</p>
+</li>
+</ul>
+</li>
 </ul>
 
   
@@ -572,13 +984,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：215字</p>
+      <p>字数：2.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：13分钟</p>
     </a>
   </div>
 
@@ -771,7 +1183,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E9%99%90%E5%92%8C%E8%BF%9E%E7%BB%AD"><span class="toc-text">极限和连续</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sinx-%E5%92%8C-cosx-%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="toc-text">$sinx$ 和 $cosx$ 的导数</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E9%99%90%E5%92%8C%E8%BF%9E%E7%BB%AD"><span class="toc-text">极限和连续</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sinx-%E5%92%8C-cosx-%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="toc-text">$sinx$ 和 $cosx$ 的导数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%98%E6%B3%95%E6%B3%95%E5%88%99%E5%92%8C%E9%99%A4%E6%B3%95%E6%B3%95%E5%88%99"><span class="toc-text">乘法法则和除法法则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99"><span class="toc-text">链式法则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%87%BD%E6%95%B0-f-1-left-y-right-%E4%B8%8E%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0-x-lny"><span class="toc-text">反函数 $f^{-1}\left( y\right)$ 与对数函数 $x&#x3D;lny$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0-lny-%E5%92%8C%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0-sin-1-y-%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="toc-text">对数函数 $lny$ 和反三角函数 $sin^{-1}(y)$ 的导数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E9%95%BF%E7%8E%87%E5%92%8C%E5%AF%B9%E6%95%B0%E5%9B%BE"><span class="toc-text">增长率和对数图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%BF%91%E4%BC%BC%E5%92%8C%E7%89%9B%E9%A1%BF%E6%B3%95"><span class="toc-text">线性近似和牛顿法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%82%E7%BA%A7%E6%95%B0%E5%92%8C%E6%AC%A7%E6%8B%89%E5%85%AC%E5%BC%8F"><span class="toc-text">幂级数和欧拉公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">关于运动的微分方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%A2%9E%E9%95%BF%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">关于增长的微分方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E5%AD%A6%E6%80%BB%E7%BB%93"><span class="toc-text">微分学总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AD%E5%87%BD%E6%95%B0"><span class="toc-text">六函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AD%E6%B3%95%E5%88%99"><span class="toc-text">六法则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AD%E5%AE%9A%E7%90%86"><span class="toc-text">六定理</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -828,14 +1240,14 @@
     <meting-js
       theme='#1BCDFC'
       autoplay='true'
-      volume='0.2'
-      loop='all'
-      order='random'
+      volume='0.1'
+      loop='one'
+      order='list'
       fixed='false'
       list-max-height='320px'
-      server='tencent'
-      type='playlist'
-      id='5192584153'
+      server='netease'
+      type='song'
+      id='551340988'
       list-folded='true'>
     </meting-js>
   
@@ -1343,8 +1755,8 @@ var loadCSS = function( href, before, media, attributes ){
 
   <script>
   let APlayerController = new Object();
-  APlayerController.id = '5192584153';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.2';
+  APlayerController.id = '551340988';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.1';
   loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
   // APlayer 需要在  MetingJS 之前加载
   loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
@@ -1787,6 +2199,8 @@ document.addEventListener("pjax:success", bindToggleButton);
 
 
 
+
+<script src="//code.tidio.co/tu8j8vmfuovtkhsj4lgr7sub986gd1ku.js" async></script>
 
 
 <script>
