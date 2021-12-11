@@ -223,7 +223,7 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: http://img.duoziwang.com/2021/03/06291546713633.jpg
+      avatar: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/头像.gif
       shape: rectangle # circle, rectangle
       url: /about/
       title: 只是为了好玩
