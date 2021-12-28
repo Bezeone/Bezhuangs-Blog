@@ -12,18 +12,18 @@ valine:
 
 ---
 
-{% image https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%8D%8E%E5%B1%B1.jpg, width=400px, alt=庄之皓，Bezhuang %}
+{% image https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/头像.jpg, width=400px, alt=庄之皓，Bezhuang %}
 
 ---
 
 </br>
 {% span center small, 手机：13818993049 %}
 </br>
-{% span center small, 本科专业阿拉伯语，业余刷题打代码 %}
+{% span center small, 阿拉伯语本科生 %}
 </br>
-{% span center small, 彩六新进，糖豆国小萌新，GTA看云玩家 %}
+{% span center small, 曼联球迷，彩六新进 %}
 </br>
-{% span center small, 喜爱篮球、电影，偶尔看看电影、写写博客 %}
+{% span center small, 兴趣爱好：篮球、足球、F1 ... %}
 
 
 

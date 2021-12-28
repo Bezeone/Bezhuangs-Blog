@@ -11,13 +11,12 @@ comments: false
 
 ## 开源贡献
 
--<div align="center">
-{% ghcard Bezhuang %}
-</div>
+| {% ghcard Bezhuang %} |
+| :-------------------: |
 
 ## 项目仓库
 
-| {% ghcard Bezhuang/Pikachu-rainbow-fart%} | {%  ghcard Bezhuang/Hexo-blog %} |
-|  --  |  --  |
-| {%  ghcard Bezhuang/LearnCS %} |  {%  ghcard Bezhuang/Bezhuang %}  |
+| {% ghcard Bezhuang/Pikachu-rainbow-fart%} | {%  ghcard Bezhuang/LearnCS %} |
+|  :-:  |  :-:  |
+| {%  ghcard Bezhuang/Bezhuang-blog-code %} |  {%  ghcard Bezhuang/Bezhuang %}  |
 
