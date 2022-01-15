@@ -519,9 +519,12 @@
 </li>
 <li><p>对称矩阵</p>
 <ul>
-<li>$S_{2}=\begin{bmatrix}<br>2 &amp; -1 \<br>-1 &amp; 2<br>\end{bmatrix}$</li>
-<li>$S_{3}=\begin{bmatrix}<br>1 &amp; -1 &amp; 0 \<br>-1 &amp; 2 &amp; -1 \<br>0 &amp; -1 &amp; 1<br>\end{bmatrix}$</li>
-<li>$S_{4}=\begin{bmatrix}<br>2 &amp; -1 &amp; 0 \<br>-1 &amp; 2 &amp; -1 \<br>0 &amp; -1 &amp; 2<br>\end{bmatrix}$</li>
+<li><p>$S_{2}=\begin{bmatrix}<br>2 &amp; -1 \<br>-1 &amp; 2<br>\end{bmatrix}$</p>
+</li>
+<li><p>$S_{3}=\begin{bmatrix}<br>1 &amp; -1 &amp; 0 \<br>-1 &amp; 2 &amp; -1 \<br>0 &amp; -1 &amp; 1<br>\end{bmatrix}$</p>
+</li>
+<li><p>$S_{4}=\begin{bmatrix}<br>2 &amp; -1 &amp; 0 \<br>-1 &amp; 2 &amp; -1 \<br>0 &amp; -1 &amp; 2<br>\end{bmatrix}$</p>
+</li>
 </ul>
 </li>
 <li><p>正交矩阵</p>
@@ -533,39 +536,52 @@
 </li>
 </ul>
 <h4 id="A-的列空间（列的所有线性组合）"><a href="#A-的列空间（列的所有线性组合）" class="headerlink" title="A 的列空间（列的所有线性组合）"></a>A 的列空间（列的所有线性组合）</h4><ul>
-<li>将矩阵乘以向量<ul>
-<li>$Ax=\begin{bmatrix} 1 &amp; 4 &amp; 5 \ 3 &amp; 2 &amp; 5 \ 2 &amp; 1 &amp; 3 \end{bmatrix}\begin{bmatrix} x_{1} \ x_{2} \ x_{3} \end{bmatrix}=\begin{bmatrix} 1 \ 3 \ 2 \end{bmatrix}x_{1}+\begin{bmatrix} x \ 2 \ 1 \end{bmatrix}x_{2}+\begin{bmatrix} 5 \ 5 \ 3 \end{bmatrix}x_{3}$</li>
-<li>$Ax$ 为一种特殊的列的线性组合</li>
-<li>$A$ 的列空间 = $C(A)$ = 所有 $Ax$ 向量 = 各列的所有线性组合</li>
-<li>$C(A)$ 是一个平面</li>
+<li><p>将矩阵乘以向量</p>
+<ul>
+<li><p>$Ax=\begin{bmatrix} 1 &amp; 4 &amp; 5 \ 3 &amp; 2 &amp; 5 \ 2 &amp; 1 &amp; 3 \end{bmatrix}\begin{bmatrix} x_{1} \ x_{2} \ x_{3} \end{bmatrix}=\begin{bmatrix} 1 \ 3 \ 2 \end{bmatrix}x_{1}+\begin{bmatrix} x \ 2 \ 1 \end{bmatrix}x_{2}+\begin{bmatrix} 5 \ 5 \ 3 \end{bmatrix}x_{3}$</p>
+</li>
+<li><p>$Ax$ 为一种特殊的列的线性组合</p>
+</li>
+<li><p>$A$ 的列空间 = $C(A)$ = 所有 $Ax$ 向量 = 各列的所有线性组合</p>
+</li>
+<li><p>$C(A)$ 是一个平面</p>
+</li>
 </ul>
 </li>
 </ul>
 <h4 id="列空间的基"><a href="#列空间的基" class="headerlink" title="列空间的基"></a>列空间的基</h4><ul>
-<li>$A=CR=\begin{bmatrix}<br>1 &amp; 4 \<br>3 &amp; 2 \<br>2 &amp; 1<br>\end{bmatrix}\begin{bmatrix}<br>1 &amp; 0 &amp; 1 \<br>0 &amp; 1 &amp; 1<br>\end{bmatrix}$<ul>
-<li>行秩 = 列秩 = r = 2</li>
-<li>C 是平面的两个独立列向量，而 R 则表示了 A 是如何通过 C 中的两个向量重组 A 的</li>
-<li>R 的 r 行是行空间的一组基</li>
+<li><p>$A=CR=\begin{bmatrix}<br>1 &amp; 4 \<br>3 &amp; 2 \<br>2 &amp; 1<br>\end{bmatrix}\begin{bmatrix}<br>1 &amp; 0 &amp; 1 \<br>0 &amp; 1 &amp; 1<br>\end{bmatrix}$</p>
+<ul>
+<li><p>行秩 = 列秩 = r = 2</p>
+</li>
+<li><p>C 是平面的两个独立列向量，而 R 则表示了 A 是如何通过 C 中的两个向量重组 A 的</p>
+</li>
+<li><p>R 的 r 行是行空间的一组基</p>
+</li>
 </ul>
 </li>
-<li>$A = CR$ 表明 A 的行秩等于列秩 <ul>
+<li><p>$A = CR$ 表明 A 的行秩等于列秩 </p>
+<ul>
 <li>C 的 r 列相互线性独立（由定义可知）</li>
 <li>A 的每一列都是（C 的）这 r 列的线性组合（因为 A = CR）</li>
 <li>R 的 r 行相互线性独立（这 r 列包含了 r × r 的矩阵 I ）</li>
 <li>A 的每一行都是（C 的）这 r 行的线性组合（因为 A = CR）</li>
 </ul>
 </li>
-<li>核心内容 <ul>
+<li><p>核心内容 </p>
+<ul>
 <li>C 的 r 列组成了 A 的列空间的基：维度 r </li>
 <li>R 的 r 列组成了 A 的行空间的基：维度 r</li>
 </ul>
 </li>
-<li>基包含两个向量 <ul>
+<li><p>基包含两个向量 </p>
+<ul>
 <li>A 的秩等于 r = 2 </li>
 <li>$n − r = 3 − 2 = 1$</li>
 </ul>
 </li>
-<li>计数定理 <ul>
+<li><p>计数定理 </p>
+<ul>
 <li>$Ax = 0$ 有一组解 $x = (1, 1, −1)$ 有 $n − r$ 组独立解可使 $Ax = 0$ 成立</li>
 </ul>
 </li>
@@ -778,10 +794,10 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>冒泡排序</p>
+        <a class='prev' href='/%E5%8F%8C%E8%89%B2%E7%90%83/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>双色球系统</p>
           <p class='content'>
-偶然刷到一篇名为《一半人写不出冒泡排序，你的同龄人都躺下了》的文章，其中提到轮子哥毕业去参加面试的时候，第一轮笔试考察冒泡排序，结果现场的一半学生都没写出来。自己回想了一下，也有一些遗忘。冒泡...</p>
+双色球是最常见的一种彩票。双色球投注区分为红球号码区和蓝球号码区，红球号码范围为01～33，蓝球号码范围为01～16。双色球每期从33个红球中开出6个号码，从16个蓝球中开出1个号码作为中奖号...</p>
         </a>
       
       
