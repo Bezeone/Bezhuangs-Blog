@@ -69,7 +69,7 @@
     <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js"></script>
     
 
-<header id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+<header id="l_header" class="l_header always shadow floatable blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -376,7 +376,7 @@
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper  search' style="display: none;">
           
             <div class='cover-bg' style='background-image:url(https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%A3%81%E7%BA%B82.jpg)'></div>
           
@@ -391,6 +391,14 @@
     
   </div>
   <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="search here..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
     <div class='menu navigation'>
       <div class='list-h'>
         
@@ -399,35 +407,35 @@
               
               
               id="photos">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4f7.svg'><p>相册</p>
+              <p>相册</p>
             </a>
           
             <a href="/projects"
               
               
               id="projects">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>开源库</p>
+              <p>开源库</p>
             </a>
           
             <a href="/plans"
               
               
               id="plans">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4dd.svg'><p>计划表</p>
+              <p>计划表</p>
             </a>
           
             <a href="/todo"
               
               
               id="todo">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/270d-1f3fb.svg'><p>进行中</p>
+              <p>进行中</p>
             </a>
           
             <a href="/guestbook"
               
               
               id="guestbook">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4ac.svg'><p>留言板</p>
+              <p>留言板</p>
             </a>
           
         
@@ -1821,6 +1829,8 @@ function listenSearch(){
 }
 function setSearchService() {
 	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
 	
 }
 </script>
