@@ -920,9 +920,16 @@ public void setAge(int a)&#123;
 </li>
 </ul>
 <h3 id="构造器（constructor）"><a href="#构造器（constructor）" class="headerlink" title="构造器（constructor）"></a>构造器（constructor）</h3><ul>
-<li><p>构造器的作用：创建对象、初始化对象的属性</p>
+<li><p>构造器的作用：初始化类的对象（属性），并返回对象的地址</p>
 </li>
 <li><p>如果没有显示的定义类的构造器的话，则系统默认提供一个空参的构造器</p>
+</li>
+<li><p>无参数构造器：初始化的对象时，成员变量的数据均采用默认值</p>
+</li>
+<li><p>有参数构造器：在初始化对象的时候，同时可以为对象进行赋值</p>
+<ul>
+<li>一旦定义了有参数构造器，无参数构造器就没有了，此时就需要自己写无参数构造器了</li>
+</ul>
 </li>
 <li><p>一个类中至少会有一个构造器，一个类中若定义多个构造器，则彼此构成重载</p>
 <pre><code class="java">权限修饰符  类名(形参列表) &#123; &#125;
@@ -1633,7 +1640,7 @@ java.awt  //包含了构成抽象窗口工具集（abstractwindowtoolkits）的�
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：12.1k字</p>
+      <p>字数：12.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
