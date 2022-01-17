@@ -2,7 +2,7 @@
 title: Python Project for Data Science
 date: 2021-03-03
 updated: 2021-03-06
-tags: [Python, Coursera, Data Science]
+tags: [Python]
 categories: 人工智能与大数据
 ---
 

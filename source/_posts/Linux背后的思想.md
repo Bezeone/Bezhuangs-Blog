@@ -1,9 +1,9 @@
 ---
-title: 听林纳斯大神聊聊Linux背后的思想
+title: 听林纳斯大神聊聊 Linux 背后的思想
 date: 2021-03-10
 updated: 2021-03-13
 tags: [Linux]
-categories: 代码人生
+categories: 程序人生
 ---
 
 > Linus Torvalds，一个任何极客都不会陌生的名字，Linux之父、Git之父，大神在计算机领域的影响力可以说是划时代的。那么在这些传奇的背后蕴藏着怎样的思想呢？下面这个Linus2016年时在TED上接受的一次访谈或许能让我们对Linux背后的思想略窥一二。

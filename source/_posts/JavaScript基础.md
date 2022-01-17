@@ -1,15 +1,15 @@
 ---
-title: JavaScript基础知识总结
+title: JavaScript 基础知识总结
 date: 2020-10-05
 updated: 2021-01-22
-tags: [前端, JavaScript]
+tags: [JavaScript]
 categories: 编程与开发
 references: 
   - title: learn x in y minutes
     url: https://learnxinyminutes.com/docs/zh-cn/javascript-cn/
 ---
 
-> JavaScript 是一门跨平台、面向对象的脚本语言，它能使网页可交互，可以让你在网页上添加更多功能，另外还有高级的服务端 JavaScript 版本，在web浏览器中，JavaScript能够通过其所连接的环境提供的编程接口进行控制。在之前我已经简单总结了[HTML5/CSS3的必会知识点](/HTML和CSS基础)，为Javascript 学习打下基础，以下是我对于经常会使用到的 JavaScript 基础知识的总结，但不包括JS 库和框架的知识，会在之后再补上。
+> JavaScript 是一门跨平台、面向对象的脚本语言，它能使网页可交互，可以让你在网页上添加更多功能，另外还有高级的服务端 JavaScript 版本，在web浏览器中，JavaScript能够通过其所连接的环境提供的编程接口进行控制。在之前我已经简单总结了[HTML5/CSS3的必会知识点](/HTML和CSS基础)，为 Javascript 学习打下基础，以下是我对于经常会使用到的 JavaScript 基础知识的总结，但不包括 JS 库和框架的知识，会在之后再补上。
 
 <!--more-->
 

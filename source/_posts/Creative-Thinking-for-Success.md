@@ -2,11 +2,11 @@
 title: Creative Thinking：Techniques and Tools for Success
 date: 2020-06-28
 updated: 2020-07-01
-tags: [Coursera]
+tags: []
 categories: 经济与商业
 ---
 
-> In this ever-growing and changing world, being able to think creatively and innovatively are essential skills. This course provided by IMPERIAL COLLEGE LONDON equips us with a tool-box, introducing us to a selection of behaviours and techniques that augments our innate creativity. The following are the notes I took during this course. 
+> In this ever-growing and changing world, being able to think creatively and innovatively are essential skills. This course provided by IMPERIAL COLLEGE LONDON equips us with a tool-box, introducing us to a selection of behaviors and techniques that augments our innate creativity. The following are the notes I took during this course. 
 
 <!--more-->
 
@@ -81,7 +81,7 @@ categories: 经济与商业
 
 - TRIZ = Theory of intensive problem solving
 - Invented by Genrich Altshuller
-- Specific Problem --Abstraction-> General Problem -> Genearl Solutions --Analogy-> Solution to Specific Problem
+- Specific Problem --Abstraction-> General Problem -> General Solutions --Analogy-> Solution to Specific Problem
 - 39 Parameters
 - 40 principles
 - The concept of contradiction

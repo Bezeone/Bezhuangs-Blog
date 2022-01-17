@@ -2,8 +2,8 @@
 title: 2021阿里Java训练营第三期
 date: 2021-03-26
 updated: 2021-04-18
-tags: [Java]
-categories: 代码人生
+tags: [Java, Spring Cloud]
+categories: 程序人生
 references:
   - title: Spring Cloud微服务架构设计与开发实战
     url: https://developer.aliyun.com/learning/course/60
@@ -58,7 +58,7 @@ references:
   eureka.client.register-with-eureka=false
   ```
 
-### Spring Cloud2020微服务架构
+### Spring Cloud2020 微服务架构
 
 - Spring Cloud Netflix Greenwich以上（2.1.X）版本相对成熟，企业使用多，容易落地架构
 - Spring Cloud Alibaba相对成熟，部分组件可以替换

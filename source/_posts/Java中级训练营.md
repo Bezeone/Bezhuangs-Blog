@@ -2,8 +2,8 @@
 title: 2021阿里Java训练营第二期
 date: 2021-03-12
 updated: 2021-03-15
-tags: [Java]
-categories: 代码人生
+tags: [Java, Spring Boot, MySQL, MongoDB, Redis]
+categories: 程序人生
 references:
   - title: Spring Boot 2.5.x开发实战
     url: https://developer.aliyun.com/learning/course/71
@@ -15,7 +15,7 @@ references:
 
 ![](https://ucc-image.oss-cn-beijing.aliyuncs.com/credential/26/f6c8aefac0a44ad78108e5a9935fb5a9.png)
 
-### Java Spring企业级开发平台
+### Java Spring 企业级开发平台
 
 - 最初来自2002年Rod Jahnson所著书《Expert One-on-One J2EE Design and Development》,最早名字为：Interface21
 - 2003年6月诞生轻量级Java企业级开发工具类库[Spring](http://www.springsource.org)，现在已经发展成为包括开发工具、MVC框架、类库、微服务架构的完整平台（体系）

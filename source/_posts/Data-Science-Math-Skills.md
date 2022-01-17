@@ -2,7 +2,7 @@
 title: Data Science Math Skills
 date: 2020-05-03
 updated: 2020-05-25
-tags: [Coursera, Data Science]
+tags: []
 categories: 数学
 mathjax: true
 ---
@@ -22,18 +22,22 @@ mathjax: true
 #### Cardinality
 
 - The cardinality (size) of a set is the number of elements in it.
-- |A| = 4 (there are 4 elements in A, so the cardinality is 4)
+
+- $|A| = 4$ (there are 4 elements in A, so the cardinality is 4)
 
 #### Intersections
 
-- The intersection is defined as elements that are in both sets. Symbol ∩: “intersects” (and)
-- A ∩ B = {x : x ∈ A and x ∈ B}
-- If there are no elements in common, the answer is the empty set ∅. The cardinality of the empty set |∅| = 0.
+- The intersection is defined as elements that are in both sets. Symbol $∩$: “intersects” (and)
+
+- $A ∩ B = {x : x ∈ A and x ∈ B}$
+
+- If there are no elements in common, the answer is the empty set ∅. The cardinality of the empty set $|∅| = 0$
 
 #### Unions
 
 - The union is defined as elements that are in either set. Symbol ∪: “union” (or)
-- A ∪ B = {x ∈ A or x ∈ B}.
+
+- $A ∪ B = {x ∈ A or x ∈ B}$
 
 #### Visualizing sets
 
@@ -41,7 +45,7 @@ mathjax: true
 
 #### Inclusion-exclusion formula
 
-- Inclusion-exclusion formula: |A ∪ B| = |A| + |B| − |A ∩ B|
+- Inclusion-exclusion formula: $|A ∪ B| = |A| + |B| − |A ∩ B|$
 
 ### Numbers
 
@@ -55,23 +59,26 @@ mathjax: true
 
 #### Intervals and Interval Notation
 
-- Closed intervals [2, 3.1]
-- Open intervals (5, 8)
-- Half-open intervals (2, 3], [20, 20.3)
+- Closed intervals $[2, 3.1]$
+
+- Open intervals $(5, 8)$
+
+- Half-open intervals $(2, 3], [20, 20.3)$
 
 ### Sigma Notation
 
 #### Sigma notation (Σ)
 
-- distributive property: a(b + c) = ab + ac
-- commutative property: a + b = b + a
+- distributive property: $a(b + c) = ab + ac$
+
+- commutative property: $a + b = b + a$
 
 ### Cartesian Plane
 
 #### Axes and quadrants
 
-- x−axis
-- y−axis
+- X−axis
+- Y−axis
 - first quadrant
 - second quadrant
 - third quadrant
@@ -88,6 +95,7 @@ mathjax: true
 #### Point-Slope Formula for Lines
 
 - $y-y_{0}=m\left( x-x_{0}\right)$ Point-slope form
+
 - $y=mx+b$ Slope-intercept form
 
 ### Functions
@@ -109,18 +117,25 @@ mathjax: true
 #### Integer Exponents
 
 1. Multiplication rule: $x^{n}x^{m}=x^{m+n}$
+
 2. Power to a power: $x^{n^{m}}=x^{nm}$
+
 3. Product to a power: $\left( x\cdot y\right) ^{n}=x^{n}\cdot y^{n}$
+
 4. Fraction to a power: $\left( \dfrac{x}{y}\right) ^{n}=\dfrac{x^{n}}{y^{n}}$
+
 5. Division and negative powers
 
 #### How Logarithms and Exponents Are Related
 
 - $b^{x}=N$ “exponential form”
+
 - $x=\log _{b}N$ “logarithmic form”
 
 1. Product rule: $\log(xy) = \log(x) + \log(y)$
-2. Quotient rule: $\log(\dfrac{x}{y}\) = \log(x) − \log(y)$
+
+2. Quotient rule: $\log ( \dfrac{x}{y}) = \log(x) − \log(y)$
+
 3. Power and root rule: $\log \left( x^{n}\right) =nlog\left( x\right)$
 
 ### Basic Probability Definitions

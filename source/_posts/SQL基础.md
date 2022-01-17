@@ -1,15 +1,15 @@
 ---
-title: SQL基础知识总结
+title: SQL 基础知识总结
 date: 2020-05-26
 updated: 2020-11-27
-tags: [SQL]
+tags: [SQL, MySQL]
 categories: 编程与开发
 references:
   - title: SQL语法速成手册
     url: https://mp.weixin.qq.com/s/sKQy3MxNiDjlu3HLwrXBJg
 ---
 
-> 现代程序离不开关系数据库，要使用关系数据库就必须掌握SQL语言。SQL 是用于访问和处理数据库的标准的计算机语言。本文是在学习完[SQL教程](https://www.liaoxuefeng.com/wiki/1177760294764384) 后针对关系型数据库的一般语法进行的总结，常见的关系型数据库包括：MySQL、SQL Server、Access、Oracle、Sybase、DB2 等等，MySQL是目前使用最多的SQL 数据库，本文也是以MySQL 的操作为例阐释SQL语法。
+> 现代程序离不开关系数据库，要使用关系数据库就必须掌握 SQL 语言。SQL 是用于访问和处理数据库的标准的计算机语言。本文是在学习完 [SQL 教程](https://www.liaoxuefeng.com/wiki/1177760294764384) 后针对关系型数据库的一般语法进行的总结，常见的关系型数据库包括：MySQL、SQL Server、Access、Oracle、Sybase、DB2 等等，MySQL 是目前使用最多的 SQL 数据库，本文也是以 MySQL 的操作为例阐释SQL语法。
 
 <!--more-->
 

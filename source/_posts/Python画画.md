@@ -1,5 +1,5 @@
 ---
-title: 使用Python程序画画
+title: 使用 Python 程序画画
 date: 2021-06-01
 updated: 2021-06-01
 tags: [Python]

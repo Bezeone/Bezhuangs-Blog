@@ -1,5 +1,5 @@
 ---
-title: Python基础知识总结
+title: Python 基础知识总结
 date: 2020-07-11
 updated: 2020-10-30
 tags: [Python]
@@ -11,7 +11,7 @@ references:
     url: https://book.douban.com/subject/27021033/
 ---
 
-> Python 是由 Guido van Rossum 在八十年代末和九十年代初，在荷兰国家数学和计算机科学研究所设计的一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。在此之前我已经学习了英语版本的Python&计算机导论课程：[Python for everybody](/Python4)，二刷时我使用的教程则是尚硅谷的[Python基础教程](https://www.bilibili.com/video/BV1hW41197sB)，这篇笔记是对Python语言基础知识的总结，为今后的网站开发、数据分析、机器学习等应用打下基础。
+> Python 是由 Guido van Rossum 在八十年代末和九十年代初，在荷兰国家数学和计算机科学研究所设计的一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。在此之前我已经学习了英语版本的 Python &计算机导论课程：[Python for everybody](/Python4)，二刷时我使用的教程则是尚硅谷的[ Python 基础教程](https://www.bilibili.com/video/BV1hW41197sB)，这篇笔记是对 Python 语言基础知识的总结，为今后的网站开发、数据分析、机器学习等应用打下基础。
 
 <!--more-->
 

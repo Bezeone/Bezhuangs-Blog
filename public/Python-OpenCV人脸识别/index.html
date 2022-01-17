@@ -418,18 +418,11 @@ Open Source Computer Vision Library（OpenCV）是一个跨平台的计算机视
               <p>开源库</p>
             </a>
           
-            <a href="/plans"
-              
-              
-              id="plans">
-              <p>计划表</p>
-            </a>
-          
             <a href="/todo"
               
               
               id="todo">
-              <p>进行中</p>
+              <p>计划表</p>
             </a>
           
             <a href="/guestbook"
@@ -949,17 +942,17 @@ Open Source Computer Vision Library（OpenCV）是一个跨平台的计算机视
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%8B/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据结构（下）</p>
+        <a class='prev' href='/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>微分学重点</p>
           <p class='content'>
-数据结构是指数据的存储结构，是带有结构特性的数据元素的集合。精心选择的数据结构可以带来更好的运行或者存储效率。数据结构是计算机科学与技术专业、软件工程专业甚至于其它电气信息类专业的重要专业基础...</p>
+微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点...</p>
         </a>
       
       
-        <a class='next' href='/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%8B/'>
-          <p class='title'>计算机网络（下）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='next' href='/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B9/'>
+          <p class='title'>微积分重点<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>
-计算机网络是计算机专业必修的重要课程之一，与现实世界结合得相当紧密，也是考研408计算机学科专业基础综合考试中的一门课程。计算机网络学习的核心内容就是网络协议的学习。网络协议是为计算机网络中进...</p>
+微积分重点（Highlights of Calculus）是 MIT 数学教授 Gilbert Strang 对于微积分中的精华和重点出的一个生动、简短的课程，帮助我们重新审视微积分，课程主要...</p>
         </a>
       
     </div>
@@ -1054,22 +1047,6 @@ Open Source Computer Vision Library（OpenCV）是一个跨平台的计算机视
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='true'
-      volume='0.1'
-      loop='one'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='song'
-      id='551340988'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -1306,32 +1283,6 @@ var loadCSS = function( href, before, media, attributes ){
   
         
       
-        
-          <hr>
-        
-      
-        
-          <li class='music name'>
-            <p class='nav music-title fix-cursor-default'></p>
-          </li>
-          <li class='music ctrl'>
-            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
-          </li>
-          <li class='music volume'>
-            <a class='nav volume'>
-              <div class="aplayer-volume-bar-wrap">
-                <div class="aplayer-volume-bar fix-cursor-pointer">
-                  <div class="aplayer-volume"></div>
-                  <i class='left fa fa-volume-off fa-fw'></i>
-                  <i class='right fa fa-volume-up fa-fw'></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        
-      
     </ul>
   </div>
 
@@ -1435,7 +1386,7 @@ var loadCSS = function( href, before, media, attributes ){
       }
 
       // 有音乐播放器
-      if ('true' == true && ('home,contributors,source_docs,hr,print,hr,music'||[]).includes('music')) {
+      if ('false' == true && ('home,contributors,source_docs,hr,print'||[]).includes('music')) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();
@@ -1570,30 +1521,6 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
-
-
-  <script>
-  let APlayerController = new Object();
-  APlayerController.id = '551340988';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.1';
-  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
-  // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
-  window.volantis.LoadMetingJS=0
-  var checkAPlayer = setInterval(function () {
-    if (!window.APlayer) return
-    clearInterval(checkAPlayer)
-	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
-	  window.LoadMetingJS=1
-      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-	  }
-  }, 2500)
-
-  
-    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/aplayer.min.js');
-  
-
-</script>
 
 
 

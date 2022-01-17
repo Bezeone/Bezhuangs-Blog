@@ -1,5 +1,5 @@
 - group: 行业大佬 # 分组标题
-  description: 经常会看的技术大牛们 # 分组描述
+  description: 技术大牛们的博客 # 分组描述
   items:
     - title: 酷壳 # 名称
       avatar: https://coolshell.cn/wp-content/uploads/2009/04/qrcode_for_gh_dd9d8c843f20_860-300x300.jpg # 头像
@@ -54,9 +54,9 @@
       keywords: # 关键词
       description: # 描述
     - title: 顾林x # 名称
-      avatar: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E7%BE%8E%E5%A5%B34.jpg # 头像
+      avatar: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E7%BE%8E%E5%A5%B33.jpg # 头像
       url: https://weibo.com/u/2621087333 # 链接
-      screenshot: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E7%BE%8E%E5%A5%B33.jpg # 截图
+      screenshot: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E7%BE%8E%E5%A5%B34.jpg # 截图
       keywords: # 关键词
       description: # 描述
     - title: 潘白雪s # 名称

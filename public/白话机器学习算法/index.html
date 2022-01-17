@@ -24,8 +24,6 @@
   
   <title>白话机器学习算法 - Bezhuang&#39;s Blog</title>
   
-    <meta name="keywords" content="Machine Learning">
-  
 
   
     <meta name="description" content="
@@ -418,18 +416,11 @@
               <p>开源库</p>
             </a>
           
-            <a href="/plans"
-              
-              
-              id="plans">
-              <p>计划表</p>
-            </a>
-          
             <a href="/todo"
               
               
               id="todo">
-              <p>进行中</p>
+              <p>计划表</p>
             </a>
           
             <a href="/guestbook"
@@ -1039,9 +1030,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Machine-Learning/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Machine Learning</p></a></div>
-
 
         
       
@@ -1149,10 +1137,10 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E5%8F%8C%E8%89%B2%E7%90%83/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>双色球系统</p>
+        <a class='prev' href='/JavaWeb%E5%9F%BA%E7%A1%80-%E4%B8%8A/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JavaWeb 基础总结（上）</p>
           <p class='content'>
-双色球是最常见的一种彩票。双色球投注区分为红球号码区和蓝球号码区，红球号码范围为01～33，蓝球号码范围为01～16。双色球每期从33个红球中开出6个号码，从16个蓝球中开出1个号码作为中奖号...</p>
+  cec776f7fc63ae327c1b8b56b82bb8d06ddf381de1ed6a9d4eceaf4f70557eaeb12ff3733ad3c5a8b05478819db47f...</p>
         </a>
       
       
@@ -1254,22 +1242,6 @@
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='true'
-      volume='0.1'
-      loop='one'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='song'
-      id='551340988'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -1506,32 +1478,6 @@ var loadCSS = function( href, before, media, attributes ){
   
         
       
-        
-          <hr>
-        
-      
-        
-          <li class='music name'>
-            <p class='nav music-title fix-cursor-default'></p>
-          </li>
-          <li class='music ctrl'>
-            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
-          </li>
-          <li class='music volume'>
-            <a class='nav volume'>
-              <div class="aplayer-volume-bar-wrap">
-                <div class="aplayer-volume-bar fix-cursor-pointer">
-                  <div class="aplayer-volume"></div>
-                  <i class='left fa fa-volume-off fa-fw'></i>
-                  <i class='right fa fa-volume-up fa-fw'></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        
-      
     </ul>
   </div>
 
@@ -1635,7 +1581,7 @@ var loadCSS = function( href, before, media, attributes ){
       }
 
       // 有音乐播放器
-      if ('true' == true && ('home,contributors,source_docs,hr,print,hr,music'||[]).includes('music')) {
+      if ('false' == true && ('home,contributors,source_docs,hr,print'||[]).includes('music')) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();
@@ -1770,30 +1716,6 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
-
-
-  <script>
-  let APlayerController = new Object();
-  APlayerController.id = '551340988';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.1';
-  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
-  // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
-  window.volantis.LoadMetingJS=0
-  var checkAPlayer = setInterval(function () {
-    if (!window.APlayer) return
-    clearInterval(checkAPlayer)
-	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
-	  window.LoadMetingJS=1
-      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-	  }
-  }, 2500)
-
-  
-    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/aplayer.min.js');
-  
-
-</script>
 
 
 

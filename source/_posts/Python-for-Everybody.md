@@ -2,7 +2,7 @@
 title: Python for everybody
 date: 2020-03-25
 updated: 2020-05-15
-tags: [Coursera, Python, SQL]
+tags: [Python, SQL]
 categories: 计算机专业
 references: 
   - title: Python学习-PY4E作业

@@ -1,8 +1,8 @@
 ---
-title: HTML/CSS相关基础知识总结
+title: HTML/CSS 基础知识总结
 date: 2020-09-10
 updated: 2021-01-22
-tags: [前端]
+tags: [HTML/CSS]
 categories: 编程与开发
 references: 
   - title: 前端学习路线图
@@ -11,7 +11,7 @@ references:
     url: https://www.w3school.com.cn/h.asp
 ---
 
-> 对于前端开发来说，最基本的知识肯定是`html`, `css`, `js`三剑客了。前端技术更新快，因此对于文档的阅读和[实际操练](https://learn.freecodecamp.one/)十分重要，基础阶段一定要打好，才能向更高峰攀登。笔记是对一些我认为的HTML5和CSS3相关常用知识的总结。至于想看最全和最权威文档的朋友还是移步[MDN web docs](https://developer.mozilla.org/zh-CN/)吧。
+> 对于前端开发来说，最基本的知识肯定是`HTML`, `CSS`, `JavaScript`三剑客了。前端技术更新快，因此对于文档的阅读和[实际操练](https://learn.freecodecamp.one/)十分重要，基础阶段一定要打好，才能向更高峰攀登。本篇笔记是对一些我认为的 HTML5 和 CSS3 相关常用知识的总结。至于想看最全和最权威文档的朋友还是移步[MDN web docs](https://developer.mozilla.org/zh-CN/)吧。
 
 <!--more-->
 

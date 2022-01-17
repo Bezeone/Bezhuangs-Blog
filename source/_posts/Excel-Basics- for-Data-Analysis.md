@@ -2,7 +2,7 @@
 title: Excel Basics for Data Analysis
 date: 2021-01-04
 updated: 2021-01-31
-tags: [Excel, Coursera, Data Science]
+tags: [Excel]
 categories: 人工智能与大数据
 ---
 

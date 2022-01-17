@@ -24,7 +24,7 @@
   
   <title>操作系统（下） - Bezhuang&#39;s Blog</title>
   
-    <meta name="keywords" content="Operating System">
+    <meta name="keywords" content="Linux">
   
 
   
@@ -418,18 +418,11 @@
               <p>开源库</p>
             </a>
           
-            <a href="/plans"
-              
-              
-              id="plans">
-              <p>计划表</p>
-            </a>
-          
             <a href="/todo"
               
               
               id="todo">
-              <p>进行中</p>
+              <p>计划表</p>
             </a>
           
             <a href="/guestbook"
@@ -658,13 +651,195 @@
 </li>
 </ul>
 <h4 id="虚拟内存的基本概念"><a href="#虚拟内存的基本概念" class="headerlink" title="虚拟内存的基本概念"></a>虚拟内存的基本概念</h4><ul>
-<li></li>
+<li><p>在真实的操作系统中，通常采用段页式存储管理，段面向用户，页面向硬件</p>
+</li>
+<li><p>虚拟内存解决的问题</p>
+<ul>
+<li>一次性：作业必须一次性全部装入内存后才能开始运行。这会造成两个问题：①作业很大时，不能全部装入内存，导致大作业无法运行；②当大量作业要求运行时，由于内存无法容纳所有作业，因此只有少量作业能运行，导致多道程序并发度下降</li>
+<li>驻留性：一旦作业被装入内存，就会一直驻留在内存中，直至作业运行结束。事实上，在一个时间段内，只需要访问作业的一小部分数据即可正常运行，这就导致了内存中会驻留大量的、暂时用不到的数据，浪费了宝贵的内存资源。</li>
+</ul>
+</li>
+<li><p>虚拟内存的实现：</p>
+<ul>
+<li>基于局部性原理，在程序装入时，可以将程序中很快会用到的部分装入内存，暂时用不到的部分留在外存，就可以让程序开始执行</li>
+<li>在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序</li>
+<li>若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存。在操作系统的管理下，在用户看来似乎有一个比实际内存大得多的内存，这就是虚拟内存。</li>
+</ul>
+</li>
+</ul>
+<h4 id="请求分页管理"><a href="#请求分页管理" class="headerlink" title="请求分页管理"></a>请求分页管理</h4><ul>
+<li>请求分页管理：在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序。若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存</li>
+<li>缺页中断： 在请求分页系统中，每当要访问的页面不在内存时，便产生一个缺页中断，然后由操作系统的缺页中断处理程序处理中断</li>
+<li>缺页的进程阻塞，放入阻塞队列，调页完成后再将其唤醒，放回就绪队列。如果内存中有空闲块，则为进程分配一个空闲块，将所缺页面装入该块，并修改页表中相应的页表项。如果内存中没有空闲块，则由页面置换算法选择一个页面淘汰，同时要注意，若某个页面被换出外存，则快表中的相应表项也要删除，否则可能访问错误的页面</li>
+<li>理解缺页，缺页就像货架上缺少了商品，需要从仓库里调取商品，就先暂停这个货架的销售，等商品调取完毕再重新出售。</li>
+</ul>
+<h4 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h4><ul>
+<li><p>置换算法的评价指标是：缺页的次数，某种算法让缺页次数最低，调度效率最高，那就是最优的算法</p>
+</li>
+<li><p>最佳置换算法：每次淘汰的页面都是以后永久不用或最长时间不使用的页面，保证最低的缺页率。显然，这种需要预测未来的算法不可能实现。</p>
+</li>
+<li><p>先进先出算法FIFO：缺页时，淘汰最早进入的页面。算法简单，但局限性也明显，例如某些经常使用的页面一直被换进换出，和使用频率低的页面有相同的被换出的机会。</p>
+</li>
+<li><p>最近最久未使用置换算法LRU：每次淘汰的页面都是最近最久未使用的页面。需要在页面中添加一个记录项，记录上次被访问以来经历的时间t，当需要淘汰页面时，选择时间t最大的淘汰，也就是最久未使用的淘汰。算法设计虽好，但开销很大，实现困难。</p>
+</li>
+<li><p>时钟置换算法：时钟置换算法也可以称为最近未使用算法。是一种性能和开销均衡的算法。</p>
+</li>
+<li><p>简单的时钟算法实现方法：为每个页面设置一个访问位，再将内存中的页面都通过链接指针链接成一个循环队列。当某页被访问时，其访问位置为1。当需要淘汰一个页面时，只需检查页的访问位。如果是0，就选择该页换出;如果是1，则将它置为0，暂不换出，继续检查下一个页面，若第一轮扫描中所有页面都是1，则将这些页面的访问位依次置为0后，再进行第二轮扫描（第二轮扫描中一定会有访问位为0的页面，因此简单的CLOCK算法选择一个淘汰页面最多会经过两轮扫描)</p>
+</li>
+</ul>
+<h3 id="I-O原理"><a href="#I-O原理" class="headerlink" title="I/O原理"></a>I/O原理</h3><h4 id="文件的逻辑结构"><a href="#文件的逻辑结构" class="headerlink" title="文件的逻辑结构"></a>文件的逻辑结构</h4><ul>
+<li><p>文件可以分为两类：</p>
+<ul>
+<li><p>无结构文件：文件内部数据就是一系列二进制流或字符流。最典型的就是txt文件。</p>
+</li>
+<li><p>有结构文件：由一组相似的记录组成，又称记录式文件。典型的excel表、数据库表等。</p>
+</li>
+</ul>
+</li>
+<li><p>有结构文件的逻辑结构又分顺序文件、索引文件、索引顺序文件，注意逻辑结构是展示给用户的，是文件的组织形式，例如是一张顺序存储的excel表格，还是一张excel索引表加上excel顺序表，还是多级索引加顺序，而不是在计算机上的存储方式。</p>
+</li>
+<li><p>顺序文件：文件中的记录一个接一个地顺序排列（逻辑上），记录可以是定长的或可变长的。各个记录在物理上可以顺序存储或链式存储。</p>
+</li>
+<li><p>顺序存储即逻辑相邻的文件物理上也相邻，链式存储即在末尾添加新的文件。</p>
+</li>
+<li><p>记录的类型又分为可变长和不可变长记录</p>
+</li>
+</ul>
+<ul>
+<li>索引顺序文件：索引顺序文件是索引文件和顺序文件思想的结合。索引顺序文件中，同样会为文件建立一张索引表，但不同的是：并不是每个记录对应一个索引表项，而是一组记录对应一个索引表项，索引表项的地址直接指向顺序文件所在区域，再顺序查找到所需的文件，从而节省了很大的空间。(例如我们可以通过An Qi找到An Kang、An Jie等，而不用在索引表中存放这么多信息。另外索引项之间不需要有按照逻辑关系排列)</li>
+<li>多级索引顺序文件：在索引顺序文件的基础上再增加层次深度，可以减少查找的次数(顺序查找范围缩小了)</li>
+</ul>
+<h4 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h4><ul>
+<li><p>文件目录可以分为：单级目录结构、两级目录结构、多级目录结构(树形目录结构)</p>
+</li>
+<li><p>单极目录结构：顾名思义，所有的文件放在一个目录中，类似于一个仓库把所有文件不加整理的堆放在一起，显然效率会很低下</p>
+</li>
+<li><p>两级目录结构:主要分为主文件目录和用户文件目录。类似于仓库中加了几个员工货架，不同员工的货物放在不同货架，但在一个货架中文件还是采用堆砌式的存储。</p>
+</li>
+<li><p>多级目录结构，又称树形目录结构:我们当前主流操作系统都是多级目录结构，简而言之就是文件目录可以一级一级的延申，从而文件更有条理。</p>
+</li>
+<li><p>FCB(文件控制块)，首先来看一张图，如果文件目录都以这种表的形式进行信息查找，会大大降低运行效率，增加系统负担。</p>
+</li>
+<li><p>提出对策，其实在查找各级目录的过程中，只需要用到文件名这个信息，可以考虑让目录表瘦身来提升效率。</p>
+</li>
+<li><p>索引结点指针指向索引结点(文件名之外的其他信息就存放在结点中，从而按需读取，提升效率)</p>
+</li>
+<li><p>每一个文件都有一个FCB，记录了文件的地址、信息、权限等等属性</p>
+</li>
+</ul>
+<h4 id="文件的物理结构"><a href="#文件的物理结构" class="headerlink" title="文件的物理结构"></a>文件的物理结构</h4><ul>
+<li><p>最重要的三种物理结构：顺序、链接、索引，其中最主要使用的是索引文件，可以随机访问，同时增删效率高</p>
+</li>
+<li><p>文件的物理结构是文件分配在计算机存储上的分配方式。分配的基本单位是 物理块,可以构想一下，一个大文件，如一首音乐23MB，难道直接一整个塞入硬盘吗？显然可能会出现一些问题，硬盘的空间也需要不断调整，就像内存分页一样，硬盘也被分为小的物理块号方便进行调度。</p>
+</li>
+<li><p>连续分配</p>
+<ul>
+<li>优点：支持顺序访问和直接访问（即随机访问）；连续分配的文件在顺序访问时速度最快</li>
+<li>缺点：不方便文件拓展；存储空间利用率低，会产生磁盘碎片</li>
+</ul>
+</li>
+<li><p>链式分配</p>
+<ul>
+<li>隐式：采用链式分配（隐式链接）方式的文件，只支持顺序访问，不支持随机访问，查找效率低。另外，指向下一个盘块的指针也需要耗费少量的存储空间。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>显式：直观理解就是在隐式的基础上添加了一张表，从表上能看出不同物理块号的下一块的地址</p>
+</li>
+<li><p>结论：采用链式分配（显式链接）方式的文件，支持顺序访问，也支持随机访问（想访问i 号逻辑块时，并不需要依次访问之前的0 ~ i-1号逻辑块），由于块号转换的过程不需要访问磁盘，因此相比于隐式链接来说，访问速度快很多</p>
+</li>
+<li><p>显式链接也不会产生外部碎片，也可以很方便地对文件进行拓展。</p>
+</li>
+<li><p>索引分配</p>
+<ul>
+<li>索引就是文件分成不同的物理块存入磁盘，对每个物理块都有一个索引与之对应，需要读写时就通过索引表查询其物理地址进行相关操作</li>
+</ul>
+</li>
+</ul>
+<h4 id="磁盘结构"><a href="#磁盘结构" class="headerlink" title="磁盘结构"></a>磁盘结构</h4><ul>
+<li><p>磁道：每一圈就是一个磁道，最内侧磁道面积最小，所以数据密度最大</p>
+</li>
+<li><p>扇区：磁道被划分为小的磁盘块</p>
+</li>
+<li><p>一个盘片可能有两个盘面;每个盘面对应一个磁头；所有磁头连在一起，共进退；每个盘面的相对位置的磁道组成柱面</p>
+</li>
+</ul>
+<h4 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h4><ul>
+<li><p>磁盘调度算法要解决的核心问题就是寻道时间，即移动磁头的时间，而其他的启动时间、传输时间都很迅速，不是最主要的时间消耗</p>
+</li>
+<li><p>先来先服务FCFS</p>
+<ul>
+<li>根据进程请求房屋内磁盘的现后顺序进行调度。符合惯性思维，但在很多时候，效果很差。</li>
+</ul>
+</li>
+<li><p>最短寻找时间优先(学过数据结构与算法的话，核心思想就是贪心算法)，该算法会优先处理与当前磁头最近的磁道的需求</p>
+<ul>
+<li>那么很可能磁头就会如图所示的移动，也会存在饥饿问题：磁头只在一个小区域移动，而不能满足需要远距离移动的需求。例如不断有18-&gt;38，38-&gt;18的需求，那磁头就不会执行18-&gt;150的请求，从而产生饥饿</li>
+</ul>
+</li>
+<li><p>扫描算法</p>
+<ul>
+<li>核心思想，只有磁头移动到最外侧磁道的时候才能往内侧移动，移动到最内侧的时候才能向外侧移动。这样就不会产生饥饿问题。</li>
+</ul>
+</li>
+</ul>
+<h4 id="文件共享"><a href="#文件共享" class="headerlink" title="文件共享"></a>文件共享</h4><ul>
+<li>文件共享分两种链接方式，硬链接和软连接<ul>
+<li>硬链接就是在另一个用户的目录中，索引结点指针直接指向了发送分享的用户的索引节点，从而实现了共享，count的数量代表文件正在被几个用户使用。</li>
+<li>软连接，类似于快捷方式，记录了原文件的路径，然后层层查找。</li>
+</ul>
+</li>
+</ul>
+<h4 id="文件保护"><a href="#文件保护" class="headerlink" title="文件保护"></a>文件保护</h4><ul>
+<li><p>文件保护有三种方式口令、加密、访问控制</p>
+<ul>
+<li>口令：为文件设置一串口令，就像打开手机需要先解锁。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>加密：使用加密方法对文件加密，只有拥有正确的解密方法才能解密，有点像不同军队之间进行通信，要实现进行加密，要是想窥探敌情，就要对密文进行破解。</p>
+</li>
+<li><p>访问控制：每个文件的FCB或者索引结点中设置访问控制表，如windows中，设置了很多的访问权限，例如</p>
+</li>
+</ul>
+<h4 id="I-O设备"><a href="#I-O设备" class="headerlink" title="I/O设备"></a>I/O设备</h4><ul>
+<li><p>I/O就是输入输出，I/O设备就是可以将数据输入到计算机或将计算机数据输出的设备，常见的：鼠标、键盘、音响、显示器、打印机、话筒、摄像头等等。</p>
+</li>
+<li><p>I/O控制器:CPU无法直接控制I/O设备，需要一个电子部件去充当中间人，这个部件就是I/O控制器，CPU控制I/O控制器，I/O控制器控制I/O设备。</p>
+</li>
+<li><p>假如我们的CPU能够控制I/O设备，那不同的厂商、不同型号的设备，都要对应进行编码，显然是不切实际的，所以CPU要采用通用调度方式调度I/O设备从而需要I/O控制器。</p>
+</li>
+</ul>
+<ul>
+<li>Java语言中，调用System.out.Println()，这本身并不能在显示器上打印，而需要通过操作系统调用write方法，接着调用字符设备接口，命令显示器写</li>
 </ul>
 
   
   
     
     <div class='footer'>
+      
+        <div class='references'>
+          <section class='header'>
+            
+              <i class="fas fa-quote-left fa-fw" aria-hidden="true"></i>
+            
+            <span>References</span>
+          </section>
+          <section class='body'>
+            <ul>
+              
+                <li>
+                  <a href="https://blog.csdn.net/SakuraA6/article/details/108810916" rel="external nofollow noopener noreferrer" target="_blank">
+                  操作系统笔记整理
+                  </a>
+                </li>
+              
+            </ul>
+          </section>
+        </div>
       
       
       
@@ -703,7 +878,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Operating-System/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Operating System</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
 
 
         
@@ -713,13 +888,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.1k字</p>
+      <p>字数：6.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：10分钟</p>
+      <p>时长：22分钟</p>
     </a>
   </div>
 
@@ -812,10 +987,10 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%8A/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>机器学习（上）</p>
+        <a class='prev' href='/%E4%BB%8E2020%E7%9A%84%E8%A7%86%E8%A7%92%E7%9C%8B%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>从2020的视角看线性代数</p>
           <p class='content'>
-机器学习是人工智能的重要技术基础，涉及的内容十分广泛，涵盖概率论知识，统计学知识，近似理论知识和复杂算法知识，使用计算机作为工具并致力于真实实时的模拟人类学习方式。我选择的课程是台湾大学电机工...</p>
+2020 年 MIT 数学教授 Gilbert Strang 录制了一个关于线性代数的学习和教学的一个新的、启发性的课程，从矩阵 A 的列空间和组合这些列的乘法 Ax 开始，包括了线性代数的概...</p>
         </a>
       
       
@@ -865,7 +1040,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0"><span class="toc-text">内存管理概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="toc-text">交换与覆盖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">非连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">虚拟内存的基本概念</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0"><span class="toc-text">内存管理概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="toc-text">交换与覆盖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">非连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">虚拟内存的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86"><span class="toc-text">请求分页管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">页面置换算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O%E5%8E%9F%E7%90%86"><span class="toc-text">I&#x2F;O原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-text">文件的逻辑结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-text">文件目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="toc-text">文件的物理结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84"><span class="toc-text">磁盘结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">磁盘调度算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB"><span class="toc-text">文件共享</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%9D%E6%8A%A4"><span class="toc-text">文件保护</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I-O%E8%AE%BE%E5%A4%87"><span class="toc-text">I&#x2F;O设备</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -917,22 +1092,6 @@
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='true'
-      volume='0.1'
-      loop='one'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='song'
-      id='551340988'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -1169,32 +1328,6 @@ var loadCSS = function( href, before, media, attributes ){
   
         
       
-        
-          <hr>
-        
-      
-        
-          <li class='music name'>
-            <p class='nav music-title fix-cursor-default'></p>
-          </li>
-          <li class='music ctrl'>
-            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
-          </li>
-          <li class='music volume'>
-            <a class='nav volume'>
-              <div class="aplayer-volume-bar-wrap">
-                <div class="aplayer-volume-bar fix-cursor-pointer">
-                  <div class="aplayer-volume"></div>
-                  <i class='left fa fa-volume-off fa-fw'></i>
-                  <i class='right fa fa-volume-up fa-fw'></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        
-      
     </ul>
   </div>
 
@@ -1298,7 +1431,7 @@ var loadCSS = function( href, before, media, attributes ){
       }
 
       // 有音乐播放器
-      if ('true' == true && ('home,contributors,source_docs,hr,print,hr,music'||[]).includes('music')) {
+      if ('false' == true && ('home,contributors,source_docs,hr,print'||[]).includes('music')) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();
@@ -1433,30 +1566,6 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
-
-
-  <script>
-  let APlayerController = new Object();
-  APlayerController.id = '551340988';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.1';
-  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
-  // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
-  window.volantis.LoadMetingJS=0
-  var checkAPlayer = setInterval(function () {
-    if (!window.APlayer) return
-    clearInterval(checkAPlayer)
-	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
-	  window.LoadMetingJS=1
-      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-	  }
-  }, 2500)
-
-  
-    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/aplayer.min.js');
-  
-
-</script>
 
 
 

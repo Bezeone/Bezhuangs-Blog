@@ -24,8 +24,6 @@
   
   <title>计算机组成原理（上） - Bezhuang&#39;s Blog</title>
   
-    <meta name="keywords" content="Computer Organization">
-  
 
   
     <meta name="description" content="
@@ -418,18 +416,11 @@
               <p>开源库</p>
             </a>
           
-            <a href="/plans"
-              
-              
-              id="plans">
-              <p>计划表</p>
-            </a>
-          
             <a href="/todo"
               
               
               id="todo">
-              <p>进行中</p>
+              <p>计划表</p>
             </a>
           
             <a href="/guestbook"
@@ -514,124 +505,298 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="计算机系统概论"><a href="#计算机系统概论" class="headerlink" title="计算机系统概论"></a>计算机系统概论</h3><h4 id="计算机的发展历程"><a href="#计算机的发展历程" class="headerlink" title="计算机的发展历程"></a>计算机的发展历程</h4><ul>
-<li>电子管时代 -&gt; 晶体管时代 -&gt; 中小规模集成电路时代 -&gt; 超大规模集成电路时代 -&gt; 智能计算机 -&gt; 生物计算机/量子计算机</li>
-<li>冯·诺依曼计算机（SISD）<ol>
-<li>由运算器、存储器、控制器、输入设备和输出设备组成</li>
-<li>指令和数据用二进制表示，以同等地位存于存储器，可按地址寻访</li>
-<li>指令由操作码和地址码组成</li>
-<li>存储程序，且以运算器为中心</li>
+<h3 id="计算机系统概述"><a href="#计算机系统概述" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h3><h4 id="计算机系统的多层次结构"><a href="#计算机系统的多层次结构" class="headerlink" title="计算机系统的多层次结构"></a>计算机系统的多层次结构</h4><ul>
+<li>硬件：<ol>
+<li>微程序机器层M0（微指令系统），由硬件直接执行微指令</li>
+<li>传统机器M1（机器语言机器），用微程序解释机器指令</li>
+</ol>
+</li>
+<li>软件：<ol>
+<li>虚拟机器M2（操作系统机器），用机器语言解释操作系统</li>
+<li>汇编语言M3（汇编语言机器），用汇编程序翻译成机器语言程序</li>
+<li>虚拟机器M4（高级语言机器），用编译程序翻译成汇编语言程序</li>
 </ol>
 </li>
 </ul>
-<h4 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h4><ul>
-<li>计算机系统由硬件和软件组成，软件分为系统软件和应用软件</li>
-<li>软硬件在逻辑上是等效的</li>
-<li>计算机硬件主要由存储器、运算器、控制器、输入设备和输出设备组成<ul>
-<li>运算器 ALU + 控制器 CU = CPU</li>
-<li>主存 + 辅存 = 存储器</li>
-<li>CPU + 主存储器 = 主机</li>
-<li>现代计算机为以存储器为中心，指令和数据都是保存在存储器中的</li>
+<h4 id="冯·诺依曼机"><a href="#冯·诺依曼机" class="headerlink" title="冯·诺依曼机"></a>冯·诺依曼机</h4><ul>
+<li><p>基本工作方式：控制流驱动方式</p>
+</li>
+<li><p>最根本的特征：采用存储程序原理，即按地址访问并顺序执行指令</p>
+</li>
+<li><p>指令和数据均以二进制形式存放在存储器中</p>
+</li>
+<li><p>CPU区分依据是：指令周期的不同阶段</p>
+</li>
+<li><p>冯·诺依曼计算机：以运算器为中心</p>
+</li>
+<li><p>现代的计算器：以存储器为中心</p>
+</li>
+<li><p>5大部件：存储器、运算器、控制器、输入设备、输出设备（适配器）</p>
+</li>
+<li><p>三大部分：CPU（运算器、控制器）、I/O设备（输入设备、输出设备）、主存储器</p>
+</li>
+<li><p>哈佛结构：将指令和数据放在两个独立的存储器，允许在一个机器周期内同时获得指令和操作数，提高了执行速度</p>
+</li>
+</ul>
+<h4 id="计算机性能指标"><a href="#计算机性能指标" class="headerlink" title="计算机性能指标"></a>计算机性能指标</h4><ul>
+<li><p>机器字长：</p>
+<ul>
+<li>CPU一次能处理数据的位数，通常与CPU的寄存器位数有关，字长越长，精度越高</li>
+<li>机器的字长也会影响机器的运算速度：字长较短，运算位数多，可能需要多次运算才能完成</li>
+<li>对硬件造价有影响：直接影响ALU、数据总线以及存储字长的位数</li>
 </ul>
 </li>
-<li>存储器的基本组成：存储体 -&gt; 存储单元 -&gt; 存储元<ul>
-<li>存储单元：存放一串二进制代码，每个存储单元赋予一个地址号</li>
-<li>存储字：存储单元中二进制代码的组合</li>
-<li>存储字长：存储字的位数</li>
-<li>地址寄存器 MAR：存放访存地址，N 位长的 MAR 可映射到 $2^N$ 个地址</li>
-<li>数据寄存器 MDR：暂存从主存中读写的信息，MDR 长度等于存储字长</li>
-<li>按字节寻址和数据线无关，只和地址线有关</li>
-<li>按字寻址，数据线个数等于存储字长位数</li>
-<li>字地址是连续存储单元地址中的最小值</li>
-</ul>
+<li><p>存储容量：主存容量、辅存容量</p>
 </li>
-<li>运算器的核心是算术逻辑单元 ALU<table>
-<thead>
-<tr>
-<th></th>
-<th>ACC 累加器</th>
-<th>MQ 乘商寄存器</th>
-<th>X 操作数寄存器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>加法</td>
-<td>被加数、和</td>
-<td></td>
-<td>加数</td>
-</tr>
-<tr>
-<td>减法</td>
-<td>被减数、差</td>
-<td></td>
-<td>减数</td>
-</tr>
-<tr>
-<td>乘法</td>
-<td>乘积高位</td>
-<td>乘数、乘积地位</td>
-<td>被乘数</td>
-</tr>
-<tr>
-<td>除法</td>
-<td>被除数、余数</td>
-<td>商</td>
-<td>除数</td>
-</tr>
-</tbody></table>
-</li>
-<li>控制器的功能：解释指令、保证指令的按序执行<ul>
-<li>取指令 -&gt; 分析指令 -&gt; 执行指令</li>
-<li>程序计数器 PC：存放当前欲执行指令的地址，具有计数功能（PC）+1 -&gt; PC</li>
-<li>指令寄存器 IR：存放当前欲执行的指令，IR 的内容来自主存的 MDR</li>
-<li>控制单元 CU</li>
 </ul>
-</li>
-<li>主机完成一条指令的过程：<ul>
-<li>输入程序 -&gt; 程序首地址 -&gt; PC -&gt; 启动程序运行</li>
-<li>取指令：PC -&gt; MAR -&gt; M -&gt; MDR -&gt;IR</li>
-<li>分析指令：OP（IR）-&gt; CU</li>
-<li>执行指令：Ad（IR）-&gt; MAR -&gt; M -&gt; MDR -&gt; ACC</li>
-</ul>
-</li>
-<li>计算机系统的层次结构：高级语言 -&gt; 汇编语言 -&gt; 操作系统 -&gt; 机器语言 -&gt; 微指令系统</li>
-</ul>
-<h4 id="计算机硬件的主要技术指标"><a href="#计算机硬件的主要技术指标" class="headerlink" title="计算机硬件的主要技术指标"></a>计算机硬件的主要技术指标</h4><ul>
-<li>机器字长：CPU一次能处理数据的位数，与CPU中的寄存器位数有关</li>
-<li>运算速度：主频、核数及每个核支持的线程数<ul>
-<li>吉普森法：$T_{M}=\sum ^{n}<em>{i=1}f</em>{i}t_{i}$</li>
-<li>CPI：执行一条指令所需时钟周期数</li>
-<li>MIPS：每秒执行百万条指令</li>
-<li>FLOPS：每秒浮点运算次数</li>
-<li>在指令数和时钟周期一定的前提下，CPI越大，执行时间越长</li>
-</ul>
-</li>
-<li>存储容量：存放二进制信息的总位数<ul>
-<li>主存容量：存储单元个数 × 存储字长，字节数</li>
-<li>辅存容量：字节数</li>
+<ul>
+<li><p>运算速度：</p>
+<ul>
+<li>吞吐量和响应时间</li>
+<li>主频和CPU时钟周期</li>
+<li>CPI：执行一条指令所需的时钟周期数</li>
+<li>CPU执行时间：指运行一个程序所花费的时间。取决于：主频、CPI、指令条数</li>
+<li>MIPS：每秒执行多少百万条指令</li>
+<li>MFLOPS：每秒执行多少百万次浮点运算（标志系统性能最有用参数）</li>
+<li>GFLOPS：每秒执行多少十亿次浮点运算</li>
+<li>TFLOPS：每秒执行多少万亿次浮点运算</li>
 </ul>
 </li>
 </ul>
-<h3 id="数据的表示和运算"><a href="#数据的表示和运算" class="headerlink" title="数据的表示和运算"></a>数据的表示和运算</h3><h4 id="数制与编码"><a href="#数制与编码" class="headerlink" title="数制与编码"></a>数制与编码</h4><ul>
-<li>十进制换二进制：整数除二取余，由下而上；小数乘二取整，由上而下 </li>
-<li>二进制基本符号少，易于用稳态电路实现，编码、计数、逻辑运算规则简单</li>
-<li>八进制 Q，十六进制 H</li>
-<li>真值换机器数：0正1负</li>
-<li>有权BCD码（8421）：逢1001进位，4位一数，C正D负放队尾，偶数位数高位补零</li>
-<li>余3码：8421码的基础上加十进制3（0011）</li>
-<li>ASCII：”0”：48；”A”：65；”a”：97</li>
-<li>国标码 = (区位码)H + 2020H</li>
-<li>汉字内码 = (国标码)H + 8080H</li>
-<li>奇偶校验码：添加一位校验码后使整个码字里1的个数为奇数/偶数</li>
-<li>循环冗余校验码 CRC：检错编码</li>
-<li>海明码：纠错编码</li>
+<h3 id="数据的表示和运算"><a href="#数据的表示和运算" class="headerlink" title="数据的表示和运算"></a>数据的表示和运算</h3><h4 id="汉字的编码"><a href="#汉字的编码" class="headerlink" title="汉字的编码"></a>汉字的编码</h4><ul>
+<li>输入码（外码）：区位码、国际码、拼音码、电报码、表形码等</li>
+<li>内码：0、1（机器码）</li>
+<li>输出码：汉字字形码</li>
+<li>汉字编码包括汉字的输入编码、汉字内码、汉字字形。用两个字节表示一个汉字，每个字节用七位码。区位码是4位十进制数，前2位是区码，后2位是位码</li>
+<li>国标码是将十进制的区位码转换为十六进制后，再在每个字节上加上20H。为了方便计算机区分中文字符和英文字符，将国标码两个字节的最高位都改为“1”，这就是汉字内码（十六进制）</li>
 </ul>
-<h4 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h4><p>- </p>
+<h4 id="字符串的存放"><a href="#字符串的存放" class="headerlink" title="字符串的存放"></a>字符串的存放</h4><ul>
+<li>小端模式：按先存储低位字节、后存储高位字节的顺序存放字符串的内容</li>
+<li>大端模式：按先存储高位字节、后存储低位字节的顺序存放字符串的内容</li>
+</ul>
+<h4 id="校验码"><a href="#校验码" class="headerlink" title="校验码"></a>校验码</h4><ul>
+<li>奇偶校验码：只能检出一位错误，不能确定出错的位置；只能检验处奇数位错误，不能检测出偶数位错误。<ul>
+<li>奇校验码：整个校验码中“1”的个数为奇数。</li>
+<li>偶校验码：整个校验码中“1”的个数为偶数。</li>
+</ul>
+</li>
+<li>海明（汉明）检验码：可检出错位位置</li>
+<li>循环冗余校验（CRC）码：可检出错误位置（通过除法运算）</li>
+</ul>
+<h4 id="原码、反码、补码、移码"><a href="#原码、反码、补码、移码" class="headerlink" title="原码、反码、补码、移码"></a>原码、反码、补码、移码</h4><ul>
+<li>原码、补码、反码三种机器数的最高位均是符号位</li>
+<li>当真值为正时，原码、补码、反码的表示形式均相同，即符号位用“0”表示，数值部分与真值相同</li>
+<li>当真值为负时，原码、补码、反码的表示形式不同，但其符号位都用“1”表示，而数值部分补码是原码的“求反加1”，反码是原码的“每位求反”。</li>
+<li>同一个真值的移码和补码仅差一个符号位。</li>
+<li>4、不同机器数表示±0时，其形式不同。</li>
+<li>[+0]原≠[-0]原， [+0]反≠[-0]反，[+0]补=[-0]补，[+0]移=[-0]移</li>
+<li>当机器字长确定后，补码比原码、反码能多表示一个负数</li>
+<li>移码只能表示整数，用它表示浮点数的阶码时，能方便地判断阶码的大小</li>
+</ul>
+<h4 id="补码定点数的加-减运算"><a href="#补码定点数的加-减运算" class="headerlink" title="补码定点数的加/减运算"></a>补码定点数的加/减运算</h4><ul>
+<li>基本公式：（将符号位和数值部分一起参加运算，并且将符号位产生的进位自然丢掉即可）</li>
+<li>加法：[A]补+[B]补=[A+B]补</li>
+<li>减法：[A-B]补=[A]补+[-B]补（[-B]补由[B]补连同符号位在内，每位取反，末尾加1）</li>
+</ul>
+<h4 id="溢出判断"><a href="#溢出判断" class="headerlink" title="溢出判断"></a>溢出判断</h4><ul>
+<li>用一位符号判断溢出：实际参加操作的两个数符号相同，结果又与原操作数的符号不同，即为溢出</li>
+<li>用两位符号位判断溢出：当2位符号位不同时，表示溢出，否则，无溢出。不论是否发生溢出，高位（第1位）符号永远代表真正的符号。（变形补码，运算时多一位）</li>
+<li>01正溢出（上溢）；10负溢出（下溢）</li>
+<li>采用一位符号位根据数据位的进位情况判断溢出。如果符号位的进位与最高数位的进位不同，则表示结果溢出</li>
+</ul>
+<h4 id="浮点数的加-减运算"><a href="#浮点数的加-减运算" class="headerlink" title="浮点数的加/减运算"></a>浮点数的加/减运算</h4><ul>
+<li>对阶：两个数的小数点位置对齐（使阶码相等），两个数的阶码相减求阶差，使小阶的尾数向右移位，每右移一位，阶码加1</li>
+<li>尾数求和：将对阶后的两个尾数按定点加（减）运算规则进行运算</li>
+<li>规格化：补码规格化形式为[S]补 00.1××××；[S]补 11.0××××<ul>
+<li>左规：尾数出现00.0××××或11.1××××时，需左规。尾数左移一位，阶码减1</li>
+<li>右规：尾数出现01.××××或10.××××时，表示尾数溢出，但在浮点运算中不算溢出，可通过右规处理。尾数右移一位，阶码加1</li>
+</ul>
+</li>
+<li>舍入：在对阶和右规的过程中，可能会将尾数的低位丢失，引起误差，影响精度，用舍入法来提高尾数的精度<ul>
+<li>“0舍1入”法：被移去的最高位数值位为0，则舍去；被移去的最高数值位为1，则在尾数的末位加1。又溢出时，再右规……</li>
+<li>“恒置1”法：不论丢掉的最高数位是“1”还是“0”，都使尾数末位恒置“1”。</li>
+<li>两种方法同样都有使尾数变大和变小两种可能</li>
+</ul>
+</li>
+<li>溢出判断（是否溢出由阶码的符号决定）<ul>
+<li>上溢：阶码[j]补=01，×××，作溢出处理</li>
+<li>下溢：阶码[j]补=10，×××，按机器零处理</li>
+</ul>
+</li>
+</ul>
+<h4 id="浮点数的表示范围"><a href="#浮点数的表示范围" class="headerlink" title="浮点数的表示范围"></a>浮点数的表示范围</h4><ul>
+<li><p>上溢：当浮点数阶码大于最大阶码时，上溢，机器停止运算，进行中断溢出处理。</p>
+</li>
+<li><p>下溢：当浮点数阶码小于最小阶码时，下溢，溢出的数绝对值很小，通常将位数各位强制为0，按机器零处理，机器可以继续运行。</p>
+</li>
+</ul>
+<h4 id="8位二进制整数范围"><a href="#8位二进制整数范围" class="headerlink" title="8位二进制整数范围"></a>8位二进制整数范围</h4><ul>
+<li>原码、反码：-127—+127</li>
+<li>补码、移码：-128—+127</li>
+</ul>
+<h4 id="标准IEEE-754标准"><a href="#标准IEEE-754标准" class="headerlink" title="标准IEEE 754标准"></a>标准IEEE 754标准</h4><ul>
+<li><p>现代计算机中，浮点数一般采用IEEE制定的国际标准：</p>
+</li>
+<li><p>常用的浮点数有三种：阶码用移码表示</p>
+</li>
+<li><p>短实数、长实数、临时实数的偏移量用十六进制数表示分别为7FH（127）、3FFH、3FFFH</p>
+</li>
+<li><p>尾数部分通常是用原码、规格化表示，即非“0”的有效位最高位总是“1”，但在IEEE标准中，有效位呈如下形式：1▲ff…ffff</p>
+</li>
+<li><p>其中▲表示假想的二进制小数点。在实际表示中，对短实数和长实数，这个整数位的1省略，称隐藏位；对于临时实数不采用隐藏位方案</p>
+</li>
+</ul>
+<h3 id="存储器层次结构"><a href="#存储器层次结构" class="headerlink" title="存储器层次结构"></a>存储器层次结构</h3><h4 id="存储器的层次化结构"><a href="#存储器的层次化结构" class="headerlink" title="存储器的层次化结构"></a>存储器的层次化结构</h4><ul>
+<li><p>存储器主要性能指标：速度、容量、每位价格（位价）</p>
+</li>
+<li><p>一般来说，速度越高，位价越高；容量越大，位价越低；容量越大，速度越低。</p>
+</li>
+<li><p>层次结构主要体现在缓存-主存和主存-辅存这两个层次上。</p>
+<ul>
+<li>缓存-主存：主要解决CPU和主存速度不匹配问题（由硬件自动完成）数据调动对任何程序员透明。</li>
+<li>主存-辅存：主要解决存储系统的容量问题（由硬件和操作系统共同完成）数据调动对应用程序员透明</li>
+</ul>
+</li>
+</ul>
+<h4 id="动态RAM的刷新"><a href="#动态RAM的刷新" class="headerlink" title="动态RAM的刷新"></a>动态RAM的刷新</h4><ul>
+<li>一般取2ms，对动态RAM的全部基本单元电路必作一次刷新，称为刷新周期，又称再生周期。刷新的单位是行，仅需要行地址。</li>
+<li>集中刷新：在规定的一个刷新周期内，对全部存储单元集中一段时间逐行进行刷新，此刻必须停止读/写操作，称“死时间”或“死区”。（全部一起刷）</li>
+<li>分散刷新：对每行存储单元的刷新分到每个存取周期内完成。优点：没有死区。缺点：存取周期加长，整个系统速度降低。（一个个刷）</li>
+<li>异步刷新：是前两种方式的结合，既缩短“死时间”，又充分利用最大刷新时间间隔为2ms的特点。（一行行刷）</li>
+<li>一行行刷的平均刷新时间<ul>
+<li>行数 = 芯片容量 / 每行存储单元个数</li>
+<li>平均刷新时间 = 间隔最长 / 行数</li>
+</ul>
+</li>
+</ul>
+<h5 id="存储容量的扩展"><a href="#存储容量的扩展" class="headerlink" title="存储容量的扩展"></a>存储容量的扩展</h5><ul>
+<li>位扩展<ul>
+<li>增加存储字长</li>
+<li>例如：2片1K4位的存储芯片可组成1K8位的存储器。</li>
+<li>注意：其中一片的数据线作为高4位D7-D4，另一片的数据线作为低4位D3-D0。</li>
+</ul>
+</li>
+<li>字扩展<ul>
+<li>增加存储器字的数量</li>
+<li>例如：2片1K8位的存储芯片可组成一个2K8位的存储器。</li>
+<li>注意：两片都连地址线A0-A9。（从低位连起）</li>
+</ul>
+</li>
+<li>字、位扩展<ul>
+<li>既增加存储字的数量又增加存储字长。</li>
+</ul>
+</li>
+</ul>
+<h4 id="双口RAM和多模块存储器"><a href="#双口RAM和多模块存储器" class="headerlink" title="双口RAM和多模块存储器"></a>双口RAM和多模块存储器</h4><ul>
+<li>为了提高CPU访问存储器的速度，可以采用双端口存储器（空间并行）、多模块存储器（时间并行）等技术，都属于并行技术。</li>
+</ul>
+<h4 id="多模块存储器"><a href="#多模块存储器" class="headerlink" title="多模块存储器"></a>多模块存储器</h4><ul>
+<li>为了提高访存速度（CPU速度比存储器快，同时从存储器中取出n条指令，可以充分利用CPU资源，提高运行速度）</li>
+<li>单体多字系统<ul>
+<li>在一个存取周期内，从同一地址取出n条指令，然后逐条将指令送至CPU执行，即每隔1/n存取周期，主存向CPU送一条指令，增大了存储器的带宽，提高了存储器的工作速度。</li>
+<li>例如：从同一地址取出4条指令，为单体四字结构，每字W位。按地址在一个存取周期内可读出4*W位的指令或数据，使主存带宽提高到4倍。</li>
+<li>缺点：指令和数据在主存内必须是连续存放的，一旦遇到转移指令，或者操作数不能连续存放，这种方法的效果就不明显。</li>
+</ul>
+</li>
+<li>多体并行系统</li>
+<li>采用多提模块组成的存储器。每个模块可以并行工作，也可以交叉工作。<ul>
+<li>低位交叉编址<ul>
+<li>程序连续存放在相邻体中（交叉存储）。低位地址表示体号，高位地址表示体内地址。<br>地址的低n为片选。</li>
+<li>优点：相邻地址单元的数据放在不同组，各组可以并行工作，能较好提高存储器的带宽。</li>
+<li>缺点：某一组出现故障，会影响整个存储器的正常工作。</li>
+</ul>
+</li>
+<li>高位交叉编址<ul>
+<li>按体内地址顺序存放（顺序存储）。高位地址表示体号，低位地址表示体内地址。</li>
+<li>地址的高n位片选。</li>
+<li>优点： 某一组的故障不影响其他组，且容易通过添加模块来扩充容量。</li>
+<li>缺点：相邻地址单元的数据放在同一组存储单元，各组间串行工作，不利于提升存储器的带宽。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Cache中主存块之间的映射方式"><a href="#Cache中主存块之间的映射方式" class="headerlink" title="Cache中主存块之间的映射方式"></a>Cache中主存块之间的映射方式</h4><ul>
+<li>由主存地址映射到Cache地址称为地址映射</li>
+<li>直接映射<ul>
+<li>主存数据只能装入Cache中的唯一位置。若这个位置已有内容，则产生块冲突，原来的块将无条件地被替换出去（无需使用替换算法）。</li>
+<li>优点：实现简单，只需利用主存地址的某些位直接判断，即可确定所需字块是否在缓存中。</li>
+<li>缺点：不够灵活，降低命中率。</li>
+</ul>
+</li>
+<li>全相联映射<ul>
+<li>允许主存中每一字块映射到Cache中的任何一块位置上。可以从已被占满的Cache中替换出任一旧字块。</li>
+<li>通常采用昂贵的“按内容寻址”的相联存储器来完成。</li>
+<li>优点：灵活，命中率高，缩小了块冲突率，空间利用率高。</li>
+<li>缺点：地址变换速度慢，实现成本高</li>
+</ul>
+</li>
+<li>组相联映射（上述两种映射的折中）<ul>
+<li>将Cache空间分成大小相同的组，主存的一个数据块可以装入到一组内的任何一个位置（组间采取直接映射，组内采取全相联映射）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Cache中主存块的替换算法"><a href="#Cache中主存块的替换算法" class="headerlink" title="Cache中主存块的替换算法"></a>Cache中主存块的替换算法</h4><ul>
+<li>先进先出（First-In-First-Out，FIFO）算法</li>
+<li>近期最少使用（Least Recently Used，LRU）算法</li>
+<li>随机法</li>
+</ul>
+<h4 id="磁盘存储器"><a href="#磁盘存储器" class="headerlink" title="磁盘存储器"></a>磁盘存储器</h4><ul>
+<li>磁盘寻址的最小单位是扇区。</li>
+<li>道密度：沿磁盘半径方向单位长度的磁道数。</li>
+<li>位密度：单位长度磁道上记录二进制的位数。</li>
+<li>平均寻道时间：从一个磁道转移到另一个磁道的平均时间。（全部寻道时间的一半）</li>
+<li>平均等待时间：旋转等待的平均时间。（转一周时间的一半）</li>
+<li>一扇区的传送时间：T=1 / (转速×扇区数)</li>
+<li>存取一个扇区的时间：T=每个扇区位数 / (转速×扇区数)</li>
+<li>平均存取时间=平均寻道时间 + 平均等待时间 + 传输时间</li>
+<li>每个记录面的磁道数：K=[(外直径-内直径)/2]*磁道密度</li>
+<li>盘组格式化容量：C = 记录面数 * K * 每个扇区字节数 * 扇区数</li>
+<li>盘组非格式化容量：CN = 记录面数 * K * 最内圈磁道周长 * 内层位密度</li>
+<li>WE 为写允许信号：低电平0为写，高电平1为读</li>
+<li>CS为片选信号：低电平0有效</li>
+<li>借位/进位C：1=结果的最高位发生了进位，0=结果的最高位未发生进位</li>
+<li>溢出标志位V：1=溢出，0=没有溢出</li>
+</ul>
+<h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><h4 id="指令的寻址方式"><a href="#指令的寻址方式" class="headerlink" title="指令的寻址方式"></a>指令的寻址方式</h4><ul>
+<li>寻址模式是大多数中央处理器 （CPU）设计中的指令集架构的一个方面</li>
+<li>在给定指令集架构中定义的各种寻址模式决定了该架构中的机器语言指令如何识别每个指令的操作数</li>
+<li>寻址模式指定如何通过使用寄存器中保存的信息和/或机器指令中包含的常量或其他地方包含的常量来计算操作数的有效存储器地址。</li>
+</ul>
+<h4 id="CISC和RISE"><a href="#CISC和RISE" class="headerlink" title="CISC和RISE"></a>CISC和RISE</h4><ul>
+<li>从硬件角度来看CISC处理的是不等长指令集，它必须对不等长指令进行分割，因此在执行单一指令的时候需要进行较多的处理工作。而RISC执行的是等长精简指令集，CPU在执行指令的时候速度较快且性能稳定。因此在并行处理方面RISC明显优于CISC，RISC可同时执行多条指令，它可将一条指令分割成若干个进程或线程，交由多个处理器同时执行。由于RISC执行的是精简指令集，所以它的制造工艺简单且成本低廉。</li>
+<li>从软件角度来看，CISC运行的则是我们所熟识的DOS、Windows操作系统。而且它拥有大量的应用程序。因为全世界有65%以上的软件厂商都理为基于CISC体系结构的PC及其兼容机服务的，象赫赫有名的Microsoft就是其中的一家。而RISC在此方面却显得有些势单力薄。虽然在RISC上也可运行DOS、Windows，但是需要一个翻译过程，所以运行速度要慢许多。</li>
+</ul>
+<h4 id="地址指令操作数物理位置的三种形式"><a href="#地址指令操作数物理位置的三种形式" class="headerlink" title="地址指令操作数物理位置的三种形式"></a>地址指令操作数物理位置的三种形式</h4><ul>
+<li>寄存器——寄存器型（RR型）；</li>
+<li>寄存器——存储器型指令（RS型）；</li>
+<li>存储器——存储器型（SS型）。</li>
+</ul>
 
   
   
     
     <div class='footer'>
+      
+        <div class='references'>
+          <section class='header'>
+            
+              <i class="fas fa-quote-left fa-fw" aria-hidden="true"></i>
+            
+            <span>References</span>
+          </section>
+          <section class='body'>
+            <ul>
+              
+                <li>
+                  <a href="https://blog.csdn.net/weixin_47135547/article/details/107566603" rel="external nofollow noopener noreferrer" target="_blank">
+                  计算机组成原理重点总结
+                  </a>
+                </li>
+              
+            </ul>
+          </section>
+        </div>
       
       
       
@@ -669,9 +834,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Computer-Organization/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Computer Organization</p></a></div>
-
 
         
       
@@ -680,13 +842,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：4.5k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4分钟</p>
+      <p>时长：15分钟</p>
     </a>
   </div>
 
@@ -812,59 +974,6 @@
 
 
 
-  <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-
 
 </div>
 <aside class='l_side'>
@@ -885,7 +994,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA"><span class="toc-text">计算机系统概论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-text">计算机的发展历程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-text">计算机的基本组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%9A%84%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87"><span class="toc-text">计算机硬件的主要技术指标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-text">数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%88%B6%E4%B8%8E%E7%BC%96%E7%A0%81"><span class="toc-text">数制与编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0"><span class="toc-text">定点数</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-text">计算机系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%A4%9A%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-text">计算机系统的多层次结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC%E6%9C%BA"><span class="toc-text">冯·诺依曼机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">计算机性能指标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-text">数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%89%E5%AD%97%E7%9A%84%E7%BC%96%E7%A0%81"><span class="toc-text">汉字的编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AD%98%E6%94%BE"><span class="toc-text">字符串的存放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-text">校验码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81%E3%80%81%E7%A7%BB%E7%A0%81"><span class="toc-text">原码、反码、补码、移码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0-%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-text">补码定点数的加&#x2F;减运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BA%A2%E5%87%BA%E5%88%A4%E6%96%AD"><span class="toc-text">溢出判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0-%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-text">浮点数的加&#x2F;减运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4"><span class="toc-text">浮点数的表示范围</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8%E4%BD%8D%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B4%E6%95%B0%E8%8C%83%E5%9B%B4"><span class="toc-text">8位二进制整数范围</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86IEEE-754%E6%A0%87%E5%87%86"><span class="toc-text">标准IEEE 754标准</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-text">存储器层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E5%8C%96%E7%BB%93%E6%9E%84"><span class="toc-text">存储器的层次化结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81RAM%E7%9A%84%E5%88%B7%E6%96%B0"><span class="toc-text">动态RAM的刷新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%AE%B9%E9%87%8F%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-text">存储容量的扩展</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E5%8F%A3RAM%E5%92%8C%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">双口RAM和多模块存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">多模块存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cache%E4%B8%AD%E4%B8%BB%E5%AD%98%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84%E6%96%B9%E5%BC%8F"><span class="toc-text">Cache中主存块之间的映射方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cache%E4%B8%AD%E4%B8%BB%E5%AD%98%E5%9D%97%E7%9A%84%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">Cache中主存块的替换算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">磁盘存储器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-text">指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-text">指令的寻址方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CISC%E5%92%8CRISE"><span class="toc-text">CISC和RISE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E6%95%B0%E7%89%A9%E7%90%86%E4%BD%8D%E7%BD%AE%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-text">地址指令操作数物理位置的三种形式</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -937,22 +1046,6 @@
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='true'
-      volume='0.1'
-      loop='one'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='song'
-      id='551340988'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -1189,32 +1282,6 @@ var loadCSS = function( href, before, media, attributes ){
   
         
       
-        
-          <hr>
-        
-      
-        
-          <li class='music name'>
-            <p class='nav music-title fix-cursor-default'></p>
-          </li>
-          <li class='music ctrl'>
-            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
-          </li>
-          <li class='music volume'>
-            <a class='nav volume'>
-              <div class="aplayer-volume-bar-wrap">
-                <div class="aplayer-volume-bar fix-cursor-pointer">
-                  <div class="aplayer-volume"></div>
-                  <i class='left fa fa-volume-off fa-fw'></i>
-                  <i class='right fa fa-volume-up fa-fw'></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        
-      
     </ul>
   </div>
 
@@ -1318,7 +1385,7 @@ var loadCSS = function( href, before, media, attributes ){
       }
 
       // 有音乐播放器
-      if ('true' == true && ('home,contributors,source_docs,hr,print,hr,music'||[]).includes('music')) {
+      if ('false' == true && ('home,contributors,source_docs,hr,print'||[]).includes('music')) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();
@@ -1453,30 +1520,6 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
-
-
-  <script>
-  let APlayerController = new Object();
-  APlayerController.id = '551340988';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.1';
-  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
-  // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
-  window.volantis.LoadMetingJS=0
-  var checkAPlayer = setInterval(function () {
-    if (!window.APlayer) return
-    clearInterval(checkAPlayer)
-	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
-	  window.LoadMetingJS=1
-      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-	  }
-  }, 2500)
-
-  
-    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/aplayer.min.js');
-  
-
-</script>
 
 
 

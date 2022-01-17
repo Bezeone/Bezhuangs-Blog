@@ -2,7 +2,7 @@
 title: Accenture Coding Virtual Experience Program
 date: 2022-01-01
 updated: 2022-01-17
-tags: [Forage]
+tags: [Java, Spring, Spring Boot, Gradle, Jenkins]
 categories: 程序人生
 ---
 

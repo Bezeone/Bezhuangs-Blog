@@ -418,18 +418,11 @@ Object Oriented Programming，面向对象的编程的思想是一种对现实�
               <p>开源库</p>
             </a>
           
-            <a href="/plans"
-              
-              
-              id="plans">
-              <p>计划表</p>
-            </a>
-          
             <a href="/todo"
               
               
               id="todo">
-              <p>进行中</p>
+              <p>计划表</p>
             </a>
           
             <a href="/guestbook"
@@ -1714,22 +1707,6 @@ The Introduction to Data Analytics course provided by IBM is the first in a seri
         <div class="aplayer-container">
           
 
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='true'
-      volume='0.1'
-      loop='one'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='song'
-      id='551340988'
-      list-folded='true'>
-    </meting-js>
-  
-
 
         </div>
       
@@ -1965,32 +1942,6 @@ var loadCSS = function( href, before, media, attributes ){
   
         
       
-        
-          <hr>
-        
-      
-        
-          <li class='music name'>
-            <p class='nav music-title fix-cursor-default'></p>
-          </li>
-          <li class='music ctrl'>
-            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
-          </li>
-          <li class='music volume'>
-            <a class='nav volume'>
-              <div class="aplayer-volume-bar-wrap">
-                <div class="aplayer-volume-bar fix-cursor-pointer">
-                  <div class="aplayer-volume"></div>
-                  <i class='left fa fa-volume-off fa-fw'></i>
-                  <i class='right fa fa-volume-up fa-fw'></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        
-      
     </ul>
   </div>
 
@@ -2094,7 +2045,7 @@ var loadCSS = function( href, before, media, attributes ){
       }
 
       // 有音乐播放器
-      if ('true' == true && ('home,contributors,source_docs,hr,print,hr,music'||[]).includes('music')) {
+      if ('false' == true && ('home,contributors,source_docs,hr,print'||[]).includes('music')) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();
@@ -2229,30 +2180,6 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
-
-
-  <script>
-  let APlayerController = new Object();
-  APlayerController.id = '551340988';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.1';
-  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
-  // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
-  window.volantis.LoadMetingJS=0
-  var checkAPlayer = setInterval(function () {
-    if (!window.APlayer) return
-    clearInterval(checkAPlayer)
-	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
-	  window.LoadMetingJS=1
-      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-	  }
-  }, 2500)
-
-  
-    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/aplayer.min.js');
-  
-
-</script>
 
 
 

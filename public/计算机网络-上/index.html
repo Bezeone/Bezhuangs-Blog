@@ -24,8 +24,6 @@
   
   <title>计算机网络（上） - Bezhuang&#39;s Blog</title>
   
-    <meta name="keywords" content="Computer Networking">
-  
 
   
     <meta name="description" content="
@@ -418,18 +416,11 @@
               <p>开源库</p>
             </a>
           
-            <a href="/plans"
-              
-              
-              id="plans">
-              <p>计划表</p>
-            </a>
-          
             <a href="/todo"
               
               
               id="todo">
-              <p>进行中</p>
+              <p>计划表</p>
             </a>
           
             <a href="/guestbook"
@@ -783,9 +774,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Computer-Networking/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Computer Networking</p></a></div>
-
 
         
       
@@ -894,14 +882,14 @@
     <div class="prev-next">
       
         <a class='prev' href='/Java%E5%9F%BA%E7%A1%80/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Java基础编程总结</p>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Java 基础编程总结</p>
           <p class='content'>
-Java 语言是 SUN(Stanford University Network) 公司于1995年推出的一门高级编程语言，舍弃了 C 语言中容易引起错误的指针（以引用取代）、运算符重载（op...</p>
+Java 语言是 SUN (Stanford University Network) 公司于1995年推出的一门高级编程语言，舍弃了 C 语言中容易引起错误的指针（以引用取代）、运算符重载（o...</p>
         </a>
       
       
         <a class='next' href='/Python%E7%94%BB%E7%94%BB/'>
-          <p class='title'>使用Python程序画画<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='title'>使用 Python 程序画画<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>
 turtle 库是 Python 的标准库之一，属于入门级的图形绘制函数库，其原理是让一只海龟在画布上游走，走过的轨迹形成了绘制的图形，海龟由程序控制，可以自由改变颜色、方向宽度等。我们也可以...</p>
         </a>
@@ -1051,22 +1039,6 @@ turtle 库是 Python 的标准库之一，属于入门级的图形绘制函数�
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='true'
-      volume='0.1'
-      loop='one'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='song'
-      id='551340988'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -1303,32 +1275,6 @@ var loadCSS = function( href, before, media, attributes ){
   
         
       
-        
-          <hr>
-        
-      
-        
-          <li class='music name'>
-            <p class='nav music-title fix-cursor-default'></p>
-          </li>
-          <li class='music ctrl'>
-            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
-          </li>
-          <li class='music volume'>
-            <a class='nav volume'>
-              <div class="aplayer-volume-bar-wrap">
-                <div class="aplayer-volume-bar fix-cursor-pointer">
-                  <div class="aplayer-volume"></div>
-                  <i class='left fa fa-volume-off fa-fw'></i>
-                  <i class='right fa fa-volume-up fa-fw'></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        
-      
     </ul>
   </div>
 
@@ -1432,7 +1378,7 @@ var loadCSS = function( href, before, media, attributes ){
       }
 
       // 有音乐播放器
-      if ('true' == true && ('home,contributors,source_docs,hr,print,hr,music'||[]).includes('music')) {
+      if ('false' == true && ('home,contributors,source_docs,hr,print'||[]).includes('music')) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();
@@ -1567,30 +1513,6 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 
 
-
-
-  <script>
-  let APlayerController = new Object();
-  APlayerController.id = '551340988';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.1';
-  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
-  // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
-  window.volantis.LoadMetingJS=0
-  var checkAPlayer = setInterval(function () {
-    if (!window.APlayer) return
-    clearInterval(checkAPlayer)
-	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
-	  window.LoadMetingJS=1
-      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-	  }
-  }, 2500)
-
-  
-    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.0/source/js/aplayer.min.js');
-  
-
-</script>
 
 
 

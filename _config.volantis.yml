@@ -53,10 +53,6 @@ cover:
       url: /projects
     - name: 计划表
       icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4dd.svg
-      url: /plans
-    - name: 进行中
-      icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/270d-1f3fb.svg
       url: /todo
     - name: 留言板
@@ -482,7 +478,7 @@ plugins:
   # APlayer is only available in mainland China.
   # APlayer config: https://github.com/metowolf/MetingJS
   aplayer:
-    enable: true
+    enable: false
     js:
       aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js
       meting: https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
@@ -565,7 +561,7 @@ plugins:
 rightmenu:
   enable: true
   # hr: 分割线, music: 音乐控制器
-  layout: [home, contributors, source_docs, hr, print, hr, music]
+  layout: [home, contributors, source_docs, hr, print]
   # 可选功能项
   print:
     name: 打印页面
