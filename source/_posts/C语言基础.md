@@ -1,7 +1,6 @@
 ---
 title: C语言基础知识总结
 date: 2020-08-20
-updated: 2020-12-01
 tags: [C/C++]
 categories: 编程与开发
 references:

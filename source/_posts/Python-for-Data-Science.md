@@ -1,7 +1,6 @@
 ---
 title: Python for Data Science, AI & Development
-date: 2021-01-28
-updated: 2021-02-04
+date: 2021-02-04
 tags: [Python]
 categories: 人工智能与大数据
 ---

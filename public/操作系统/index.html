@@ -22,9 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>操作系统（下） - Bezhuang&#39;s Blog</title>
-  
-    <meta name="keywords" content="Linux">
+  <title>操作系统 - Bezhuang&#39;s Blog</title>
   
 
   
@@ -459,7 +457,7 @@
     
     
       <h1 class="title">
-        操作系统（下）
+        操作系统
       </h1>
       <div class='new-meta-box'>
         
@@ -479,19 +477,27 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年9月11日</p>
+    <p>发布于：2021年11月30日</p>
   </a>
 </div>
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-01T00:00:00+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年12月1日</p>
-  </a>
-</div>
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：11.4k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：38分钟</p>
+    </a>
+  </div>
+
 
           
         
@@ -503,10 +509,379 @@
   
   
   <blockquote>
-<p> 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/SUDA-1001752241">国家精品课</a>和汤子瀛版教材，以下为所记课堂笔记下半部分，包含内存管理、文件管理和设备管理的知识点，可供参考。上半部分笔记请访问<a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8A">操作系统（上）</a></p>
+<p> 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/SUDA-1001752241">国家精品课</a>和汤子瀛版教材，以下为所记课堂笔记，可供参考。</p>
 </blockquote>
 <a id="more"></a>
 
+<h3 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h3><h4 id="操作系统基本概念"><a href="#操作系统基本概念" class="headerlink" title="操作系统基本概念"></a>操作系统基本概念</h4><ul>
+<li>冯诺依曼模型：运算器、存储器、控制器、输入设备和输出设备</li>
+<li>引入操作系统的目的：提供一个计算机用户与计算机硬件系统之间的接口、有效的控制和管理计算机系统中的各种硬件和软件资源、合理地组织计算机系统的工作流程</li>
+<li>操作系统是计算机系统的资源管理程序</li>
+<li>操作系统的核心是控制和协调进程的运行，解决进程之间的通信</li>
+<li>操作系统的发展：无操作系统阶段 -&gt; 单道批处理系统 -&gt; 多道批处理系统</li>
+</ul>
+<h4 id="操作系统的特征"><a href="#操作系统的特征" class="headerlink" title="操作系统的特征"></a>操作系统的特征</h4><ul>
+<li>并行性：2个或多个事件在同一时刻发生</li>
+<li>并发性：2个或多个事件在同一时间间隔内发生</li>
+<li>并发和共享是操作系统的2个最基本的特征，二者之间互为存在条件</li>
+<li>资源共享方式：互斥共享、同时访问</li>
+<li>虚拟是指把一个物理上的实体变为若干个逻辑上的对应物</li>
+<li>异步性</li>
+</ul>
+<h4 id="操作系统的功能和服务"><a href="#操作系统的功能和服务" class="headerlink" title="操作系统的功能和服务"></a>操作系统的功能和服务</h4><ul>
+<li>处理器管理：进程控制、进程同步、进程通信、进程调度</li>
+<li>存储器管理：内存分配、内存保护、内存扩充</li>
+<li>设备管理：设备分配、设备传输控制、设备独立性</li>
+<li>文件管理：文件存储空间的管理、目录管理、文件操作管理、文件保护</li>
+<li>用户接口：命令接口、程序接口、图形接口<ul>
+<li>联机命令接口又称交互式命令结构</li>
+<li>脱机命令接口又称批处理命令接口</li>
+</ul>
+</li>
+<li>操作系统3种基本类型：批处理操作系统、分时操作系统、实时操作系统</li>
+<li>其他操作系统：嵌入式操作系统、集群系统、网络操作系统、分布式操作系统</li>
+</ul>
+<h4 id="操作系统的运行环境"><a href="#操作系统的运行环境" class="headerlink" title="操作系统的运行环境"></a>操作系统的运行环境</h4><ul>
+<li>处理器的执行状态分为核心态与用户态<ul>
+<li>核心态是操作系统管理程序执行时机器所处的状态</li>
+<li>用户态是用户程序执行时机器所处的状态</li>
+</ul>
+</li>
+<li>特权指令是只能由操作系统内核部分使用，不允许用户直接使用的指令，如I/O指令、设置中断屏蔽指令、清内存指令、存储保护指令和设置时钟指令</li>
+<li>内核的指令操作工作在核心态<ul>
+<li>时钟管理</li>
+<li>中断机制</li>
+<li>原语</li>
+<li>系统控制的数据结构及处理</li>
+</ul>
+</li>
+<li>异常，也称内中断，是由错误引起的</li>
+<li>通常异常会引起中断，而中断未必是由异常引起的</li>
+<li>系统调用（API）：进程控制、文件系统控制、系统控制、内存管理、网络管理、socket 管控、制用户管理以及进程间通信</li>
+</ul>
+<h4 id="操作系统的体系结构"><a href="#操作系统的体系结构" class="headerlink" title="操作系统的体系结构"></a>操作系统的体系结构</h4><ul>
+<li>操作系统的体系结构主要包括模块组合结构、层次结构和微内核结构</li>
+<li>模块组合结构<ul>
+<li>接口简单直接，系统的效率相对较高</li>
+<li>系统结构不清晰、可扩展性差、可适应性差</li>
+</ul>
+</li>
+<li>层次结构<ul>
+<li>按功能的调用次序排列成若干层</li>
+<li>组织和依赖关系清晰明了，可读性、可适应性及可靠性都得到了增强</li>
+<li>通常要将为进程提供服务的系统调用模块放在系统的内层。</li>
+</ul>
+</li>
+<li>微内核结构<ul>
+<li>客户服务器模式（C/S 模式）</li>
+<li>每个服务进程运行在独立的用户进程中，可靠性好，灵活性好，便于维护</li>
+<li>适合分布式处理的计算环境</li>
+<li>效率不高，尤其是通信频繁的系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><ul>
+<li><p>在计算机操作系统中，进程是资源分配的基本单位，也是独立运行的基本单位</p>
+<ul>
+<li>程序顺序执行时的特征：顺序性，封闭性，可再现性</li>
+<li>程序的并发执行的特征：间断性，失去封闭性，不可再现性</li>
+</ul>
+</li>
+<li><p>程序并发执行且其结果具有可再现性的条件（Bernstein 条件）</p>
+<ul>
+<li>R(p1) ∩ W(p2) = ∅</li>
+<li>R(p2) ∩ W(p1) = ∅</li>
+<li>W(p1) ∩ W(p2) = ∅</li>
+</ul>
+</li>
+<li><p>进程的特征：动态性、并发性、独立性、异步性、结构特征（程序段、数据段和进程控制块）</p>
+</li>
+<li><p>进程和程序的关系</p>
+<ul>
+<li>进程和程序的关系程序是静止的</li>
+<li>进程是暂时的，程序是永久的</li>
+<li>进程的组成包括程序段、数据块和进程控制块（Process Control Block）</li>
+<li>通过多次执行，一个程序可以产生多个不同的进程，通过调用关系，一个进程可以执行多个程序</li>
+<li>进程可创建其他进程，而程序不能形成新的程序</li>
+</ul>
+</li>
+<li><p>由程序段、相关数据段和PCB三部分构成的是进程映像，也叫进程实体</p>
+<ul>
+<li>映像是静态的，进程是动态的，进程是进程实体的运行过程</li>
+</ul>
+</li>
+<li><p>进程和作业的区别</p>
+<ul>
+<li>作业是用户需要计算机完成某项任务而要求计算机所做的工作的集合</li>
+<li>作业提交、作业收容、作业执行、作业完成</li>
+<li>进程是已提交完毕的作业的执行过程，是资源分配的基本单位</li>
+<li>作业是用户向计算机提交任务的任务实体，而进程是完成用户任务的执行实体</li>
+<li>这个作业可由多个进程组成，而必须至少由一个进程组成，但一个进程不能构成多个作业</li>
+</ul>
+</li>
+<li><p>进程的组成</p>
+<ul>
+<li>进程控制块（PCB）：标识进程的存在，刻画执行瞬间特征的数据机构</li>
+<li>其他组成部分：程序段、数据段、进程标识符（PID）、进程当前状态、进程队列指针、程序和数据地址，进程优先级、CPU 现场保护区、通信信息、家族联系、占有资源清单</li>
+</ul>
+</li>
+<li><p>PCB 是进程存在的唯一标志</p>
+<ul>
+<li>PCB 存在是为了保证程序的并发执行</li>
+<li>创建进程实质上是创建进程的 PCB，而撤销进程实质上是撤销进程的 PCB</li>
+<li>系统总是通过 PCB 对进程进行控制的</li>
+</ul>
+</li>
+<li><p>进程的5种基本状态：就续状态、执行状态、阻塞状态、创建状态、结束状态</p>
+<ul>
+<li>执行状态只能由就绪状态转换，而无法由阻塞状态直接转换</li>
+<li>不能从就绪状态变为阻塞状态</li>
+<li>进程状态是唯一的</li>
+</ul>
+</li>
+<li><p>进程的创建</p>
+<ul>
+<li>进程创建是通过创建原语实现的</li>
+<li>申请一个空闲 PCB，并指定唯一的 PID -&gt; 分配必要的资源 -&gt; 将新进程的PCB初始化 -&gt; 插入到就绪队列</li>
+<li>导致进程创建的事件：用户登录、作业调度和请求服务</li>
+</ul>
+</li>
+<li><p>撤销一个进程：撤销原语</p>
+<ul>
+<li>找到被撤销进程的PCB -&gt; 停止该进程的执行 -&gt; 回收被撤销进程所占用的资源 -&gt; 回收PCB</li>
+</ul>
+</li>
+<li><p>进程的阻塞与唤醒：两条低级进程通讯原语</p>
+<ul>
+<li>阻塞原语（P 原语）的功能是将进行进程由执行状态转为阻塞状态</li>
+<li>唤醒原语（V 原语）的功能是将进程由阻塞状态变为就绪状态</li>
+<li>一个进程由执行状态变为阻塞状态，是由这个进程自己调用阻塞原语去完成的</li>
+<li>进程由阻塞状态变为就绪状态，是由另一个发现者进程调用唤醒原语去实现的。一般这个发现者进程与被唤醒进程是合作的并发进程</li>
+</ul>
+</li>
+<li><p>调度是决定将系统资源分配给哪个进程，进程切换是实际分配系统资源</p>
+<ul>
+<li>进程切换一定会产生中断，但处理器模式切换不一定产生进程切换</li>
+</ul>
+</li>
+<li><p>进程的互斥与同步就是一种进程间的通信方式</p>
+<ul>
+<li>高级进程通信方式：共享存储器系、消息传递系统、管道（共享文件）通信系统</li>
+</ul>
+</li>
+</ul>
+<h4 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h4><ul>
+<li>线程是进程内一个相对独立的可调度的执行单元<ul>
+<li>内核级线程依赖于内核，一个内核级线程由于 I/O 操作而阻塞时不会影响其他线程的运行</li>
+<li>用户级线程不依赖于操作系统核心，由于操作系统内核不了解用户线程的存在，当一个线程阻塞时，整个进程必须等待</li>
+</ul>
+</li>
+<li>进程与线程<ul>
+<li>线程谁独立调度的基本单位，进程是拥有资源的基本单位</li>
+<li>线程不拥有资源，但线程可以访问其隶属进程的系统资源</li>
+<li>进程之间可以并发执行，同一进程内的多个线程之间也可以并发执行</li>
+<li>多线程之间的同步与通信非常容易实现</li>
+</ul>
+</li>
+<li>多线程模型：多对一模型，一对一模型，多对多模型（将多个用户级线程映射到多个内核级线程）</li>
+</ul>
+<h4 id="处理器的三级调度"><a href="#处理器的三级调度" class="headerlink" title="处理器的三级调度"></a>处理器的三级调度</h4><ul>
+<li>高级调度（作业调度）：从外存上处于后备状态的作业中选择一个或多个，给他们分配内存等必要资源并建立相应的进程，以便该作业具有获得竞争处理器的权利<ul>
+<li>作业调度每次要接纳多少个作业进入内存取决于多道程序的并发程度</li>
+<li>多道程序的并发程度应根据系统的规模和运算速度来决定</li>
+<li>应将哪些作业从外存调入内存取决于所采取的调度算法</li>
+</ul>
+</li>
+<li>中级调度（交换调度）：按照给定的原则和策略，将处于外存对换区中具备运行条件的进程调入内存，并将其状态修改为就绪状态，挂在就绪队列上等待</li>
+<li>低级调度（进程调度）：按照某种策略和方法，从就绪队列中选取一个进程，将处理器先分配给他<ul>
+<li>进程调度的运行频率很高</li>
+<li>作业调度的结果是为作业创造进程，而进程调度的结果是进程被执行</li>
+</ul>
+</li>
+<li>衡量调度算法的性能： CPU利用率、系统吞吐量、响应时间、周转时间<ul>
+<li>作业的周转时间 = 作业的完成时间 - 作业的提交时间</li>
+<li>平均周转时间：多个作业周转时间的平均值</li>
+<li>带权周转时间是作业周转时间与运行时间的比</li>
+</ul>
+</li>
+</ul>
+<h4 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h4><ul>
+<li>处理器分配的任务由进程调度程序完成</li>
+<li>进程调度的功能：记录系统中所有进程的有关情况以及状态特征，选择获得处理器的进程和处理器分配</li>
+<li>引起进程调度的原因<ul>
+<li>当前运行进程运行结束</li>
+<li>当前运行进程因某种原因从运行状态进入阻塞状态</li>
+<li>执行完系统调用等系统程序后返回用户进程</li>
+<li>在采用抢占调度方式的系统中，一个更高优先级的进程要求使用处理器</li>
+<li>在分时系统中分配给该进程的时间片已用完</li>
+</ul>
+</li>
+<li>不能进行进程调度的情况<ul>
+<li>处理中断的过程中</li>
+<li>在操作系统内核程序临界区中</li>
+<li>其他需要完全屏蔽中断的原子操作过程中</li>
+</ul>
+</li>
+<li>进程调度的方式：抢占方式、非抢占方式</li>
+</ul>
+<h4 id="常见调度算法"><a href="#常见调度算法" class="headerlink" title="常见调度算法"></a>常见调度算法</h4><ul>
+<li>先来先服务调度算法（作业调度、进程调度）<ul>
+<li>FCFS：按照进程进入就绪队列的先后次序来分配处理器</li>
+</ul>
+</li>
+<li>短作业优先调度算法（作业调度、进程调度）<ul>
+<li>SJF：把处理器分配给最快完成的作业或进程</li>
+</ul>
+</li>
+<li>优先级调度算法（作业调度、进程调度）<ul>
+<li>静态优先级是在创建进程时确定的，确定之后整个进程运行期间不再改变</li>
+<li>按进程类、作业的资源要求、用户类型和要求确定静态优先级</li>
+<li>动态优先级是指在创建进程时根据进程的特点及相关情况确定一个优先级</li>
+<li>根据进程占有CPU时间的长短和就绪进程等待CPU时间的长短确定动态优先级</li>
+<li>基于优先级的调度算法还可按调度方式的不同，分为非抢占优先级调度算法和抢占优先级调度算法</li>
+<li>在优先级相同的情况下，通常按照先来先服务或者短作业优先的顺序执行</li>
+</ul>
+</li>
+<li>时间片轮转调度算法（进程调度）<ul>
+<li>分时系统必须满足系统对响应时间的要求</li>
+<li>就绪队列中的进程数与时间片的大小成反比</li>
+<li>系统的处理能力决定时间片的大小</li>
+</ul>
+</li>
+<li>高响应比优先调度算法（作业调度）<ul>
+<li>响应比 = 作业响应时间 / 估计运行时间</li>
+<li>作业响应时间 = 作业等待时间 + 估计运行时间</li>
+</ul>
+</li>
+<li>多级反馈队列调度算法（作业调度）<ul>
+<li>时间片轮转调度算法和优先级调度算法的综合与发展</li>
+</ul>
+</li>
+</ul>
+<h4 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h4><ul>
+<li><p>互斥是间接相互制约关系，而同步是直接相互制约关系</p>
+</li>
+<li><p>只要是同类进程即为互斥关系，不同类进程即为同步关系</p>
+</li>
+<li><p>临界资源：同时仅允许一个进程使用的资源</p>
+<ul>
+<li>进入区、临界区、退出区、剩余区</li>
+<li>临界区：进程中用于访问临界资源的代码，又称临界段</li>
+<li>临界资源是必须互斥访问的资源，这种资源同时只能被一个进程所使用，但需要这种资源的进程不止一个，因此需要对使用临界资源的进程进行管理</li>
+<li>每个进程的临界区代码可以不相同</li>
+</ul>
+</li>
+<li><p>互斥的要求：空闲让进，忙则等待，有限等待，让权等待</p>
+</li>
+<li><p>互斥实现方法</p>
+<ul>
+<li>软件实现方法</li>
+<li>互斥实现的硬件方法：中断屏蔽、硬件指令</li>
+<li>硬件方法适用范围广，支持多个临界区，但不能实现让权等待</li>
+</ul>
+</li>
+</ul>
+<h4 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h4><ul>
+<li>信号量 <code>(s,q)</code> 及同步原语<ul>
+<li>整型变量 s 表示系统中某类资源的数目，q 是一个初始状态为空的队列</li>
+<li>信号量的值仅能由 P 操作（wait）操作和 V 操作（signal）操作改变，操作系统利用它的状态对进程和资源进行管理</li>
+<li> P 操作相当于申请资源，V 操作相当于释放资源</li>
+</ul>
+</li>
+<li>信号量分为整型信号量和记录型信号量（资源信号量）<ul>
+<li>记录型信号量添加了链表结构用于链接所有等待该资源的进程，解决忙等的问题</li>
+</ul>
+</li>
+<li>信号量可以用来实现进程互斥和描述前趋关系</li>
+</ul>
+<h4 id="经典同步问题"><a href="#经典同步问题" class="headerlink" title="经典同步问题"></a>经典同步问题</h4><ul>
+<li>生产者-消费者问题<ul>
+<li>P(full) / P(empty) 与 P(mutex) 的顺序不可倒，必须先对资源信号量进行 P 操作，再对互斥信号量进行 P 操作。否则会导致死锁</li>
+<li>互斥信号量就是给同类进程准备的</li>
+</ul>
+</li>
+<li>读者写者问题（许多进程共享数据区）<ul>
+<li>读者不互斥，写者必须互斥</li>
+<li>读者优先，公平情况和写者优先三种不同算法</li>
+</ul>
+</li>
+<li>哲学家进餐问题<ul>
+<li>最多允许4个哲学家同时进餐</li>
+<li>仅当一个哲学家左右两边的筷子同时可用时，他才可以拿起筷子</li>
+<li>将哲学家编号要求奇数号的哲学家先拿左边筷子，偶数号的哲学家先拿右边筷子</li>
+</ul>
+</li>
+<li>理发师问题</li>
+<li>信号量机制问题的解题步骤分析<ul>
+<li>关系分析</li>
+<li>确定临界资源</li>
+<li>整理思路</li>
+</ul>
+</li>
+<li>实现同步互斥的 P、V 操作必须成对出现，先进行 P 操作进入临界区，后进行 V 操作退出临界区</li>
+<li> P、V操作要分别紧靠临界区的头尾部</li>
+<li>通常用于互斥的信号量初值设为 1</li>
+</ul>
+<h4 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h4><ul>
+<li>管程定义了一个数据结构和能为并发进程所执行的一组操作<ul>
+<li>局部于管程的数据只能被局部于管程内的过程所访问</li>
+<li>一个进程只有通过调用管程内的过程才能进入管程访问共享数据</li>
+<li>每次仅允许一个进程在管程内执行某个内部过程，即进程互斥地通过调用内部过程进入管程</li>
+</ul>
+</li>
+<li>管程的互斥访问完全由编译程序在编译时自动添加</li>
+<li>为实现进程间的同步，管程还必须包含若干用于同步的设施<ul>
+<li>局限于管程并仅能从管程内进行访问的若干变量，用于区别各种不同的等待原因</li>
+<li>在条件变量上进行操作的两个函数过程，wait 和 signal</li>
+</ul>
+</li>
+</ul>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><ul>
+<li>死锁的概念<ul>
+<li>参死锁的进程至少有两个</li>
+<li>每个参与死锁的进程均等待资源</li>
+<li>参与死锁的进程中至少有两个进程占有资源</li>
+<li>死锁进程是系统中当前进程集合的一个子集</li>
+</ul>
+</li>
+<li>死锁产生的原因是竞争资源<ul>
+<li>一个资源是否属于可剥夺资源，完全取决于资源本身的性质</li>
+</ul>
+</li>
+<li>死锁产生的必要条件<ul>
+<li>互斥条件</li>
+<li>不剥夺条件</li>
+<li>请求于保持条件：可采用预先静态分配方法</li>
+<li>环路等待条件：可采用有序资源分配法</li>
+</ul>
+</li>
+<li>处理死锁的方法：鸵鸟算法、预防死锁、避免死锁、检测及解除死锁（被动）<ul>
+<li>死锁预防对系统加的限制条件通常很严格，对系统的并发性会产生很大的副作用</li>
+<li>死锁避免往往在资源被分配出去之前，要计算分配之后系统是否安全</li>
+</ul>
+</li>
+<li>死锁的避免<ul>
+<li>系统在进行资源分配之前，先计算资源分配的安全性（安全序列）</li>
+<li>并非所有不安全状态都是死锁状态，死锁是不安全状态的真子集</li>
+<li>银行家算法</li>
+</ul>
+</li>
+<li>死锁的检测和解除<ul>
+<li>系统资源分配图（system resource allocation graph）可定义为一个二元组</li>
+<li><code>SRAG = (V,E)</code></li>
+<li>死锁定理：不同简化顺序将得到相同的不可简化图。系统状态 S 为死锁状态的条件是当且仅当 S 状态的资源分配图是不可完全简化的</li>
+<li>死锁检测算法：available、allocation、request、临时变量（work与finish）</li>
+<li>死锁解除：剥夺资源，撤销进程，进程回退</li>
+</ul>
+</li>
+<li>进程与饿死<ul>
+<li>当等待时间给进程推进和响应带来明显影响时，发生进程饥饿</li>
+<li>当饥饿到一定程度，进程所赋予的任务即使完成也不再具有实际意义时，进程被饿死</li>
+<li>活锁：在忙时等待条件下发生的饥饿</li>
+<li>饥饿和饿死与资源分配策略有关，因而可从公平性方面考虑防止饥饿与饿死</li>
+</ul>
+</li>
+</ul>
 <h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><h4 id="内存管理概述"><a href="#内存管理概述" class="headerlink" title="内存管理概述"></a>内存管理概述</h4><ul>
 <li>内存管理的功能是为多道程序的运行提供良好的环境<ul>
 <li>内存的分配和回收：记住内存空间的使用情况、实施内存的分配、回收系统或用户释放的内存空间</li>
@@ -811,35 +1186,14 @@
 </li>
 <li><p>假如我们的CPU能够控制I/O设备，那不同的厂商、不同型号的设备，都要对应进行编码，显然是不切实际的，所以CPU要采用通用调度方式调度I/O设备从而需要I/O控制器。</p>
 </li>
-</ul>
-<ul>
-<li>Java语言中，调用System.out.Println()，这本身并不能在显示器上打印，而需要通过操作系统调用write方法，接着调用字符设备接口，命令显示器写</li>
+<li><p>Java语言中，调用System.out.Println()，这本身并不能在显示器上打印，而需要通过操作系统调用write方法，接着调用字符设备接口，命令显示器写</p>
+</li>
 </ul>
 
   
   
     
     <div class='footer'>
-      
-        <div class='references'>
-          <section class='header'>
-            
-              <i class="fas fa-quote-left fa-fw" aria-hidden="true"></i>
-            
-            <span>References</span>
-          </section>
-          <section class='body'>
-            <ul>
-              
-                <li>
-                  <a href="https://blog.csdn.net/SakuraA6/article/details/108810916" rel="external nofollow noopener noreferrer" target="_blank">
-                  操作系统笔记整理
-                  </a>
-                </li>
-              
-            </ul>
-          </section>
-        </div>
       
       
       
@@ -877,27 +1231,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：6.6k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：22分钟</p>
-    </a>
-  </div>
-
 
         
       
@@ -909,8 +1242,8 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8B/&title=操作系统（下） - Bezhuang's Blog&summary=
- 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记下半部分，包含内存管理、文件管理和设备管理的知识点，可供参考。上半部分笔记请访问操作系统（上）
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/&title=操作系统 - Bezhuang's Blog&summary=
+ 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记，可供参考。
 "
           
           >
@@ -923,8 +1256,8 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8B/&title=操作系统（下） - Bezhuang's Blog&summary=
- 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记下半部分，包含内存管理、文件管理和设备管理的知识点，可供参考。上半部分笔记请访问操作系统（上）
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/&title=操作系统 - Bezhuang's Blog&summary=
+ 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记，可供参考。
 "
           
           >
@@ -937,8 +1270,8 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8B/&title=操作系统（下） - Bezhuang's Blog&summary=
- 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记下半部分，包含内存管理、文件管理和设备管理的知识点，可供参考。上半部分笔记请访问操作系统（上）
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/&title=操作系统 - Bezhuang's Blog&summary=
+ 操作系统（OS）是管理和控制计算机硬件与软件资源，是计算机上直接运行的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。我选择的课程是苏州大学的国家精品课和汤子瀛版教材，以下为所记课堂笔记，可供参考。
 "
           
           >
@@ -953,7 +1286,7 @@
         <div class='hoverbox'>
           <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEaElEQVR42u3aS3LEMAgFQN//0skBUlMWDyR7Uq1dMv5IjRdAcf1YW9aFACxYCyxYsBbYI7BXuD7d/+dFN9ffPb/7vNX7xzzAggULFixYsGDBHoVdToBvNvbp+m6gVv8/9bzYAyxYsGDBggULFuwjsKsbTTdeDchUgTBdgIAFCxYsWLBgwYL9bthuol59ThW+W/CABQsWLFiwYMGC/Z+wq2B3gNXf0/d3zwcWLFiwYMGCBQv2nbDVhLp64OmBj+6+XzsJAxYsWLBgwYIFC3YJtrqqjeJv+zv2AAsWLFiwYMGCBXsEdmp1BzV2v3+qILjdB1iwYMGCBQsWLNgjsNVB4nQweBW+G4ipwqZaQIAFCxYsWLBgwYI9C5sOMKQN8dWApPdX912FjSsvsGDBggULFixYsFthq4lxd4Mp1NT13YEOsGDBggULFixYsM/Api/sXt9NxNOGd7cRf3tusGDBggULFixYsEdg00Q9HbBIDzqd8Hcb28uVF1iwYMGCBQsWLNgtsOmARDqQnCb0U4XAdIDBggULFixYsGDBPgPbPfhUQ7x6XwrV/XDKjW6wYMGCBQsWLFiwW2DHBhWaiXgVutrwTu8vF05gwYIFCxYsWLBgj8BOJdLpwaoJ/3ShkTbmlxvdYMGCBQsWLFiwYLfApoMXaSO4G8hqA767v/J9YMGCBQsWLFiwYF8B2z3w1O9dsO452wMbYMGCBQsWLFiwYEdhuwdPr6seIG28pwGsBggsWLBgwYIFCxbsu2DTjab3p8+rQk81xG8nYcCCBQsWLFiwYMFugV1NzNOCIi0QqqDVAZGpgRSwYMGCBQsWLFiw74DdfZA0oF2Y9EMpFzRgwYIFCxYsWLBgj8JONaLThnn3umqguwUOWLBgwYIFCxYs2Gdhq2DVgqLbOE8PXC08pgY5wIIFCxYsWLBgwZ6FLT+gCF9NzLuN7yrQ6v5vfwcLFixYsGDBggV7BLaa6HdfnD63C5q+Jy4QwIIFCxYsWLBgwW6FnU7cqwMQq4E8NYBxhQssWLBgwYIFCxbsWdipBDveyGIDPf0A4oZ1sUEOFixYsGDBggUL9lnYagGwCtiFjA9aLEC6wGDBggULFixYsGCfgU0byFOJfDUA3cJjumEOFixYsGDBggUL9hnYqYNXIaqB7jbIpwY1wIIFCxYsWLBgwb4DtgtWDUw1wU8DtAsULFiwYMGCBQsW7DOw3VV+cTOQU1BTDfiPAxtgwYIFCxYsWLBgt8K2E+LiQbsDFVOFQbUQWf7QwIIFCxYsWLBgwR6FrRYEUw3r7kBIFTYtOJY9wIIFCxYsWLBgwT4COz1IkYJMNcR33Q8WLFiwYMGCBQv2f8B2G9LdhvNUIdJtgIMFCxYsWLBgwYL9Dtj04FMFRrUAmGrgby8QwIIFCxYsWLBgwW4d2EgHItIArRYg3cGTuJABCxYsWLBgwYIFexR2avChm4B3B0KmGt1pAMGCBQsWLFiwYMGegbVmF1iwYC2wYMFaYLeuX6PnVjrha9mkAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADsUlEQVR42u3aQZYaMQwEUO5/6eQAefPaJckgJt87kqHb/rAoSv36Y5XWCwE4cODAWeDALYF7FddP70+v+8/GDu/30/ue/r19XnDgwIEDBw4cuGVwxwEwhDt9PQ2e3vf4vODAgQMHDhw4cEvh0gBaDbTd96V/N3ZecODAgQMHDhy4XwJ3Wih2QdN9pkEcHDhw4MCBAwfuf4PrHmi6mJzeLzhw4MCBAwcO3LfApQPaU4jq308Vqusm+eDAgQMHDhw4cENw6bodSN8deI/PCw4cOHDgwIEDtwRuat0uFNP7VQPv4znBgQMHDhw4cOCWwJ0Wk2kgTh9ITA+cDrTTBw+PfzmAAwcOHDhw4MB9GG56wDu18XRAnYKffiHAgQMHDhw4cOC2wVVvkEJVB9zp9bsfwOMHCw4cOHDgwIEDtwSuO8hNgauFZHfAPPYFAAcOHDhw4MCBWwJ3HPyaRWE3yFaL1Grwbf9yAAcOHDhw4MCBezNcWizeKkTT+1eDeAwJDhw4cODAgQO3BK77IF4amNOAfGuf5XOBAwcOHDhw4MB9KdytwrBaUFaLznKxCg4cOHDgwIEDtwzu9kangu+tBxhPzwsOHDhw4MCBA7cNrhpQb4FXi8apAN4eSIMDBw4cOHDgwL0JLg2u3SB6GnyrMFW48V8O4MCBAwcOHDhwl+HS4DkVkKcG3enrcpAHBw4cOHDgwIFbAndrcNyF7A6Qu+uxyAQHDhw4cODAgVsCl15wqtDsFpmnoGNBGhw4cODAgQMHbhlc9YbVA0xBdz/o032CAwcOHDhw4MB9C9xpMKwWm2kxeWvgHQdvcODAgQMHDhy4JXBpkE2LxeNgWYSvDrqr1wUHDhw4cODAgdsGVw2qKWi32Ez/f6pIBQcOHDhw4MCB2wo39QDh1PvTgvH0g732ywEcOHDgwIEDB+5DcNWBdHfAfOt1+oU4vj44cODAgQMHDtxyuKmNdjdcHZS/mitugMGBAwcOHDhw4N4M111dsCpAtYg8HXA/FpngwIEDBw4cOHAfhusGxOlCswvYDfCP1wMHDhw4cODAgVsGlwbe6us0gHYD+PUADA4cOHDgwIEDtwQuDbzdwnKq8KyCxoNzcODAgQMHDhy4XwbXDaKnQfvtgRccOHDgwIEDB+6XwlUHu9VCszqQntoXOHDgwIEDBw7cVrg0mJaDZBhwuwPrsYITHDhw4MCBAwduGVx3cNstKLvA1fu1i0xw4MCBAwcOHLgPwVnZAgcOHDhwFjhwH15/ASNPf6Z3OmeCAAAAAElFTkSuQmCC">
           </div>
         </div>
       
@@ -961,7 +1294,7 @@
       
         <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
           
-            target="_blank" href="https://t.me/share/url?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E4%B8%8B/&text=操作系统（下） - Bezhuang's Blog"
+            target="_blank" href="https://t.me/share/url?url=http://blog.zhuangzhihao.top/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/&text=操作系统 - Bezhuang's Blog"
           
           >
           
@@ -987,17 +1320,17 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E4%BB%8E2020%E7%9A%84%E8%A7%86%E8%A7%92%E7%9C%8B%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>从2020的视角看线性代数</p>
+        <a class='prev' href='/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>计算机网络</p>
           <p class='content'>
-2020 年 MIT 数学教授 Gilbert Strang 录制了一个关于线性代数的学习和教学的一个新的、启发性的课程，从矩阵 A 的列空间和组合这些列的乘法 Ax 开始，包括了线性代数的概...</p>
+计算机网络是计算机专业必修的重要课程之一，与现实世界结合得相当紧密，也是考研408计算机学科专业基础综合考试中的一门课程。计算机网络学习的核心内容就是网络协议的学习。网络协议是为计算机网络中进...</p>
         </a>
       
       
-        <a class='next' href='/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%8B/'>
-          <p class='title'>数据结构（下）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='next' href='/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/'>
+          <p class='title'>计算机组成原理<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>
-数据结构是指数据的存储结构，是带有结构特性的数据元素的集合。精心选择的数据结构可以带来更好的运行或者存储效率。数据结构是计算机科学与技术专业、软件工程专业甚至于其它电气信息类专业的重要专业基础...</p>
+计算机组成原理是计算机专业本科教学中的重要课程，它可以帮助我们系统地理解计算机硬件系统的组织结构和工作原理、掌握计算机硬件系统的基本分析与设计方法以及建立计算机系统的整体概念，为进一步学习计算...</p>
         </a>
       
     </div>
@@ -1040,7 +1373,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0"><span class="toc-text">内存管理概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="toc-text">交换与覆盖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">非连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">虚拟内存的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86"><span class="toc-text">请求分页管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">页面置换算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O%E5%8E%9F%E7%90%86"><span class="toc-text">I&#x2F;O原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-text">文件的逻辑结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-text">文件目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="toc-text">文件的物理结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84"><span class="toc-text">磁盘结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">磁盘调度算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB"><span class="toc-text">文件共享</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%9D%E6%8A%A4"><span class="toc-text">文件保护</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I-O%E8%AE%BE%E5%A4%87"><span class="toc-text">I&#x2F;O设备</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-text">操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">操作系统基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">操作系统的特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E6%9C%8D%E5%8A%A1"><span class="toc-text">操作系统的功能和服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">操作系统的运行环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">操作系统的体系结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-text">进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-text">进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B"><span class="toc-text">线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E4%B8%89%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="toc-text">处理器的三级调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6"><span class="toc-text">进程调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">常见调度算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5"><span class="toc-text">同步与互斥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">信号量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98"><span class="toc-text">经典同步问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%A1%E7%A8%8B"><span class="toc-text">管程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%BB%E9%94%81"><span class="toc-text">死锁</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0"><span class="toc-text">内存管理概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="toc-text">交换与覆盖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">非连续分配管理方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">虚拟内存的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86"><span class="toc-text">请求分页管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">页面置换算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O%E5%8E%9F%E7%90%86"><span class="toc-text">I&#x2F;O原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-text">文件的逻辑结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-text">文件目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="toc-text">文件的物理结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84"><span class="toc-text">磁盘结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">磁盘调度算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB"><span class="toc-text">文件共享</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%9D%E6%8A%A4"><span class="toc-text">文件保护</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I-O%E8%AE%BE%E5%A4%87"><span class="toc-text">I&#x2F;O设备</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -1059,7 +1392,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="操作系统（下）";
+  pdata.postTitle="操作系统";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

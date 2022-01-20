@@ -1,7 +1,6 @@
 ---
 title: 云上搭建基于 Anaconda 的 Jupyter 数据科学环境
 date: 2021-05-09
-updated: 2021-06-12
 tags: [云服务器]
 categories: 云计算与应用开发
 references:

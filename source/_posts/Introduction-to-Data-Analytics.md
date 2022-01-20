@@ -1,7 +1,6 @@
 ---
 title: Introduction to Data Analytics
-date: 2020-12-30
-updated: 2021-01-24
+date: 2021-01-24
 tags: []
 categories: 人工智能与大数据
 ---

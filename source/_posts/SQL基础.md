@@ -1,7 +1,6 @@
 ---
 title: SQL 基础知识总结
-date: 2020-05-26
-updated: 2020-11-27
+date: 2020-07-26
 tags: [SQL, MySQL]
 categories: 编程与开发
 references:

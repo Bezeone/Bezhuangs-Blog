@@ -1,7 +1,6 @@
 ---
 title: 基于Python和OpenCV实现人脸识别
 date: 2021-08-03
-updated: 2021-09-15
 tags: [Python, OpenCV]
 categories: 编程与开发
 references:

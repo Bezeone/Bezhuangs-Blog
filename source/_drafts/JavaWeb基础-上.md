@@ -1,11 +1,11 @@
-title: JavaWeb 基础总结（上）
+---
+title: Java Web 知识总结
 date: 2021-11-01
-updated: 2022-01-20
-tags: [Java, JavaWeb, MySQL, Maven]
-password: 990312
+tags: [Java, MySQL, JDBC, Maven]
 categories: 编程与开发
+---
 
-> JavaWeb 是整个 Web 开发的基础课程，分为三部分内容：数据库、前端、web核心，可以为后期学习分布式、微服务打下坚实的基础。我选择的课程为[Java web 从入门到企业实战教程](https://www.bilibili.com/video/BV1Qf4y1T7Hx)，以下为所记课堂笔记第一部分，包含数据库部分学习内容。其他部分笔记详见[JavaWeb 基础总结（中）](/JavaWeb基础-中)和[JavaWeb 基础总结（下）](/JavaWeb基础-下)，可供参考。
+> JavaWeb 是整个 Web 开发的基础课程，分为三部分内容：数据库、前端、web核心，可以为后期学习分布式、微服务打下坚实的基础。我选择的课程为[Java web 从入门到企业实战教程](https://www.bilibili.com/video/BV1Qf4y1T7Hx)，以下为所记课堂笔记，可供参考。
 
 <!--more-->
 
@@ -1060,26 +1060,20 @@ public class JDBCDemo {
     Class.forName("com.mysql.jdbc.Driver");
     ```
 
-    
-
-    在该类中的静态代码块中已经执行了 `DriverManager` 对象的 `registerDriver()` 方法进行驱动的注册了，那么我们只需要加载 `Driver` 类，该静态代码块就会执行。而 `Class.forName("com.mysql.jdbc.Driver");` 就可以加载 `Driver` 类。
-
-    > ==提示：==
-    >
-    > * MySQL 5之后的驱动包，可以省略注册驱动的步骤
-    > * 自动加载jar包中META-INF/services/java.sql.Driver文件中的驱动类
+  * 在该类中的静态代码块中已经执行了 `DriverManager` 对象的 `registerDriver()` 方法进行驱动的注册了，那么我们只需要加载 `Driver` 类，该静态代码块就会执行，而 `Class.forName("com.mysql.jdbc.Driver");` 就可以加载 `Driver` 类
 
 
-* 获取数据库连接
+  * 获取数据库连接
 
-  ```java
-  Connection conn = DriverManager.getConnection(url, username, password);
-  ```
+    ```java
+    Connection conn = DriverManager.getConnection(url, username, password);
+    ```
 
-  * url ： `jdbc:mysql://ip地址(域名):端口号/数据库名称?参数键值对1&参数键值对2…`
-    * 配置 useSSL=false 参数，禁用安全连接方式，解决警告提示
-  * user ：用户名
-  * poassword ：密码
+    * url ： `jdbc:mysql://ip地址(域名):端口号/数据库名称?参数键值对1&参数键值对2…`
+      * 配置 `useSSL=false` 参数，禁用安全连接方式，解决警告提示
+    * user ：用户名
+    * poassword ：密码
+
 
 - Connection（数据库连接对象）
 
@@ -1087,377 +1081,119 @@ public class JDBCDemo {
 
   * 管理事务
 
+  - 获取执行对象
 
-#### 3.2.1  获取执行对象
+    * 普通执行SQL对象
 
-* 普通执行SQL对象
-
-  ```sql
-  Statement createStatement()
-  ```
-
-  入门案例中就是通过该方法获取的执行对象。
-
-* 预编译SQL的执行SQL对象：防止SQL注入
-
-  ```sql
-  PreparedStatement  prepareStatement(sql)
-  ```
-
-  通过这种方式获取的 `PreparedStatement` SQL语句执行对象是我们一会重点要进行讲解的，它可以防止SQL注入。
-
-* 执行存储过程的对象
-
-  ```sql
-  CallableStatement prepareCall(sql)
-  ```
-
-  通过这种方式获取的 `CallableStatement` 执行对象是用来执行存储过程的，而存储过程在MySQL中不常用，所以这个我们将不进行讲解。
-
-#### 3.2.2  事务管理
-
-先回顾一下MySQL事务管理的操作：
-
-* 开启事务 ： BEGIN; 或者 START TRANSACTION;
-* 提交事务 ： COMMIT;
-* 回滚事务 ： ROLLBACK;
-
-> MySQL默认是自动提交事务
-
-接下来学习JDBC事务管理的方法。
-
-Connection几口中定义了3个对应的方法：
-
-* 开启事务
-
-  ![image-20210725173444628](D:\下载\JavaWeb-资料\day03-JDBC\ppt\assets\image-20210725173444628.png)
-
-  参与autoCommit 表示是否自动提交事务，true表示自动提交事务，false表示手动提交事务。而开启事务需要将该参数设为为false。
-
-* 提交事务
-
-  ![image-20210725173618636](D:\下载\JavaWeb-资料\day03-JDBC\ppt\assets\image-20210725173618636.png)
-
-* 回滚事务
-
-  ![image-20210725173648674](D:\下载\JavaWeb-资料\day03-JDBC\ppt\assets\image-20210725173648674.png)
-
-具体代码实现如下：
-
-```sql
-/**
- * JDBC API 详解：Connection
- */
-public class JDBCDemo3_Connection {
-
-    public static void main(String[] args) throws Exception {
-        //1. 注册驱动
-        //Class.forName("com.mysql.jdbc.Driver");
-        //2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
-        String url = "jdbc:mysql:///db1?useSSL=false";
-        String username = "root";
-        String password = "1234";
-        Connection conn = DriverManager.getConnection(url, username, password);
-        //3. 定义sql
-        String sql1 = "update account set money = 3000 where id = 1";
-        String sql2 = "update account set money = 3000 where id = 2";
-        //4. 获取执行sql的对象 Statement
-        Statement stmt = conn.createStatement();
-
-        try {
-            // ============开启事务==========
-            conn.setAutoCommit(false);
-            //5. 执行sql
-            int count1 = stmt.executeUpdate(sql1);//受影响的行数
-            //6. 处理结果
-            System.out.println(count1);
-            int i = 3/0;
-            //5. 执行sql
-            int count2 = stmt.executeUpdate(sql2);//受影响的行数
-            //6. 处理结果
-            System.out.println(count2);
-
-            // ============提交事务==========
-            //程序运行到此处，说明没有出现任何问题，则需求提交事务
-            conn.commit();
-        } catch (Exception e) {
-            // ============回滚事务==========
-            //程序在出现异常时会执行到这个地方，此时就需要回滚事务
-            conn.rollback();
-            e.printStackTrace();
-        }
-
-        //7. 释放资源
-        stmt.close();
-        conn.close();
-    }
-}
-```
-
-### 3.3  Statement
-
-#### 3.3.1  概述
-
-Statement对象的作用就是用来执行SQL语句。而针对不同类型的SQL语句使用的方法也不一样。
-
-* 执行DDL、DML语句
-
-  ![image-20210725175151272](D:\下载\JavaWeb-资料\day03-JDBC\ppt\assets\image-20210725175151272.png)
-
-* 执行DQL语句
-
-  <img src="D:\下载\JavaWeb-资料\day03-JDBC\ppt\assets\image-20210725175131533.png" alt="image-20210725175131533" style="zoom:80%;" />
-
-  该方法涉及到了 `ResultSet` 对象，而这个对象我们还没有学习，一会再重点讲解。
-
-
-
-#### 3.3.2  代码实现
-
-* 执行DML语句
-
-  ```java
-  /**
-    * 执行DML语句
-    * @throws Exception
-    */
-  @Test
-  public void testDML() throws  Exception {
-      //1. 注册驱动
-      //Class.forName("com.mysql.jdbc.Driver");
-      //2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
-      String url = "jdbc:mysql:///db1?useSSL=false";
-      String username = "root";
-      String password = "1234";
-      Connection conn = DriverManager.getConnection(url, username, password);
-      //3. 定义sql
-      String sql = "update account set money = 3000 where id = 1";
-      //4. 获取执行sql的对象 Statement
+      ```sql
+      Statement createStatement()  
+      -- 通过该方法获取执行对象
       Statement stmt = conn.createStatement();
-      //5. 执行sql
-      int count = stmt.executeUpdate(sql);//执行完DML语句，受影响的行数
-      //6. 处理结果
-      //System.out.println(count);
-      if(count > 0){
-          System.out.println("修改成功~");
-      }else{
-          System.out.println("修改失败~");
-      }
-      //7. 释放资源
-      stmt.close();
-      conn.close();
-  }
-  ```
+      int count = stmt.executeUpdate(sql);
+      ```
 
-* 执行DDL语句
 
-  ```java
-  /**
-    * 执行DDL语句
-    * @throws Exception
-    */
-  @Test
-  public void testDDL() throws  Exception {
-      //1. 注册驱动
-      //Class.forName("com.mysql.jdbc.Driver");
-      //2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
-      String url = "jdbc:mysql:///db1?useSSL=false";
-      String username = "root";
-      String password = "1234";
-      Connection conn = DriverManager.getConnection(url, username, password);
-      //3. 定义sql
-      String sql = "drop database db2";
-      //4. 获取执行sql的对象 Statement
-      Statement stmt = conn.createStatement();
-      //5. 执行sql
-      int count = stmt.executeUpdate(sql);//执行完DDL语句，可能是0
-      //6. 处理结果
-      System.out.println(count);
-  
-      //7. 释放资源
-      stmt.close();
-      conn.close();
-  }
-  ```
+    * 预编译SQL的执行SQL对象：防止SQL注入
+    
+      ```sql
+      PreparedStatement  prepareStatement(sql)
+      ```
+    
+      * 通过这种方式获取的 `PreparedStatement` SQL语句执行对象可以防止SQL注入
 
-  > 注意：
-  >
-  > * 以后开发很少使用java代码操作DDL语句
 
-### 3.4  ResultSet
+    * 执行存储过程的对象
+    
+      ```sql
+      CallableStatement prepareCall(sql)
+      ```
+    
+      - 通过这种方式获取的 `CallableStatement` 执行对象是用来执行存储过程的，但存储过程在MySQL中不常用
 
-#### 3.4.1  概述
 
-ResultSet（结果集对象）作用：
+  - 事务管理
 
-* ==封装了SQL查询语句的结果。==
+    - MySQL事务管理的操作（MySQL默认是自动提交事务）
 
-而执行了DQL语句后就会返回该对象，对应执行DQL语句的方法如下：
+      * 开启事务 ： `BEGIN;` 或者 `START TRANSACTION;`
+
+      * 提交事务 ： `COMMIT;`
+
+      * 回滚事务 ： `ROLLBACK;`
+
+
+    - JDBC事务管理的方法
+
+
+  - Connection几个接口中定义了3个对应的方法：
+
+    * 开启事务
+
+      ```
+      setAutoCommit(boolean autoCommit)
+      ```
+
+      - 参与 `autoCommit` 表示是否自动提交事务，true表示自动提交事务，false表示手动提交事务，而开启事务需要将该参数设为为 false
+
+    * 提交事务
+
+      ```
+      commit()
+      ```
+
+    * 回滚事务
+
+      ```
+      rollback;
+      ```
+
+
+- Statement（声明执行对象）
+
+  - Statement对象的作用就是用来执行SQL语句，而针对不同类型的SQL语句使用的方法也不一样
+
+
+  * 执行DDL、DML语句
+
+    ```sql
+    int excuteUpdate(sql)
+    ```
+
+    * 返回值：DML语句影响的行数，DDL语句执行成功后可能返回0
+
+
+  * 执行DQL语句
+
+    ```sql
+    ResultSet excuteQuery(sql)
+    ```
+
+    - 返回值： `ResultSet` 结果集对象
+
+
+- ResultSet（结果集对象）
+  * 封装了SQL查询语句的结果，执行DQL语句后就会返回该对象
+
 
 ```sql
 ResultSet  executeQuery(sql)：执行DQL 语句，返回 ResultSet 对象
 ```
 
-那么我们就需要从 `ResultSet` 对象中获取我们想要的数据。`ResultSet` 对象提供了操作查询结果数据的方法，如下：
+- `ResultSet` 对象提供了获取查询结果数据的方法
+- `boolean  next()`：将光标从当前位置向前移动一行，判断当前行是否为有效行
+  - 方法返回值：true （ 有效行，当前行有数据），false（无效行，当前行没有数据）
 
-> boolean  next()
->
-> * 将光标从当前位置向前移动一行 
-> * 判断当前行是否为有效行
->
-> 方法返回值说明：
->
-> * true  ： 有效航，当前行有数据
-> * false ： 无效行，当前行没有数据
-
-> xxx  getXxx(参数)：获取数据
->
-> * xxx : 数据类型；如： int getInt(参数) ；String getString(参数)
-> * 参数
->   * int类型的参数：列的编号，从1开始
->   * String类型的参数： 列的名称 
-
-如下图为执行SQL语句后的结果
-
-<img src="D:\下载\JavaWeb-资料\day03-JDBC\ppt\assets\image-20210725181320813.png" alt="image-20210725181320813" style="zoom:80%;" />
+- `xxx  getXxx(参数)`：获取数据
+  - xxx : 数据类型；如： int getInt(参数) ；String getString(参数)
+  - int类型的参数：列的编号，从1开始
+  - String类型的参数： 列的名称 
 
 一开始光标指定于第一行前，如图所示红色箭头指向于表头行。当我们调用了 `next()` 方法后，光标就下移到第一行数据，并且方法返回true，此时就可以通过 `getInt("id")` 获取当前行id字段的值，也可以通过 `getString("name")` 获取当前行name字段的值。如果想获取下一行的数据，继续调用 `next()`  方法，以此类推。
 
-#### 3.4.2  代码实现
+- PreparedStatement
+  - 预编译SQL语句并执行：预防SQL注入问题
 
-```java
-/**
-  * 执行DQL
-  * @throws Exception
-  */
-@Test
-public void testResultSet() throws  Exception {
-    //1. 注册驱动
-    //Class.forName("com.mysql.jdbc.Driver");
-    //2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
-    String url = "jdbc:mysql:///db1?useSSL=false";
-    String username = "root";
-    String password = "1234";
-    Connection conn = DriverManager.getConnection(url, username, password);
-    //3. 定义sql
-    String sql = "select * from account";
-    //4. 获取statement对象
-    Statement stmt = conn.createStatement();
-    //5. 执行sql
-    ResultSet rs = stmt.executeQuery(sql);
-    //6. 处理结果， 遍历rs中的所有数据
-    /* // 6.1 光标向下移动一行，并且判断当前行是否有数据
-        while (rs.next()){
-            //6.2 获取数据  getXxx()
-            int id = rs.getInt(1);
-            String name = rs.getString(2);
-            double money = rs.getDouble(3);
-
-            System.out.println(id);
-            System.out.println(name);
-            System.out.println(money);
-
-            System.out.println("--------------");
-
-        }*/
-    // 6.1 光标向下移动一行，并且判断当前行是否有数据
-    while (rs.next()){
-        //6.2 获取数据  getXxx()
-        int id = rs.getInt("id");
-        String name = rs.getString("name");
-        double money = rs.getDouble("money");
-
-        System.out.println(id);
-        System.out.println(name);
-        System.out.println(money);
-
-        System.out.println("--------------");
-    }
-
-    //7. 释放资源
-    rs.close();
-    stmt.close();
-    conn.close();
-}
-```
-
-### 3.5  案例
-
-* 需求：查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中
-
-  <img src="D:\下载\JavaWeb-资料\day03-JDBC\ppt\assets\image-20210725182352433.png" alt="image-20210725182352433" style="zoom:80%;" />
-
-* 代码实现
-
-  ```java
-  /**
-    * 查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中
-    * 1. 定义实体类Account
-    * 2. 查询数据，封装到Account对象中
-    * 3. 将Account对象存入ArrayList集合中
-    */
-  @Test
-  public void testResultSet2() throws  Exception {
-      //1. 注册驱动
-      //Class.forName("com.mysql.jdbc.Driver");
-      //2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
-      String url = "jdbc:mysql:///db1?useSSL=false";
-      String username = "root";
-      String password = "1234";
-      Connection conn = DriverManager.getConnection(url, username, password);
-  
-      //3. 定义sql
-      String sql = "select * from account";
-  
-      //4. 获取statement对象
-      Statement stmt = conn.createStatement();
-  
-      //5. 执行sql
-      ResultSet rs = stmt.executeQuery(sql);
-  
-      // 创建集合
-      List<Account> list = new ArrayList<>();
-     
-      // 6.1 光标向下移动一行，并且判断当前行是否有数据
-      while (rs.next()){
-          Account account = new Account();
-  
-          //6.2 获取数据  getXxx()
-          int id = rs.getInt("id");
-          String name = rs.getString("name");
-          double money = rs.getDouble("money");
-  
-          //赋值
-          account.setId(id);
-          account.setName(name);
-          account.setMoney(money);
-  
-          // 存入集合
-          list.add(account);
-      }
-  
-      System.out.println(list);
-  
-      //7. 释放资源
-      rs.close();
-      stmt.close();
-      conn.close();
-  }
-  ```
-
-
-
-### 3.6  PreparedStatement
-
-> PreparedStatement作用：
->
-> * 预编译SQL语句并执行：预防SQL注入问题
-
-对上面的作用中SQL注入问题大家肯定不理解。那我们先对SQL注入进行说明.
-
-#### 3.6.1  SQL注入
-
-> SQL注入是通过操作输入来修改事先定义好的SQL语句，用以达到执行代码对服务器进行攻击的方法。
+- SQL注入是通过操作输入来修改事先定义好的SQL语句，用以达到执行代码对服务器进行攻击的方法。
 
 在今天资料下的 `day03-JDBC\资料\2. sql注入演示` 中修改 `application.properties` 文件中的用户名和密码，文件内容如下：
 

@@ -1,7 +1,6 @@
 ---
 title: Marketing Analytics
-date: 2020-06-10
-updated: 2020-06-22
+date: 2020-06-22
 tags: []
 categories: 经济与商业
 ---

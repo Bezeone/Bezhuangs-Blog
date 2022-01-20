@@ -1,7 +1,6 @@
 ---
 title: Python 基础知识总结
-date: 2020-07-11
-updated: 2020-10-30
+date: 2020-10-11
 tags: [Python]
 categories: 编程与开发
 references:

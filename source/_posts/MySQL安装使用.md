@@ -1,7 +1,6 @@
 ---
 title: MySQL 的安装和使用
 date: 2020-09-01
-updated: 2020-09-29
 tags: [MySQL]
 categories: 编程与开发
 ---

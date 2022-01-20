@@ -1,7 +1,6 @@
 ---
 title: Managing Machine Learning Projects with Google Cloud
-date: 2020-06-04
-updated: 2020-06-02
+date: 2020-06-08
 tags: []
 categories: 人工智能与大数据
 ---

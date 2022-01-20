@@ -1,7 +1,6 @@
 ---
 title: Data Science Math Skills
-date: 2020-05-03
-updated: 2020-05-25
+date: 2020-05-25
 tags: []
 categories: 数学
 mathjax: true

@@ -1,7 +1,6 @@
 ---
 title: 2021阿里Java训练营第三期
 date: 2021-03-26
-updated: 2021-04-18
 tags: [Java, Spring Cloud]
 categories: 程序人生
 references:

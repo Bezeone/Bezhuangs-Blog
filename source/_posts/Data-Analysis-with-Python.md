@@ -1,7 +1,6 @@
 ---
 title: Data Analysis With Python
-date: 2021-02-17
-updated: 2021-03-27
+date: 2021-03-27
 tags: [Python]
 mathjax: true
 categories: 人工智能与大数据

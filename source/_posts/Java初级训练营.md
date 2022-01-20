@@ -1,8 +1,7 @@
 ---
 title: 2021阿里Java训练营第一期
 date: 2021-02-04
-updated: 2021-02-13
-tags: [Java, JavaWeb]
+tags: [Java]
 categories: 程序人生
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Git 基础知识总结
 date: 2020-04-13
-updated: 2020-07-05
 tags: [Git]
 categories: 编程与开发
 references:

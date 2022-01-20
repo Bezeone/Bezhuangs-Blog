@@ -1,7 +1,6 @@
 ---
 title: Creative Thinking：Techniques and Tools for Success
-date: 2020-06-28
-updated: 2020-07-01
+date: 2020-07-10
 tags: []
 categories: 经济与商业
 ---

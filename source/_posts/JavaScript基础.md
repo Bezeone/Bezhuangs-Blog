@@ -1,7 +1,6 @@
 ---
 title: JavaScript 基础知识总结
 date: 2020-10-05
-updated: 2021-01-22
 tags: [JavaScript]
 categories: 编程与开发
 references: 

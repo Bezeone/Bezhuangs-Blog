@@ -1,7 +1,6 @@
 ---
 title: Python for everybody
-date: 2020-03-25
-updated: 2020-05-15
+date: 2020-05-14
 tags: [Python, SQL]
 categories: 计算机专业
 references: 

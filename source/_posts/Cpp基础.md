@@ -1,7 +1,6 @@
 ---
 title: C++基础知识总结
 date: 2020-11-09
-updated: 2021-10-01
 tags: [C/C++]
 categories: 编程与开发
 references:

@@ -1,7 +1,6 @@
 ---
 title: 使用 Python 程序画画
-date: 2021-06-01
-updated: 2021-06-01
+date: 2020-06-01
 tags: [Python]
 categories: 编程与开发
 references:

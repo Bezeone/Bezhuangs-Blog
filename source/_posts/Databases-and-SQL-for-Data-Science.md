@@ -1,7 +1,6 @@
 ---
 title: Databases and SQL for Data Science with Python
-date: 2021-02-06
-updated: 2021-02-09
+date: 2021-02-15
 tags: [Python, SQL]
 categories: 人工智能与大数据
 ---
