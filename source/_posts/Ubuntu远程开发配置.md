@@ -116,6 +116,59 @@ references:
 
   - 提交公钥到 Github 或其他 Git 仓库
 
+### 管理服务
+
+- Nginx
+
+  ```bash
+  service nginx {start|stop|status|restart|reload|configtest}
+  ```
+
+- MySQL
+
+  ```bash
+  service mysqld {start|stop|restart|reload|status}
+  ```
+
+- PHP
+
+  ```bash
+  service php-fpm {start|stop|restart|reload|status}
+  ```
+
+- Pure-Ftpd
+
+  ```bash
+  service pureftpd {start|stop|restart|status}
+  ```
+
+- Redis
+
+  ```bash
+  service redis-server {start|stop|status|restart}
+  ```
+
+- Memcached
+
+  ```bash
+  service memcached {start|stop|status|restart|reload}
+  ```
+
+### 虚拟主机管理
+
+- 添加虚拟主机
+
+  ```bash
+  cd /root/oneinstack
+  ./vhost.sh
+  ```
+
+- 删除虚拟主机
+
+  ```bash
+  ./vhost.sh --del
+  ```
+
 ### 本地开发环境
 
 - 使用 Visual Studio Code 中的 Remote -SSH 插件连接
