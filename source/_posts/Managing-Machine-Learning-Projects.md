@@ -2,7 +2,7 @@
 title: Managing Machine Learning Projects with Google Cloud
 date: 2020-06-08
 tags: []
-categories: 人工智能与大数据
+categories: 人工智能与机器学习
 ---
 
 > This course provided by GOOGLE CLOUD is intended to be an introduction to machine learning for business professionals. It teaches me how to translate business problems into machine learning use cases and vet them for feasibility and impact. The following are the notes I took during this course.

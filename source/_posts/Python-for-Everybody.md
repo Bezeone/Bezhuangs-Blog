@@ -2,7 +2,7 @@
 title: Python for everybody
 date: 2020-05-14
 tags: [Python, SQL]
-categories: 计算机专业
+categories: 计算机基础
 references: 
   - title: Python学习-PY4E作业
     url: https://blog.csdn.net/u012348774/article/details/78106407

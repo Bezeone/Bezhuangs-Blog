@@ -1,8 +1,8 @@
 ---
-title: 2021阿里Java训练营第二期
+title: 2021 阿里云 Java 训练营第二期
 date: 2021-03-12
 tags: [Java, Spring Boot, MySQL, MongoDB, Redis]
-categories: 程序人生
+categories: 后端开发与架构
 references:
   - title: Spring Boot 2.5.x开发实战
     url: https://developer.aliyun.com/learning/course/71

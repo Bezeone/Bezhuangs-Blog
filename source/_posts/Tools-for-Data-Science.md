@@ -1,8 +1,8 @@
 ---
 title: Tools for Data Science
 date: 2021-05-15
-tags: [Python, R Language]
-categories: 人工智能与大数据
+tags: [IBM, Python, R Language]
+categories: 数据科学与大数据技术
 ---
 
 > In this course provided by IBM, I learned about Jupyter Notebooks, JupyterLab, RStudio IDE, Git, GitHub, and Watson Studio, what each tool is used for, what programming languages they can execute, their features and limitations. With the tools hosted in the cloud on Skills Network Labs, I can now run simple code in Python, R or Scala. The following are the notes I took during this course.

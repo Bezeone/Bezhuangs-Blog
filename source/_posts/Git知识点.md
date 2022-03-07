@@ -2,7 +2,7 @@
 title: Git 基础知识总结
 date: 2020-04-13
 tags: [Git]
-categories: 编程与开发
+categories: 后端开发与架构
 references:
   - title: 简明Git指南
     url: https://www.runoob.com/manual/git-guide/

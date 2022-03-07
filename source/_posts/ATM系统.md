@@ -2,7 +2,7 @@
 title: 银行 ATM 系统实现
 date: 2022-02-05
 tags: [Java]
-categories: 开源项目
+categories: 项目文档与经验
 ---
 
 > 2022年寒假二刷复习完 Java SE 的全部知识点后，为了更加熟练掌握 Java 面向对象的特性，进一步掌握编程技巧和调试技巧，根据[黑马程序员项目指导](https://www.bilibili.com/video/BV1Cv411372m)模拟实现一个银行 ATM 系统软件，以下为项目过程中记录的笔记和项目介绍文档，源代码保存在 [Github 仓库](https://github.com/Bezhuang/Learn-CS/tree/main/%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE/ATM-system)中，可供参考。

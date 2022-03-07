@@ -1,8 +1,8 @@
 ---
-title: C++基础知识总结
+title: C++ 基础知识总结
 date: 2020-11-09
 tags: [C/C++]
-categories: 编程与开发
+categories: 后端开发与架构
 references:
   - title: C语言中文网
     url: http://c.biancheng.net/cplus/

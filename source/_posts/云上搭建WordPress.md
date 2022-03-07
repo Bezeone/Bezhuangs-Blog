@@ -1,8 +1,8 @@
 ---
-title: 搭建LAMP环境安装部署Wordpress
+title: 搭建 LAMP 环境安装部署 Wordpress
 date: 2021-05-01
-tags: [云服务器]
-categories: 云计算与应用开发
+tags: []
+categories: 云服务器与云计算
 references:
   - title: 基于ECS搭建云上博客
     url: https://developer.aliyun.com/adc/scenario/fdecd528be6145dcbe747f0206e361f3

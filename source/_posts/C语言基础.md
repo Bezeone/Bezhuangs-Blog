@@ -1,8 +1,8 @@
 ---
-title: C语言基础知识总结
+title: C 语言基础知识总结
 date: 2020-08-20
 tags: [C/C++]
-categories: 编程与开发
+categories: 后端开发与架构
 references:
   - title: C语言教程
     url: https://www.runoob.com/cprogramming/c-tutorial.html

@@ -2,7 +2,7 @@
 title: SQL 基础知识总结
 date: 2020-07-26
 tags: [SQL, MySQL]
-categories: 编程与开发
+categories: 后端开发与架构
 references:
   - title: SQL语法速成手册
     url: https://mp.weixin.qq.com/s/sKQy3MxNiDjlu3HLwrXBJg
