@@ -1004,11 +1004,8 @@ set @@autocommit = 0;
 
 
   * 处理返回结果
-
   * 释放资源
-
-
-* IDEA 中编写代码
+  * IDEA 中编写代码
 
 ```java
 /**
@@ -1074,12 +1071,12 @@ public class JDBCDemo {
 
     * 普通执行SQL对象
 
-      ```sql
-      Statement createStatement()  
-      -- 通过该方法获取执行对象
-      Statement stmt = conn.createStatement();
-      int count = stmt.executeUpdate(sql);
-      ```
+    ```sql
+    Statement createStatement()  
+    -- 通过该方法获取执行对象
+    Statement stmt = conn.createStatement();
+    int count = stmt.executeUpdate(sql);
+    ```
 
 
     * 预编译SQL的执行SQL对象：防止SQL注入
