@@ -1,20 +1,13 @@
 ---
-title: Java Web 知识总结
+title: JDBC 基础知识总结
 date: 2021-11-01
 tags: [Java, MySQL, JDBC, Maven]
 categories: 编程与开发
 ---
 
-> JavaWeb 是整个 Web 开发的基础课程，分为三部分内容：数据库、前端、web核心，可以为后期学习分布式、微服务打下坚实的基础。我选择的课程为[Java web 从入门到企业实战教程](https://www.bilibili.com/video/BV1Qf4y1T7Hx)，以下为所记课堂笔记，可供参考。
+> JDBC 框架（Java Database Connectivity），是 Java 语言编程中与数据库连接的 API，封装了各种数据库访问的 API 和基础类库，支持多种数据库连接。也是 Java Web 技术的第一部分基础，在学习过程中，选择的课程为黑马程序员的 [Java web 从入门到企业实战教程](https://www.bilibili.com/video/BV1Qf4y1T7Hx)，以下为所记课堂笔记，可供参考。
 
 <!--more-->
-
-### JavaWeb 整体介绍
-
-- JavaWeb 是用 Java 技术来解决相关 web 互联网领域的技术栈
-  - 网页：展现数据
-  - 数据库：存储和管理数据
-  - JavaWeb 程序：逻辑处理
 
 ### MySQL 基础
 
@@ -723,32 +716,31 @@ SELECT 字段列表 FROM 表1 [INNER] JOIN 表2 ON 条件;
 
 * 隐式内连接
 
-  ```sql
-  SELECT * FROM emp, dept WHERE emp.dep_id = dept.did;
-  ```
+```sql
+SELECT * FROM emp, dept WHERE emp.dep_id = dept.did;
+```
 
-  * 查询 emp 的 name， gender，dept 表的 dname
+* 查询 emp 的 name， gender，dept 表的 dname
 
-
-  ```sql
-  SELECT
-  	t1. NAME,
-  	t1.gender,
-  	t2.dname
-  FROM
-  	emp t1,
-  	dept t2
-  WHERE
-  	t1.dep_id = t2.did;
-  ```
+```sql
+SELECT
+	t1. NAME,
+	t1.gender,
+	t2.dname
+FROM
+	emp t1,
+	dept t2
+WHERE
+	t1.dep_id = t2.did;
+```
 
 * 显式内连接
 
-  ```sql
-  select * from emp inner join dept on emp.dep_id = dept.did;
-  -- 上面语句中的inner可以省略，可以书写为如下语句
-  select * from emp  join dept on emp.dep_id = dept.did;
-  ```
+```sql
+select * from emp inner join dept on emp.dep_id = dept.did;
+-- 上面语句中的inner可以省略，可以书写为如下语句
+select * from emp  join dept on emp.dep_id = dept.did;
+```
 
 - 外连接查询
 
@@ -762,24 +754,23 @@ SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件;
 
 * 查询emp表所有数据和对应的部门信息（左外连接）
 
-  ```sql
-  select * from emp left join dept on emp.dep_id = dept.did;
-  -- 结果显示查询到了左表（emp）中所有的数据及两张表能关联的数据
-  ```
-  
+```sql
+select * from emp left join dept on emp.dep_id = dept.did;
+-- 结果显示查询到了左表（emp）中所有的数据及两张表能关联的数据
+```
+
 * 查询dept表所有数据和对应的员工信息（右外连接）
 
-  ```sql
-  select * from emp right join dept on emp.dep_id = dept.did;
-  -- 结果显示查询到了右表（dept）中所有的数据及两张表能关联的数据
-  ```
-  
-  。要查询出部门表中所有的数据，也可以通过左外连接实现，只需要将两个表的位置进行互换：
-  
-  ```sql
-  select * from dept left join emp on emp.dep_id = dept.did;
-  ```
-  
+```sql
+select * from emp right join dept on emp.dep_id = dept.did;
+-- 结果显示查询到了右表（dept）中所有的数据及两张表能关联的数据
+```
+
+。要查询出部门表中所有的数据，也可以通过左外连接实现，只需要将两个表的位置进行互换：
+
+```sql
+select * from dept left join emp on emp.dep_id = dept.did;
+```
 
 - 子查询
 
@@ -787,29 +778,27 @@ SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件;
 
 
   * 子查询根据查询结果不同，作用不同
-
   * 子查询语句结果是单行单列，子查询语句作为条件值，使用 =  !=  >  <  等进行条件判断
   * 子查询语句结果是多行单列，子查询语句作为条件值，使用 in 等关键字进行条件判断
   * 子查询语句结果是多行多列，子查询语句作为虚拟表
-
   * 查询 '财务部' 和 '市场部' 所有的员工信息
 
-    ```sql
-    -- 查询 '财务部' 或者 '市场部' 所有的员工的部门did
-    select did from dept where dname = '财务部' or dname = '市场部';
-    
-    select * from emp where dep_id in (select did from dept where dname = '财务部' or dname = '市场部');
-    ```
+```sql
+-- 查询 '财务部' 或者 '市场部' 所有的员工的部门did
+select did from dept where dname = '财务部' or dname = '市场部';
+
+select * from emp where dep_id in (select did from dept where dname = '财务部' or dname = '市场部');
+```
 
 
   * 查询入职日期是 '2011-11-11' 之后的员工信息和部门信息
 
-    ```sql
-    -- 查询入职日期是 '2011-11-11' 之后的员工信息
-    select * from emp where join_date > '2011-11-11' ;
-    -- 将上面语句的结果作为虚拟表和dept表进行内连接查询
-    select * from (select * from emp where join_date > '2011-11-11' ) t1, dept where t1.dep_id = dept.did;
-    ```
+```sql
+-- 查询入职日期是 '2011-11-11' 之后的员工信息
+select * from emp where join_date > '2011-11-11' ;
+-- 将上面语句的结果作为虚拟表和dept表进行内连接查询
+select * from (select * from emp where join_date > '2011-11-11' ) t1, dept where t1.dep_id = dept.did;
+```
 
 #### 事务
 
@@ -826,11 +815,11 @@ SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件;
 
   * 开启事务
 
-    ```sql
-    START TRANSACTION;
-    或者  
-    BEGIN;
-    ```
+  ```sql
+  START TRANSACTION;
+  或者  
+  BEGIN;
+  ```
 
 
   * 提交事务
@@ -851,19 +840,19 @@ SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件;
 
   * 环境准备
 
-    ```sql
-    DROP TABLE IF EXISTS account;
-    
-    -- 创建账户表
-    CREATE TABLE account(
-    	id int PRIMARY KEY auto_increment,
-    	name varchar(10),
-    	money double(10,2)
-    );
-    
-    -- 添加数据
-    INSERT INTO account(name,money) values('张三',1000),('李四',1000);
-    ```
+  ```sql
+  DROP TABLE IF EXISTS account;
+  
+  -- 创建账户表
+  CREATE TABLE account(
+  	id int PRIMARY KEY auto_increment,
+  	name varchar(10),
+  	money double(10,2)
+  );
+  
+  -- 添加数据
+  INSERT INTO account(name,money) values('张三',1000),('李四',1000);
+  ```
 
 
   * 不加事务演示问题
@@ -1587,4 +1576,3 @@ public class DruidDemo {
 
 
 
-# 未完待续
