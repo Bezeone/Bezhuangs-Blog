@@ -1,7 +1,7 @@
 ---
 title: 2021 阿里云 Java 训练营第一期
 date: 2021-02-04
-tags: [Java]
+tags: [Java, JDBC, Servlet, Tomcat]
 categories: 后端开发与架构
 ---
 

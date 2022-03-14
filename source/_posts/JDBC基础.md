@@ -2,7 +2,7 @@
 title: Java 数据库基础知识总结
 date: 2022-03-12
 tags: [Java, MySQL, JDBC]
-categories: 编程与开发
+categories: 后端开发与架构
 ---
 
 > Java 数据库连接，JDBC（Java Database Connectivity），是 Java 语言编程中与数据库连接的 API，封装了各种数据库访问的 API 和基础类库，支持多种数据库连接，也是 Java Web 技术核心的第一部分，我把整个学习过程分为 MySQL 基础、MySQL 高级、JDBC 和数据连接池四个部分，便于理解，选择的课程为黑马程序员的 [Java web 从入门到企业实战教程](https://www.bilibili.com/video/BV1Qf4y1T7Hx)，以下为学习过程中所记笔记，可供参考。

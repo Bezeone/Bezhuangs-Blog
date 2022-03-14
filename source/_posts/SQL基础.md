@@ -1,5 +1,5 @@
 ---
-title: SQL 基础知识总结
+title: SQL 语法总结
 date: 2020-07-26
 tags: [SQL, MySQL]
 categories: 后端开发与架构
