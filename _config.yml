@@ -135,4 +135,4 @@ live2d:
 deploy:
   type: git
   repo:
-    - git@github.com:Bezhuang/Hexo-blog.git
+    - git@github.com:Bezhuang/Bezhuang-blog-code.git

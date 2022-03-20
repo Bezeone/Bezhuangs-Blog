@@ -10,228 +10,696 @@ references:
     url: https://www.w3school.com.cn/h.asp
 ---
 
-> 对于前端开发来说，最基本的知识肯定是`HTML`, `CSS`, `JavaScript`三剑客了。前端技术更新快，因此对于文档的阅读和[实际操练](https://learn.freecodecamp.one/)十分重要，基础阶段一定要打好，才能向更高峰攀登。本篇笔记是对一些我认为的 HTML5 和 CSS3 相关常用知识的总结。至于想看最全和最权威文档的朋友还是移步[MDN web docs](https://developer.mozilla.org/zh-CN/)吧。
+> 对于前端开发来说，最基本的知识肯定是`HTML`, `CSS`, `JavaScript`三剑客了。前端技术更新快，因此对于文档的阅读和[实际操练](https://learn.freecodecamp.one/)十分重要，基础阶段一定要打好，才能向更高峰攀登。本篇笔记是对一些我认为的 HTML5 和 CSS3 相关常用知识的总结。至于想看最全和最权威文档的朋友还是移步 [MDN web docs](https://developer.mozilla.org/zh-CN/) 吧。
 
 <!--more-->
 
-### HTML简介
+### HTML
 
-- HTML 指的是超文本标记语言 (**H**yper **T**ext **M**arkup **L**anguage)
-- HTML 不是一种编程语言，而是一种标记语言 (markup language)，标记语言是一套标记标签 (markup tag)，HTML 使用标记标签来描述网页。
+#### 介绍
 
-### HTML基础
+- HTML 是一门语言，所有的网页都是用HTML 这门语言编写出来的，也就是HTML是用来写网页的，像京东，12306等网站有很多网页
+- HTML(HyperText Markup Language)：超文本标记语言
 
-- `<!DOCTYPE html>` 声明为 HTML5 文档
+* 超文本：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容
 
-- `<html></html>` 之间的文本描述网页，`<main></main>` 元素让搜索引擎和开发者瞬间就能找到网页的主要内容。
+* 标记语言：由标签构成的语言
 
-- `<body></body>` 之间的文本是可见的页面内容
+* XML就是标记语言，由一个一个的标签组成，HTML 也是由标签组成
 
-- `<h1></h1>` 之间的文本被显示为标题，`<p></p>` 之间的文本被显示为段落
+* HTML中的标签都是预定义好的，运行在浏览器上并由浏览器解析，然后展示出对应的效果。例如我们想在浏览器上展示出图片就需要使用预定义的 `img` 标签；想展示可以点击的链接的效果就可以使用预定义的 `a` 标签等
 
-- `<a href="url">text</a>` 定义HTML链接
+* HTML 预定义了很多标签，对于后端开发工程师，不会每个都学习，页面开发是有专门的前端工程来开发
 
-- `<img src="url" alt="替换文本">`添加图片，`<map>` /`<area>` 定义地图和可点击部分
+* W3C标准：W3C是万维网联盟，这个组成是用来定义标准的。他们规定了一个网页是由三部分组成，分别是：
 
-- `<br></br>` 表示空元素，`&nbsp;` 表示空格占位符，`&lt;` 表示小于号
+  * 结构：对应的是 HTML 语言
 
-- `<head></head>`包含了文档的元（meta）数据，如`<meta charset="utf-8">` 定义网页编码格式为 `utf-8`；`<title></title>`描述了文档的标题；`<base>`标签为页面上的所有链接规定默认地址或目标；`<link>` 标签定义文档与外部资源之间的关系
+  * 表现：对应的是 CSS 语言
 
-- `lorem ipsum text`是占位符。`<!--more-->`是注释，`<!--[if IE 8]><![endif]-->`条件注释只有IE8执行
+  * 行为：对应的是 JavaScript 语言
 
-- `id` 或 `name` 属性规定元素唯一id：`<a name="label">文本</a>`，`href` 属性值为井号`#`加上想跳转区域对应的`id`属性值创建内部跳转
+* HTML定义页面的整体结构；CSS是用来美化页面，让页面看起来更加美观；JavaScript可以使网页动起来，比如轮播图也就是多张图片自动的进行切换等效果。
 
-- `target="_blank"` 属性在空白页打开标签
+#### HTML 快速入门
 
-- `class` 属性规定元素类名，`style` 属性规定元素行内样式
+* 新建文本文件，后缀名改为 .html
 
-- `<hr />` 标签在 HTML 页面中创建水平线，`<br /` 标签在不产生新段落的情况下换行
+  * 页面文件的后缀名是 .html，所以需要该后缀名
 
-- `<b></b>` 定义粗体文本，`<em></em>` 定义着重文字
+* 编写 HTML 结构标签
 
-- `<code></code>` 定义计算机代码，`<kbd></kbd>` 定义键盘文本，`<pre></pre>` 定义预格式文本，`<var></var>` 定义变量
+  * HTML 是由一个一个的标签组成的，但是它也用于表示结构的标签
 
-- `<q></q>` 定义短引用，`<blockquote cite="/link"></blockquote>` 定义长引用，`<dfn abbr title=""></dfn>` 定义项目定义
+  ```html
+  <html>
+  	<head>
+      	<title> </title>
+      </head>
+      <body>
+          
+      </body>
+  </html>
+  ```
 
-- `<bdo dir="rtl"></bdo>` 定义文本方向
+* html 标签是根标签，下面有 `head` 标签和 `body` 标签这两个子标签。而 `head` 标签的 `title` 子标签是用来定义页面标题名
 
-- `<link rel="stylesheet" type="text/css" href="mystyle.css">` 放在在`<head></head>` 标签中使用外部样式表，也可以通过` <style></style>` 标签定义内部样式表。
+* `body` 标签的内容会被展示在内容区中
 
-- `<table border='1'></table>` 定义表格，其中`<tr></tr>` 定义行，再其中`<td></td>` 定义行中每个单元格，`<th></th>` 放在`<tr></tr>` 下表示表头
+```html
+<html>
+	<head>
+    	<title>html 快速入门</title>
+    </head>
+    <body>
+        乾坤未定，你我皆是黑马~
+    </body>
+</html>
+```
 
-- `<ol></ol>` 定义有序列表，` <ul></ul>` 定义无序列表，`<li></li>` 定义列表项，`<dl></dl>` 定义定义列表，`<dt></dt>` 定义定义项目， `<dd></dd>` 定义定义的描述。
+- 更改字体颜色
+  - `font` 标签就可以使用，该标签有一个 `color` 属性可以设置字体颜色，如：` <font color='red'></font> ` 就是将文字设置成了红颜色。那么我们只需要将需要变成红色的文字放在标签体部分就可以了
 
-- `<div></div>` 定义文档中的分区或节(division/section)。 `<span></span>` 定义span,用来组合文档中行内的元素
+```html
+<html>
+	<head>
+    	<title>html 快速入门</title>
+    </head>
+    <body>
+        <font color='red'>乾坤未定，你我皆是黑马~</font>
+    </body>
+</html>
+```
 
-- `<frameset cols="25%,75%"></frameset>` 定义HTML框架，`<iframe src="URL"></iframe>`定义内连标签
+* HTML 标签不区分大小写
 
-- `<body></body>` 拥有两个配置背景的标签，`Bgcolor`颜色或者`Background`图像
+* HTML 标签属性值 单双引皆可
 
-- `<script type=""></script` 标签用于定义客户端脚本，也可通过`src` 属性指向外部脚本文件，比如 JavaScript
+* HTML 语法松散
 
-- `<noscript></noscript>` 标签提供无法使用脚本时的替代内容
 
-- 颜色由红色、绿色、蓝色混合而成，每种颜色的最小值是0（十六进制：#00），最大值是255（十六进制：#FF），如黑色`#000000`
+#### 基础标签
 
-- 从 Web 诞生早期至今，已经发展出多个 HTML 版本：
+- 标题标签
 
-  | 版本      | 年份 |
-  | :-------- | :--- |
-  | HTML      | 1991 |
-  | HTML+     | 1993 |
-  | HTML 2.0  | 1995 |
-  | HTML 3.2  | 1997 |
-  | HTML 4.01 | 1999 |
-  | XHTML 1.0 | 2000 |
-  | HTML5     | 2012 |
-  | XHTML5    | 2013 |
+  * 创建页面文件，在 `body` 标签中书写标签。
 
-### XHTML
 
-- XHTML 指的是可扩展超文本标记语言，是以 XML 应用的方式定义的 HTML，是更严格更纯净的 HTML 版本
-- XHTML文档结构
-  - `XHTML DOCTYPE` 是强制性的
-  - `<html></html>` 中的 `XML namespace` 属性是强制性的
-  - `<html></html>`、`<head></head>`、`<title></title>` 以及 `<body></body> `也是强制性的
+  * 书写标题标签：标题标签中 h1最大，h6最小。
 
-- XHTML元素语法
-  - XHTML 元素必须正确嵌套
-  - XHTML 元素必须始终关闭，包括空元素
-  - XHTML 元素必须小写
-  - XHTML 文档必须有一个根元素
+    ```html
+    <h1>我是标题 h1</h1>
+    <h2>我是标题 h2</h2>
+    <h3>我是标题 h3</h3>
+    <h4>我是标题 h4</h4>
+    <h5>我是标题 h5</h5>
+    <h6>我是标题 h6</h6>
+    ```
 
-- XHTML属性语法
-  - XHTML 属性必须使用小写
-  - XHTML 属性值必须用引号包围
-  - XHTML 属性最小化也是禁止的
-- 从 HTML 转换到 XHTML
-  1. 向每张页面的第一行添加 XHTML <!DOCTYPE>
-  2. 向每张页面的 html 元素添加 `xmlns` 属性
-  3. 把所有元素名改为小写
-  4. 关闭所有空元素
-  5. 把所有属性名改为小写
-  6. 为所有属性值加引号
+- hr标签：`hr` 标签在浏览器中呈现出 横线 的效果。
 
-### HTML表单
+```html
+<hr>
+```
 
-- `<form></form>` 元素定义 HTML 表单搜集输入
-- `<input type='text' name="描述字" value="占位字">`  是最重要的表单元素
-- `<input type="radio"> `定义单选按钮，`checkbox` 定义复选框，`submit` 定义提交
-- `action` 属性定义在提交表单时执行的动作，默认刷新页面
-- `method` 属性规定在提交表单时所用的 HTTP 方法（GET 或 POST）
-- `<fieldset></fieldset>` 元素组合表单中的相关数据，`<legend></legend>` 元素为其定义标题
-- `<select></select>` 元素定义下拉列表，`<option></option>` 元素定义待选择的选项（ `selected` 属性定义预定义选项）
-- `<textarea></textarea>` 元素定义多行输入字段（文本域），`<button></button>` 元素定义可点击的按钮
-- `<datalist></datalist>` 元素为 `<input></input>` 元素规定预定义选项列表
-- value 属性规定输入字段的初始值，readonly 属性规定输入字段为只读，size 属性规定输入字段的尺寸，maxlength 属性规定输入字段允许的最大长度，autocomplete 属性规定表单或输入字段是否应该自动完成，novalidate 属性规定在提交表单时不对表单数据进行验证。。。。。。
+- font：字体标签（已不建议使用了，可以用 CSS 进行设置）
 
-### HTML5
+  * face 属性：用来设置字体。如 "楷体"、"宋体"等
 
-- HTML5 是最新的 HTML 标准，是专门为承载丰富的 web 内容而设计的，并且无需额外插件，拥有新的语义、图形以及多媒体元素，提供的新元素和新的 API 简化了 web 应用程序的搭建，是跨平台的，被设计为在不同类型的硬件（PC、平板、手机、电视机等等）之上运行。
 
-- [帮助老版本浏览器处理 HTML5](https://www.w3school.com.cn/html/html5_browsers.asp)
+  * color 属性：设置文字颜色。颜色有三种表示方式
 
-- HTML5 提供的新元素：
+    * 英文单词：red,pink,blue...
 
-  | 标签           | 描述                                                 |
-  | :------------- | :--------------------------------------------------- |
-  | `<article>`    | 定义文档内的文章。                                   |
-  | `<aside>`      | 定义页面内容之外的内容。                             |
-  | `<bdi>`        | 定义与其他文本不同的文本方向。                       |
-  | `<details>`    | 定义用户可查看或隐藏的额外细节。                     |
-  | `<dialog>`     | 定义对话框或窗口。                                   |
-  | `<figcaption>` | 定义 `<figure> `元素的标题。                         |
-  | `<figure>`     | 定义自包含内容，比如图示、图表、照片、代码清单等等。 |
-  | `<footer>`     | 定义文档或节的页脚。                                 |
-  | `<header>`     | 定义文档或节的页眉。                                 |
-  | `<main>`       | 定义文档的主内容。                                   |
-  | `<mark>`       | 定义重要或强调的内容。                               |
-  | `<menuitem>`   | 定义用户能够从弹出菜单调用的命令/菜单项目。          |
-  | `<meter>`      | 定义已知范围（尺度）内的标量测量。                   |
-  | `<nav>`        | 定义文档内的导航链接。                               |
-  | `<progress>`   | 定义任务进度。                                       |
-  | `<rp>`         | 定义在不支持 ruby 注释的浏览器中显示什么。           |
-  | `<rt>`         | 定义关于字符的解释/发音（用于东亚字体）。            |
-  | `<ruby>`       | 定义 ruby 注释（用于东亚字体）。                     |
-  | `<section>`    | 定义文档中的节。                                     |
-  | `<summary>`    | 定义 `<details>` 元素的可见标题。                    |
-  | `<time>`       | 定义日期/时间。                                      |
-  | `<wbr>`        | 定义可能的折行（line-break）。                       |
-  | `<datalist>`   | 定义输入控件的预定义选项。                           |
-  | `<keygen>`     | 定义键对生成器字段（用于表单）。                     |
-  | `<output>`     | 定义计算结果。                                       |
-  | `<canvas>`     | 定义使用 JavaScript 的图像绘制。                     |
-  | `<svg>`        | 定义使用 SVG 的图像绘制。                            |
-  | `<audio>`      | 定义声音或音乐内容。                                 |
-  | `<embed>`      | 定义外部应用程序的容器（比如插件）。                 |
-  | `<source>`     | 定义 `<video> `和` <audio> `的来源。                 |
-  | `<track>`      | 定义 `<video>` 和 `<audio>` 的轨道。                 |
-  | `<video>`      | 定义视频或影片内容。                                 |
-  
-- 详细内容和用法见：[HTML5参考手册](https://www.w3school.com.cn/tags/index.asp)
+    * `rgb(值1,值2,值3)`：值的取值范围：0~255  
 
-### CSS基础
+    * `#值1值2值3`：值的范围：00~FF
 
-- CSS 指层叠样式表 (Cascading *S*tyle *S*heets)，样式定义如何显示 HTML 元素，样式通常存储在样式表中
 
-- 外部样式表可以极大提高工作效率，外部样式表通常存储在 CSS 文件中，多个样式定义可层叠为一
+* size 属性：设置文字大小
 
-- CSS 规则：`selector {property1: value1; property2: value2, value2sub;}`
+```html
+<font face="楷体" size="5" color="#ff0000">传智教育</font>
+```
 
-- 派生选择器：`li strong {font-style: italic;}`
+- 换行标签：`<br>` 标签
 
-- id 选择器以 "#" 来定义：`#id-red {color:red;}`
+- 段落标签
 
-- CSS 类选择器：`.center {text-align: center}`（前提：`class=center`）
+```html
+<p>
+刚察草原绿草如茵，沙柳河水流淌入湖。藏族牧民索南才让家中，茶几上摆着馓子、麻花和水果，炉子上刚煮开的奶茶香气四溢……
+</p>
+<p>
+6月8日下午，习近平总书记来到青海省海北藏族自治州刚察县沙柳河镇果洛藏贡麻村，走进牧民索南才让家中，看望慰问藏族群众。
+</p>
+```
 
-- CSS 属性选择器：`[attribute=value]{}`
+- 加粗、斜体、下划线标签
 
-- CSS 基本样式属性
+  * b：加粗标签
 
-  | 属性                  | 描述                                                                  |
-  | :-------------------- | :-------------------------------------------------------------------- |
-  | background            | 简写属性，作用是将背景属性设置在一个声明中。                          |
-  | background-attachment | 背景图像是否固定或者随着页面的其余部分滚动。                          |
-  | background-color      | 设置元素的背景颜色。                                                  |
-  | background-image      | 把图像设置为背景。                                                    |
-  | background-position   | 设置背景图像的起始位置。                                              |
-  | background-repeat     | 设置背景图像是否及如何重复。                                          |
-  | color                 | 设置文本颜色                                                          |
-  | direction             | 设置文本方向。                                                        |
-  | line-height           | 设置行高。                                                            |
-  | letter-spacing        | 设置字符间距。                                                        |
-  | text-align            | 对齐元素中的文本。                                                    |
-  | text-decoration       | 向文本添加修饰。                                                      |
-  | text-indent           | 缩进元素中文本的首行。                                                |
-  | text-shadow           | 设置文本阴影。CSS2 包含该属性，但是 CSS2.1 没有保留该属性。           |
-  | text-transform        | 控制元素中的字母。                                                    |
-  | unicode-bidi          | 设置文本方向。                                                        |
-  | white-space           | 设置元素中空白的处理方式。                                            |
-  | word-spacing          | 设置字间距。                                                          |
-  | font                  | 简写属性。作用是把所有针对字体的属性设置在一个声明中。                |
-  | font-family           | 设置字体系列。                                                        |
-  | font-size             | 设置字体的尺寸。                                                      |
-  | font-size-adjust      | 当首选字体不可用时，对替换字体进行智能缩放。（CSS2.1 已删除该属性。） |
-  | font-style            | 设置字体风格。                                                        |
-  | font-variant          | 以小型大写字体或者正常字体显示文本。                                  |
-  | font-weight           | 设置字体的粗细。                                                      |
-  | list-style            | 简写属性。用于把所有用于列表的属性设置于一个声明中。                  |
-  | list-style-image      | 将图象设置为列表项标志。                                              |
-  | list-style-position   | 设置列表中列表项标志的位置。                                          |
-  | list-style-type       | 设置列表项标志的类型。                                                |
-  | marker-offset         |                                                                       |
-  | border-collapse       | 设置是否把表格边框合并为单一的边框。                                  |
-  | border-spacing        | 设置分隔单元格边框的距离。                                            |
-  | caption-side          | 设置表格标题的位置。                                                  |
-  | empty-cells           | 设置是否显示表格中的空单元格。                                        |
-  | table-layout          | 设置显示单元、行和列的算法。                                          |
-  | outline               | 在一个声明中设置所有的轮廓属性。                                      |
-  | outline-color         | 设置轮廓的颜色。                                                      |
-  | outline-style         | 设置轮廓的样式。                                                      |
-  | outline-width         | 设置轮廓的宽度。                                                      |
-  
+  * i：斜体标签
+
+  * u：下划线标签，在文字的下方有一条横线
+
+
+```html
+<b>沙柳河水流淌</b><br>
+<i>沙柳河水流淌</i><br>
+<u>沙柳河水流淌</u><br>
+```
+
+- 居中标签 `<center>` ：文本居中
+
+```html
+<hr>
+<center>
+    <b>沙柳河水流淌</b>
+</center>
+```
+
+#### 图片、音频、视频标签
+
+* `<img>`：定义图片
+
+  * src：规定显示图像的 URL（统一资源定位符）
+
+  * height：定义图像的高度
+
+  * width：定义图像的宽度
+
+  * audio：定义音频。支持的音频格式：MP3、WAV、OGG 
+
+    * src：规定音频的 URL
+
+    * controls：显示播放控件
+
+
+* `<video>`：定义视频。支持的音频格式：MP4, WebM、OGG
+  * src：规定视频的 URL
+    * controls：显示播放控件
+
+- 尺寸单位：height 属性和 width 属性有两种设置方式
+
+  * 像素：单位是px
+
+  * 百分比。占父标签的百分比。例如宽度设置为 50%，意思就是占它的父标签宽度的一般（50%）
+
+- 资源路径：图片，音频，视频标签都有 src 属性，而 src 是用来指定对应的图片，音频，视频文件的路径
+
+  * 绝对路径：协议://ip地址:端口号/资源名称
+
+  * 相对路径：相对位置关系
+
+
+```html
+<img src="../img/a.jpg" width="300" height="400">
+<audio src="b.mp3" controls></audio>
+<video src="c.mp4" controls width="500" height="300"></video>
+```
+
+#### 超链接标签
+
+- 在网页中可以看到很多超链接标签，超链接使用的是 `a` 标签。
+
+- `a` 标签属性：
+
+  * href：指定访问资源的URL 
+
+
+  * target：指定打开资源的方式
+    * _self：默认值，在当前页面打开
+    * _blank：在空白页面打开
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<a href="https://www.itcast.cn" target="_self">点我有惊喜</a>
+</body>
+</html>
+```
+
+#### 列表标签
+
+* 有序列表：`<ol>`
+
+* 无序列表：`<ul>`
+* 列表项：`<li>`
+
+- 有序列表中的 `type` 属性用来指定标记的标号的类型（数字、字母、罗马数字等）
+
+- 无序列表中的 `type` 属性用来指定标记的形状
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ol type="A">
+        <li>咖啡</li>
+        <li>茶</li>
+        <li>牛奶</li>
+    </ol>
+    
+    <ul type="circle">
+        <li>咖啡</li>
+        <li>茶</li>
+        <li>牛奶</li>
+    </ul>
+</body>
+</html>
+```
+
+#### 表格标签
+
+* table ：定义表格
+
+  * border：规定表格边框的宽度
+
+  * width ：规定表格的宽度
+
+  * cellspacing：规定单元格之间的空白
+
+* tr ：定义行
+
+  * align：定义表格行的内容对齐方式
+
+* td ：定义单元格
+
+  * rowspan：规定单元格可横跨的行数
+
+  * colspan：规定单元格可横跨的列数
+
+* th：定义表头单元格
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1" cellspacing="0" width="500">
+    <tr>
+        <th cospan="2">品牌logo</th>  <!--合并单元格-->
+        <th>品牌名称</th>
+        <th>企业名称</th>
+    </tr>
+    <tr align="center">
+        <td>010</td>
+        <td><img src="../img/三只松鼠.png" width="60" height="50"></td>
+        <td>三只松鼠</td>
+        <td>三只松鼠</td>
+    </tr>
+
+    <tr align="center">
+        <td>009</td>
+        <td><img src="../img/优衣库.png" width="60" height="50"></td>
+        <td>优衣库</td>
+        <td>优衣库</td>
+    </tr>
+    <tr align="center">
+        <td>008</td>
+        <td><img src="../img/小米.png" width="60" height="50"></td>
+        <td>小米</td>
+        <td>小米科技有限公司</td>
+    </tr>
+</table>
+</body>
+</html>
+```
+
+#### 布局标签
+
+- `<div>`：定义 HTML 文档中的一个区域部分，经常与 CSS 一起使用，用来布局网页
+- `<span>`：用于组合行内元素
+- `div`标签 在浏览器上会有换行的效果，而 `span` 标签在浏览器上没有换行效果。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>我是div</div>
+    <div>我是div</div>
+    <span>我是span</span>
+    <span>我是span</span>
+</body>
+</html>
+```
+
+#### 表单标签
+
+- 表单就是用来采集用户输入的数据，然后将数据发送到服务端，服务端会对数据库进行操作，比如注册就是将数据保存到数据库中，而登陆就是根据用户名和密码进行数据库的查询操作
+- 表单：在网页中主要负责数据采集功能，使用 `<form>` 标签定义表单
+- 表单项（元素）：不同类型的 `input` 元素、下拉列表、文本域等
+  - `<form>`：定义表单
+  - `<input>`：定义表单项，通过 type属性控制输入形式
+  - `<label>`：为表单项定义标注
+  - `<select>`：定义下拉列表
+  - `<option>`：定义下拉列表的列表项
+  - `<textarea>`：定义文本域
+- `form` 是表单标签，它在页面上没有任何展示的效果。需要借助于表单项标签来展示不同的效果。
+
+#### form 标签属性
+
+* action：规定当提交表单时向何处发送表单数据，该属性值就是 URL
+  * action 会将数据提交到服务端，该属性需要书写服务端的 URL。可以书写 `#` ，表示提交到当前页面
+
+* method ：规定用于发送表单数据的方式
+
+  * get：默认值。如果不设置 method 属性则默认就是该值
+    * 请求参数会拼接在 URL 后边
+    * url的长度有限制 4KB
+  * post
+    * 浏览器会将数据放到 http 请求消息体中
+    * 请求参数无限制的
+
+- 要想提交数据，`input` 输入框必须设置 `name` 属性
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <input type="text" name="username">
+        <input type="submit">
+    </form>
+</body>
+</html>
+```
+
+#### 表单项标签
+
+* `<input>`：表单项，通过type属性控制输入形式
+  * `input` 标签有个 `type` 属性。 `type` 属性的取值不同，展示的效果也不一样
+  * text：默认值。定义单行的输入字段
+  * password：定义密码字段
+  * radio：定义单选按钮
+  * checkbox：定义复选框
+  * file：定义文件上传按钮
+  * hidden：定义隐藏的输入字段
+  * submit：定义提交按钮，提交按钮会把表单数据发送到服务器
+  * reset：定义重置按钮，重置按钮会清除表单中的所有数据
+  * button：定义可点击按钮
+
+* `<select>`：定义下拉列表，`<option>` 定义列表项
+* `<textarea>`：文本域，它可以输入多行文本，而 `input` 数据框只能输入一行文本
+* 以上标签项的内容要想提交，必须得定义 `name` 属性。
+* 每一个标签都有 id 属性，id 属性值是唯一的标识。
+* 单选框、复选框、下拉列表需要使用 `value` 属性指定提交的值。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <input type="hidden" name="id" value="123">
+
+        <label for="username">用户名：</label>
+        <input type="text" name="username" id="username"><br>
+
+        <label for="password">密码：</label>
+        <input type="password" name="password" id="password"><br>
+
+        性别：
+        <input type="radio" name="gender" value="1" id="male"> <label for="male">男</label>
+        <input type="radio" name="gender" value="2" id="female"> <label for="female">女</label>
+        <br>
+
+        爱好：
+        <input type="checkbox" name="hobby" value="1"> 旅游
+        <input type="checkbox" name="hobby" value="2"> 电影
+        <input type="checkbox" name="hobby" value="3"> 游戏
+        <br>
+
+        头像：
+        <input type="file"><br>
+
+        城市:
+        <select name="city">
+            <option>北京</option>
+            <option value="shanghai">上海</option>
+            <option>广州</option>
+        </select>
+        <br>
+
+        个人描述：
+        <textarea cols="20" rows="5" name="desc"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="免费注册">
+        <input type="reset" value="重置">
+        <input type="button" value="一个按钮">
+    </form>
+</body>
+</html>
+```
+
+### CSS
+
+#### CSS 概述
+
+- CSS 是一门语言，用于控制网页表现
+
+- W3C标准规定了网页是由以下组成：
+
+  * 结构：HTML
+
+  * 表现：CSS
+
+  * 行为：JavaScript
+
+- CSS也有一个专业的名字：Cascading Style Sheet（层叠样式表）
+
+- `style` 标签中定义的就是css代码。以下代码描述了将 `div` 标签的内容的字体颜色设置为 红色
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>Hello CSS~</div>
+</body>
+</html>
+```
+
+#### css 导入方式
+
+css 导入方式其实就是 css 代码和 html 代码的结合方式。CSS 导入 HTML有三种方式：
+
+* 内联样式：在标签内部使用style属性，属性值是css属性键值对
+
+  ```html
+  <div style="color: red">Hello CSS~</div>
+  ```
+
+* 内部样式：定义 `<style>` 标签，在标签内部定义css样式
+
+  ```html
+  <style type="text/css">
+  	div{
+  		color: red;
+      }
+  </style>
+  ```
+
+* 外部样式：定义link标签，引入外部的css文件
+
+  * 编写一个css文件。名为：demo.css
+
+  ```css
+  div{
+  	color: red;
+  }
+  ```
+
+  - 在html中引入 css 文件
+
+  ```html
+  <link rel="stylesheet"  href="demo.css">
+  ```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+    <link href="../css/demo.css" rel="stylesheet">
+</head>
+<body>
+    <div style="color: red">hello css</div>
+
+    <span>hello css </span>
+
+    <p>hello css</p>
+</body>
+</html>
+```
+
+#### css 选择器
+
+- css 选择器就是选取需设置样式的元素（标签）
+
+```css
+div {
+	color:red;
+}
+```
+
+* 元素选择器
+
+  ```css
+  元素名称{color: red;}
+  ```
+
+  ```css
+  div {color:red}  /*该代码表示将页面中所有的div标签的内容的颜色设置为红色*/
+  ```
+
+* id 选择器
+
+  ```css
+  #id属性值{color: red;}
+  ```
+
+  ```html
+  <div id="name">hello css2</div>
+  ```
+
+  ```css
+  #name{color: red;}  /*该代码表示将页面中所有的id属性值是 name 的标签的内容的颜色设置为红色*/
+  ```
+
+* 类选择器
+
+  ```css
+  .class属性值{color: red;}
+  ```
+
+  ```html
+  <div class="cls">hello css3</div>
+  ```
+
+  ```css
+  .cls{color: red;} /*该代码表示将页面中所有的class属性值是 cls 的标签的内容的颜色设置为红色*/
+  ```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            color: red;
+        }
+
+        #name{
+            color: blue;
+        }
+
+        .cls{
+            color: pink;
+        }
+    </style>
+
+</head>
+<body>
+    <div>div1</div>
+    <div id="name">div2</div>
+    <div class="cls">div3</div>
+    <span class="cls">span</span>
+</body>
+</html>
+```
+
+#### CSS 基本样式属性
+
+| 属性                  | 描述                                                                  |
+| :-------------------- | :-------------------------------------------------------------------- |
+| background            | 简写属性，作用是将背景属性设置在一个声明中。                          |
+| background-attachment | 背景图像是否固定或者随着页面的其余部分滚动。                          |
+| background-color      | 设置元素的背景颜色。                                                  |
+| background-image      | 把图像设置为背景。                                                    |
+| background-position   | 设置背景图像的起始位置。                                              |
+| background-repeat     | 设置背景图像是否及如何重复。                                          |
+| color                 | 设置文本颜色                                                          |
+| direction             | 设置文本方向。                                                        |
+| line-height           | 设置行高。                                                            |
+| letter-spacing        | 设置字符间距。                                                        |
+| text-align            | 对齐元素中的文本。                                                    |
+| text-decoration       | 向文本添加修饰。                                                      |
+| text-indent           | 缩进元素中文本的首行。                                                |
+| text-shadow           | 设置文本阴影。CSS2 包含该属性，但是 CSS2.1 没有保留该属性。           |
+| text-transform        | 控制元素中的字母。                                                    |
+| unicode-bidi          | 设置文本方向。                                                        |
+| white-space           | 设置元素中空白的处理方式。                                            |
+| word-spacing          | 设置字间距。                                                          |
+| font                  | 简写属性。作用是把所有针对字体的属性设置在一个声明中。                |
+| font-family           | 设置字体系列。                                                        |
+| font-size             | 设置字体的尺寸。                                                      |
+| font-size-adjust      | 当首选字体不可用时，对替换字体进行智能缩放。（CSS2.1 已删除该属性。） |
+| font-style            | 设置字体风格。                                                        |
+| font-variant          | 以小型大写字体或者正常字体显示文本。                                  |
+| font-weight           | 设置字体的粗细。                                                      |
+| list-style            | 简写属性。用于把所有用于列表的属性设置于一个声明中。                  |
+| list-style-image      | 将图象设置为列表项标志。                                              |
+| list-style-position   | 设置列表中列表项标志的位置。                                          |
+| list-style-type       | 设置列表项标志的类型。                                                |
+| marker-offset         |                                                                       |
+| border-collapse       | 设置是否把表格边框合并为单一的边框。                                  |
+| border-spacing        | 设置分隔单元格边框的距离。                                            |
+| caption-side          | 设置表格标题的位置。                                                  |
+| empty-cells           | 设置是否显示表格中的空单元格。                                        |
+| table-layout          | 设置显示单元、行和列的算法。                                          |
+| outline               | 在一个声明中设置所有的轮廓属性。                                      |
+| outline-color         | 设置轮廓的颜色。                                                      |
+| outline-style         | 设置轮廓的样式。                                                      |
+| outline-width         | 设置轮廓的宽度。                                                      |
+
 - CSS链接的四种状态：
-  
+
   - `a:link {}`- 普通的、未被访问的链接
   - `a:visited {}`- 用户已访问的链接
   - `a:hover {}`- 鼠标指针位于链接的上方
@@ -254,7 +722,7 @@ references:
 
 - 更多关于 CSS 的信息，请参阅 [CSS 实例](https://www.w3school.com.cn/example/csse_examples.asp)、[CSS 参考手册](https://www.w3school.com.cn/cssref/index.asp)
 
-### CSS3
+#### CSS3
 
 - CSS3 完全向后兼容，浏览器通常支持 CSS2，因此您不必改变现有的设计。
 - 选择器
