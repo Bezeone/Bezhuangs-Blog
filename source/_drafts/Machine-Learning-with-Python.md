@@ -1,10 +1,8 @@
 ---
 title: Machine Learning with Python
-date: 2021-11-10
-updated: 2021-12-15
+date: 2022-04-05
 tags: [Python]
-group: todo
-categories: 人工智能与大数据
+categories: 数据科学与大数据技术
 ---
 
 > This course provided by IBM dives into the basics of machine learning using an approachable, and well-known programming language, Python. In this course, I've learned about the purpose of Machine Learning and where it applies to the real world and had a general overview of Machine Learning topics such as supervised vs unsupervised learning, model evaluation, and Machine Learning algorithms. The following are the notes I took during this course.

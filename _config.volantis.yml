@@ -1,7 +1,7 @@
 navbar:
   visiable: always # always, auto
   logo: # choose [img] or [icon + title]
-    img: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: #
     icon:
     title: Bezhuang's Blog
   menu:
@@ -31,13 +31,13 @@ navbar:
         toggle: darkmode
 
 cover:
-  height_scheme: half # full, half
+  height_scheme: full # full, half
   layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%A3%81%E7%BA%B82.jpg
+  background: https://wallpapercave.com/wp/wp10474992.png
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 庄之皓 · Bezhuang
   subtitle: 欢迎访问我的博客！Welcome to my blog!
@@ -63,7 +63,7 @@ cover:
 pages:
   # 友链页面配置
   friends:
-    layout_scheme: sites # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
+    layout_scheme: traditional # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
 
 ############################### Article Layout ############################### > start
 # 文章布局
@@ -222,9 +222,9 @@ sidebar:
       avatar: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/头像.gif
       shape: rectangle # circle, rectangle
       url: /about/
-      title: 只是为了好玩
-      subtitle: Just for fun
-      jinrishici: true
+      title: Rolling Stone
+      subtitle: 
+      jinrishici: false
       social:
         - icon: fas fa-envelope
           url: mailto:bezhuang@outlook.com
