@@ -2,7 +2,7 @@
 title: Data Science Math Skills
 date: 2020-05-25
 tags: []
-categories: 数学
+categories: 慕课MOOC
 mathjax: true
 ---
 

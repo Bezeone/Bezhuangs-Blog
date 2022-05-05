@@ -1,8 +1,8 @@
 ---
 title: Accenture Coding Virtual Experience Program
 date: 2022-01-16
-tags: [Java, Spring, Spring Boot, Gradle, Jenkins]
-categories: 项目文档与经验
+tags: [Spring, Spring Boot, Gradle, Jenkins]
+categories: Java
 ---
 
 > The Accenture Know-the-Code Virtual Experience Program covers the fundamentals of software development, including object-oriented programming, code refactoring, and agile delivery. It empowers me to explore what a career in software development could look like at Accenture while practicing my coding skills. The following are the notes I took during this virtual experience.

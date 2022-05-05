@@ -1,8 +1,8 @@
 ---
 title: HTTP 协议和 Servlet
 date: 2022-04-05
-tags: [Java, HTTP, Tomcat, Servlet]
-categories: 后端开发与架构
+tags: [HTTP, Servlet, Tomcat]
+categories: Java
 references: 
   - title: Java web从入门到企业实战
     url: https://www.bilibili.com/video/BV1Qf4y1T7Hx

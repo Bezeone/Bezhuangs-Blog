@@ -1,8 +1,8 @@
 ---
 title: Data Visualization With Python
 date: 2021-03-06
-tags: [IBM, Python]
-categories: 数据科学与大数据技术
+tags: []
+categories: 数据科学
 ---
 
 > One of the key skills of a data scientist is the ability to tell a compelling story, visualizing data and findings in an approachable and stimulating way. Learning how to leverage a software tool to visualize data will helps one understand the data better, and make more effective decisions. The main goal of this Data Visualization with Python course provided by IBM is to use various techniques and several data visualization libraries in Python, namely Matplotlib, Seaborn, and Folium for presenting data visually. The following are the notes I took during this course.

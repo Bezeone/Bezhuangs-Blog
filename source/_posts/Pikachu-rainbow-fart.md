@@ -2,10 +2,10 @@
 title: 皮卡丘彩虹屁语音包
 date: 2021-02-16
 tags: []
-categories: 项目文档与经验
+categories: 开源项目
 ---
 
-> [VSCode Rainbow Fart](https://github.com/saekiraku/vscode-rainbow-fart/) 是一个在你编程时持续夸你写的牛逼的扩展，可以根据代码关键字播放贴近代码意义的真人语音。[皮卡丘彩虹屁语音包（Pikachu-rainbow-fart）](https://github.com/Bezhuang/Pikachu-rainbow-fart) 是基于此插件编写的定制化的皮卡丘语音包，项目基于 MIT 协议开源于 Github
+> [VSCode Rainbow Fart](https://github.com/saekiraku/vscode-rainbow-fart/) 是一个在你编程时持续夸你写的牛逼的扩展，可以根据代码关键字播放贴近代码意义的真人语音。[皮卡丘彩虹屁语音包（Pikachu-rainbow-fart）](https://github.com/Bezhuang/Pikachu-rainbow-fart) 是基于此插件编写的定制化的皮卡丘语音包，项目基于 MIT 协议开源于 Github。
 
 <!--more-->
 

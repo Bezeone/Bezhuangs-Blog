@@ -1,8 +1,8 @@
 ---
 title: Java 基础编程总结
 date: 2021-06-20
-tags: [Java]
-categories: 后端开发与架构
+tags: []
+categories: Java
 references:
   - title: Java基础 - lsqstudy
     url: https://blog.csdn.net/PorkBird/article/details/113666542

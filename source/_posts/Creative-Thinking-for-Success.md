@@ -2,90 +2,61 @@
 title: Creative Thinking：Techniques and Tools for Success
 date: 2020-07-10
 tags: []
-categories: 经济与商业
+categories: 慕课MOOC
 ---
 
-> In this ever-growing and changing world, being able to think creatively and innovatively are essential skills. This course provided by IMPERIAL COLLEGE LONDON equips us with a tool-box, introducing us to a selection of behaviors and techniques that augments our innate creativity. The following are the notes I took during this course. 
+> The greatest innovators aren’t necessarily the people who have the most original idea. Often, they are people- or teams- that have harnessed their creativity to develop a new perspective or more effective way of communicating an idea. You can train your imagination to seize opportunities, break away from routine and habit, and tap into your natural creativity. This course provided by IMPERIAL COLLEGE LONDON equips us with a tool-box, introducing us to a selection of behaviors and techniques that augments our innate creativity.
 
 <!--more-->
 
 {% pdf /pdf/creative-thinking.pdf %}
 
-### Principle of Creativity
+### 1. Principle of Creativity
 
-- Necessity is the mother of invention.
-- Opportunity is the father of invention.
-- Creativity is imagination with responsibility.
-- Creativity is the ability to imagine or invent something new of value.
+Necessity is the mother of invention. Opportunity is the father of invention.
 
-#### Levels of Creativity
+Creativity is imagination with responsibility. Creativity is the ability to imagine or invent something new of value.
 
-- Big C vs Little C
-- Eminent vs Everyday
-- The value of patronage
-- The Renaissance→Industrial Revolution→Neuroscience→Data and AI
+Levels of Creativity: Big C vs Little C, Eminent vs Everyday.
 
-#### Creative Environments
+The value of patronage: The Renaissance → Industrial Revolution → Neuroscience → Data and AI
 
-- Create a low stress environment
-- Reassurance and high trust
-- Relaxation aids production and realization of ideas
+Creative Environments: Create a low stress environment with reassurance and high trust. Relaxation aids production and realization of ideas are also important.
 
-### Creativity Tools
+### 2. Creativity Tools
 
-- Various Types of Brainstorming
-- Morphological Analysis
-- Six Hats
-- TRIZ
-- SCAMPER
+Creativity Tools to Enhance: Fluency, Flexibility, Originality.
 
-#### Creativity Tools to Enhance
+Various Types of Brainstorming Techniques: Flipchart, Post-its, Brainwriting, Alphabet, Grid, Circle brainstorming.
 
-- Fluency
-- Flexibility
-- Originality
+Morphological Analysis: A creative tool that helps generate ideas that would not normally spring to mind.
 
-#### Top 6 Brainstorming Techniques
+-   Generic morphological analysis chart.
+-   Subsystems and Means.
+-   Explore the design space systematically or experimentally.
+-   Sketching synthesises the subsystems.
+-   Small variation in selection = Substantial difference in outcome.
+-   The sub-functions and potential means of fulfilling each of these sub-functions can be arranged in a grid.
+-   Morphological Analysis applied to Plot Line.
 
-- Flipchart
-- Post-its
-- Brainwriting
-- Alphabet
-- Grid
-- Circle brainstorming
+Six Thinking Hats: The Value of Diversity. The six thinking hat technique aids and augments creativity.
 
-### Six Thinking Hats
+- White Hat (facts, figures, information)
+- Red Hat (intuition, gut reaction, emotion)
+- Black Hat (critically, cautiously, defensively)
+- Yellow Hat (optimistic viewpoint)
+- Green Hat (creativity)
+- Blue Hat (control and organization)
 
-- The Value of Diversity
-- The six thinking hat technique aids and augments creativity.
-  - White Hat (facts, figures, information)
-  - Red Hat (intuition, gut reaction, emotion)
-  - Black Hat (critically, cautiously, defensively)
-  - Yellow Hat (optimistic viewpoint)
-  - Green Hat (creativity)
-  - Blue Hat (control and organization)
+TRIZ: Theory of intensive problem solving
 
-### Morphological Analysis
-
-- Morphological Analysis is a creative tool that helps generate ideas that would not normally spring to mind
-- Generic morphological analysis chart
-- Subsystems and Means
-- Explore the design space systematically or experimentally
-- Sketching synthesises the subsystems
-- Small variation in selection = Substantial difference in outcome
-- The sub-functions and potential means of fulfilling each of these sub-functions can be arranged in a grid
-- Morphological Analysis applied to Plot Line
-
-### TRIZ
-
-- TRIZ = Theory of intensive problem solving
 - Invented by Genrich Altshuller
 - Specific Problem --Abstraction-> General Problem -> General Solutions --Analogy-> Solution to Specific Problem
 - 39 Parameters
 - 40 principles
 - The concept of contradiction
 
-### Scamper
+Scamper
 
 - Substitute
 - Combine
@@ -95,7 +66,7 @@ categories: 经济与商业
 - Eliminate
 - Reverse/ Rearrange
 
-### Using the Tools in Combination
+Using the Tools in Combination
 
 - The Double Diamond Model
 - Circle Brainstorming

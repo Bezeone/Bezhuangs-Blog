@@ -2,13 +2,13 @@
 title: 云上搭建基于 Anaconda 的 Jupyter 数据科学环境
 date: 2021-05-09
 tags: []
-categories: 云服务器与云计算
+categories: 云服务
 references:
   - title: 如何在云服务器上设置可远端访问的jupyter notebook
     url: https://www.jianshu.com/p/fff4a61dee7a
 ---
 
-> Jupyter Notebook是基于浏览器网页的用于交互计算的应用程序，支持Python、R、Julia和Scala等多种语言，在数据科学相关领域有着非常大的用途。JupyterLab是基于web的集成开发环境，包含了Jupyter Notebook所有功能的同时还支持操作终端、编辑markdown文本、打开交互模式、查看csv文件及图片等功能，最近在学习的IBM数据科学专项课程也都是基于Jupyter Lab的，在阿里云主机上部署Jupyter环境也能使研究和学习更加方便。本篇笔记是在多次踩坑后总结的适用于CentOS7.6系统的过程记录。
+> Jupyter Notebook是基于浏览器网页的用于交互计算的应用程序，支持Python、R、Julia和Scala等多种语言，在数据科学相关领域有着非常大的用途。JupyterLab是基于web的集成开发环境，包含了Jupyter Notebook所有功能的同时还支持操作终端、编辑markdown文本、打开交互模式、查看csv文件及图片等功能，最近在学习的IBM数据科学专项课程也都是基于Jupyter Lab的，在阿里云主机上部署Jupyter环境也能使研究和学习更加方便。
 
 <!--more-->
 
