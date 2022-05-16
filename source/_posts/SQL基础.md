@@ -8,57 +8,72 @@ references:
     url: https://mp.weixin.qq.com/s/sKQy3MxNiDjlu3HLwrXBJg
 ---
 
-> 现代程序离不开关系数据库，要使用关系数据库就必须掌握 SQL 语言。SQL 是用于访问和处理数据库的标准的计算机语言。本文是在学习完 [SQL 教程](https://www.liaoxuefeng.com/wiki/1177760294764384) 后针对关系型数据库的一般语法进行的总结，常见的关系型数据库包括：MySQL、SQL Server、Access、Oracle、Sybase、DB2 等等，MySQL 是目前使用最多的 SQL 数据库，本文也是以 MySQL 的操作为例阐释SQL语法。
+> 现代程序离不开关系数据库，要使用关系数据库就必须掌握 SQL 语言。SQL 是用于访问和处理数据库的标准的计算机语言。常见的关系型数据库包括：MySQL、SQL Server、Access、Oracle、Sybase、DB2 等等，MySQL 是目前使用最多的 SQL 数据库，本文也是以 MySQL 的操作为例阐释 SQL 语法。
 
 <!--more-->
 
 ### 基本概念
 #### 数据库术语
-- 数据库（database）：保存有组织的数据的容器（通常是一个文件或一组文件）
-- 数据表（table）：某种特定类型数据的结构化清单
-- 模式（schema）：关于数据库和表的布局及特性的信息
-  - 模式定义了数据在表中如何存储，包含存储什么样的数据，数据如何分解，各部分信息如何命名等信息
-  - 数据库和表都有模式
-- 列（column）：表中的一个字段，所有表都是由一个或多个列组成的
-- 行（row）：表中的一个记录
-- 主键（primary key）：一列（或一组列），其值能够唯一标识表中每一行
+数据库（database）：保存有组织的数据的容器（通常是一个文件或一组文件）
+
+数据表（table）：某种特定类型数据的结构化清单
+
+模式（schema）：关于数据库和表的布局及特性的信息
+- 模式定义了数据在表中如何存储，包含存储什么样的数据，数据如何分解，各部分信息如何命名等信息
+- 数据库和表都有模式
+
+列（column）：表中的一个字段，所有表都是由一个或多个列组成的
+
+行（row）：表中的一个记录
+
+主键（primary key）：一列（或一组列），其值能够唯一标识表中每一行
 
 ### SQL 语法
-- SQL（Structured Query Language)：标准 SQL 由 ANSI 标准委员会管理，从而称为 ANSI SQL
-- SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除
-- 各个 DBMS 都有自己的实现，如 PL/SQL、Transact-SQL 等
+SQL（Structured Query Language)：标准 SQL 由 ANSI 标准委员会管理，从而称为 ANSI SQL
+
+SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除
+
+各个 DBMS 都有自己的实现，如 PL/SQL、Transact-SQL 等
+
 #### SQL 语法结构
-- 子句：是语句和查询的组成成分（在某些情况下，这些都是可选的）
-- 表达式：可以产生任何标量值，或由列和行的数据库表
-- 谓词：给需要评估的 SQL 三值逻辑（3VL）（true/false/unknown）或布尔真值指定条件，并限制语句和查询的效果，或改变程序流程
-- 查询：基于特定条件检索数据，这是 SQL 的一个重要组成部分
-- 语句：可以持久地影响纲要和数据，也可以控制数据库事务、程序流程、连接、会话或诊断
+子句：是语句和查询的组成成分（在某些情况下，这些都是可选的）
+
+表达式：可以产生任何标量值，或由列和行的数据库表
+
+谓词：给需要评估的 SQL 三值逻辑（3VL）（true/false/unknown）或布尔真值指定条件，并限制语句和查询的效果，或改变程序流程
+
+查询：基于特定条件检索数据，这是 SQL 的一个重要组成部分
+
+语句：可以持久地影响纲要和数据，也可以控制数据库事务、程序流程、连接、会话或诊断
 
 #### SQL 语法要点
-- SQL 语句不区分大小写，但是数据库表名、列名和值是否区分，依赖于具体的 DBMS 以及配置
-- 多条 SQL 语句必须以分号（`;`）分隔
-- 处理 SQL 语句时，所有空格都被忽略，SQL 语句可以写成一行，也可以分写为多行
-- 一行 SQL 语句
+SQL 语句不区分大小写，但是数据库表名、列名和值是否区分，依赖于具体的 DBMS 以及配置
 
-    ```SQL
-    UPDATE user SET username='robot', password='robot' WHERE username = 'root';
-    ```
+多条 SQL 语句必须以分号（`;`）分隔
 
-- 多行 SQL 语句
+处理 SQL 语句时，所有空格都被忽略，SQL 语句可以写成一行，也可以分写为多行
 
-    ```SQL
-    UPDATE user
-    SET username='robot', password='robot'
-    WHERE username = 'root';
-    ```
+一行 SQL 语句：
 
-- SQL 支持三种注释
+```SQL
+UPDATE user SET username='robot', password='robot' WHERE username = 'root';
+```
 
-    ```mysql
-    ##注释1
-    -- 注释2
-    /* 注释3 */
-    ```
+多行 SQL 语句
+
+```SQL
+UPDATE user
+SET username='robot', password='robot'
+WHERE username = 'root';
+```
+
+SQL 支持三种注释：
+
+```mysql
+##注释1
+-- 注释2
+/* 注释3 */
+```
 
 #### SQL 分类
 - 数据定义语言（DDL）

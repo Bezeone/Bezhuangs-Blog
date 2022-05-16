@@ -1,176 +1,176 @@
 ---
 title: macOS + Ubuntu 实现远程开发配置
 date: 2022-03-06
-tags: []
+tags: [Linux]
 categories: 云服务
 references:
   - title: 《LNMP环境镜像使用手册》
     url: https://oneinstack.com/docs/lnmpstack-image-guide/
 ---
 
-> 刚刚续费了一年的阿里云轻量应用服务器，打算把大多数的开发环境放到服务器上，实现远程开发。我使用的是 macOS Monterey 和基于 Ubuntu 18.04 的 LNMP 镜像系统，IDE 选取 Visual Studio Code 和 IntelliJ IDEA 进行开发学习，以下为搭建环境过程中所记笔记，可供参考。
+> 刚刚续费了一年的阿里云轻量应用服务器，打算把大多数的开发环境放到服务器上，实现远程开发。我使用的是 macOS Monterey 和基于 Ubuntu 18.04 的 LNMP 镜像系统，IDE 选取 Visual Studio Code 和 IntelliJ IDEA 进行开发学习。
 
 <!--more-->
 
-### 服务器镜像信息
+### 一、服务器镜像信息
 
-- 我使用的是阿里云轻量应用服务器提供的 LNMP 7.4 镜像，该镜像为LNMP（Ubuntu18.04 64位+Nginx+MySQL5.7+PHP5.3～8.0切换）架构，jemalloc优化内存管理，脚本菜单式添加Nginx虚拟主机绑定，并支持内网OSS备份功能，是常见的搭建Web应用所需的环境，支持高并发性能。
+我使用的是阿里云轻量应用服务器提供的 LNMP 7.4 镜像，该镜像为LNMP（Ubuntu18.04 64位+Nginx+MySQL5.7+PHP5.3～8.0切换）架构，jemalloc优化内存管理，脚本菜单式添加Nginx虚拟主机绑定，并支持内网OSS备份功能，是常见的搭建Web应用所需的环境，支持高并发性能。
 
-- 应用程序安装信息
+应用程序安装信息：
 
-  - Nginx 1.18：`/usr/local/nginx`
+- Nginx 1.18：`/usr/local/nginx`
 
-  - PHP 7.4：`/usr/local/php`
-  - MySQL 5.7：`/usr/local/mysql`
-
+- PHP 7.4：`/usr/local/php`
+- MySQL 5.7：`/usr/local/mysql`
 - 数据库地址：127.0.0.1:3306 
-
 - 网站根目录：`/data/wwwroot`
 
-- 查询数据库和 FTP 密码
+查询数据库和 FTP 密码
 
-  ```bash
-  sudo cat /root/ReadMe
-  ```
+```bash
+sudo cat /root/ReadMe
+```
 
-### Ubuntu 系统配置
+### 二、Ubuntu 系统配置
 
-- 依赖源设置
+依赖源设置：
 
-  ```bash
-  mv /etc/apt/sources.list{,bak} #备份sources.list
-  cat > /etc/apt/sources.list << EOF
-  deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-  deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-  
-  deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-  deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-  
-  deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-  deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-  
-  deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-  deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-  
-  deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-  deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-  EOF
-  apt update
-  ```
+```bash
+mv /etc/apt/sources.list{,bak} #备份sources.list
+cat > /etc/apt/sources.list << EOF
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 
-- 在防火墙添加规则放行 21、20000/30000 端口，允许通过 FTP 连接
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
 
-### 搭建开发环境
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
 
-- C/C++ 开发环境
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
 
-  ```bash
-  sudo apt-get install build-essential
-  ```
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+EOF
+apt update
+```
 
-- Python3 开发环境
+在防火墙添加规则放行 21、20000/30000 端口，允许通过 FTP 连接。
 
-  ```bash
-  python3 --version  
-  sudo apt-get install python3-pip
-  ```
+### 三、搭建开发环境
 
-- Java 开发环境
+C/C++ 开发环境：
 
-  ```bash
-  sudo apt install openjdk-11-jdk
-  ```
+```bash
+sudo apt-get install build-essential
+```
 
-- Go 开发环境
+Python3 开发环境：
 
-  ```bash
-  sudo wget -c https://dl.google.com/go/go1.15.6.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-  vim /etc/profile
-  ```
+```bash
+python3 --version  
+sudo apt-get install python3-pip
+```
 
-  - 添加以下内容
+Java 开发环境：
 
-    ```bash
-    export GOROOT=/usr/local/go
-    export GOPATH=/tufei/code/go
-    export GOBIN=$GOPATH/bin
-    export PATH=$GOPATH:$GOBIN:$GOROOT/bin:$PATH
-    ```
+```bash
+sudo apt install openjdk-11-jdk
+```
 
-  - 保存
+Go 开发环境：
 
-    ```bash
-    source  /etc/profile
-    go version
-    ```
+```bash
+sudo wget -c https://dl.google.com/go/go1.15.6.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+vim /etc/profile
+```
 
-- Git 安装配置
+添加以下内容：
 
-  ```bash
-  sudo apt-get install git
-  git config --global user.name "Zhuang Zhihao"
-  git config --global user.email "bezhuang@outlook.com"
-  ssh-keygen -t rsa -C "bezhuang@outlook.com"
-  cat /root/.ssh/id_rsa.pub
-  ```
+```bash
+export GOROOT=/usr/local/go
+export GOPATH=/tufei/code/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOPATH:$GOBIN:$GOROOT/bin:$PATH
+```
 
-  - 提交公钥到 Github 或其他 Git 仓库
+保存：
 
-### 管理服务
+```bash
+source  /etc/profile
+go version
+```
 
-- Nginx
+Git 安装配置：
 
-  ```bash
-  service nginx {start|stop|status|restart|reload|configtest}
-  ```
+```bash
+sudo apt-get install git
+git config --global user.name "Zhuang Zhihao"
+git config --global user.email "bezhuang@outlook.com"
+ssh-keygen -t rsa -C "bezhuang@outlook.com"
+cat /root/.ssh/id_rsa.pub
+```
 
-- MySQL
+提交公钥到 Github 或其他 Git 仓库。
 
-  ```bash
-  service mysqld {start|stop|restart|reload|status}
-  ```
+### 四、管理服务
 
-- PHP
+Nginx：
 
-  ```bash
-  service php-fpm {start|stop|restart|reload|status}
-  ```
+```bash
+service nginx {start|stop|status|restart|reload|configtest}
+```
 
-- Pure-Ftpd
+MySQL：
 
-  ```bash
-  service pureftpd {start|stop|restart|status}
-  ```
+```bash
+service mysqld {start|stop|restart|reload|status}
+```
 
-- Redis
+PHP：
 
-  ```bash
-  service redis-server {start|stop|status|restart}
-  ```
+```bash
+service php-fpm {start|stop|restart|reload|status}
+```
 
-- Memcached
+Pure-Ftpd：
 
-  ```bash
-  service memcached {start|stop|status|restart|reload}
-  ```
+```bash
+service pureftpd {start|stop|restart|status}
+```
 
-### 虚拟主机管理
+Redis：
 
-- 添加虚拟主机
+```bash
+service redis-server {start|stop|status|restart}
+```
 
-  ```bash
-  cd /root/oneinstack
-  ./vhost.sh
-  ```
+Memcached：
 
-- 删除虚拟主机
+```bash
+service memcached {start|stop|status|restart|reload}
+```
 
-  ```bash
-  ./vhost.sh --del
-  ```
+### 五、虚拟主机管理
 
-### 本地开发环境
+添加虚拟主机：
 
-- 使用 Visual Studio Code 中的 Remote -SSH 插件连接
-- 使用 Termius 进行 SSH 和 SFTP 连接
-- 博客现仍使用 Hexo，Typora 软件用于编写博客文章，uPic 软件用于上传图床
+```bash
+cd /root/oneinstack
+./vhost.sh
+```
+
+删除虚拟主机：
+
+```bash
+./vhost.sh --del
+```
+
+### 六、本地开发环境
+
+使用 Visual Studio Code 中的 Remote -SSH 插件连接，
+
+使用 Termius 进行 SSH 和 SFTP 连接，
+
+博客现仍使用 Hexo，Typora 软件用于编写博客文章，uPic 软件用于上传图床。

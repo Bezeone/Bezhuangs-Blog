@@ -1,14 +1,14 @@
 ---
 title: HTTP 协议和 Servlet
 date: 2022-04-05
-tags: [HTTP, Servlet, Tomcat]
+tags: [HTTP, Servlet]
 categories: Java
 references: 
   - title: Java web从入门到企业实战
     url: https://www.bilibili.com/video/BV1Qf4y1T7Hx
 ---
 
-> Java Web 是用 Java 技术来解决相关 web 互联网领域的技术栈，国内很多大型网站公司也是首选 Java 语言来解决 web 互联网相关的问题。要了解 Java Web 开发的技术栈，首先需要理解 HTTP 协议和 HTTP 请求与响应数据的格式，理解 Servlet 的执行流程和生命周期，掌握 Servlet 的使用和相关配置。
+> Java Web 核心第一章。Java Web 是用 Java 技术来解决相关 web 互联网领域的技术栈，国内很多大型网站公司也是首选 Java 语言来解决 web 互联网相关的问题。要了解 Java Web 开发的技术栈，首先需要理解 HTTP 协议和 HTTP 请求与响应数据的格式，理解 Servlet 的执行流程和生命周期，掌握 Servlet 的使用和相关配置。
 
 <!--more-->
 
