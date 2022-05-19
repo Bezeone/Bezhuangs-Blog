@@ -1,7 +1,7 @@
 ---
 title: HTML 和 CSS 基础知识总结
 date: 2020-09-10
-tags: [CSS]
+tags: [HTML, CSS]
 categories: 前端
 references: 
   - title: 前端学习路线图
