@@ -2,7 +2,7 @@
 title: Git 操作指令总结
 date: 2020-04-13
 tags: [Git]
-categories: 后端
+categories: 其他开发
 references:
   - title: Git 教程
     url: https://www.liaoxuefeng.com/wiki/896043488029600/

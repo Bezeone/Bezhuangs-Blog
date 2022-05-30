@@ -1,6 +1,6 @@
 ---
 title: gets 函数与 puts 函数
-date: 2021-05-03
+date: 2022-05-03
 tags: []
 categories: C/C++
 references:
@@ -40,6 +40,20 @@ int main()
 }
 ```
 
+虽然用 `gets()` 时有空格也可以直接输入，但是 gets 不检查预留存储区是否能够容纳实际输入的数据，换句话说，如果输入的字符数目大于数组的长度，gets 无法检测到这个问题，就会发生内存越界，所以编程时建议使用 `fgets()`。fgets 相对于 gets 去读取标准输入时，会把 `\n` 放到字符数组中。`char *fgets(char *s, int size, FILE *stream);`。
+
+```c
+int main()
+{
+	char c[20];
+	fgets(c, sizeof(c), stdin);
+	int len = strlen(c);
+  c[len -1] = '\0';
+	puts(c);
+  return 0;
+}
+```
+
 ### 三、str 系列字符串操作函数
 
 str 系列字符串操作函数主要包括 strlen、strcpy 、strcmp、strcat 等。strlen 函数用于统计字符串长度，strcpy 函数用于将某个字符串复制到字符数组中，strcmp 函数用于比较两个字符串的大小，strcat 函数用于将两个字符串连接到一起：
@@ -72,6 +86,40 @@ int main(){
     strcat(d, "!"); // 将字符串!拼接到d中
     puts(d);  //study!
     return 0;
+}
+```
+
+### 四、判断回文数
+
+读取一个字符串，字符串可能含有空格，将字符串逆转，原来的字符串与逆转后字符串相同，输出 0，原字符串小于逆转后字符串输出 -1，大于逆转后字符串输出 1。例如输入 hello，逆转后的字符串为 olleh，因为hello 小于 olleh，所以输出 -1。
+
+```c
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+  char c[20], d[20];
+  gets(c);
+  int i, j;
+  for (i = strlen(c) - 1, j = 0; i >= 0; i--, j++)
+  {
+    d[j] = c[i];
+  }
+  d[j] = '\0';
+  int result = strcmp(c, d);
+  if (result < 0)
+  {
+    printf("%d\n", -1);
+  }
+  else if (result > 0)
+  {
+    printf("%d\n", 1);
+  }
+  else
+  {
+    printf("%d\n", 0);
+  }
+  return 0；
 }
 ```
 

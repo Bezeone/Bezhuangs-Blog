@@ -2,7 +2,7 @@
 title: 通过编写咖啡店菜单学习基础 CSS
 date: 2022-05-17
 tags: [CSS]
-categories: 前端
+categories: Web前端
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design
@@ -193,4 +193,3 @@ footer {
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
     <iframe src="https://free-code-camp-demo.vercel.app/通过编写咖啡店菜单学习基础CSS/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
 </div>
-

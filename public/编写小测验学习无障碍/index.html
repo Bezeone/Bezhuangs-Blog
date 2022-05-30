@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,9 +22,15 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：慕课MOOC - Bezhuang&#39;s Blog</title>
+  <title>通过编写小测验学习无障碍 - Bezhuang&#39;s Blog</title>
+  
+    <meta name="keywords" content="CSS,HTML">
   
 
+  
+    <meta name="description" content="
+freeCodeCamp 响应式网页设计的认证课程第八章。无障碍环境使你的网页便于所有人使用，甚至是残疾人。在通过编写小测验学习无障碍的课程中，建立一个测验网页，学习诸如键盘快捷键、ARIA 属性和设计最佳实践等无障碍工具。
+">
   
 
   <!-- feed -->
@@ -374,7 +378,7 @@
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://wallpapercave.com/wp/wp10474992.png"></div>
           
@@ -445,315 +449,527 @@
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
     
-      
+      <h1 class="title">
+        通过编写小测验学习无障碍
+      </h1>
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
+            
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/Managing-Machine-Learning-Projects/">
-        Managing Machine Learning Projects with Google Cloud
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>This course provided by GOOGLE CLOUD is intended to be an introduction to machine learning for business professionals. It teaches me how to translate business problems into machine learning use cases and vet them for feasibility and impact.</p>
-</blockquote>
-    
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CSS/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CSS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HTML/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>HTML</p></a></div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>本文发布于：2022年5月26日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.4k字</p>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-06-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：8分钟</p>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <blockquote>
+<p>freeCodeCamp 响应式网页设计的认证课程第八章。无障碍环境使你的网页便于所有人使用，甚至是残疾人。在通过编写小测验学习无障碍的课程中，建立一个测验网页，学习诸如键盘快捷键、ARIA 属性和设计最佳实践等无障碍工具。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="一、重点-HTML-代码"><a href="#一、重点-HTML-代码" class="headerlink" title="一、重点 HTML 代码"></a>一、重点 HTML 代码</h3><p>head：</p>
+<pre><code class="html">&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;freeCodeCamp Accessibility Quiz practice project&quot; /&gt;
+  &lt;title&gt;Accessibility Quiz&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot; /&gt;
+&lt;/head&gt;</code></pre>
+<p>header：</p>
+<pre><code class="html">&lt;header&gt;
+  &lt;img id=&quot;logo&quot; src=&quot;https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg&quot;&gt;
+  &lt;h1&gt;HTML/CSS Quiz&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#student-info&quot; accesskey=&quot;i&quot;&gt;INFO&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#html-questions&quot; accesskey=&quot;h&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#css-questions&quot; accesskey=&quot;c&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+<p>student-info:</p>
+<pre><code class="html">&lt;section role=&quot;region&quot; aria-labelledby=&quot;student-info&quot;&gt;
+  &lt;h2 id=&quot;student-info&quot;&gt;Student Info&lt;/h2&gt;
+  &lt;div class=&quot;info&quot;&gt;
+    &lt;label for=&quot;student-name&quot;&gt;Name:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;student-name&quot; id=&quot;student-name&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;info&quot;&gt;
+    &lt;label for=&quot;student-email&quot;&gt;Email:&lt;/label&gt;
+    &lt;input type=&quot;email&quot; name=&quot;student-email&quot; id=&quot;student-email&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;info&quot;&gt;
+    &lt;label for=&quot;birth-date&quot;&gt;D.O.B.&lt;span class=&quot;sr-only&quot;&gt;(Date of Birth)&lt;/span&gt;&lt;/label&gt;
+    &lt;input type=&quot;date&quot; name=&quot;birth-date&quot; id=&quot;birth-date&quot; /&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+<p>html-questions：</p>
+<pre><code class="html">&lt;section role=&quot;region&quot; aria-labelledby=&quot;html-questions&quot;&gt;
+  &lt;h2 id=&quot;html-questions&quot;&gt;HTML&lt;/h2&gt;
+  &lt;div class=&quot;question-block&quot;&gt;
+    &lt;p&gt;1&lt;/p&gt;
+    &lt;fieldset class=&quot;question&quot; name=&quot;html-question-one&quot;&gt;
+      &lt;legend&gt;
+        The legend element represents a caption for the content of its
+        parent fieldset element
+      &lt;/legend&gt;
+      &lt;ul class=&quot;answers-list&quot;&gt;
+        &lt;li&gt;
+          &lt;label for=&quot;q1-a1&quot;&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;q1-a1&quot; name=&quot;q1&quot; value=&quot;true&quot; /&gt;
+            True
+          &lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;label for=&quot;q1-a2&quot;&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;q1-a2&quot; name=&quot;q1&quot; value=&quot;false&quot; /&gt;
+            False
+          &lt;/label&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;question-block&quot;&gt;
+    &lt;p&gt;2&lt;/p&gt;
+    &lt;fieldset class=&quot;question&quot; name=&quot;html-question-two&quot;&gt;
+      &lt;legend&gt;
+        A label element nesting an input element is required to have a
+        for attribute with the same value as the input&#39;s id
+      &lt;/legend&gt;
+      &lt;ul class=&quot;answers-list&quot;&gt;
+        &lt;li&gt;
+          &lt;label for=&quot;q2-a1&quot;&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;q2-a1&quot; name=&quot;q2&quot; value=&quot;true&quot; /&gt;
+            True
+          &lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;label for=&quot;q2-a2&quot;&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;q2-a2&quot; name=&quot;q2&quot; value=&quot;false&quot; /&gt;
+            False
+          &lt;/label&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+<p>css-questions：</p>
+<pre><code class="html">&lt;section role=&quot;region&quot; aria-labelledby=&quot;css-questions&quot;&gt;
+  &lt;h2 id=&quot;css-questions&quot;&gt;CSS&lt;/h2&gt;
+  &lt;div class=&quot;formrow&quot;&gt;
+    &lt;div class=&quot;question-block&quot;&gt;
+      &lt;label for=&quot;customer&quot;&gt;Are you a frontend developer?&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;select name=&quot;customer&quot; id=&quot;customer&quot; required&gt;
+        &lt;option value=&quot;&quot;&gt;Select an option&lt;/option&gt;
+        &lt;option value=&quot;yes&quot;&gt;Yes&lt;/option&gt;
+        &lt;option value=&quot;no&quot;&gt;No&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;question-block&quot;&gt;
+      &lt;label for=&quot;css-questions&quot;&gt;Do you have any questions:&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;answer&quot;&gt;
+      &lt;textarea id=&quot;css-questions&quot; name=&quot;css-questions&quot; rows=&quot;5&quot; cols=&quot;24&quot;
+                placeholder=&quot;Who is flexbox...&quot;&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+<p>footer：</p>
+<pre><code class="html">&lt;footer&gt;
+  &lt;address&gt;
+    &lt;a href=&quot;https://freecodecamp.org&quot;&gt;freeCodeCamp&lt;/a&gt;&lt;br /&gt;
+    San Francisco&lt;br /&gt;
+    California&lt;br /&gt;
+    USA
+  &lt;/address&gt;
+&lt;/footer&gt;</code></pre>
+<h3 id="二、重点-CSS-代码"><a href="#二、重点-CSS-代码" class="headerlink" title="二、重点 CSS 代码"></a>二、重点 CSS 代码</h3><p>@media 属性：</p>
+<pre><code class="CSS">@media (prefers-reduced-motion: no-preference) &#123;
+    * &#123;
+        scroll-behavior: smooth;
+    &#125;
+&#125;</code></pre>
+<p>body，header：</p>
+<pre><code class="css">body &#123;
+    background: #f5f6f7;
+    color: #1b1b32;
+    font-family: Helvetica;
+    margin: 0;
+&#125;
+header &#123;
+    width: 100%;
+    height: 50px;
+    background-color: #1b1b32;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+&#125;</code></pre>
+<p>logo，nav：</p>
+<pre><code class="CSS">#logo &#123;
+    width: max(100px, 18vw);
+    background-color: #0a0a23;
+    aspect-ratio: 35 / 4;
+    padding: 0.4rem;
+&#125;
+h1 &#123;
+    color: #f1be32;
+    font-size: min(5vw, 1.2em);
+    text-align: center;
+&#125;
+nav &#123;
+    width: 50%;
+    max-width: 300px;
+    height: 50px;
+&#125;
+nav&gt;ul &#123;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline-start: 0;
+    margin-block: 0;
+    height: 100%;
+&#125;
+nav&gt;ul&gt;li &#123;
+    color: #dfdfe2;
+    margin: 0 0.2rem;
+    padding: 0.2rem;
+    display: block;
+&#125;
+nav&gt;ul&gt;li:hover &#123;
+    background-color: #dfdfe2;
+    color: #1b1b32;
+    cursor: pointer;
+&#125;
+li&gt;a &#123;
+    color: inherit;
+    text-decoration: none;
+&#125;</code></pre>
+<p>表单 1：</p>
+<pre><code class="CSS">main &#123;
+    padding-top: 50px;
+&#125;
+section &#123;
+    width: 80%;
+    margin: 0 auto 10px auto;
+    max-width: 600px;
+&#125;
+h1,
+h2 &#123;
+    font-family: Verdana, Tahoma;
+&#125;
+h2 &#123;
+    border-bottom: 4px solid #dfdfe2;
+    margin-top: 0px;
+    padding-top: 60px;
+&#125;
+.info &#123;
+    padding: 10px 0 0 5px;
+&#125;
+.formrow &#123;
+    margin-top: 30px;
+    padding: 0px 15px;
+&#125;
+input &#123;
+    font-size: 16px;
+&#125;
+.info label,
+.info input &#123;
+    display: inline-block;
+    text-align: right;
+&#125;
+.info input &#123;
+    width: 50%;
+    text-align: left;
+&#125;
+.info label &#123;
+    width: 10%;
+    min-width: 55px;
+&#125;</code></pre>
+<p>表单 2、3：</p>
+<pre><code class="CSS">.question-block &#123;
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 5px;
+&#125;
+p &#123;
+    margin-top: 5px;
+    padding-left: 15px;
+    font-size: 20px;
+&#125;
+p::before &#123;
+    content: &quot;Question #&quot;;
+&#125;
+.question &#123;
+    border: none;
+    padding-bottom: 0;
+&#125;
+.answers-list &#123;
+    list-style: none;
+    padding: 0;
+&#125;
+button &#123;
+    display: block;
+    margin: 40px auto;
+    width: 40%;
+    padding: 15px;
+    font-size: 23px;
+    background: #d0d0d5;
+    border: 3px solid #3b3b4f;
+&#125;</code></pre>
+<p>.sr-only selector：</p>
+<pre><code class="CSS">.sr-only &#123;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+&#125;</code></pre>
+<h3 id="三、页面展示"><a href="#三、页面展示" class="headerlink" title="三、页面展示"></a>三、页面展示</h3><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="https://free-code-camp-demo.vercel.app/通过编写小测验学习无障碍/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
+
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/Managing-Machine-Learning-Projects/'>
-            阅读全文
-          </a>
+        <div class='references'>
+          <section class='header'>
+            
+              <i class="fas fa-quote-left fa-fw" aria-hidden="true"></i>
+            
+            <span>References</span>
+          </section>
+          <section class='body'>
+            <ul>
+              
+                <li>
+                  <a href="https://chinese.freecodecamp.org/learn/2022/responsive-web-design" rel="external nofollow noopener noreferrer" target="_blank">
+                  freeCodeCamp
+                  </a>
+                </li>
+              
+            </ul>
+          </section>
         </div>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+
+              
+            
+          </blockquote>
+        </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' href="/about" rel="nofollow">
+    <img no-lazy src="https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&cdv=1&dpr=2&pid=16.1">
+    <p>Bezhuang</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-    <h2 class="article-title" >
-      <a href="/Data-Science-Math-Skills/">
-        Data Science Math Skills
-      </a>
-    </h2>
-  
-  <div class='md'>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zhuangzhihao.top/%E7%BC%96%E5%86%99%E5%B0%8F%E6%B5%8B%E9%AA%8C%E5%AD%A6%E4%B9%A0%E6%97%A0%E9%9A%9C%E7%A2%8D/&title=通过编写小测验学习无障碍 - Bezhuang's Blog&summary=
+freeCodeCamp 响应式网页设计的认证课程第八章。无障碍环境使你的网页便于所有人使用，甚至是残疾人。在通过编写小测验学习无障碍的课程中，建立一个测验网页，学习诸如键盘快捷键、ARIA 属性和设计最佳实践等无障碍工具。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
     
-      <blockquote>
-<p>Data Science Math Skills course provided by DUKE UNIVERSITY is designed to teach the vocabulary, notation, concepts, and algebra rules that all data scientists must know before moving on to more advanced material. The following are the notes I took during this course.</p>
-</blockquote>
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zhuangzhihao.top/%E7%BC%96%E5%86%99%E5%B0%8F%E6%B5%8B%E9%AA%8C%E5%AD%A6%E4%B9%A0%E6%97%A0%E9%9A%9C%E7%A2%8D/&title=通过编写小测验学习无障碍 - Bezhuang's Blog&summary=
+freeCodeCamp 响应式网页设计的认证课程第八章。无障碍环境使你的网页便于所有人使用，甚至是残疾人。在通过编写小测验学习无障碍的课程中，建立一个测验网页，学习诸如键盘快捷键、ARIA 属性和设计最佳实践等无障碍工具。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.zhuangzhihao.top/%E7%BC%96%E5%86%99%E5%B0%8F%E6%B5%8B%E9%AA%8C%E5%AD%A6%E4%B9%A0%E6%97%A0%E9%9A%9C%E7%A2%8D/&title=通过编写小测验学习无障碍 - Bezhuang's Blog&summary=
+freeCodeCamp 响应式网页设计的认证课程第八章。无障碍环境使你的网页便于所有人使用，甚至是残疾人。在通过编写小测验学习无障碍的课程中，建立一个测验网页，学习诸如键盘快捷键、ARIA 属性和设计最佳实践等无障碍工具。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
+      
+    
+      
+        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
+          
+            target="_blank" href="https://t.me/share/url?url=http://blog.zhuangzhihao.top/%E7%BC%96%E5%86%99%E5%B0%8F%E6%B5%8B%E9%AA%8C%E5%AD%A6%E4%B9%A0%E6%97%A0%E9%9A%9C%E7%A2%8D/&text=通过编写小测验学习无障碍 - Bezhuang's Blog"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2020-05-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/Data-Science-Math-Skills/'>
-            阅读全文
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/%E5%BB%BA%E7%AB%8B%E8%90%A5%E5%85%BB%E6%A0%87%E7%AD%BE%E6%9D%A5%E5%AD%A6%E4%B9%A0%E6%8E%92%E7%89%88/'>
+          <p class='title'>通过建立营养标签来学习排版<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+freeCodeCamp 响应式网页设计的认证课程第七章。排版是将文本样式设置为易于阅读并适合其目的的艺术。在通过建立营养标签来学习排版的课程中，你将使用排版来构建营养标签网页。你将学习如何使...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/Python-for-Everybody/">
-        Python for everybody
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>The Python for Everybody Specialization provided by UNIVERSITY OF MICHIGAN introduces fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. Python for Everybody is a completely open-source course, you can find all the notes and textbooks on its official <a target="_blank" rel="noopener" href="https://www.py4e.com/">website</a>, so this note will only contain my solution to all post-lesson exercises in this course.</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-05-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/Python-for-Everybody/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/Sport-Related-Concussion-Training/">
-        Sport-Related Concussion Training
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>Some common sports injuries can occur when engaging in confrontational sports like basketball, therefore it’s important to have some knowledge of avoiding and dealing with them. The Michigan Sport-Related Concussion Training Certification satisfies the state-mandated requirement for concussion training in the state of Michigan and can be helpful under certain circumstances. The following are the notes I took during this course.</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-04-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/Sport-Related-Concussion-Training/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE/">
-        计算机科学速成课
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av21376839/">计算机科学速成课程</a>的授课老师是英国树莓派基金会教育部长Carrie Anne，她以入门级大学教材和 AP 计算机科学原理指南为基础，在短短40节课中概述了计算机的历史、设计决策、编程和软件的基本要素、硬件的基本组件及其作用，对新手小白可以说是非常友好了。</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-03-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86/">
-        经济学原理
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>经济学原理是经管类学生的一门基础核心课程，基本理论通常分为微观经济学与宏观经济学两大部分，主要介绍经济学的基本概念、基本理论和基本分析方法。经济学通才保罗·萨缪尔森说过：“在当今社会，谁不学习经济学，谁就不懂得怎样生活”。学习经济学原理知识有助于培养对现实生活中经济行为与经济现象的观察能力，了解现实世界的运作，训练经济学直觉。</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-02-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/categories/%E6%85%95%E8%AF%BEMOOC/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -761,212 +977,28 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/头像.gif'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Rolling Stone</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:bezhuang@outlook.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Bezhuang/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://www.linkedin.com/in/zhuangzhihao/"
-              class="social fab fa-linkedin flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://space.bilibili.com/30593492"
-              class="social fab fa-youtube flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C-C/" href="/categories/C-C/"
-            id="categoriesC-C"
-            ><div class='name'>C/C++</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            id="categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/" href="/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/"
-            id="categoriesE4BA91E69C8DE58AA1"
-            ><div class='name'>云服务</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"
-            id="categoriesE5898DE7ABAF"
-            ><div class='name'>前端</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%90%8E%E7%AB%AF/" href="/categories/%E5%90%8E%E7%AB%AF/"
-            id="categoriesE5908EE7ABAF"
-            ><div class='name'>后端</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"
-            id="categoriesE5BC80E6BA90E9A1B9E79BAE"
-            ><div class='name'>开源项目</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%85%95%E8%AF%BEMOOC/" href="/categories/%E6%85%95%E8%AF%BEMOOC/"
-            id="categoriesE68595E8AFBEMOOC"
-            ><div class='name'>慕课MOOC</div><div class='badge'>(16)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/"
-            id="categoriesE695B0E68DAEE7A791E5ADA6"
-            ><div class='name'>数据科学</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE69CBAE599A8E5ADA6E4B9A0"
-            ><div class='name'>机器学习</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE7AE97E6B395E4B88EE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>算法与数据结构</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/" href="/categories/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"
-            id="categoriesE8A782E782B9E4B88EE6849FE683B3"
-            ><div class='name'>观点与感想</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"
-            id="categoriesE8AFBBE4B9A6E7AC94E8AEB0"
-            ><div class='name'>读书笔记</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%87%8D%E7%82%B9-HTML-%E4%BB%A3%E7%A0%81"><span class="toc-text">一、重点 HTML 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%87%8D%E7%82%B9-CSS-%E4%BB%A3%E7%A0%81"><span class="toc-text">二、重点 CSS 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA"><span class="toc-text">三、页面展示</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/CSS/" style="font-size: 20.67px; color: #6c6c6c">CSS</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Gradle/" style="font-size: 14px; color: #999">Gradle</a> <a href="/tags/HTML/" style="font-size: 20.67px; color: #6c6c6c">HTML</a> <a href="/tags/HTTP/" style="font-size: 14px; color: #999">HTTP</a> <a href="/tags/IDEA/" style="font-size: 14px; color: #999">IDEA</a> <a href="/tags/JDBC/" style="font-size: 17.33px; color: #828282">JDBC</a> <a href="/tags/JavaScript/" style="font-size: 14px; color: #999">JavaScript</a> <a href="/tags/Jenkins/" style="font-size: 14px; color: #999">Jenkins</a> <a href="/tags/Jupyter/" style="font-size: 14px; color: #999">Jupyter</a> <a href="/tags/LintCode/" style="font-size: 14px; color: #999">LintCode</a> <a href="/tags/Linux/" style="font-size: 20.67px; color: #6c6c6c">Linux</a> <a href="/tags/Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/MyBatis/" style="font-size: 14px; color: #999">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 24px; color: #555">MySQL</a> <a href="/tags/OpenCV/" style="font-size: 14px; color: #999">OpenCV</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/R-Language/" style="font-size: 14px; color: #999">R Language</a> <a href="/tags/Redis/" style="font-size: 14px; color: #999">Redis</a> <a href="/tags/SQL/" style="font-size: 20.67px; color: #6c6c6c">SQL</a> <a href="/tags/Servlet/" style="font-size: 20.67px; color: #6c6c6c">Servlet</a> <a href="/tags/Spring/" style="font-size: 14px; color: #999">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 17.33px; color: #828282">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 14px; color: #999">Spring Cloud</a> <a href="/tags/Tomcat/" style="font-size: 14px; color: #999">Tomcat</a> <a href="/tags/hdoj/" style="font-size: 14px; color: #999">hdoj</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='https://tva1.sinaimg.cn/large/9150e4e5gy1g6amdgiegcj20hh0cqjux.jpg'
-      />
-    
-      <img src='https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/微信二维码.jpg'
-      />
-    
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
 		  
@@ -975,8 +1007,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="通过编写小测验学习无障碍";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

@@ -2,7 +2,7 @@
 title: JavaScript 基础知识总结
 date: 2020-10-05
 tags: [JavaScript]
-categories: 前端
+categories: Web前端
 references: 
   - title: learn x in y minutes
     url: https://learnxinyminutes.com/docs/zh-cn/javascript-cn/

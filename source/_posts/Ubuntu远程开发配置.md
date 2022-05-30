@@ -2,7 +2,7 @@
 title: macOS + Ubuntu 实现远程开发配置
 date: 2022-03-06
 tags: [Linux]
-categories: 云服务
+categories: 其他开发
 references:
   - title: 《LNMP环境镜像使用手册》
     url: https://oneinstack.com/docs/lnmpstack-image-guide/
