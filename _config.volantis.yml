@@ -222,8 +222,8 @@ sidebar:
       avatar: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/头像.gif
       shape: rectangle # circle, rectangle
       url: /about/
-      title: Rolling Stone
-      subtitle: 
+      title: Meine Welt
+      subtitle: ist meine welt
       jinrishici: false
       social:
         - icon: fas fa-envelope
@@ -726,7 +726,7 @@ custom_css:
     hover: '#ff5722'
   navbar:
     height: 64px
-    width: auto # auto, max
+    width: max # auto, max
     effect: [shadow, floatable, blur]
   sidebar:
     effect: [shadow] # [shadow, floatable, blur]
@@ -740,14 +740,14 @@ custom_css:
       h1: left
       h2: left
       h3: left
-      h4: left
-      p: justify
+      h4: center
+      p: left
   gap:
     h2: 32px # Spacing above H2 (only px unit)
     h3: 24px # Spacing above H3 (only px unit)
     h4: 12px # Spacing above H4 (only px unit)
     p: 1.5rem # Paragraph spacing between paragraphs
-    line_height: 2 # normal, 1.5, 1.75, 2 ...
+    line_height: 1.5 # normal, 1.5, 1.75, 2 ...
   border_radius:
     card: 8px
     codeblock: 8px
