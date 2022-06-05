@@ -9,7 +9,7 @@ categories: 观点与感想
 
 <!--more-->
 
-### 传奇的诞生
+### 一、传奇的诞生
 
 1991年的8月25日，一个刚进入赫尔辛基大学不久的21岁学生在学校的邮箱列表中公开了这样一封邮件：“What would you like to see most in minix —— small poll for my new operation system”，在邮件中他这么写道：“我正在开发一个（免费的）操作系统 ...... 这只是出于爱好，不会像gnu那样庞大和专业 ...... 我现在已经移植了bash和gcc ...... 看起来几个月之内就会有实质性的进展”。1991年9月，他通过大学的FTP服务器发布了这个叫Freax的操作系统，随后它被重新命名为我们今天所熟知的名字：Linux。
 
@@ -19,7 +19,7 @@ Software is like sex, It‘s better when it’s free. —— Linus Torvalds
 
 26年后，当Linus描述起一开始建立Linux项目时的工作情况，他说：“Linux最初并不是一个团队合作的产物”，这个操作系统最初只是作为众多为他自己服务的一系列项目中的一个，仅仅是一个因为个人需要而开发的产物。接下来当项目逐渐成长起来，需要获得别人的一些认可和意见，他才逐渐把源码放开，“我已经在这个项目上努力半年了，快来看看我的成果”。在那时，也没有使用什么开源方法或是改进项目的手段，只是不同的人贡献了一些不同的代码，让你觉得，“噢，我从来没有想过可以这样，这样竟然可以让项目获得改进”。不久之后，Linus将其加入了FSF（ 自由软件基金 ）的 GNU 计划中，使用流行的开源许可证，避免了商业或其他的因素参与导致的负面影响，也同时允许用户合法的免费使用、拷贝并且改动程序。今天，Linux 内核是地球上目前为止最活跃的开源项目，是服务器端处于支配地位的操作系统，是 Android 的基础。世界上所有的超级计算机都跑在 Linux 上，包括 NASA 的集群和SpaceX的引擎。
 
-### 开源的力量
+### 二、开源的力量
 
 最开始的时候，人们并不是向项目直接贡献代码，人们更多的是贡献自己的想法。Linus原本是不喜欢有人打扰自己的工作的，对他来说，哪怕是电脑主机都不需要性能多强劲，只需要做到绝对的安静就好。所以当人们开始评论、开始对代码提供反馈信息的时候，突然就会让人耳目一新，这是一种崭新的时刻，“I Love Other People”！ 
 
@@ -29,7 +29,7 @@ Software is like sex, It‘s better when it’s free. —— Linus Torvalds
 
 时至今日，开源机制能够运转良好，其中很重要的一个缘故是代码可以将所有的事情都转化为黑和白（1和0）。通常这样利于作出决定，代码要么执行，要么不执行，因此意味着更少的争议空间。当然，你也能将同样的原则应用到其它领域的一些地方（比如科研、学术），因为黑色和白色混合在一起不只是变成灰色，而是很多不同的颜色。
 
-### 优雅的品味
+### 三、优雅的品味
 
 在Coding的领域，你不仅仅只需要打代码，还要对代码有好的品位。我们可以看看下面这个调用单向链表的例子：
 
@@ -69,13 +69,13 @@ CS 101，当碰到一个问题时，可以通过不同的方式被重写，移�
 
 "Good taste is much bigger than clever or stupid. Good taste is about really seeing the big patterns and kind of instinctively knowing what's the right way to do things." 
 
-### 脚踏实地
+### 四、脚踏实地
 
 人们常常把特斯拉和爱迪生拿来对比。特斯拉是有远见的有疯狂创意的科学家，人们爱特斯拉（不然怎么满大街的毛豆3呢）。爱迪生则是一个常常被批评为乏味的人。但大神更崇尚后者，“Genius is one percent inspiration and 99 percent perspiration”，爱迪生也许不是一个很好的人，但他的努力帮助他完成很多不平凡的事情。
 
 “I am not a visionary, I do not have a five-year plan. I'm an engineer. And I'm perfectly happy with all the people who are walking around and just staring at the clouds and looking at the stars and saying, 'I want to go there'. But I'm looking at the ground, and I want to fix the pothole that's right in front of me before I fall in. This is the kind of person I am“。
 
-### 笔者的其他一些废话
+### 五、笔者的其他一些废话
 
 “I do code for fun, but I also want to code for something meaningful”，纵观整篇访谈，这是让我印象最深的一句话。技术是为了实现目标、解决问题而存在的，我始终相信，我们创造出的每一个程序都应该有自己存在的价值和意义。大家是不是都听过一种说法，CV工程师，复制-->粘贴，每天重复、机械的劳动，就和10年前的文员一样，整天CRUD，却离自己的初心渐行渐远。这是在尊重技术，还是只是为了名和利呢？
 
@@ -83,7 +83,7 @@ CS 101，当碰到一个问题时，可以通过不同的方式被重写，移�
 
 第一次写长文，难免有些生疏，有些语句不通也请见谅。遗憾自己书读的还是不够多，见识还是不够广，唯有加紧努力让拥有的能力赶上自己的心气。访谈的原视频放在下面了，有什么问题欢迎及时指正。
 
-### TED访谈
+### 六、TED 访谈视频
 
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
     <iframe src="//player.bilibili.com/player.html?bvid=BV1w7411Z71f"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
