@@ -486,7 +486,7 @@ C.T # Get the transposed of C
 
 - [Final Assignment Notebook Url](https://jp-tok.dataplatform.cloud.ibm.com/analytics/notebooks/v2/86e30bef-41d8-4b38-a8f3-b0be3f7ca27d/view?access_token=7c7aa7dd80dcca2762f88c50a413cdaed865b0d218dded9d0afcf730680a7cf1) (May not be accessible from Mainland China)
 
-  ![Unemployment stats & GDP](https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/Python-for-DS&AI.png)
+  ![Unemployment stats & GDP](https://blog.zhuangzhihao.top/img/Python-for-DS&AI.png)
 
 ### Assignments
 

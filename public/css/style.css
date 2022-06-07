@@ -18,19 +18,19 @@
 }
 @font-face {
   font-family: 'STKaiti';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Ubuntu/Ubuntu-Regular.ttf");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
 }
 @font-face {
   font-family: 'Space Mono';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Monaco/Monaco.ttf");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
 }
 @font-face {
   font-family: 'TsukushiARoundGothic';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/TsukushiARoundGothic/TsukushiAMaruGothic.ttc");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
 }
@@ -3241,49 +3241,6 @@ article .readmore {
   margin-top: 24px;
   font-size: 0.875rem;
 }
-.gallery-page {
-  margin-top: -50px;
-}
-.img-list,
-.gallery-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-}
-.img-column {
-  display: flex;
-  flex-direction: column-reverse;
-}
-.img-column a,
-.gallery-column a {
-  border-bottom: 0px;
-}
-.gallery-item {
-  margin-bottom: -50px;
-}
-.gallery-item p {
-  margin: -25px auto -10px;
-  max-width: 50%;
-  text-align: center;
-  font-size: 15px;
-  color: $black-deep;
-  background: rgba(255,255,255,0.3);
-  border-radius: 7px;
-  border: 1px solid $black-deep;
-  box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
-}
-.posts-expand .post-body .gallery-column a img {
-  height: 250px;
-  width: 300px;
-  object-fit: cover;
-}
-@media (max-width: 767px) {
-  .gallery-item p {
-    min-width: 75px;
-    font-size: 13px;
-  }
-}
 footer.footer {
   position: relative;
   padding: 40px 10px 120px 10px;
@@ -3933,16 +3890,6 @@ img.lazyload:not(.placeholder):not(.loaded) {
 }
 img.lazyload:not(.placeholder).loaded {
   filter: none;
-}
-canvas {
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  min-width: 100%;
-  min-height: 100%;
-  height: auto;
-  width: auto;
-  z-index: -1;
 }
 .md >p {
   padding-top: 4px;

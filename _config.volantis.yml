@@ -23,12 +23,15 @@ navbar:
     - name: 更多
       icon: fas fa-ellipsis-v
       rows:
-      - name: 友情链接
-        icon: fas fa-link
-        url: friends/
-      # - name: 暗黑模式 # 可自定义
-      #   icon: fas fa-moon # 可自定义
-      #   toggle: darkmode
+      - name: 开源库
+        icon: far fa-hdd
+        url: /projects
+      - name: 计划表
+        icon: fas fa-calendar-alt
+        url: /todo
+      - name: 暗黑模式 # 可自定义
+        icon: fas fa-moon # 可自定义
+        toggle: darkmode
 
 cover:
   height_scheme: full # full, half
@@ -37,28 +40,20 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://wallpapercave.com/wp/wp10474992.png #https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed@main/blogimg/c言语入门.png 
+  background: /img/c言语入门.png #https://wallpapercave.com/wp/wp10474992.png #https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed@main/blogimg/c言语入门.png 
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 庄之皓 · Bezhuang
   subtitle: 欢迎访问我的博客！Welcome to my blog!
   search: search here...
   features:
-    - name: 相册
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4f7.svg
-      url: /photos
-    - name: 开源库
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: /projects
-    - name: 计划表
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/270d-1f3fb.svg
-      url: /todo
-    - name: 留言板
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/1f4ac.svg
-      url: /guestbook
+    # - name: 开源库
+    #   icon: #
+    #   img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
+    #   url: /projects
+    # - name: 计划表
+    #   icon: #
+    #   img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.1/assets/svg/270d-1f3fb.svg
+    #   url: /todo
 
 pages:
   # 友链页面配置
@@ -94,7 +89,7 @@ article:
       # ----------------
       # 参考资料、相关资料等 (for layout: post/docs)
       references:
-        title: References
+        title: 参考资料（References）：
         icon: fas fa-quote-left
         # 在 front-matter 中:
         #   references:
@@ -124,7 +119,7 @@ article:
       donate:
         enable: false
         images:
-          - https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98.png
+          - #
     # 文章底部信息
     # 从 meta_library 中取
     bottom_meta: [category, author, share]
@@ -219,7 +214,7 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/头像.gif
+      avatar: /img/头像.gif
       shape: rectangle # circle, rectangle
       url: /about/
       title: Meine Welt
@@ -230,6 +225,8 @@ sidebar:
           url: mailto:bezhuang@outlook.com
         - icon: fab fa-github
           url: https://github.com/Bezhuang/
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/zhuangzhihao/
         - icon: fab fa-youtube
           url: https://space.bilibili.com/30593492
         - icon: fas fa-rss
@@ -277,7 +274,7 @@ sidebar:
       height: # Automatic height if not set
       images:
         - https://tva1.sinaimg.cn/large/9150e4e5gy1g6amdgiegcj20hh0cqjux.jpg
-        - https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/微信二维码.jpg
+        - /img/微信二维码.jpg
     # ---------------------------------------
     # webinfo widget
     webinfo:
@@ -453,6 +450,25 @@ plugins:
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
       - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg
       - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg
 
   # APlayer is only available in mainland China.
   # APlayer config: https://github.com/metowolf/MetingJS
@@ -496,7 +512,7 @@ plugins:
   #   icon: fas fa-moon # 可自定义
   #   toggle: darkmode
   darkmodejs:
-    enable: false
+    enable: true
 
   # 旧版 Internet Explorer 淘汰行动
   # https://support.dmeng.net/kill-old-versions-of-ie.html
@@ -512,7 +528,7 @@ plugins:
   artitalk:
     # Set `layout: artitalk` to enable in page
     # 配置项按照yml格式继续填写即可
-    enable: true
+    enable: false
     appId: SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI
     appKey: j5I5paEqIfWfOlCg13vU2vNq
     #serverURL: #leancloud绑定的安全域名，使用国际版的话不需要填写
@@ -748,19 +764,19 @@ custom_css:
     logofont:
       fontfamily: '"TsukushiARoundGothic", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'TsukushiARoundGothic'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/TsukushiARoundGothic/TsukushiAMaruGothic.ttc
+      url: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/TsukushiARoundGothic/TsukushiAMaruGothic.ttc
       weight: normal
       style: normal
     bodyfont:
       fontfamily: '"STKaiti", "Ubuntu", "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'STKaiti'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Ubuntu/Ubuntu-Regular.ttf
+      url: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Ubuntu/Ubuntu-Regular.ttf
       weight: normal
       style: normal
     codefont:
       fontfamily: 'Space Mono, Menlo, UbuntuMono, Monaco'
       name: 'Space Mono'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Monaco/Monaco.ttf
+      url: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Monaco/Monaco.ttf
       weight: normal
       style: normal
 ############################### Custom css ############################### > end

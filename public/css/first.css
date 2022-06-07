@@ -21,19 +21,19 @@
 }
 @font-face {
   font-family: 'STKaiti';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Ubuntu/Ubuntu-Regular.ttf");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
 }
 @font-face {
   font-family: 'Space Mono';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Monaco/Monaco.ttf");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
 }
 @font-face {
   font-family: 'TsukushiARoundGothic';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/TsukushiARoundGothic/TsukushiAMaruGothic.ttc");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
 }
