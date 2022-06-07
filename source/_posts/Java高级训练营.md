@@ -12,7 +12,7 @@ references:
 
 <!--more-->
 
-![](https://ucc-image.oss-cn-beijing.aliyuncs.com/credential/27/9afb0bbd19d049869c5533dd7110d0bd.png)
+![](/img/Java高级训练营.png)
 
 ### 微服务架构设计与实践
 

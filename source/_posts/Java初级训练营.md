@@ -9,7 +9,7 @@ categories: Java
 
 <!--more-->
 
-![](https://ucc-image.oss-cn-beijing.aliyuncs.com/credential/22/87e768f5aca640b3ad57813564f6cdb8.png)
+![](/img/Java第一期训练营.png)
 
 ### Java知识点
 

@@ -12,7 +12,7 @@ references:
 
 <!--more-->
 
-![](https://ucc-image.oss-cn-beijing.aliyuncs.com/credential/26/f6c8aefac0a44ad78108e5a9935fb5a9.png)
+![](/img/Java第二期训练营.png)
 
 ### Java Spring 企业级开发平台
 
