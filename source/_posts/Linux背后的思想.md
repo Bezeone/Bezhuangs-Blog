@@ -1,5 +1,5 @@
 ---
-title: 听林纳斯大神聊聊 Linux 背后的思想
+title: 听林纳斯聊聊 Linux 背后的思想
 date: 2021-03-12
 tags: [Linux]
 categories: 观点与感想
