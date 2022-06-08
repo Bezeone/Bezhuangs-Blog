@@ -16,7 +16,7 @@ references:
 
 #### Git 操作指令
 
-![](https://cdn.jsdelivr.net/gh/Bezhuang/Imgbed/blogimg/Git.png)
+![](https://blog.zhuangzhihao.top/img/Git.png)
 
 
 #### 集中式（SVN） VS 分布式（Git）
