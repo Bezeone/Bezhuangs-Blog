@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header always shadow floatable blur show"  >
+<header id="l_header" class="l_header always shadow blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -473,6 +473,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
+    </a>
+  </div>
+
 
           
         
@@ -515,11 +522,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点的补充，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。</p>
 </blockquote>
 <span id="more"></span>
-
 <h3 id="极限和连续"><a href="#极限和连续" class="headerlink" title="极限和连续"></a>极限和连续</h3><p>极限定义：当 $n\rightarrow \infty$ 时，$a_{n}\rightarrow A$</p>
 <p>洛必达法则：假设 $f(x)$ 和 $g(x)$ 都收敛于 0</p>
-<p>$$\dfrac{f\left( x\right) }{g\left( x\right) }=\dfrac{\dfrac{\Delta f}{\Delta x}}{\dfrac{\Delta g}{\Delta x}}\rightarrow \dfrac{s}{t}$$</p>
-<p>可导必然连续，连续不一定可导</p>
+<script type="math/tex; mode=display">\dfrac{f\left( x\right) }{g\left( x\right) }=\dfrac{\dfrac{\Delta f}{\Delta x}}{\dfrac{\Delta g}{\Delta x}}\rightarrow \dfrac{s}{t}</script><p>可导必然连续，连续不一定可导</p>
 <p>连续定义：对任取 $\varepsilon$，都能找到 $\delta$，满足如果 $\left| x-a\right| &lt;\delta$，则 $\left| f\left( x\right) -f\left( a\right) \right| &lt;\varepsilon$</p>
 <h3 id="sinx-和-cosx-的导数"><a href="#sinx-和-cosx-的导数" class="headerlink" title="$sinx$ 和 $cosx$ 的导数"></a>$sinx$ 和 $cosx$ 的导数</h3><p>用 $sin$ 和 $cos$ 表示勾股定理</p>
 <ul>
@@ -528,8 +533,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>$\left( \cos \theta \right) ^{2}+\left( \sin \theta \right) ^{2}=1$</p>
 </li>
 </ul>
-<p>$$\dfrac{d}{dx}\sin x=\dfrac{\Delta \left( \sin x\right) }{\Delta x}=\dfrac{\sin \left( x+\Delta x\right) -\sin x}{\Delta x}$$</p>
-<ul>
+<script type="math/tex; mode=display">\dfrac{d}{dx}\sin x=\dfrac{\Delta \left( \sin x\right) }{\Delta x}=\dfrac{\sin \left( x+\Delta x\right) -\sin x}{\Delta x}</script><ul>
 <li><p>因为 $\sin \left( x+\Delta x\right) =\sin x\cos \Delta x+\cos x\sin \Delta x$</p>
 </li>
 <li><p>所以原式 = $\dfrac{sinx\left( \cos \Delta x-1\right) }{\Delta x}+\dfrac{\cos x\sin \Delta x}{\Delta x}$</p>
@@ -539,8 +543,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>所以 $\dfrac{d}{dx}\sin x=\cos x$</p>
 </li>
 </ul>
-<p>$$\dfrac{d}{dx}\cos x=\dfrac{\Delta \left( \cos x\right) }{\Delta x}=\dfrac{\cos \left( x+\Delta x\right) -\cos x}{\Delta x}$$</p>
-<ul>
+<script type="math/tex; mode=display">\dfrac{d}{dx}\cos x=\dfrac{\Delta \left( \cos x\right) }{\Delta x}=\dfrac{\cos \left( x+\Delta x\right) -\cos x}{\Delta x}</script><ul>
 <li><p>因为 $\cos \left( x+\Delta x\right) =\cos x\cos \Delta x-\sin x\sin \Delta x$</p>
 </li>
 <li><p>所以原式 = $\dfrac{cos\left( \cos \Delta x-1\right) }{\Delta x}-\dfrac{\sin x\sin \Delta x}{\Delta x}$</p>
@@ -555,8 +558,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>$\dfrac{d}{dx}\cos x=-\sin x$</p>
 </li>
 </ul>
-<h3 id="乘法法则和除法法则"><a href="#乘法法则和除法法则" class="headerlink" title="乘法法则和除法法则"></a>乘法法则和除法法则</h3><p>$$p(x)=f(x)g(x)$$</p>
-<ul>
+<h3 id="乘法法则和除法法则"><a href="#乘法法则和除法法则" class="headerlink" title="乘法法则和除法法则"></a>乘法法则和除法法则</h3><script type="math/tex; mode=display">p(x)=f(x)g(x)</script><ul>
 <li><p>$\dfrac{\Delta p}{\Delta x}=\dfrac{f\Delta g}{\Delta x}+\dfrac{g\Delta f}{\Delta x}+\dfrac{\Delta f{\Delta }g}{\Delta x}$</p>
 </li>
 <li><p>乘法法则：$\dfrac{dp}{dx}=f\left( x\right) \dfrac{dg}{dx}+g\left( x\right) \dfrac{df}{dx}$</p>
@@ -566,8 +568,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>$y=x^2sinx$：$\dfrac{dy}{dx}=x^{2}\cos x+2xsinx$</p>
 </li>
 </ul>
-<p>$$q(x)=\dfrac{f(x)}{g(x)}$$</p>
-<ul>
+<script type="math/tex; mode=display">q(x)=\dfrac{f(x)}{g(x)}</script><ul>
 <li><p>$f(x)=g(x)q(x)$</p>
 </li>
 <li><p>$\dfrac{df}{dx}=g\left( x\right) \dfrac{dq}{dx}+q\left( x\right) \dfrac{dg}{dx}=g\left( x\right) \dfrac{dq}{dx}+\dfrac{f\left( x\right) }{g\left( x\right) }\dfrac{dg}{dx}$</p>
@@ -619,9 +620,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>阶乘：$2^{x},e^{x},10^{x},\ldots$</p>
 <p>对数图</p>
 <ul>
-<li><img src="https://blog.zhuangzhihao.top/img/微积分重点04.png" style="zoom: 50%;">
-
-</li>
+<li><img src="https://blog.zhuangzhihao.top/img/微积分重点04.png" style="zoom: 50%;"></li>
 </ul>
 <p>线性拟合</p>
 <ul>
@@ -707,8 +706,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 <li><p>$r=0$ 时，$\dfrac{d^{2}y}{dt^{2}}=-\omega ^{2}y$ （$\omega ^{2}= \dfrac{k}{m}$）$\rightarrow y=C\cos \omega t+D\sin \omega t$</p>
 </li>
-<li><img src="https://blog.zhuangzhihao.top/img/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B905.png" style="zoom: 50%;">
-
+<li><p><img src="https://blog.zhuangzhihao.top/img/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B905.png" style="zoom: 50%;"></p>
 </li>
 </ul>
 <p>令 $y=e^{\lambda t}$ 满足方程 $m\lambda ^{2}e^{\lambda t}+2r\lambda e^{\lambda t}+ke^{\lambda t}=0$</p>
@@ -717,9 +715,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 <li><p>$\lambda =\dfrac{-r\pm \sqrt{r^{2}-km}}{m}$</p>
 </li>
-<li><p>$y=Ce^{\lambda _{1}t}+De^{\lambda _{2}t}$</p>
+<li><p>$y=Ce^{\lambda <em>{1}t}+De^{\lambda </em>{2}t}$</p>
 </li>
-<li><p>若 $\lambda _{1}=\lambda _{2}$，$y=Ce^{\lambda t}+Dte^{\lambda t}$</p>
+<li><p>若 $\lambda <em>{1}=\lambda </em>{2}$，$y=Ce^{\lambda t}+Dte^{\lambda t}$</p>
 </li>
 </ul>
 <p>当 $m=1,r=3,k=10$ 时，$1y’’+6y’+10y=0$</p>
@@ -746,7 +744,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <p>人口增长方程：$\dfrac{dP}{dt}=cP-sP^{2}$，$c$ 为增长率而 $s$ 为竞争因素</p>
 <ul>
-<li><img src="https://blog.zhuangzhihao.top/img/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B906.png" style="zoom: 50%;">
+<li><p><img src="https://blog.zhuangzhihao.top/img/%E5%BE%AE%E7%A7%AF%E5%88%86%E9%87%8D%E7%82%B906.png" style="zoom: 50%;"></p>
 </li>
 <li><p>令 $y=\dfrac{1}{P}$，$\dfrac{dy}{dt}=-\dfrac{\dfrac{dP}{dt}}{P^{2}}=\dfrac{\left( cP+sP^{2}\right) }{P^{2}}=s-cP=s-cy$</p>
 </li>
@@ -759,45 +757,49 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <ul>
 <li>$p=\dfrac{c}{2s}$ 时，$\dfrac{d^{2}P}{dt^{2}}=0$（拐点，增长率开始放缓）</li>
 </ul>
-<h3 id="微分学总结"><a href="#微分学总结" class="headerlink" title="微分学总结"></a>微分学总结</h3><h4 id="六函数"><a href="#六函数" class="headerlink" title="六函数"></a>六函数</h4><table>
+<h3 id="微分学总结"><a href="#微分学总结" class="headerlink" title="微分学总结"></a>微分学总结</h3><h4 id="六函数"><a href="#六函数" class="headerlink" title="六函数"></a>六函数</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">积分</th>
-<th align="center"></th>
-<th align="center">导数</th>
+<th style="text-align:center">积分</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">导数</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$\dfrac{x^{n+1}}{\left( n+1\right) },n\neq -1$</td>
-<td align="center">$x^n$</td>
-<td align="center">$nx^{n-1}$</td>
+<tbody>
+<tr>
+<td style="text-align:center">$\dfrac{x^{n+1}}{\left( n+1\right) },n\neq -1$</td>
+<td style="text-align:center">$x^n$</td>
+<td style="text-align:center">$nx^{n-1}$</td>
 </tr>
 <tr>
-<td align="center">$-cosx$</td>
-<td align="center">$sinx$</td>
-<td align="center">$cosx$</td>
+<td style="text-align:center">$-cosx$</td>
+<td style="text-align:center">$sinx$</td>
+<td style="text-align:center">$cosx$</td>
 </tr>
 <tr>
-<td align="center">$sinx$</td>
-<td align="center">$cosx$</td>
-<td align="center">$-sinx$</td>
+<td style="text-align:center">$sinx$</td>
+<td style="text-align:center">$cosx$</td>
+<td style="text-align:center">$-sinx$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{e^{cx}}{c}$</td>
-<td align="center">$e^{cx}$</td>
-<td align="center">$ce^{cx}$</td>
+<td style="text-align:center">$\dfrac{e^{cx}}{c}$</td>
+<td style="text-align:center">$e^{cx}$</td>
+<td style="text-align:center">$ce^{cx}$</td>
 </tr>
 <tr>
-<td align="center">$x\ln x-x$</td>
-<td align="center">$lnx$</td>
-<td align="center">$\dfrac{1}{x}$</td>
+<td style="text-align:center">$x\ln x-x$</td>
+<td style="text-align:center">$lnx$</td>
+<td style="text-align:center">$\dfrac{1}{x}$</td>
 </tr>
 <tr>
-<td align="center">斜坡函数</td>
-<td align="center">分段函数</td>
-<td align="center">$\delta$ 函数</td>
+<td style="text-align:center">斜坡函数</td>
+<td style="text-align:center">分段函数</td>
+<td style="text-align:center">$\delta$ 函数</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="六法则"><a href="#六法则" class="headerlink" title="六法则"></a>六法则</h4><p>加法法则：和的导数等于导数的和</p>
 <ul>
 <li>$af\left( x\right) +bg\left( x\right) \rightarrow a\dfrac{df}{dx}+b\dfrac{dg}{dx}$</li>
@@ -874,6 +876,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
               
             
+              
+                <p>本文永久地址：<a href=http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/>http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/</a></p>
+              
+            
           </blockquote>
         </div>
       
@@ -889,13 +895,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E6%85%95%E8%AF%BEMOOC/">慕课MOOC</a>
-    </a>
-  </div>
-
 
         
       
@@ -912,77 +911,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/&title=微分学重点 - Bezhuang's Blog&summary=
-微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点的补充，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/&title=微分学重点 - Bezhuang's Blog&summary=
-微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点的补充，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/&title=微分学重点 - Bezhuang's Blog&summary=
-微分学重点的十二章关于导数的课程深入挖掘了微积分的子领域，“微分”。 与微积分重点的课程一样，MIT 数学教授 Gilbert Strang 解释了每个主题如何应用于现实生活中，是对微积分重点的补充，以下为所记课堂笔记，笔记以中文形式记录，方便理解，可供参考。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/weibo.png">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://blog.zhuangzhihao.top/assets/img/wechat.png"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEaElEQVR42u3awW4rMQgF0Pz/T/ftnxQFLtiTVodd1cmMfewFIF4/4ki8EIAFK8CCBSvAXoF9hVH+0H/Pv/v99Ltbz009wIIFCxYsWLBgwd6FTaG2nq+CVMHebrz5d/vigAULFixYsGDBgn0ENl1YWkCkiXm1EKkWAmseYMGCBQsWLFiwYP8E7LRxnRYa1fV3DwgsWLBgwYIFCxbs34JNC4JuoXH6oMCCBQsWLFiwYMH+TtgpyLSRPB0Qqb736ydhwIIFCxYsWLBgwZZg04GJv/p37AEWLFiwYMGCBQv2Cuw0XsPYSvSrv9tq1L/9LliwYMGCBQsWLNgrsGmCXG1IdxvO3cb0p3V3AacXAixYsGDBggULFuwd2HSj6Qa7AyDp99P3j38PFixYsGDBggUL9grsdEBjCr5VOEwb4+nF+Fh5gQULFixYsGDBgr0CmybiWwMU3UIiXddWIVEuEMCCBQsWLFiwYMGuwk4b3FsN427BMb0YU+i3z4EFCxYsWLBgwYK9Cps2uKuJdXoA04Z3ejHSQgQsWLBgwYIFCxbsd8BOByymCXw6ADItdMYDG2DBggULFixYsGAfgf0ZxhRsOrAxvQBgwYIFCxYsWLBgvxu2O5iwtYDuQUwb89MGfPnCgAULFixYsGDBgr0Ce2qjaSJf3XC1kZ3Cp4UOWLBgwYIFCxYs2Luw3QVsQ3S/1z24tIDp/h4sWLBgwYIFCxbsHdhuQ3gKnBYg0wIjHsBICwSwYMGCBQsWLFiwXwE73VC3IDg+WBE2tD9eGLBgwYIFCxYsWLBXYbca3NVBitMb7R7M9HmwYMGCBQsWLFiwz8JOG9TTRnl3YGK7UBk3xsGCBQsWLFiwYMFehU0T9nTjaSGSwp5uhIMFCxYsWLBgwYJ9BnZrQCJNsLvPpdH9fvs9YMGCBQsWLFiwYK/CdjeYwkwb5ulBbB9MeWADLFiwYMGCBQsW7BHYU4nyxwWEYKca41uNcrBgwYIFCxYsWLB3YbsN4nRD24n+9LlpgQAWLFiwYMGCBQv2Gdh2AtwE3fpOCpgWLt0DAAsWLFiwYMGCBfss7OnBiLTxvD2QsT3YARYsWLBgwYIFC/ZZ2FODEKca29uFRQoKFixYsGDBggUL9jtgbzXC04GKtMCo7jdeN1iwYMGCBQsWLNhHYKsv7CbO08GJaWHQhUzXBRYsWLBgwYIFC/YO7DSmgxDdhnO3gEgLgOp63w5sgAULFixYsGDBgj0K+wpjmqB33zttiHcPLG6UgwULFixYsGDBgr0KmzaU00Zx+p70fWmD/NgkDFiwYMGCBQsWLNhV2GkCnQ6CVH9f/W66rmuTMGDBggULFixYsGC/AnY6gNEF7R7U9ODKFwIsWLBgwYIFCxbsr4JNN179f7vhPLwg6cGBBQsWLFiwYMGCfQa2m1hXN5RCbwH9hNFteIMFCxYsWLBgwYK9C9uNNEHvJvrpwW0VLuOBDbBgwYIFCxYsWLBHYMVugAULVoAFC1aAPRr/AAizENTjvaBqAAAAAElFTkSuQmCC">
-          </div>
-        </div>
-      
-    
-      
-        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
-          
-            target="_blank" href="https://t.me/share/url?url=http://blog.zhuangzhihao.top/%E5%BE%AE%E5%88%86%E5%AD%A6%E9%87%8D%E7%82%B9/&text=微分学重点 - Bezhuang's Blog"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/telegram.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
 
         
       
@@ -1154,7 +1082,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | </span> <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次</span></p>
+          <div><p><span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | &lt;/span&gt; <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次&lt;/span&gt;</p>
 </div>
         
       
@@ -1286,17 +1214,15 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 <script>
   
-  loadCSS("https://blog.zhuangzhihao.top/assets/js/all.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
   
-  
-  loadCSS("https://blog.zhuangzhihao.top/assets/js/solarized-light.min.css", window.volantis.loadcss);
   
 </script>
 <!-- required -->
 
-<script src="https://blog.zhuangzhihao.top/assets/js/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 <script>
   function pjax_fancybox() {
@@ -1647,36 +1573,13 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-   <script type="text/javascript">
-  loadScript("https://blog.zhuangzhihao.top/assets/js/scrollreveal.min.js")
-  function pjax_scrollrebeal() {
-    ScrollReveal().reveal('.l_main .reveal', {
-      distance: '32px',
-      duration: '800',
-      interval: '20',
-      scale: '1',
-      easing: 'ease-out'
-    });
-  }
-  $(function () {
-  var checkScrollReveal = setInterval(function () {
-    if ($("#safearea").css("display")!="block") return
-    if (typeof ScrollReveal=="undefined") return
-    clearInterval(checkScrollReveal)
-	pjax_scrollrebeal();
-  }, 100)
-  });
-  volantis.pjax.push(pjax_scrollrebeal)
-</script>
-
-
 
 
 
 
   
   
-<script src="https://blog.zhuangzhihao.top/assets/js/Valine.min.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -1708,7 +1611,7 @@ var loadCSS = function( href, before, media, attributes ){
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI","appKey":"j5I5paEqIfWfOlCg13vU2vNq","meta":["nick","mail","link"],"requiredFields":["nick"],"enableQQ":true,"recordIP":true,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":true,"js":"https://blog.zhuangzhihao.top/assets/js/Valine.min.js"}, {
+    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI","appKey":"j5I5paEqIfWfOlCg13vU2vNq","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":true,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":true}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -1725,7 +1628,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://blog.zhuangzhihao.top/assets/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -1768,20 +1671,6 @@ function setSearchService() {
 
 
 
-
-  
-
-<script src="https://blog.zhuangzhihao.top/assets/js/highlight.min.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-volantis.pjax.push(()=>{
-	document.querySelectorAll('pre code').forEach((block) => {
-	  hljs.highlightBlock(block);
-	});
-},"highlightjs")
-</script>
 
 
 

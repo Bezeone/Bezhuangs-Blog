@@ -107,7 +107,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header always shadow floatable blur show"  >
+<header id="l_header" class="l_header always shadow blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -472,6 +472,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+    </a>
+  </div>
+
 
           
         
@@ -514,36 +521,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>偶然刷到一篇名为<a target="_blank" rel="noopener" href="https://www.cnblogs.com/techflow/p/13998832.html">《一半人写不出冒泡排序，你的同龄人都躺下了》</a>的文章，其中提到轮子哥毕业去参加面试的时候，第一轮笔试考察冒泡排序，结果现场的一半学生都没写出来。冒泡排序（Bubble Sort），是一种最基础的、最简单直观的交换排序，之所以叫做冒泡排序，是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样。</p>
 </blockquote>
 <span id="more"></span>
-
 <h3 id="一、冒泡排序的思想"><a href="#一、冒泡排序的思想" class="headerlink" title="一、冒泡排序的思想"></a>一、冒泡排序的思想</h3><p>从头开始两两比较，把较大的元素与较小的元素进行交换，每轮把当前最大的一个元素存入到数组当前的末尾。每一趟比较只能确定将一个数归位，如果有 n 个数进行排序，要进行 n-1 趟操作。算法时间复杂度复杂度 <code>O(n)</code> 。</p>
 <h3 id="二、冒泡排序的实现步骤"><a href="#二、冒泡排序的实现步骤" class="headerlink" title="二、冒泡排序的实现步骤"></a>二、冒泡排序的实现步骤</h3><ol>
-<li> 定义一个外部循环控制冒泡的轮数（<code>数组.length-1</code>）</li>
-<li> 定义一个内部循环控制每轮依次往后比较几个位置（<code>数组.length-i-1</code>）</li>
-<li> 如果当前位置的元素值 <code>&gt;</code> 后一个位置的元素值，两者交换</li>
+<li>定义一个外部循环控制冒泡的轮数（<code>数组.length-1</code>）</li>
+<li>定义一个内部循环控制每轮依次往后比较几个位置（<code>数组.length-i-1</code>）</li>
+<li>如果当前位置的元素值 <code>&gt;</code> 后一个位置的元素值，两者交换</li>
 </ol>
-<h3 id="三、Java-版代码实现"><a href="#三、Java-版代码实现" class="headerlink" title="三、Java 版代码实现"></a>三、Java 版代码实现</h3><pre><code class="java">public class BubbleSort &#123;
-    public static void main(String[] args) &#123;
-        int[] arr = &#123;5, 2, 3, 1&#125;;
-        for (int i = 1; i &lt;= arr.length - 1; i++) &#123;
-            for (int j = 0; j &lt; arr.length - i; j++) &#123;
-                if (arr[j] &gt; arr[j + 1]) &#123;
-                    int temp = arr[j + 1];
-                    arr[j + 1] = arr[j];
-                    arr[j] = temp;
-                &#125;
-            &#125;
-        &#125;
-        for (int i = 0; i &lt; arr.length; i++) &#123;
-            System.out.println(arr[i]);
-        &#125;
-    &#125;
-&#125;</code></pre>
-<h3 id="四、Python-版代码实现"><a href="#四、Python-版代码实现" class="headerlink" title="四、Python 版代码实现"></a>四、Python 版代码实现</h3><pre><code class="python">def bubbleSort(arr):
-    for i in range(1, len(arr)):
-        for j in range(0, len(arr) - i):
-            if arr[j] &gt; arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr</code></pre>
+<h3 id="三、Java-版代码实现"><a href="#三、Java-版代码实现" class="headerlink" title="三、Java 版代码实现"></a>三、Java 版代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = arr[j + <span class="number">1</span>];</span><br><span class="line">                    arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">                    arr[j] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="四、Python-版代码实现"><a href="#四、Python-版代码实现" class="headerlink" title="四、Python 版代码实现"></a>四、Python 版代码实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(arr)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(arr) - i):</span><br><span class="line">            <span class="keyword">if</span> arr[j] &gt; arr[j + <span class="number">1</span>]:</span><br><span class="line">                arr[j], arr[j + <span class="number">1</span>] = arr[j + <span class="number">1</span>], arr[j]</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
 
   
   
@@ -558,6 +543,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
                 <p>This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 
+              
+            
+              
+                <p>本文永久地址：<a href=http://blog.zhuangzhihao.top/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/>http://blog.zhuangzhihao.top/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</a></p>
               
             
           </blockquote>
@@ -575,13 +564,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
-    </a>
-  </div>
-
 
         
       
@@ -598,77 +580,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zhuangzhihao.top/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/&title=冒泡排序 - Bezhuang's Blog&summary=
-偶然刷到一篇名为《一半人写不出冒泡排序，你的同龄人都躺下了》的文章，其中提到轮子哥毕业去参加面试的时候，第一轮笔试考察冒泡排序，结果现场的一半学生都没写出来。冒泡排序（Bubble Sort），是一种最基础的、最简单直观的交换排序，之所以叫做冒泡排序，是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zhuangzhihao.top/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/&title=冒泡排序 - Bezhuang's Blog&summary=
-偶然刷到一篇名为《一半人写不出冒泡排序，你的同龄人都躺下了》的文章，其中提到轮子哥毕业去参加面试的时候，第一轮笔试考察冒泡排序，结果现场的一半学生都没写出来。冒泡排序（Bubble Sort），是一种最基础的、最简单直观的交换排序，之所以叫做冒泡排序，是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.zhuangzhihao.top/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/&title=冒泡排序 - Bezhuang's Blog&summary=
-偶然刷到一篇名为《一半人写不出冒泡排序，你的同龄人都躺下了》的文章，其中提到轮子哥毕业去参加面试的时候，第一轮笔试考察冒泡排序，结果现场的一半学生都没写出来。冒泡排序（Bubble Sort），是一种最基础的、最简单直观的交换排序，之所以叫做冒泡排序，是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/weibo.png">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://blog.zhuangzhihao.top/assets/img/wechat.png"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADrElEQVR42u3aS5KDMAwFQO5/6ZkDTKWwngyITHuXDxi1Ny9Sjh8rWgcCcODAgbPAgRsCd4Tr0/V/Njr5/Oz7n/b7dN3Z++16wYEDBw4cOHDghsEtB8CTQqpAq3DpAaXP9/F6cODAgQMHDhy4oXDVAJoGye79Vr+f7gcOHDhw4MCBA/ftcFcH3/Q5q4EdHDhw4MCBAwfuv8GtFlBtLKaNyfQ1OHDgwIEDBw7c2+F2Bdj0j4Mp4Go9Yyb54MCBAwcOHDhwm+DSwfJbX8f1ggMHDhw4cODADYG7alXhr26IbqsLHDhw4MCBAwduCFz1j37dgXW3Ybp63+4fD5d/OYADBw4cOHDgwA2BSzfoDrJTkOp1aVAHBw4cOHDgwIF7K1z6gGmh1UC76wBO6wEHDhw4cODAgRsGl25QDdDlxmHxYLvw8T8ywYEDBw4cOHDgboarbtQt7Kr7pY3L1ffBgQMHDhw4cOCmwnUbi90G4e4BefU5lusGBw4cOHDgwIEbCpcOltMG6FUA1f3bARgcOHDgwIEDB+5muOqFuwe+6WA5bXR2DwocOHDgwIEDB24aXDcIVwuPB8LNA2gPzMGBAwcOHDhw4IbBdRuVq4PjalDd/XzpoBwcOHDgwIEDB24qXBo4q4V0A/Huz8uNT3DgwIEDBw4cuOFwaXDtNjS70LsOFBw4cODAgQMH7i1w6aC2G4x3Nx6PcC0fODhw4MCBAwcO3DC4XYPgaoOy28iMB8vpvuDAgQMHDhw4cMPgVm9QhUwfMA3g6aB6uU5w4MCBAwcOHLhhcKsNwmrg3NWYTAfaqwG8/csBHDhw4MCBAwfuYbjqjbsPmB5Ud6Ce3hccOHDgwIEDB24qXBpw7yrs7v3KvxzAgQMHDhw4cOBuhksDb/r9XQPsaiO2Cro8yQcHDhw4cODAgXsIrhqI08ZmGmi7r9ODAAcOHDhw4MCBextcNbh2H2g1gFYbkke4yh1gcODAgQMHDhy4m+G6qzrQrgbhamG7BtynjUxw4MCBAwcOHLiH4boB8aqBc/fzbqNzuZEJDhw4cODAgQP3MFwaeHfB7w7WtwVgcODAgQMHDhy4IXDVQrswaSCtDqq7wR4cOHDgwIEDB+6/wXWDbQqxLfCCAwcOHDhw4MB9KdyuhuJlA+Ti9+OBNDhw4MCBAwcO3MNw1cKqjcZV4N0Fb2twggMHDhw4cODADYPrDm67jdA0AHcbk+1GJjhw4MCBAwcO3ENwVm2BAwcOHDgLHLiH1y/Y/AII2mmZRwAAAABJRU5ErkJggg==">
-          </div>
-        </div>
-      
-    
-      
-        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
-          
-            target="_blank" href="https://t.me/share/url?url=http://blog.zhuangzhihao.top/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/&text=冒泡排序 - Bezhuang's Blog"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/telegram.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
 
         
       
@@ -787,7 +698,7 @@ Open Source Computer Vision Library（OpenCV）是一个跨平台的计算机视
     
       
         
-          <div><p><span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | </span> <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次</span></p>
+          <div><p><span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | &lt;/span&gt; <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次&lt;/span&gt;</p>
 </div>
         
       
@@ -919,17 +830,15 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 <script>
   
-  loadCSS("https://blog.zhuangzhihao.top/assets/js/all.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
   
-  
-  loadCSS("https://blog.zhuangzhihao.top/assets/js/solarized-light.min.css", window.volantis.loadcss);
   
 </script>
 <!-- required -->
 
-<script src="https://blog.zhuangzhihao.top/assets/js/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 <script>
   function pjax_fancybox() {
@@ -1280,36 +1189,13 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-   <script type="text/javascript">
-  loadScript("https://blog.zhuangzhihao.top/assets/js/scrollreveal.min.js")
-  function pjax_scrollrebeal() {
-    ScrollReveal().reveal('.l_main .reveal', {
-      distance: '32px',
-      duration: '800',
-      interval: '20',
-      scale: '1',
-      easing: 'ease-out'
-    });
-  }
-  $(function () {
-  var checkScrollReveal = setInterval(function () {
-    if ($("#safearea").css("display")!="block") return
-    if (typeof ScrollReveal=="undefined") return
-    clearInterval(checkScrollReveal)
-	pjax_scrollrebeal();
-  }, 100)
-  });
-  volantis.pjax.push(pjax_scrollrebeal)
-</script>
-
-
 
 
 
 
   
   
-<script src="https://blog.zhuangzhihao.top/assets/js/Valine.min.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -1341,7 +1227,7 @@ var loadCSS = function( href, before, media, attributes ){
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI","appKey":"j5I5paEqIfWfOlCg13vU2vNq","meta":["nick","mail","link"],"requiredFields":["nick"],"enableQQ":true,"recordIP":true,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":true,"js":"https://blog.zhuangzhihao.top/assets/js/Valine.min.js"}, {
+    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI","appKey":"j5I5paEqIfWfOlCg13vU2vNq","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":true,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":true}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -1358,7 +1244,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://blog.zhuangzhihao.top/assets/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -1401,20 +1287,6 @@ function setSearchService() {
 
 
 
-
-  
-
-<script src="https://blog.zhuangzhihao.top/assets/js/highlight.min.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-volantis.pjax.push(()=>{
-	document.querySelectorAll('pre code').forEach((block) => {
-	  hljs.highlightBlock(block);
-	});
-},"highlightjs")
-</script>
 
 
 

@@ -64,13 +64,13 @@ article:
   preview:
     scheme: landscape # landscape
     # pin icon for post
-    pin_icon: https://blog.zhuangzhihao.top/assets/svg/1f4cc.svg
+    pin_icon: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg
     # auto generate title if not exist
     auto_title: true # false, true
     # auto generate excerpt if not exist
     auto_excerpt: true # false, true
     # show split line or not
-    line_style: solid # hidden, solid, dashed, dotted
+    line_style: dashed # hidden, solid, dashed, dotted
     # show author
     author: false # true, false
     # show readmore button
@@ -79,7 +79,7 @@ article:
   body:
     # 文章顶部信息
     # 从 meta_library 中取
-    top_meta: [tags, date, wordcount] #启用评论数量需在此添加
+    top_meta: [category, date, wordcount] #启用评论数量需在此添加
     # ----------------
     # 文章页脚组件
     footer_widget:
@@ -107,10 +107,11 @@ article:
       # 版权声明组件 (for layout: post)
       copyright:
         enable: true
-        permalink: 本文永久地址：'
+        permalink: '本文永久地址：'
         content:
+          # - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
           - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
-          # - permalink
+          - permalink
       # ----------------
       # 打赏组件 (for layout: post)
       donate:
@@ -119,7 +120,7 @@ article:
           - #
     # 文章底部信息
     # 从 meta_library 中取
-    bottom_meta: [category, author, share]
+    bottom_meta: [tags, author, share]
     # meta library
     meta_library:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
@@ -161,16 +162,16 @@ article:
         icon: fas fa-hashtag
       # 分享
       share:
-        - id: qq
-          img: https://blog.zhuangzhihao.top/assets/img/qq.png
-        - id: qzone
-          img: https://blog.zhuangzhihao.top/assets/img/qzone.png
-        - id: weibo
-          img: https://blog.zhuangzhihao.top/assets/img/weibo.png
-        - id: qrcode # 当id为qrcode时需要安装插件  npm i hexo-helper-qrcode
-          img: https://blog.zhuangzhihao.top/assets/img/wechat.png
-        - id: telegram
-          img: https://blog.zhuangzhihao.top/assets/img/telegram.png
+        # - id: qq
+        #   img: /assets/img/qq.png
+        # - id: qzone
+        #   img: /assets/img/qzone.png
+        # - id: weibo
+        #   img: /assets/img/weibo.png
+        # - id: qrcode # 当id为qrcode时需要安装插件  npm i hexo-helper-qrcode
+        #   img: /assets/img/wechat.png
+        # - id: telegram
+        #   img: /assets/img/telegram.png
 ############################### Article Layout ############################### > end
 
 
@@ -180,14 +181,14 @@ comments:
   subtitle:
   service: valine # valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
   valine:
-    js: https://blog.zhuangzhihao.top/assets/js/Valine.min.js
+    # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是valine的问题
     placeholder: 快来评论吧~  # 评论占位提示
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
     appId: SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI
     appKey: j5I5paEqIfWfOlCg13vU2vNq
     meta: [nick,mail,link] # valine comment header info
-    requiredFields: [nick]
+    requiredFields: [nick,mail]
     enableQQ: true # Unstable avatar link
     recordIP: true # Record commenter IP
     avatar: robohash # gravatar style https://valine.js.org/avatar
@@ -216,14 +217,12 @@ sidebar:
       url: /about/
       title: Meine Welt
       subtitle: ist meine welt
-      jinrishici: false
+      jinrishici: true
       social:
         - icon: fas fa-envelope
           url: mailto:bezhuang@outlook.com
         - icon: fab fa-github
           url: https://github.com/Bezhuang/
-        - icon: fab fa-linkedin
-          url: https://www.linkedin.com/in/zhuangzhihao/
         - icon: fab fa-youtube
           url: https://space.bilibili.com/30593492
         - icon: fas fa-rss
@@ -243,7 +242,7 @@ sidebar:
     # category widget
     category:
       class: category
-      display: [desktop, mobile]
+      display: [desktop]
       header:
         icon: fas fa-folder-open
         title: 文章分类
@@ -337,14 +336,8 @@ site_footer:
   social:
     - avatar: fa-id-card-o
       url: https://zhuangzhihao.top
-    - avatar: fa-linkedin-square
-      url: https://www.linkedin.com/in/zhuangzhihao/
     - avatar: fa-youtube-play
       url: https://space.bilibili.com/30593492
-    - avatar: fa-instagram
-      url: https://www.instagram.com/bezhuang312/
-    - avatar: fa-twitter
-      url: https://twitter.com/Bezhuang
     # or
     #- img:
     #  url:
@@ -367,9 +360,9 @@ site_footer:
 plugins:
   ################ required plugins ################
   # jquery
-  jquery: https://blog.zhuangzhihao.top/assets/js/jquery.min.js
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js
   # fontawesome
-  fontawesome: https://blog.zhuangzhihao.top/assets/js/all.min.css
+  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css
   ################ optional plugins ################
 
   ######## Plugins to improve loading speed:
@@ -377,7 +370,7 @@ plugins:
   # 预加载
   preload:
     enable: false
-    service: instant_page # instant_page, flying_pages
+    service: flying_pages # instant_page, flying_pages
     instant_page: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js
     flying_pages: https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js
 
@@ -394,15 +387,15 @@ plugins:
 
   # highlight.js
   highlightjs:
-    enable: true # Please set hexo.config.highlight.enable = false !!!
-    js: https://blog.zhuangzhihao.top/assets/js/highlight.min.js
-    css: https://blog.zhuangzhihao.top/assets/js/solarized-light.min.css
+    enable: #true # Please set hexo.config.highlight.enable = false !!!
+    js: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/highlight.min.js
+    css: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/styles/solarized-light.min.css
     # more: https://www.jsdelivr.com/package/npm/highlight.js?path=styles
 
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
-    enable: true
-    js: https://blog.zhuangzhihao.top/assets/js/scrollreveal.min.js
+    enable: #true
+    js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js
     distance: 32px
     duration: 800 # ms
     interval: 20 # ms
@@ -470,6 +463,7 @@ plugins:
     list_folded: true
   pjax:
     enable: true
+    cover: true
     timeout: 5000        # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
     cacheBust: false     # When set to true, Pjax appends a timestamp  to skip the browser cache.
     animation: false # false, nprogress, circle
@@ -607,7 +601,7 @@ color_scheme:
   # 亮色主题（默认）
   light:
     # 网站背景色
-    site_bg: '#81D4FA'
+    site_bg: '#f4f4f4'
     # 网站背景上的文字
     site_inner: '#fff'
     # 网站页脚文字
@@ -619,19 +613,19 @@ color_scheme:
     text: '#444'
 
     # 区块和代码块背景色
-    block: '#B9C4C9'
+    block: '#f6f6f6'
     # 代码块高亮时的背景色
-    codeblock: '#B9C4C9'
+    codeblock: '#FFF7EA'
     # 行内代码颜色
-    inlinecode: '#F50057'
+    inlinecode: '#c74f00'
 
     # 文章部分
-    h1: '#444'
-    h2: '#444'
-    h3: '#444'
+    h1: '#3a3a3a'
+    h2: '#3a3a3a'
+    h3: '#333'
     h4: '#444'
-    h5: '#444'
-    h6: '#444'
+    h5: '#555'
+    h6: '#666'
     p: '#444'
 
     # 列表文字
@@ -650,7 +644,7 @@ color_scheme:
     # 网站页脚文字
     site_footer: '#aaa'
     # 卡片背景色
-    card: '#444'
+    card: '#333'
     # 卡片上的普通文字
     text: '#eee'
 
@@ -682,6 +676,7 @@ color_scheme:
 
 ############################### Custom css ############################### > start
 custom_css:
+  toc_smooth: true # TOC 目录平滑滚动效果 
   cursor:
     enable: false
     text: https://cdn.jsdelivr.net/gh/Chiuye/Coffee-Rabbit-Cursor/Rabbit-Cursor/Rabbit-Text.cur
@@ -693,14 +688,12 @@ custom_css:
     grab: https://cdn.jsdelivr.net/gh/Chiuye/Coffee-Rabbit-Cursor/Rabbit-Cursor/Rabbit-Aim.cur
   max_width: 1080px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
   scrollbar:
-    size: 10px
+    size: 4px
     border: 2px
-    color: '#2196f3'
-    hover: '#ff5722'
   navbar:
     height: 64px
-    width: auto # auto, max
-    effect: [shadow, floatable, blur]
+    width: max # auto, max
+    effect: [shadow, blur]
   sidebar:
     effect: [shadow] # [shadow, floatable, blur]
   body:
@@ -714,18 +707,18 @@ custom_css:
       h2: left
       h3: left
       h4: center
-      p: left
+      p: justify
   gap:
-    h2: 32px # Spacing above H2 (only px unit)
-    h3: 24px # Spacing above H3 (only px unit)
-    h4: 12px # Spacing above H4 (only px unit)
-    p: 1.5rem # Paragraph spacing between paragraphs
+    h2: 40px # Spacing above H2 (only px unit)
+    h3: 20px # Spacing above H3 (only px unit)
+    h4: 10px # Spacing above H4 (only px unit)
+    p: 1.5em # Paragraph spacing between paragraphs
     line_height: 1.5 # normal, 1.5, 1.75, 2 ...
   border_radius:
     card: 8px
-    codeblock: 8px
+    codeblock: 4px
     searchbar: 8px
-    button: 8px
+    button: 4px
   fontsize:
     root: 16px
     h1: 3.5rem # 不推荐用在文章中
@@ -762,7 +755,7 @@ custom_css:
 
 ############################### Analytics ############################### > start
 analytics:
-  busuanzi: https://blog.zhuangzhihao.top/assets/js/busuanzi.pure.mini.js
+  busuanzi: https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   leancloud: # 请使用自己的 id & key 以防止数据丢失
     app_id: SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI
     app_key: j5I5paEqIfWfOlCg13vU2vNq

@@ -47,7 +47,7 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: false
+  enable: true
   line_number: true
   auto_detect: false
   tab_replace: ''
@@ -104,6 +104,9 @@ theme: volantis
 
 # hexo-blog-encrypt
 encrypt:
+  enable: false
+
+mathjax:
   enable: true
 
 #Feed Atom

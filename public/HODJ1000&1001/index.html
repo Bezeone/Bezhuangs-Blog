@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header always shadow floatable blur show"  >
+<header id="l_header" class="l_header always shadow blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -473,6 +473,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+    </a>
+  </div>
+
 
           
         
@@ -491,7 +498,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：348字</p>
+      <p>字数：350字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -515,65 +522,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>在学完算法和数据结构，以及几门主流的编程语言后，本菜鸡从2021年1月起，正式加入刷题大军。对杭电OJ也慕名已久，所以成为我刷题的首选。</p>
 </blockquote>
 <span id="more"></span>
-
 <h3 id="1000、A-B-Problem"><a href="#1000、A-B-Problem" class="headerlink" title="1000、A + B Problem"></a>1000、A + B Problem</h3><h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>系统默认要读取多组输入，所以要用<code>while</code>语句。</p>
 <p>Java 提交时 <code>class</code> 类名应该为 <code>Main</code>。</p>
-<h4 id="C-版代码"><a href="#C-版代码" class="headerlink" title="C++版代码"></a>C++版代码</h4><pre><code class="cpp">#include &lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-  int num1, num2;
-  while (cin &gt;&gt; num1 &gt;&gt; num2)
-  &#123;
-    cout &lt;&lt; num1 + num2 &lt;&lt; endl;
-  &#125;
-  return 0;
-&#125;</code></pre>
-<h4 id="Java版代码"><a href="#Java版代码" class="headerlink" title="Java版代码"></a>Java版代码</h4><pre><code class="java">import java.util.Scanner;
-public class hdoj1000 &#123;
-    public static void main(String[] args) &#123;
-    Scanner sc=new Scanner(System.in);
-    while(sc.hasNextInt())&#123;
-      int a = sc.nextInt();
-      int b = sc.nextInt();
-      System.out.println(a + b);
-    &#125;
-  &#125;
-&#125;</code></pre>
+<h4 id="C-版代码"><a href="#C-版代码" class="headerlink" title="C++版代码"></a>C++版代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> num1, num2;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; num1 &gt;&gt; num2)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; num1 + num2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Java版代码"><a href="#Java版代码" class="headerlink" title="Java版代码"></a>Java版代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hdoj1000</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Scanner sc=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    <span class="keyword">while</span>(sc.hasNextInt())&#123;</span><br><span class="line">      <span class="keyword">int</span> a = sc.nextInt();</span><br><span class="line">      <span class="keyword">int</span> b = sc.nextInt();</span><br><span class="line">      System.out.println(a + b);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="1001、Sum-Problem"><a href="#1001、Sum-Problem" class="headerlink" title="1001、Sum Problem"></a>1001、Sum Problem</h3><h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><p>32位编译直接用累加公式会溢出，只能用<code>for</code>循环。</p>
 <p>注意格式：题目要求换行两次，否则会出现<code>presentation error！</code>。</p>
-<h4 id="C-版代码-1"><a href="#C-版代码-1" class="headerlink" title="C++版代码"></a>C++版代码</h4><pre><code class="c++">#include&lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-  int num1;
-  while(cin &gt;&gt; num1)
-  &#123;
-      int sum = 0;
-    for(int i = 1; i &lt;= num1; i++)
-      sum += i;
-    cout &lt;&lt; sum &lt;&lt; endl &lt;&lt; endl; 
-    //For each case, output SUM(n) in one line, followed by a blank line.
-  &#125;
-  return 0;
-&#125;</code></pre>
-<h4 id="Java版代码-1"><a href="#Java版代码-1" class="headerlink" title="Java版代码"></a>Java版代码</h4><pre><code class="java">import java.util.*;
-import java.math.*;
-import java.util.Scanner;
-public class Main &#123;
-    public static void main(String[] args) &#123;
-        Scanner sc=new Scanner(System.in);
-        while(sc.hasNextInt()) &#123;
-            int a=sc.nextInt();
-            int sum=0;
-            for(int i=0; i&lt;=a;i++) &#123;
-                sum=sum+i;  
-            &#125;
-            System.out.println(sum);
-            System.out.println( );
-        &#125;  
-    &#125;
-&#125;</code></pre>
+<h4 id="C-版代码-1"><a href="#C-版代码-1" class="headerlink" title="C++版代码"></a>C++版代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> num1;</span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; num1)</span><br><span class="line">  &#123;</span><br><span class="line">  	<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= num1; i++)</span><br><span class="line">      sum += i;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; sum &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">    <span class="comment">//For each case, output SUM(n) in one line, followed by a blank line.</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Java版代码-1"><a href="#Java版代码-1" class="headerlink" title="Java版代码"></a>Java版代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.math.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">while</span>(sc.hasNextInt()) &#123;</span><br><span class="line">            <span class="keyword">int</span> a=sc.nextInt();</span><br><span class="line">            <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=a;i++) &#123;</span><br><span class="line">                sum=sum+i;  </span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(sum);</span><br><span class="line">            System.out.println( );</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   
   
@@ -588,6 +544,10 @@ public class Main &#123;
               
                 <p>This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 
+              
+            
+              
+                <p>本文永久地址：<a href=http://blog.zhuangzhihao.top/HODJ1000&1001/>http://blog.zhuangzhihao.top/HODJ1000&1001/</a></p>
               
             
           </blockquote>
@@ -605,13 +565,6 @@ public class Main &#123;
       
         
           
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
-    </a>
-  </div>
-
 
         
       
@@ -628,77 +581,6 @@ public class Main &#123;
       
         
           
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zhuangzhihao.top/HODJ1000&1001/&title=杭电 OJ 第 1000、1001 题思路解析 - Bezhuang's Blog&summary=
-在学完算法和数据结构，以及几门主流的编程语言后，本菜鸡从2021年1月起，正式加入刷题大军。对杭电OJ也慕名已久，所以成为我刷题的首选。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zhuangzhihao.top/HODJ1000&1001/&title=杭电 OJ 第 1000、1001 题思路解析 - Bezhuang's Blog&summary=
-在学完算法和数据结构，以及几门主流的编程语言后，本菜鸡从2021年1月起，正式加入刷题大军。对杭电OJ也慕名已久，所以成为我刷题的首选。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.zhuangzhihao.top/HODJ1000&1001/&title=杭电 OJ 第 1000、1001 题思路解析 - Bezhuang's Blog&summary=
-在学完算法和数据结构，以及几门主流的编程语言后，本菜鸡从2021年1月起，正式加入刷题大军。对杭电OJ也慕名已久，所以成为我刷题的首选。
-"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/weibo.png">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://blog.zhuangzhihao.top/assets/img/wechat.png"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC/klEQVR42u3awXHDMAwEQPffdFJAkhEOoDKCvfzZkmly+bkB+Poyfh0vBGDAgAEDBswamFdz/Jiw+f1d/9edHwwYMGDAgAGzD6YcgIrvX713tfG/5kk/p+sEAwYMGDBgwOyFuQxAxc/VYFbdWPV/xvsBAwYMGDBgwHwczDRopbBgwIABAwYMGDB3wZxqhE0bfGDAgAEDBgyYz4GJG1TFIDad/1Sj7986kWDAgAEDBgyYf4PpBq6nfm7vBwwYMGDAgAGzBmY6uheB7rqINN4PGDBgwIABA2YNTDcgdReYNsrSAlh3/WDAgAEDBgyYfTDdBaaNsrsuFqXw7UIVGDBgwIABA+ZxMHc12KbzVoPdtBB2mXzBgAEDBgwYMG8DUy0Y3d1Y6xa2LucBAwYMGDBgwKyHOV24SgtY09+3wcGAAQMGDBgw62BOX9A5DdctkMWBDwwYMGDAgAGzDmYK0Q1c3YJTFT4uwIEBAwYMGDBg1sGc3kA34E2DZPVgyheHwIABAwYMGDCPh+kutPp8Ggy7haxjnUgwYMCAAQMGzGNhUqhTjbYUMD2AeF9gwIABAwYMmDUw3Y3EwSnc8LTh1j14MGDAgAEDBsxemOmFoGrQSht3pwtbccADAwYMGDBgwDwWZtogmzbSqhvpBsLy78CAAQMGDBgwa2CmG0kDXbrw6YgbfmDAgAEDBgyYdTDToHcq2E2fV2HKAQ8MGDBgwIABsw4mLRClAa/6fBogwYABAwYMGDCfC9NtXE03nh7QqXWDAQMGDBgwYPbATEdamJoexLTAdfk+GDBgwIABA2YNzF2NtCpAt7B0uqAGBgwYMGDAgNkLkwa6tMCUFqaqkN2A9+e8YMCAAQMGDJi1MN2GV7eAlB7MFPgyIIIBAwYMGDBgPhbmrgtAaSOtCgIGDBgwYMCAAXO6YNQNhiloueEGBgwYMGDAgHk8TNpw675X3Vj1gNILR2DAgAEDBgyY94G56wLPqUJWt+EXzw8GDBgwYMCAWQNjgAEDBgwYMGCWjW8I+WWOG3o+xQAAAABJRU5ErkJggg==">
-          </div>
-        </div>
-      
-    
-      
-        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
-          
-            target="_blank" href="https://t.me/share/url?url=http://blog.zhuangzhihao.top/HODJ1000&1001/&text=杭电 OJ 第 1000、1001 题思路解析 - Bezhuang's Blog"
-          
-          >
-          
-            <img src="https://blog.zhuangzhihao.top/assets/img/telegram.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
 
         
       
@@ -817,7 +699,7 @@ Object Oriented Programming，面向对象的编程的思想是一种对现实�
     
       
         
-          <div><p><span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | </span> <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次</span></p>
+          <div><p><span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | &lt;/span&gt; <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次&lt;/span&gt;</p>
 </div>
         
       
@@ -949,17 +831,15 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 <script>
   
-  loadCSS("https://blog.zhuangzhihao.top/assets/js/all.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
   
-  
-  loadCSS("https://blog.zhuangzhihao.top/assets/js/solarized-light.min.css", window.volantis.loadcss);
   
 </script>
 <!-- required -->
 
-<script src="https://blog.zhuangzhihao.top/assets/js/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 <script>
   function pjax_fancybox() {
@@ -1310,36 +1190,13 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-   <script type="text/javascript">
-  loadScript("https://blog.zhuangzhihao.top/assets/js/scrollreveal.min.js")
-  function pjax_scrollrebeal() {
-    ScrollReveal().reveal('.l_main .reveal', {
-      distance: '32px',
-      duration: '800',
-      interval: '20',
-      scale: '1',
-      easing: 'ease-out'
-    });
-  }
-  $(function () {
-  var checkScrollReveal = setInterval(function () {
-    if ($("#safearea").css("display")!="block") return
-    if (typeof ScrollReveal=="undefined") return
-    clearInterval(checkScrollReveal)
-	pjax_scrollrebeal();
-  }, 100)
-  });
-  volantis.pjax.push(pjax_scrollrebeal)
-</script>
-
-
 
 
 
 
   
   
-<script src="https://blog.zhuangzhihao.top/assets/js/Valine.min.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -1371,7 +1228,7 @@ var loadCSS = function( href, before, media, attributes ){
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI","appKey":"j5I5paEqIfWfOlCg13vU2vNq","meta":["nick","mail","link"],"requiredFields":["nick"],"enableQQ":true,"recordIP":true,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":true,"js":"https://blog.zhuangzhihao.top/assets/js/Valine.min.js"}, {
+    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI","appKey":"j5I5paEqIfWfOlCg13vU2vNq","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":true,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":true}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -1388,7 +1245,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://blog.zhuangzhihao.top/assets/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -1431,20 +1288,6 @@ function setSearchService() {
 
 
 
-
-  
-
-<script src="https://blog.zhuangzhihao.top/assets/js/highlight.min.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-volantis.pjax.push(()=>{
-	document.querySelectorAll('pre code').forEach((block) => {
-	  hljs.highlightBlock(block);
-	});
-},"highlightjs")
-</script>
 
 
 
