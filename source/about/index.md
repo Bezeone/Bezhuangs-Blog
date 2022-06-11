@@ -12,14 +12,14 @@ valine:
 
 ---
 
-{% image https://blog.zhuangzhihao.top/img/about.jpg, width=400px, alt=庄之皓，Bezhuang %}
+{% image https://blog.zhuangzhihao.top/img/about.jpg, width=300px, alt=庄之皓，Bezhuang %}
 
 ---
 
-</br>
-{% span center small, 手机：13818993049 邮箱：bezhuang@outlook.com %}
-</br>
-{% span center small, 兴趣爱好：篮球、足球、F1 ... %}
 
 
+{% note 手机：13818993049 %}
 
+{% note 邮箱：bezhuang@outlook.com %}
+
+{% note 兴趣爱好：篮球、足球、F1 ... %}

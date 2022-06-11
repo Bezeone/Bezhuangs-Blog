@@ -332,7 +332,7 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [br, analytics, aplayer]
+  layout: [br, analytics]
   social:
     - avatar: fa-id-card-o
       url: https://zhuangzhihao.top
@@ -347,11 +347,11 @@ site_footer:
   # site source
   source: https://github.com/volantis-x/volantis-docs/
   # analytics using leancloud
-  analytics: >
-    <span id="lc-uv">本站访客数<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>人 | </span>
-    <span id="lc-sv">总访问量<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>次</span>
+  analytics: 
+    <span id="lc-uv"> 本站访客数：<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人 | 
+    <span id="lc-sv"> 总访问量：<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次 
   # site copyright
-  copyright: Copyright © Zhihao Zhuang. All rights reserved
+  copyright: #Copyright © Zhihao Zhuang. All rights reserved
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: Copyright © 2021 Zhihao Zhuang. All rights reserved
 ############################### Site Footer ############################### > end
@@ -450,15 +450,15 @@ plugins:
       meting: https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
-    type: song    # song, playlist, album, search, artist
-    id: 551340988   # song id / playlist id / album id / search keyword
+    type: playlist   # song, playlist, album, search, artist
+    id: 577551522   # song id / playlist id / album id / search keyword
     # Optional
     fixed: false     # enable fixed mode
     theme: '#1BCDFC'  # main color
-    autoplay: true   # audio autoplay
+    autoplay: false   # audio autoplay
     order: list       # player play order, values: 'list', 'random'
     loop: one        # player loop play, values: 'all', 'one', 'none'
-    volume: 0.1       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
+    volume: 0.3       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
     list_max_height: 320px # list max height
     list_folded: true
   pjax:
