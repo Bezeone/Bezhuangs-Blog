@@ -1,6 +1,6 @@
 ---
 title: 通过建立城市轮廓学习 CSS 变量
-date: 2022-06-12
+date: 2022-06-15
 tags: [CSS]
 categories: Web前端
 references: 
@@ -14,11 +14,11 @@ references:
 
 ### 一、重点 CSS 代码
 
-Browsers can apply default margin and padding values to specific elements. To make sure your piano looks correct, you need to reset the box model：
+In CSS, you can target everything with an asterisk：
 
 ```CSS
-html {
-    box-sizing: border-box;
+* {
+  border: 1px solid black;
 }
 ```
 

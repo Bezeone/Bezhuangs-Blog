@@ -489,7 +489,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>本文发布于：2022年6月12日</p>
+    <p>本文发布于：2022年6月15日</p>
   </a>
 </div>
 
@@ -500,7 +500,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：435字</p>
+      <p>字数：419字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -524,8 +524,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>freeCodeCamp 响应式网页设计的认证课程第十二章。CSS 变量负责帮助组织你的样式和重复使用它们。在通过建立城市轮廓学习 CSS 变量的课程中，建立一座城市的轮廓，学习如何配置 CSS 变量，以便可以随时重复使用它们。</p>
 </blockquote>
 <span id="more"></span>
-<h3 id="一、重点-CSS-代码"><a href="#一、重点-CSS-代码" class="headerlink" title="一、重点 CSS 代码"></a>一、重点 CSS 代码</h3><p>Browsers can apply default margin and padding values to specific elements. To make sure your piano looks correct, you need to reset the box model：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="一、重点-CSS-代码"><a href="#一、重点-CSS-代码" class="headerlink" title="一、重点 CSS 代码"></a>一、重点 CSS 代码</h3><p>In CSS, you can target everything with an asterisk：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>You have reset the <code>html</code> box model, you need to pass that on to the elements within as well.</p>
 <p>The <code>::before</code> selector creates a pseudo-element which is the first child of the selected element, while the <code>::after</code> selector creates a pseudo-element which is the last child of the selected element：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*, <span class="selector-pseudo">::before</span>, <span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  	<span class="attribute">box-sizing</span>: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
