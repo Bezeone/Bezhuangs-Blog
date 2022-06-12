@@ -706,7 +706,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>在Linux系统中，分区和格式化后还需要使用mount命令将分区挂载至空白目录，并将新分区挂载信息写入至 <code>/etc/fstab</code> 文件中</li>
 <li>具体操作</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fdisk –l  //查看分区信息</span><br><span class="line">fdisk /dev/vdb  //分区管理命令</span><br><span class="line">p  //查看分区表信息</span><br><span class="line">n  //创建分区</span><br><span class="line">w  //保存分区表</span><br><span class="line">partx  //同步磁盘信息</span><br><span class="line">mkfs.ext4 /dev/vdb1  //格式化分区为ext4格式</span><br><span class="line">mkdir /mnt/data  //创建空白目录挂载新磁盘分区</span><br><span class="line">mount /dev/vdb1 /mnt/data  //挂载分区至空白目录</span><br><span class="line">df –h | grep vdb1  //查看分区挂载信息</span><br><span class="line"><span class="built_in">echo</span> “/dev/vdb1 /mnt/data ext4 defaults 0 0” &gt;&gt; /etc/fstab  //设置开机自动挂载</span><br><span class="line">mount –a  //验证/etc/fstab文件的正确性</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fdisk –l  //查看分区信息</span><br><span class="line">fdisk /dev/vdb  //分区管理命令</span><br><span class="line">p  //查看分区表信息</span><br><span class="line">n  //创建分区</span><br><span class="line">w  //保存分区表</span><br><span class="line">partx  //同步磁盘信息</span><br><span class="line">mkfs.ext4 /dev/vdb1  //格式化分区为ext4格式</span><br><span class="line"><span class="built_in">mkdir</span> /mnt/data  //创建空白目录挂载新磁盘分区</span><br><span class="line">mount /dev/vdb1 /mnt/data  //挂载分区至空白目录</span><br><span class="line"><span class="built_in">df</span> –h | grep vdb1  //查看分区挂载信息</span><br><span class="line"><span class="built_in">echo</span> “/dev/vdb1 /mnt/data ext4 defaults 0 0” &gt;&gt; /etc/fstab  //设置开机自动挂载</span><br><span class="line">mount –a  //验证/etc/fstab文件的正确性</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>卸载云盘</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">umount /dev/vdb1  //在ECS中卸载分区</span><br><span class="line">vim /etc/fstab  //在文档中将自己新增挂载记录删除</span><br></pre></td></tr></table></figure>
@@ -907,7 +907,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>可以使用任何通用的客户端连接PolarDB集群，例如HeidiSQL</p>
 </li>
 <li><p>命令行连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h&lt;连接地址&gt; -P&lt;端口&gt; -u&lt;用户名&gt; -p&lt;密码&gt; -D&lt;数据库&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h&lt;连接地址&gt; -P&lt;端口&gt; -u&lt;用户名&gt; -p&lt;密码&gt; -D&lt;数据库&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="PolarDB-MySQL的数据管理"><a href="#PolarDB-MySQL的数据管理" class="headerlink" title="PolarDB MySQL的数据管理"></a>PolarDB MySQL的数据管理</h4><ul>
@@ -1021,7 +1021,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>事件监控与自定义监控的区别：事件监控用于解决非连续的事件类型数据监控数据上报、查询与报警的场景，而自定义监控用于解决周期性持续采集的时间序列监控数据上报、查询与报警的场景</p>
 </li>
 <li><p>模拟CPU占用场景</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 安装压力测试工具</span><br><span class="line">yum install –y stress</span><br><span class="line">// 执行压力测试命令</span><br><span class="line">stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 10m</span><br><span class="line">// 查看用户的邮箱，将会收到报警邮件</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 安装压力测试工具</span><br><span class="line">yum install –y stress</span><br><span class="line">// 执行压力测试命令</span><br><span class="line">stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --<span class="built_in">timeout</span> 10m</span><br><span class="line">// 查看用户的邮箱，将会收到报警邮件</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>阿里云云监控支持非阿里云主机的监控，需要手动安装插件</p>
 </li>
