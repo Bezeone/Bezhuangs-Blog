@@ -1,8 +1,9 @@
 navbar:
   visiable: always # always, auto
+  favicon: https://blog.zhuangzhihao.top/img/coffee.png
   logo: # choose [img] or [icon + title]
     img: #
-    icon:
+    icon: #
     title: Bezhuang's Blog
   menu:
     - name: 首页

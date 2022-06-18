@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Bezhuang&#39;s Blog</title>
   
-  
+  <subtitle>庄之皓的博客网站</subtitle>
   <link href="http://blog.zhuangzhihao.top/atom.xml" rel="self"/>
   
   <link href="http://blog.zhuangzhihao.top/"/>
