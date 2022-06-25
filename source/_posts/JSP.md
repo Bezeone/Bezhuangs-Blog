@@ -38,7 +38,7 @@ JSP 作用：简化开发，避免了在 Servlet 中直接输出 HTML 标签。
 
 1.   创建一个 maven 的 web 项目，项目结构如下：
 
-![](http://blog.zhuangzhihao.top/img/jsp01.jpg)
+![](https://blog.zhuangzhihao.top/img/jsp01.jpg)
 
 `pom.xml` 文件内容如下：
 
