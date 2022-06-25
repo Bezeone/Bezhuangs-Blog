@@ -349,12 +349,12 @@ site_footer:
   source: https://github.com/volantis-x/volantis-docs/
   # analytics using leancloud
   analytics: 
-    <span id="lc-uv"> 本站访客数：<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人 | 
-    <span id="lc-sv"> 总访问量：<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次 
+    <div id="lc-uv"> 本站访客数：<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人，</div>
+    <div id="lc-sv"> 总访问量：<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次 </div>
   # site copyright
   copyright: #Copyright © Zhihao Zhuang. All rights reserved
   # You can add your own property here. (Support markdown, for example: br: '<br>')
-  br: Copyright © 2021 Zhihao Zhuang. All rights reserved
+  br: Copyright © 2020 - 2022 Zhihao Zhuang. All rights reserved
 ############################### Site Footer ############################### > end
 
 ############################### Plugins ############################### > start
@@ -756,7 +756,7 @@ custom_css:
 
 ############################### Analytics ############################### > start
 analytics:
-  busuanzi: https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  busuanzi: #/libs/busuanzi/js/busuanzi.pure.mini.js #https://fastly.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   leancloud: # 请使用自己的 id & key 以防止数据丢失
     app_id: SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI
     app_key: j5I5paEqIfWfOlCg13vU2vNq
