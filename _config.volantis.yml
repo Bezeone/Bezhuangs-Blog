@@ -217,7 +217,7 @@ sidebar:
       shape: rectangle # circle, rectangle
       url: /about/
       title: Meine Welt
-      subtitle: ist meine welt
+      subtitle: Das hat die Welt noch nicht gesehen.
       jinrishici: true
       social:
         - icon: fas fa-envelope
