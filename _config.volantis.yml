@@ -547,11 +547,11 @@ rightmenu:
   contributors:
     name: 返回主页
     icon: fa fa-fan fa-spin
-    url: https://www.zhuangzhihao.top
+    url: https://blog.zhuangzhihao.top
   source_docs:
     name: 本站源码
     icon: fa fa-code-branch
-    url: https://github.com/Bezhuang/Hexo-blog
+    url: https://github.com/Bezhuang/Bezhuang-blog-code
   source_theme:
     name: 主题源码
     icon: fa fa-code-branch
