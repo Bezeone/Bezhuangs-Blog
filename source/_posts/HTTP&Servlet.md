@@ -8,7 +8,7 @@ references:
     url: https://www.bilibili.com/video/BV1Qf4y1T7Hx
 ---
 
-> Java Web 核心第一章。Java Web 是用 Java 技术来解决相关 web 互联网领域的技术栈，国内很多大型网站公司也是首选 Java 语言来解决 web 互联网相关的问题。要了解 Java Web 开发的技术栈，首先需要理解 HTTP 协议和 HTTP 请求与响应数据的格式，理解 Servlet 的执行流程和生命周期，掌握 Servlet 的使用和相关配置。
+> Java Web 核心第一章。Java Web 是用 Java 技术来解决相关 web 互联网领域的技术栈，国内很多大型网站公司也是首选 Java 语言来解决 web 互联网相关的问题。要了解 Java Web 开发的技术栈，首先需要理解 HTTP 协议和 HTTP 请求与响应数据的格式，理解 Servlet 的执行流程和生命周期，掌握 Servlet 的使用和相关配置。在 JavaEE 的诸多组件中，做 Web 开发一定躲不开的是 Servlet。Servlet 是一套用于处理 HTTP 请求的 API 标准。我们可以基于 Servlet 实现 HTTP 请求的处理。但是 JavaEE 当中只提供了 Servlet 的标准，要真正运行 Servlet，需要使用 Servlet Container，如 Tomcat。
 
 <!--more-->
 
