@@ -740,7 +740,7 @@ custom_css:
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: '"STKaiti", "Ubuntu", "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      fontfamily: '"STKaiti", "楷体","楷体_GB2312", "Varela Round", "Ubuntu", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'STKaiti'
       url: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@21.2.19/Ubuntu/Ubuntu-Regular.ttf
       weight: normal
