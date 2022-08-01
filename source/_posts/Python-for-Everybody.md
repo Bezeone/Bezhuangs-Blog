@@ -12,7 +12,7 @@ references:
 
 <!--more-->
 
-{% pdf /pdf/Coursera-py4e.pdf %}
+![](https://blog.zhuangzhihao.top/img/Coursera-py4e.png)
 
 ### Chapter 1
 

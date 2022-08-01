@@ -497,7 +497,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：347字</p>
+      <p>字数：344字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -521,16 +521,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>This Python Project mini-course provided by IBM is intended to demonstrate basic Python skills by performing specific tasks such as extracting data, web scraping, visualizing data, and creating a dashboard. The following are the notes I took during this course.</p>
 </blockquote>
 <span id="more"></span>
-
-
-	<div class="row">
-    <embed src="/pdf/Coursera-Python-Project4DS.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-<h3 id="Web-Scraping"><a href="#Web-Scraping" class="headerlink" title="Web Scraping"></a>Web Scraping</h3><ul>
-<li><p>HTML Tags</p>
+<p><img src="https://blog.zhuangzhihao.top/img/Coursera-Python-Project4DS.png" alt></p>
+<h3 id="Web-Scraping"><a href="#Web-Scraping" class="headerlink" title="Web Scraping"></a>Web Scraping</h3><p>HTML Tags</p>
 <ul>
 <li>HTML Composition</li>
 <li>HTML Paragraph Tags: <code>&lt;p&gt;&lt;/p&gt;</code></li>
@@ -540,32 +532,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>Document Tree: <code>&lt;head&gt;&lt;/head&gt;</code>, <code>&lt;body&gt;&lt;/body&gt;</code></li>
 <li>HTML Tables: <code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></li>
 </ul>
-</li>
-<li><p>BeautifulSoup</p>
+<p>BeautifulSoup</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html=<span class="string">&quot;&quot;</span></span><br><span class="line">soup=BeautifulSoup(html, <span class="string">&#x27;html5lib&#x27;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>BeautifulSoup: Object</p>
+<p>BeautifulSoup: Object</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tag_object=soup.title</span><br><span class="line">tag_object=soup.h3</span><br><span class="line">tag_child=tag_object.b <span class="comment">#HTML Tree</span></span><br><span class="line">parent_tag=tag_child.parent <span class="comment">#Parent attribute</span></span><br><span class="line">sibling_1=tag_object.next_sibling <span class="comment">#Next-sibling attribute</span></span><br><span class="line">tag_child.attrs <span class="comment">#Show attributes</span></span><br><span class="line">tag_child.string <span class="comment">#Navigable string</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>BeautifulSoup: <code>find_all</code></p>
+<p>BeautifulSoup: <code>find_all</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">table=BeautifulSoup(html, <span class="string">&#x27;html5lib&#x27;</span>)</span><br><span class="line">table_row=table.find_all(name=<span class="string">&#x27;tr&#x27;</span>) <span class="comment">#Python iterable</span></span><br><span class="line">first_row=table_row[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">from</span> i,row <span class="keyword">in</span> <span class="built_in">enumerate</span>(table_rows): <span class="comment">#Elements</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;row&quot;</span>,i)</span><br><span class="line">    cells+row.find_all(<span class="string">&quot;td&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> j,cell <span class="keyword">in</span> <span class="built_in">enumerate</span>(cells):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;column&quot;</span>,j,<span class="string">&quot;cell&quot;</span>,cell)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Requests &amp; BeautifulSoup in real web page</p>
+<p>Requests &amp; BeautifulSoup in real web page</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">page=requests.get(<span class="string">&quot;http://...&quot;</span>).text</span><br><span class="line">soup=BeautifulSoup(page, <span class="string">&quot;html.parser&quot;</span>) <span class="comment">#Create a BeautifulSoup object</span></span><br><span class="line">artists=soup.find_all(<span class="string">&#x27;a&#x27;</span>) <span class="comment">#Pull all instances of &lt;a&gt; tag</span></span><br><span class="line"><span class="keyword">for</span> artist <span class="keyword">in</span> artists:  <span class="comment">#Clears data of all tags</span></span><br><span class="line">    names=artist.contents[<span class="number">0</span>]</span><br><span class="line">    fullLink=artist.get(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(names)</span><br><span class="line">    <span class="built_in">print</span>(fullLink)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Project-Analyzing-Stock-Performance-and-Building-a-Dashboard"><a href="#Project-Analyzing-Stock-Performance-and-Building-a-Dashboard" class="headerlink" title="Project: Analyzing Stock Performance and Building a Dashboard"></a>Project: Analyzing Stock Performance and Building a Dashboard</h3><ul>
-<li>A stock (also known as equity) is a security that represents the ownership of a fraction of a <a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/c/corporation.asp">corporation</a>.</li>
-<li>The stock ticker is a report of the price of a certain stock, updated continuously throughout the trading session by the various stock market exchanges.</li>
-<li>Extracting Stock Data Using a Python Library: <code>yfinance</code></li>
-<li><p>Extracting Stock Data Using Web Scraping</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/ad8810db-e61c-4227-997d-f26c1ec0ad49/view?access_token=6a4d4d444262c5dc0cc25bee7ed55437e3bde917b8c6218d9f24f68053e99955">Project Notebook</a></p>
-</li>
-</ul>
-<h3 id="Assignments"><a href="#Assignments" class="headerlink" title="Assignments"></a>Assignments</h3><ul>
-<li>Visit my <a target="_blank" rel="noopener" href="https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Python%20Project%20for%20Data%20Science">Github Repository</a> </li>
-</ul>
+<h3 id="Project-Analyzing-Stock-Performance-and-Building-a-Dashboard"><a href="#Project-Analyzing-Stock-Performance-and-Building-a-Dashboard" class="headerlink" title="Project: Analyzing Stock Performance and Building a Dashboard"></a>Project: Analyzing Stock Performance and Building a Dashboard</h3><p>A stock (also known as equity) is a security that represents the ownership of a fraction of a <a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/c/corporation.asp">corporation</a>.</p>
+<p>The stock ticker is a report of the price of a certain stock, updated continuously throughout the trading session by the various stock market exchanges.</p>
+<p>Extracting Stock Data Using a Python Library: <code>yfinance</code></p>
+<p>Extracting Stock Data Using Web Scraping</p>
+<p><a target="_blank" rel="noopener" href="https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/ad8810db-e61c-4227-997d-f26c1ec0ad49/view?access_token=6a4d4d444262c5dc0cc25bee7ed55437e3bde917b8c6218d9f24f68053e99955">Project Notebook</a></p>
+<h3 id="Assignments"><a href="#Assignments" class="headerlink" title="Assignments"></a>Assignments</h3><p>Visit my <a target="_blank" rel="noopener" href="https://github.com/Bezhuang/IBM-Data-Science">Github Repository</a> </p>
 
   
   

@@ -499,7 +499,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：990字</p>
+      <p>字数：977字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -523,24 +523,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>The Accenture Know-the-Code Virtual Experience Program covers the fundamentals of software development, including object-oriented programming, code refactoring, and agile delivery. It empowers me to explore what a career in software development could look like at Accenture while practicing my coding skills. The following are the notes I took during this virtual experience.</p>
 </blockquote>
 <span id="more"></span>
-
-
-	<div class="row">
-    <embed src="/pdf/Accenture-Coding-Virtual-Experience.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-<h3 id="Task-1-Object-Oriented-Programming"><a href="#Task-1-Object-Oriented-Programming" class="headerlink" title="Task 1: Object Oriented Programming"></a>Task 1: Object Oriented Programming</h3><h4 id="Background-Information"><a href="#Background-Information" class="headerlink" title="Background Information"></a>Background Information</h4><ul>
-<li>Recently, a company has brought on Accenture to help with the development of its e-commerce website written in Java using the Spring Boot framework. The first task they need help with is searching for products</li>
-<li>One of the UX designers at Accenture has already implemented the new search capability in the UI</li>
-<li>My responsibility is to implement the search capability in our backend Java app</li>
-</ul>
-<h4 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h4><ul>
-<li>Expose an HTTP GET request on the path <code>/api/products/search</code></li>
-<li>The request should take a single parameter named “<code>query</code>” which will be the text that was entered in the search bar</li>
-<li>The request will return a Collection of <code>ProductItem</code> which are the matching products for the search</li>
-</ul>
+<p><img src="https://blog.zhuangzhihao.top/img/Accenture-Coding-Virtual-Experience.png" alt></p>
+<h3 id="Task-1-Object-Oriented-Programming"><a href="#Task-1-Object-Oriented-Programming" class="headerlink" title="Task 1: Object Oriented Programming"></a>Task 1: Object Oriented Programming</h3><h4 id="Background-Information"><a href="#Background-Information" class="headerlink" title="Background Information"></a>Background Information</h4><p>Recently, a company has brought on Accenture to help with the development of its e-commerce website written in Java using the Spring Boot framework. The first task they need help with is searching for products.</p>
+<p>One of the UX designers at Accenture has already implemented the new search capability in the UI, My responsibility is to implement the search capability in our backend Java app.</p>
+<h4 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h4><p>Expose an HTTP GET request on the path <code>/api/products/search</code></p>
+<p>The request should take a single parameter named “<code>query</code>” which will be the text that was entered in the search bar</p>
+<p>The request will return a Collection of <code>ProductItem</code> which are the matching products for the search</p>
 <h4 id="Implement-a-new-controller-to-handle-searching"><a href="#Implement-a-new-controller-to-handle-searching" class="headerlink" title="Implement a new controller to handle searching"></a>Implement a new controller to handle searching</h4><ol>
 <li>Download and unzip the mock-company-webapp codebase</li>
 <li>Open the application in IDEA with Gradle support</li>
@@ -549,20 +537,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>The controller should use the “<code>productItemRepository</code>” to interface with the product database</li>
 <li>Review the tests and implement the controller to the spec</li>
 </ol>
-<h4 id="Practical-skills-gained"><a href="#Practical-skills-gained" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><ul>
-<li>Object Oriented Programming</li>
-<li>Java</li>
-<li>Spring</li>
-</ul>
-<h3 id="Task-2-Code-Refactoring"><a href="#Task-2-Code-Refactoring" class="headerlink" title="Task 2: Code Refactoring"></a>Task 2: Code Refactoring</h3><h4 id="Background-Information-1"><a href="#Background-Information-1" class="headerlink" title="Background Information"></a>Background Information</h4><ul>
-<li>Now we’ve identified some code in the <code>ReportController</code> class that seems to be doing similar product searching</li>
-<li>I need to refactor the <code>SearchController</code> logic into a new <code>SearchService</code> class that can be used in the <code>SearchController</code> as well as in the <code>ReportController</code></li>
-</ul>
-<h4 id="Requirements-1"><a href="#Requirements-1" class="headerlink" title="Requirements"></a>Requirements</h4><ul>
-<li>Logic moved from <code>SearchController</code> to <code>SearchService</code></li>
-<li><code>SearchController</code> and <code>ReportController</code> both updated to use the <code>SearchService</code></li>
-<li>All unit tests pass</li>
-</ul>
+<h4 id="Practical-skills-gained"><a href="#Practical-skills-gained" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><p>Object Oriented Programming, Java, Spring</p>
+<h3 id="Task-2-Code-Refactoring"><a href="#Task-2-Code-Refactoring" class="headerlink" title="Task 2: Code Refactoring"></a>Task 2: Code Refactoring</h3><h4 id="Background-Information-1"><a href="#Background-Information-1" class="headerlink" title="Background Information"></a>Background Information</h4><p>Now we’ve identified some code in the <code>ReportController</code> class that seems to be doing similar product searching</p>
+<p>I need to refactor the <code>SearchController</code> logic into a new <code>SearchService</code> class that can be used in the <code>SearchController</code> as well as in the <code>ReportController</code></p>
+<h4 id="Requirements-1"><a href="#Requirements-1" class="headerlink" title="Requirements"></a>Requirements</h4><p>Logic moved from <code>SearchController</code> to <code>SearchService</code></p>
+<p><code>SearchController</code> and <code>ReportController</code> both updated to use the <code>SearchService</code></p>
+<p>All unit tests pass</p>
 <h4 id="Refactor-controllers-to-a-shared-service"><a href="#Refactor-controllers-to-a-shared-service" class="headerlink" title="Refactor controllers to a shared service"></a>Refactor controllers to a shared service</h4><ol>
 <li>Follow the README.md instructions for setting up the development environment</li>
 <li>Create the new <code>SearchService</code> class in the “<code>services</code>” package. All of the search logic from the <code>SearchController</code> should be moved into a function in this class for reusability. The relevant code is outlined with a TODO comment</li>
@@ -570,23 +550,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>Refactor both controller classes to use the service by rewriting their functions to use the new service</li>
 <li>Ensure unit tests all pass</li>
 </ol>
-<h4 id="Practical-skills-gained-1"><a href="#Practical-skills-gained-1" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><ul>
-<li>Java</li>
-<li>Spring</li>
-</ul>
-<h3 id="Task-3-Continuous-Integration"><a href="#Task-3-Continuous-Integration" class="headerlink" title="Task 3: Continuous Integration"></a>Task 3: Continuous Integration</h3><h4 id="Background-Information-2"><a href="#Background-Information-2" class="headerlink" title="Background Information"></a>Background Information</h4><ul>
-<li>Continuous Integration is the practice of automating the integration of code changes from multiple contributors into a single software project</li>
-<li>It’s a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository where building and test runs can occur</li>
-<li>Use the most popular Continuous Integration tool, Jenkins</li>
-<li>Creating a <code>Jenkinsfile</code> that will build and test the application on all branches of the repository</li>
-</ul>
-<h4 id="Requirements-2"><a href="#Requirements-2" class="headerlink" title="Requirements"></a>Requirements</h4><ul>
-<li>GitHub account created, Git CLI setup, mock-company-webapp repository forked and cloned</li>
-<li><code>Jenkinsfile</code> defined with stages setting it up to run on commit to any branch in the repository</li>
-<li>Continuous Integration server runs <code>build/test</code> and succeeds</li>
-<li>Change made to code that breaks test</li>
-<li>Continuous Integration server runs <code>build/test</code> and fails</li>
-</ul>
+<h4 id="Practical-skills-gained-1"><a href="#Practical-skills-gained-1" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><p>Java, Spring</p>
+<h3 id="Task-3-Continuous-Integration"><a href="#Task-3-Continuous-Integration" class="headerlink" title="Task 3: Continuous Integration"></a>Task 3: Continuous Integration</h3><h4 id="Background-Information-2"><a href="#Background-Information-2" class="headerlink" title="Background Information"></a>Background Information</h4><p>Continuous Integration is the practice of automating the integration of code changes from multiple contributors into a single software project</p>
+<p>It’s a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository where building and test runs can occur. Use the most popular Continuous Integration tool, Jenkins.Creating a <code>Jenkinsfile</code> that will build and test the application on all branches of the repository</p>
+<h4 id="Requirements-2"><a href="#Requirements-2" class="headerlink" title="Requirements"></a>Requirements</h4><p>GitHub account created, Git CLI setup, mock-company-webapp repository forked and cloned</p>
+<p><code>Jenkinsfile</code> defined with stages setting it up to run on commit to any branch in the repository</p>
+<p>Continuous Integration server runs <code>build/test</code> and succeeds</p>
+<p>Change made to code that breaks test</p>
+<p>Continuous Integration server runs <code>build/test</code> and fails</p>
 <h4 id="Simulating-Jenkins-using-the-Jenkinsfile-Runner-Action-in-a-GitHub-Workflow"><a href="#Simulating-Jenkins-using-the-Jenkinsfile-Runner-Action-in-a-GitHub-Workflow" class="headerlink" title="Simulating Jenkins using the Jenkinsfile Runner Action in a GitHub Workflow"></a>Simulating Jenkins using the <code>Jenkinsfile</code> Runner Action in a GitHub Workflow</h4><ol>
 <li>Create an account with GitHub and fork the mock-company-webapp repository</li>
 <li>Setup the Git CLI on workstation and “<code>clone</code>” the repository you forked to workstation</li>
@@ -601,38 +572,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>Change the <code>SearchService</code> to always return <code>Collections.emptyList()</code> in order to break the tests.</li>
 <li>Commit the change and validate the Continuous Integration build fails which proves that we’ve properly set up Continuous Integration guard rails, that will catch failing tests each time a commit is made by a developer</li>
 </ol>
-<h4 id="Practical-skills-gained-2"><a href="#Practical-skills-gained-2" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><ul>
-<li>Continuous Integration</li>
-<li>Jenkins</li>
-<li>DevOps</li>
-</ul>
-<h3 id="Task-4-Agile-Planning"><a href="#Task-4-Agile-Planning" class="headerlink" title="Task 4: Agile Planning"></a>Task 4: Agile Planning</h3><h4 id="Background-Information-3"><a href="#Background-Information-3" class="headerlink" title="Background Information"></a>Background Information</h4><ul>
-<li>In an Agile planning session, developers are given a set of large software features that they then must break up into smaller units of work, called stories, that can be completed within a one to three week period, called a sprint</li>
-<li>A story is an informal, general explanation of a software feature written from the perspective of the end user or customer and is made up of the following components:<ul>
-<li>Who the feature is for</li>
-<li>What they need</li>
-<li>Why they need it</li>
-<li>What shows it’s done</li>
-</ul>
-</li>
-</ul>
-<h4 id="Requirements-3"><a href="#Requirements-3" class="headerlink" title="Requirements"></a>Requirements</h4><ul>
-<li>Stories are written in the following format: As a <code>&lt;who the feature is for&gt;</code>, I need to be able to <code>&lt;what they need&gt;</code> so I can <code>&lt;why they need it&gt;</code></li>
-<li>The “<code>what shows it’s done</code>”, called acceptance criteria, must be provided with the story as well</li>
-<li>Stories are then pointed or sized which means to assign some kind of value indicating the difficulty of implementing the story</li>
-<li>Use a T-Shirt size strategy assigning a value of small/medium/large to each story</li>
-<li>It’s very important that stories are broken down as small as they can be so try and keep them either small or medium</li>
-<li>This allows for better concurrency throughout the sprint and easier completion within a single sprint</li>
-</ul>
-<h4 id="planning-a-sprint-to-implement-the-checkout-feature-of-the-site"><a href="#planning-a-sprint-to-implement-the-checkout-feature-of-the-site" class="headerlink" title="planning a sprint to implement the checkout feature of the site"></a>planning a sprint to implement the checkout feature of the site</h4><ul>
-<li>Create a document that defines around 10 to 20 stories around the checkout feature</li>
-<li>Pull in a subset of these stories based on our capacity to work on in the next sprint</li>
-<li>Make sure the stories are broken up as small as possible, and the acceptance criteria is testable</li>
-</ul>
-<h4 id="Practical-skills-gained-3"><a href="#Practical-skills-gained-3" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><ul>
-<li>Agile Methodology</li>
-<li>Software Development Lifecycle (SDLC)</li>
-</ul>
+<h4 id="Practical-skills-gained-2"><a href="#Practical-skills-gained-2" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><p>Continuous Integration, Jenkins, DevOps</p>
+<h3 id="Task-4-Agile-Planning"><a href="#Task-4-Agile-Planning" class="headerlink" title="Task 4: Agile Planning"></a>Task 4: Agile Planning</h3><h4 id="Background-Information-3"><a href="#Background-Information-3" class="headerlink" title="Background Information"></a>Background Information</h4><p>In an Agile planning session, developers are given a set of large software features that they then must break up into smaller units of work, called stories, that can be completed within a one to three week period, called a sprint</p>
+<p>A story is an informal, general explanation of a software feature written from the perspective of the end user or customer and is made up of the following components: Who the feature is for, What they need, Why they need it, What shows it’s done</p>
+<h4 id="Requirements-3"><a href="#Requirements-3" class="headerlink" title="Requirements"></a>Requirements</h4><p>Stories are written in the following format: As a <code>&lt;who the feature is for&gt;</code>, I need to be able to <code>&lt;what they need&gt;</code> so I can <code>&lt;why they need it&gt;</code></p>
+<p>The “<code>what shows it’s done</code>”, called acceptance criteria, must be provided with the story as well</p>
+<p>Stories are then pointed or sized which means to assign some kind of value indicating the difficulty of implementing the story</p>
+<p>Use a T-Shirt size strategy assigning a value of small/medium/large to each story</p>
+<p>It’s very important that stories are broken down as small as they can be so try and keep them either small or medium</p>
+<p>This allows for better concurrency throughout the sprint and easier completion within a single sprint</p>
+<h4 id="planning-a-sprint-to-implement-the-checkout-feature-of-the-site"><a href="#planning-a-sprint-to-implement-the-checkout-feature-of-the-site" class="headerlink" title="planning a sprint to implement the checkout feature of the site"></a>planning a sprint to implement the checkout feature of the site</h4><p>Create a document that defines around 10 to 20 stories around the checkout feature</p>
+<p>Pull in a subset of these stories based on our capacity to work on in the next sprint</p>
+<p>Make sure the stories are broken up as small as possible, and the acceptance criteria is testable</p>
+<h4 id="Practical-skills-gained-3"><a href="#Practical-skills-gained-3" class="headerlink" title="Practical skills gained"></a>Practical skills gained</h4><p>Agile Methodology, Software Development Lifecycle (SDLC)</p>
 
   
   

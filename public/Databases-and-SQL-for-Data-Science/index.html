@@ -523,135 +523,97 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>Much of the world’s data resides in databases, A working knowledge of databases and SQL is a must to become a data scientist. The emphasis in this course provided by IBM is on hands-on and practical learning. So, I’ll try to record how I work with real databases, real data science tools, real-world datasets and eventually, how I create a database instance in the cloud on the following notes I took during this course.</p>
 </blockquote>
 <span id="more"></span>
-
-
-	<div class="row">
-    <embed src="/pdf/Databases&amp;SQL4Data-Science.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-<h3 id="Introduction-to-Databases"><a href="#Introduction-to-Databases" class="headerlink" title="Introduction to Databases"></a>Introduction to Databases</h3><ul>
-<li>Structured Query Language (or SQL) is a powerful language which is used for communicating with and extracting data from databases.</li>
-<li>SQL is among the top 3 skills for a Data Scientist or Data Analysts</li>
-<li>A database is a repository of data, it provides the functionality for adding, modifying and querying data</li>
-<li>RDBMS = Relational database management system</li>
-<li>5 Basic SQL commands: Create, Insert, Select, Update, Delete</li>
-<li>Cloud databases: Ease of use and access, Scalability &amp; Economics, Disaster recovery<ul>
+<p><img src="https://blog.zhuangzhihao.top/img/Databases&amp;SQL4Data-Science.png" alt></p>
+<h3 id="Introduction-to-Databases"><a href="#Introduction-to-Databases" class="headerlink" title="Introduction to Databases"></a>Introduction to Databases</h3><p>Structured Query Language (or SQL) is a powerful language which is used for communicating with and extracting data from databases.</p>
+<p>SQL is among the top 3 skills for a Data Scientist or Data Analysts</p>
+<p>A database is a repository of data, it provides the functionality for adding, modifying and querying data</p>
+<p>RDBMS = Relational database management system</p>
+<p>5 Basic SQL commands: Create, Insert, Select, Update, Delete</p>
+<p>Cloud databases: Ease of use and access, Scalability &amp; Economics, Disaster recovery</p>
+<ul>
 <li>IBM Db2, PostgreSQL, Oracle Cloud, Microsoft Azure, Amazon RDS</li>
 </ul>
-</li>
-<li><p>DBaaS (Database-as-a-Service) provides users with access to database resources in Cloud without the need for setting up hardware and installing software.</p>
-</li>
-<li><p>Relational Model allows for data independence (key advantage)</p>
-</li>
-<li>Entities are independent objects which have Attributes<ul>
+<p>DBaaS (Database-as-a-Service) provides users with access to database resources in Cloud without the need for setting up hardware and installing software.</p>
+<p>Relational Model allows for data independence (key advantage)</p>
+<p>Entities are independent objects which have Attributes</p>
+<ul>
 <li>Entity-Relationship Model (ER-Model): used as a tool to design RDBMS</li>
 <li>Mapping Entity Diagrams to Tables: Entities become tables, Attributes get translated into columns</li>
 </ul>
-</li>
-<li>Primary Keys and Foreign Keys: A primary key uniquely identifies a specific row in a table and prevents duplication of data.</li>
-</ul>
-<h3 id="Basic-SQL"><a href="#Basic-SQL" class="headerlink" title="Basic SQL"></a>Basic SQL</h3><ul>
-<li><p>Data Definition Language statements (DDL) and Data Manipulation Language statements (DML)</p>
-</li>
-<li><p>Data Definition Language (DDL) statements are used to define, change, or drop database objects. </p>
+<p>Primary Keys and Foreign Keys: A primary key uniquely identifies a specific row in a table and prevents duplication of data.</p>
+<h3 id="Basic-SQL"><a href="#Basic-SQL" class="headerlink" title="Basic SQL"></a>Basic SQL</h3><p>Data Definition Language statements (DDL) and Data Manipulation Language statements (DML)</p>
+<p>Data Definition Language (DDL) statements are used to define, change, or drop database objects. </p>
 <ul>
 <li>Common DDL statement types include: <code>CREATE</code>, <code>ALTER</code>, <code>TRUNCATE</code> and <code>DROP</code></li>
 </ul>
-</li>
-<li><p>Data Manipulation Language (DML) statements are used to read and modify data in tables.</p>
+<p>Data Manipulation Language (DML) statements are used to read and modify data in tables.</p>
 <ul>
 <li>CRUD operations: Create, Read, Update and Delete</li>
 <li>Common DML statement types include: <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code> and <code>DELETE</code></li>
 </ul>
-</li>
-<li><p><code>CREATE</code> and <code>DROP</code> tables in the database</p>
+<p><code>CREATE</code> and <code>DROP</code> tables in the database</p>
 <ul>
 <li>It is quite common to issue a <code>DROP</code> before doing a <code>CREATE</code> in test and development scenarios, but if the table does not already exist and you try to drop it, you will see an error like <code>XXX.YYY</code> is an undefined name.</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">drop table COUNTRY;  ## If table already exists</span><br><span class="line">create table COUNTRY(</span><br><span class="line">	ID int PRIMARY KEY NOT NULL,</span><br><span class="line">	CCODE char(2) NOT NULL,</span><br><span class="line">	NAME varchar(60)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Use <code>SELECT</code> queries to retrieve data from the database</p>
+<p>Use <code>SELECT</code> queries to retrieve data from the database</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select COLUMN1, COLUMN2, ... from TABLE1 ;</span><br><span class="line">##  or</span><br><span class="line">select * from COUNTRY ;</span><br><span class="line">## or</span><br><span class="line">select * from COUNTRY where ID &lt; 5 ;</span><br><span class="line">## or</span><br><span class="line">select * from COUNTRY where CCODE = &#x27;CA&#x27;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Use <code>COUNT</code>, <code>DISTINCT</code>, <code>LIMIT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> to compose and run basic queries</p>
+<p>Use <code>COUNT</code>, <code>DISTINCT</code>, <code>LIMIT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> to compose and run basic queries</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">-- 0. Drop table INSTRUCTOR in case it already exists</span><br><span class="line">drop table INSTRUCTOR;</span><br><span class="line">-- 1. Create table INSTRUCTOR</span><br><span class="line">CREATE TABLE INSTRUCTOR</span><br><span class="line">  (ins_id INTEGER PRIMARY KEY NOT NULL, </span><br><span class="line">   lastname VARCHAR(15) NOT NULL, </span><br><span class="line">   firstname VARCHAR(15) NOT NULL, </span><br><span class="line">   city VARCHAR(15), </span><br><span class="line">   country CHAR(2)</span><br><span class="line">  );</span><br><span class="line">-- 2A. Insert single row for Rav Ahuja</span><br><span class="line">INSERT INTO INSTRUCTOR</span><br><span class="line">  (ins_id, lastname, firstname, city, country)</span><br><span class="line">  VALUES </span><br><span class="line">  (1, &#x27;Ahuja&#x27;, &#x27;Rav&#x27;, &#x27;Toronto&#x27;, &#x27;CA&#x27;);</span><br><span class="line">-- 2B. Insert the two rows for Raul and Hima</span><br><span class="line">INSERT INTO INSTRUCTOR</span><br><span class="line">  VALUES</span><br><span class="line">  (2, &#x27;Chong&#x27;, &#x27;Raul&#x27;, &#x27;Toronto&#x27;, &#x27;CA&#x27;),</span><br><span class="line">  (3, &#x27;Vasudevan&#x27;, &#x27;Hima&#x27;, &#x27;Chicago&#x27;, &#x27;US&#x27;);</span><br><span class="line">-- 3. Select all rows in the table</span><br><span class="line">SELECT * FROM INSTRUCTOR;</span><br><span class="line">-- 3b. Select firstname, lastname and country where city is Toronto</span><br><span class="line">SELECT firstname, lastname, country from INSTRUCTOR where city=&#x27;Toronto&#x27;;</span><br><span class="line">-- 4. Change the city for Rav to Markham</span><br><span class="line">UPDATE INSTRUCTOR SET city=&#x27;Markham&#x27; where ins_id=1;</span><br><span class="line">-- 5. Delete the row for Raul Chong</span><br><span class="line">DELETE FROM INSTRUCTOR where ins_id=2;</span><br><span class="line">-- 5b. Retrieve all rows from the table</span><br><span class="line">SELECT * FROM INSTRUCTOR ;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="String-Patterns-Ranges-Sorting-and-Grouping"><a href="#String-Patterns-Ranges-Sorting-and-Grouping" class="headerlink" title="String Patterns, Ranges, Sorting and Grouping"></a>String Patterns, Ranges, Sorting and Grouping</h3><ul>
-<li><p>Using String Patterns and Ranges</p>
+<h3 id="String-Patterns-Ranges-Sorting-and-Grouping"><a href="#String-Patterns-Ranges-Sorting-and-Grouping" class="headerlink" title="String Patterns, Ranges, Sorting and Grouping"></a>String Patterns, Ranges, Sorting and Grouping</h3><p>Using String Patterns and Ranges</p>
 <ul>
 <li>The <code>WHERE</code> clause always requires a predicate, which is a condition that evaluates to true, false or unknown.</li>
 <li>Use the <code>LIKE</code> predicate with string patterns for the search：<code>WHERE &lt;columnname&gt; LIKE &lt;string pattern&gt;</code></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select F_NAME , L_NAME</span><br><span class="line">from EMPLOYEES</span><br><span class="line">where ADDRESS LIKE &#x27;%Elgin,IL%&#x27; ;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Sorting Result Sets</p>
+<p>Sorting Result Sets</p>
 <ul>
 <li><p><code>ORDER BY</code>: Descending order，Specifying Column Sequence Number</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select F_NAME, L_NAME, DEP_ID </span><br><span class="line">from EMPLOYEES</span><br><span class="line">order by DEP_ID desc, L_NAME desc;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li><p>Grouping Result Sets</p>
+<p>Grouping Result Sets</p>
 <ul>
 <li><code>SELECT DISTINCT()</code> : Eliminating Duplicates</li>
 <li><code>GROUP BY</code></li>
 <li><code>HAVING</code>: Restricting the result set</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select DEP_ID, COUNT(*) AS &quot;NUM_EMPLOYEES&quot;, AVG(SALARY) AS &quot;AVG_SALARY&quot;</span><br><span class="line">from EMPLOYEES</span><br><span class="line">group by DEP_ID</span><br><span class="line">having count(*) &lt; 4</span><br><span class="line">order by AVG_SALARY;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Functions-Sub-Queries-Multiple-Tables"><a href="#Functions-Sub-Queries-Multiple-Tables" class="headerlink" title="Functions, Sub-Queries, Multiple Tables"></a>Functions, Sub-Queries, Multiple Tables</h3><ul>
-<li><p>Built-in Database Functions: Using database functions can significantly reduce the amount of data that needs to be retrieved from the database.</p>
-</li>
-<li><p>Aggregate or Column Functions</p>
+<h3 id="Functions-Sub-Queries-Multiple-Tables"><a href="#Functions-Sub-Queries-Multiple-Tables" class="headerlink" title="Functions, Sub-Queries, Multiple Tables"></a>Functions, Sub-Queries, Multiple Tables</h3><p>Built-in Database Functions: Using database functions can significantly reduce the amount of data that needs to be retrieved from the database.</p>
+<p>Aggregate or Column Functions</p>
 <ul>
 <li>INPUT: Collection of values (e.g. entire column), OUTPUT: Single value</li>
 <li><code>SUM()</code>, <code>MIN()</code>, <code>MAX()</code>, <code>AVG()</code></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select AVG( COST / QUANTITY ) from PETRESCUE where ANIMAL = &#x27;Dog&#x27;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>SCALAR</code> and <code>STRING</code> functions</p>
+<p><code>SCALAR</code> and <code>STRING</code> functions</p>
 <ul>
 <li>Perform operations on every input value</li>
 <li><code>ROUND()</code>, <code>LENGTH()</code>, <code>UCASE</code>, <code>LCASE</code></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select DISTINCT(UCASE(ANIMAL)) from PETRESCUE;</span><br><span class="line">select * from PETRESCUE where LCASE(ANIMAL) = &#x27;cat&#x27;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Date and Time Built-in Functions</p>
+<p>Date and Time Built-in Functions</p>
 <ul>
 <li><code>YEAR()</code>, <code>MONTH()</code>, <code>DAY()</code>, <code>DAYOFWEEK()</code>, <code>DAYOFYEAR()</code>, <code>WEEK()</code>, <code>HOUR()</code>, <code>MINUTE()</code>, <code>SECOND()</code></li>
 <li>Date or Time Arithmetic</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select SUM(QUANTITY) from PETRESCUE where DAY(RESCUEDATE)=&#x27;14&#x27;;</span><br><span class="line">select (RESCUEDATE + 3 DAYS) from PETRESCUE;</span><br><span class="line">select (CURRENT DATE - RESCUEDATE) from PETRESCUE;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Sub-Queries and Nested Selects</p>
+<p>Sub-Queries and Nested Selects</p>
 <ul>
 <li>Sub-Queries cannot evaluate Aggregate functions like <code>AVG()</code> in the <code>WHERE</code> clause,therefore,use a sub-Select expression</li>
 <li>Sub-queries in <code>FROM</code> clause substitute the <code>TABLE</code> name with a sub-query called Derived Tables or Table Expressions.</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from employees where salary &gt; AVG(salary)</span><br><span class="line">select EMP_ID, F_NAME, L_NAME, SALARY from employees where SALARY &gt; (select AVG(SALARY) from employees);</span><br><span class="line">select EMP_ID, SALARY, ( select AVG(SALARY) from employees ) AS AVG_SALARY from employees ;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Working with Multiple Tables</p>
+<p>Working with Multiple Tables</p>
 <ul>
 <li>Sub-queries</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from employees where DEP_ID IN ( select DEPT_ID_DEP from departments where LOC_ID = &#x27;L0002&#x27; );</span><br><span class="line">select DEPT_ID_DEP, DEP_NAME from departments where DEPT_ID_DEP IN ( select DEP_ID from employees where SALARY &gt; 70000 ) ;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Implicit <code>JOIN</code></li>
-</ul>
+<p>Implicit <code>JOIN</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from employees E, departments D where E.DEP_ID = D.DEPT_ID_DEP;</span><br><span class="line">select E.EMP_ID, D.DEP_NAME from employees E, departments D where E.DEP_ID = D.DEPT_ID_DEP</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>JOIN</code> operators（<code>INNER JOIN</code>, <code>OUTER JOIN</code>…）</li>
-</ul>
-</li>
-</ul>
-<h3 id="Accessing-databases-using-Python"><a href="#Accessing-databases-using-Python" class="headerlink" title="Accessing databases using Python"></a>Accessing databases using Python</h3><ul>
-<li><p>Python ecosystem: NumPy, pandas, matplotlib, SciPy</p>
-</li>
-<li><p>DB-API (Python Database API): Python’s standard API for accessing relational databases.</p>
+<p><code>JOIN</code> operators（<code>INNER JOIN</code>, <code>OUTER JOIN</code>…）</p>
+<h3 id="Accessing-databases-using-Python"><a href="#Accessing-databases-using-Python" class="headerlink" title="Accessing databases using Python"></a>Accessing databases using Python</h3><p>Python ecosystem: NumPy, pandas, matplotlib, SciPy</p>
+<p>DB-API (Python Database API): Python’s standard API for accessing relational databases.</p>
 <ul>
 <li>Connection Objects: Database connections, Manage transactions</li>
 <li>Cursor Objects: Database queries, Scroll through result set, Retrieve results</li>
@@ -659,51 +621,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>Cursor methods: <code>.callproc()</code>, <code>.execute()</code>, <code>.executemany()</code>, <code>.fetchone()</code>, <code>.fetchmany()</code>, <code>.fetchall()</code>, <code>.nextset()</code>, <code>.arraysize()</code>, <code>.close()</code></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dbmodule <span class="keyword">import</span> connect</span><br><span class="line"><span class="comment">#Create connection object</span></span><br><span class="line">Connection = connect(<span class="string">&#x27;databasename&#x27;</span>, <span class="string">&#x27;username&#x27;</span>, <span class="string">&#x27;pswd&#x27;</span>)</span><br><span class="line"><span class="comment">#Create a cursor object</span></span><br><span class="line">Cursor=connection.cursor()</span><br><span class="line"><span class="comment">#Run Queries</span></span><br><span class="line">Cursor.execute(<span class="string">&#x27;select * from mytable&#x27;</span>)</span><br><span class="line">Results = cursor.fetchall()</span><br><span class="line"><span class="comment">#Free resources</span></span><br><span class="line">Cursor.close()</span><br><span class="line">Connection.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Connect to Db2 database (ibm_db API)</p>
+<p>Connect to Db2 database (ibm_db API)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ibm_db</span><br><span class="line"><span class="comment">#Replace the placeholder values with your actual Db2 hostname, username, and password:</span></span><br><span class="line">dsn_hostname = <span class="string">&quot;YourDb2Hostname&quot;</span>   <span class="comment"># e.g.: &quot;dashdb-txn-sbox-yp-dal09-04.services.dal.bluemix.net&quot;</span></span><br><span class="line">dsn_uid = <span class="string">&quot;YourDb2Username&quot;</span>        <span class="comment"># e.g. &quot;abc12345&quot;</span></span><br><span class="line">dsn_pwd = <span class="string">&quot;YoueDb2Password&quot;</span>      <span class="comment"># e.g. &quot;7dBZ3wWt9XN6$o0J&quot;</span></span><br><span class="line">dsn_driver = <span class="string">&quot;&#123;IBM DB2 ODBC DRIVER&#125;&quot;</span></span><br><span class="line">dsn_database = <span class="string">&quot;BLUDB&quot;</span>            <span class="comment"># e.g. &quot;BLUDB&quot;</span></span><br><span class="line">dsn_port = <span class="string">&quot;50000&quot;</span>                <span class="comment"># e.g. &quot;50000&quot; </span></span><br><span class="line">dsn_protocol = <span class="string">&quot;TCPIP&quot;</span>            <span class="comment"># i.e. &quot;TCPIP&quot;</span></span><br><span class="line"><span class="comment">#Create the dsn connection string</span></span><br><span class="line">dsn = (</span><br><span class="line">    <span class="string">&quot;DRIVER=&#123;0&#125;;&quot;</span></span><br><span class="line">    <span class="string">&quot;DATABASE=&#123;1&#125;;&quot;</span></span><br><span class="line">    <span class="string">&quot;HOSTNAME=&#123;2&#125;;&quot;</span></span><br><span class="line">    <span class="string">&quot;PORT=&#123;3&#125;;&quot;</span></span><br><span class="line">    <span class="string">&quot;PROTOCOL=&#123;4&#125;;&quot;</span></span><br><span class="line">    <span class="string">&quot;UID=&#123;5&#125;;&quot;</span></span><br><span class="line">    <span class="string">&quot;PWD=&#123;6&#125;;&quot;</span>).<span class="built_in">format</span>(dsn_driver, dsn_database, dsn_hostname, dsn_port, dsn_protocol, dsn_uid, dsn_pwd)</span><br><span class="line"><span class="comment">#Create database connection</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    conn = ibm_db.connect(dsn, <span class="string">&quot;&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">&quot;Connected to database: &quot;</span>, dsn_database, <span class="string">&quot;as user: &quot;</span>, dsn_uid, <span class="string">&quot;on host: &quot;</span>, dsn_hostname)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">&quot;Unable to connect: &quot;</span>, ibm_db.conn_errormsg() )</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Close the connection</p>
+<p>Close the connection</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ibm_db.close(conn)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Creating tables, loading data and querying data</p>
+<p>Creating tables, loading data and querying data</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Lets first drop the table INSTRUCTOR in case it exists from a previous attempt</span></span><br><span class="line">dropQuery = <span class="string">&quot;drop table INSTRUCTOR&quot;</span></span><br><span class="line"><span class="comment">#Now execute the drop statment</span></span><br><span class="line">dropStmt = ibm_db.exec_immediate(conn, dropQuery)</span><br><span class="line"><span class="comment">#Construct the Create Table DDL statement - replace the ... with rest of the statement</span></span><br><span class="line">createQuery = <span class="string">&quot;create table INSTRUCTOR(id INTEGER PRIMARY KEY NOT NULL, fname ...)&quot;</span></span><br><span class="line"><span class="comment">#Now fill in the name of the method and execute the statement</span></span><br><span class="line">createStmt = ibm_db.replace_with_name_of_execution_method(conn, createQuery)</span><br><span class="line"><span class="comment">#Construct the query - replace ... with the insert statement</span></span><br><span class="line">insertQuery = <span class="string">&quot;...&quot;</span></span><br><span class="line"><span class="comment">#execute the insert statement</span></span><br><span class="line">insertStmt = ibm_db.exec_immediate(conn, insertQuery)</span><br><span class="line"><span class="comment">#replace ... with the insert statement that inerts the remaining two rows of data</span></span><br><span class="line">insertQuery2 = <span class="string">&quot;...&quot;</span></span><br><span class="line"><span class="comment">#execute the statement</span></span><br><span class="line">insertStmt2 = ibm_db.exec_immediate(conn, insertQuery2)</span><br><span class="line"><span class="comment">#Construct the query that retrieves all rows from the INSTRUCTOR table</span></span><br><span class="line">selectQuery = <span class="string">&quot;select * from INSTRUCTOR&quot;</span></span><br><span class="line"><span class="comment">#Execute the statement</span></span><br><span class="line">selectStmt = ibm_db.exec_immediate(conn, selectQuery)</span><br><span class="line"><span class="comment">#Fetch the Dictionary (for the first row only) - replace ... with your code</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">#Fetch the rest of the rows and print the ID and FNAME for those rows</span></span><br><span class="line"><span class="keyword">while</span> ibm_db.fetch_row(selectStmt) != <span class="literal">False</span>:</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot; ID:&quot;</span>,  ibm_db.result(selectStmt, <span class="number">0</span>), <span class="string">&quot; FNAME:&quot;</span>,  ibm_db.result(selectStmt, <span class="string">&quot;FNAME&quot;</span>))</span><br><span class="line">updateQuery = <span class="string">&quot;update INSTRUCTOR set CITY=&#x27;MOOSETOWN&#x27; where FNAME=&#x27;Rav&#x27;&quot;</span></span><br><span class="line">updateStmt = ibm_db.exec_immediate(conn, updateQuery))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Retrieve data into Pandas</p>
+<p>Retrieve data into Pandas</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"><span class="keyword">import</span> ibm_db_dbi</span><br><span class="line"><span class="comment">#connection for pandas</span></span><br><span class="line">pconn = ibm_db_dbi.Connection(conn)</span><br><span class="line"><span class="comment">#query statement to retrieve all rows in INSTRUCTOR table</span></span><br><span class="line">selectQuery = <span class="string">&quot;select * from INSTRUCTOR&quot;</span></span><br><span class="line"><span class="comment">#retrieve the query results into a pandas dataframe</span></span><br><span class="line">pdf = pandas.read_sql(selectQuery, pconn)</span><br><span class="line"><span class="comment">#print just the LNAME for first row in the pandas data frame</span></span><br><span class="line">pdf.LNAME[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#print the entire data frame</span></span><br><span class="line">pdf</span><br><span class="line">pdf.shape</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>SQL Magic</p>
+<p>SQL Magic</p>
 <ul>
 <li>Cell magics: start with a double <code>%%</code> sign and apply to the entire cell</li>
 <li>Line magics: start with a single <code>%</code>  sign and apply to a particular line in a cell</li>
 <li><code>%magicname arguments</code></li>
 <li><code>%sql select * from tablename</code></li>
 </ul>
-</li>
-</ul>
 <h3 id="Analyzing-data-with-Python"><a href="#Analyzing-data-with-Python" class="headerlink" title="Analyzing data with Python"></a>Analyzing data with Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Connect to the database</span></span><br><span class="line">%load_ext sql</span><br><span class="line">%sql ibm_db_sa://</span><br><span class="line"><span class="comment">#Store the dataset in a Table</span></span><br><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">chicago_socioeconomic_data = pandas.read_csv(<span class="string">&#x27;https://data.cityofchicago.org/resource/jcxq-k9xf.csv&#x27;</span>)</span><br><span class="line">%sql PERSIST chicago_socioeconomic_data</span><br><span class="line">%sql SELECT * FROM chicago_socioeconomic_data limit <span class="number">5</span>;</span><br><span class="line"><span class="comment">#How many rows are in the dataset</span></span><br><span class="line">%sql SELECT COUNT(*) FROM chicago_socioeconomic_data;</span><br><span class="line"><span class="comment">#How many community areas in Chicago have a hardship index greater than 50.0</span></span><br><span class="line">%sql SELECT COUNT(*) FROM chicago_socioeconomic_data WHERE hardship_index &gt; <span class="number">50.0</span>;</span><br><span class="line"><span class="comment">#What is the maximum value of hardship index in this dataset</span></span><br><span class="line">%sql SELECT MAX(hardship_index) FROM chicago_socioeconomic_data;</span><br><span class="line"><span class="comment">#Which community area which has the highest hardship index</span></span><br><span class="line">%sql select community_area_name <span class="keyword">from</span> chicago_socioeconomic_data where hardship_index = ( select <span class="built_in">max</span>(hardship_index) <span class="keyword">from</span> chicago_socioeconomic_data )</span><br><span class="line"><span class="comment">#Create a scatter plot using the variables per_capita_income_ and hardship_index</span></span><br><span class="line">!pip install seaborn</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">income_vs_hardship = %sql SELECT per_capita_income_, hardship_index FROM chicago_socioeconomic_data;</span><br><span class="line">plot = sns.jointplot(x=<span class="string">&#x27;per_capita_income_&#x27;</span>,y=<span class="string">&#x27;hardship_index&#x27;</span>, data=income_vs_hardship.DataFrame())</span><br></pre></td></tr></table></figure>
-<h3 id="Using-JOIN-operations-to-work-with-multiple-tables"><a href="#Using-JOIN-operations-to-work-with-multiple-tables" class="headerlink" title="Using JOIN operations to work with multiple tables"></a>Using JOIN operations to work with multiple tables</h3><ul>
-<li><p>Inner Join</p>
-</li>
-<li><p>Outer Join</p>
+<h3 id="Using-JOIN-operations-to-work-with-multiple-tables"><a href="#Using-JOIN-operations-to-work-with-multiple-tables" class="headerlink" title="Using JOIN operations to work with multiple tables"></a>Using JOIN operations to work with multiple tables</h3><p>Inner Join</p>
+<p>Outer Join</p>
 <ul>
 <li>Left Outer Join</li>
 <li>Right Outer Join</li>
 <li>Full Outer Join</li>
 </ul>
-</li>
-<li><p>HR Database example</p>
+<p>HR Database example</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--- Select the names, job start dates, and job titles of all employees who work for the department number 5 ---	</span></span><br><span class="line"><span class="keyword">select</span> E.F_NAME,E.L_NAME, JH.START_DATE, J.JOB_TITLE </span><br><span class="line">	<span class="keyword">from</span> EMPLOYEES <span class="keyword">as</span> E </span><br><span class="line">	<span class="keyword">INNER</span> <span class="keyword">JOIN</span> JOB_HISTORY <span class="keyword">as</span> JH <span class="keyword">on</span> E.EMP_ID<span class="operator">=</span>JH.EMPL_ID </span><br><span class="line">	<span class="keyword">INNER</span> <span class="keyword">JOIN</span> JOBS <span class="keyword">as</span> J <span class="keyword">on</span> E.JOB_ID<span class="operator">=</span>J.JOB_IDENT</span><br><span class="line">	<span class="keyword">where</span> E.DEP_ID <span class="operator">=</span><span class="string">&#x27;5&#x27;</span></span><br><span class="line">;</span><br><span class="line"><span class="comment">--- Perform a Left Outer Join on the EMPLOYEES and DEPARTMENT tables and select employee id, last name, department id and department name for all employees ---</span></span><br><span class="line"><span class="keyword">select</span> E.EMP_ID,E.L_NAME,E.DEP_ID,D.DEP_NAME</span><br><span class="line">	<span class="keyword">from</span> EMPLOYEES <span class="keyword">AS</span> E </span><br><span class="line">	<span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> DEPARTMENTS <span class="keyword">AS</span> D <span class="keyword">ON</span> E.DEP_ID<span class="operator">=</span>D.DEPT_ID_DEP</span><br><span class="line">;	</span><br><span class="line"><span class="comment">--- Re-write the query to have the result set include all the employees but department names for only the employees who were born before 1980. ---</span></span><br><span class="line"><span class="keyword">select</span> E.EMP_ID,E.L_NAME,E.DEP_ID,D.DEP_NAME</span><br><span class="line">	<span class="keyword">from</span> EMPLOYEES <span class="keyword">AS</span> E </span><br><span class="line">	<span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> DEPARTMENTS <span class="keyword">AS</span> D <span class="keyword">ON</span> E.DEP_ID<span class="operator">=</span>D.DEPT_ID_DEP </span><br><span class="line">	<span class="keyword">AND</span> <span class="keyword">YEAR</span>(E.B_DATE) <span class="operator">&lt;</span> <span class="number">1980</span></span><br><span class="line">;</span><br><span class="line"><span class="comment">--- Perform a Full Join on the EMPLOYEES and DEPARTMENT tables and select the First name, Last name and Department name of all employees. ---</span></span><br><span class="line"><span class="keyword">select</span> E.F_NAME,E.L_NAME,D.DEP_NAME</span><br><span class="line">	<span class="keyword">from</span> EMPLOYEES <span class="keyword">AS</span> E </span><br><span class="line">	<span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> DEPARTMENTS <span class="keyword">AS</span> D <span class="keyword">ON</span> E.DEP_ID<span class="operator">=</span>D.DEPT_ID_DEP</span><br><span class="line">;</span><br><span class="line"><span class="comment">--- Re-write Query to have the result set include all employee names but department id and department names only for male employees. ---</span></span><br><span class="line"><span class="keyword">select</span> E.F_NAME,E.L_NAME,D.DEPT_ID_DEP, D.DEP_NAME</span><br><span class="line">	<span class="keyword">from</span> EMPLOYEES <span class="keyword">AS</span> E </span><br><span class="line">	<span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> DEPARTMENTS <span class="keyword">AS</span> D <span class="keyword">ON</span> E.DEP_ID<span class="operator">=</span>D.DEPT_ID_DEP <span class="keyword">AND</span> E.SEX <span class="operator">=</span> <span class="string">&#x27;M&#x27;</span></span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Working-with-Real-World-Datasets"><a href="#Working-with-Real-World-Datasets" class="headerlink" title="Working with Real World Datasets"></a>Working with Real World Datasets</h3><ul>
-<li>Understand 3 Chicago datasets</li>
-<li>Load the 3 datasets into 3 tables in a Db2 database</li>
-<li>Execute SQL queries to answer assignment questions</li>
-</ul>
-<h3 id="Assignments"><a href="#Assignments" class="headerlink" title="Assignments"></a>Assignments</h3><ul>
-<li>Visit my <a target="_blank" rel="noopener" href="https://github.com/Bezhuang/LearnCS/tree/main/IBM%20Professional%20Certificates/Databases%20and%20SQL%20for%20Data%20Science%20with%20Python">Github Repository</a></li>
-</ul>
+<h3 id="Working-with-Real-World-Datasets"><a href="#Working-with-Real-World-Datasets" class="headerlink" title="Working with Real World Datasets"></a>Working with Real World Datasets</h3><p>Understand 3 Chicago datasets</p>
+<p>Load the 3 datasets into 3 tables in a Db2 database</p>
+<p>Execute SQL queries to answer assignment questions</p>
+<h3 id="Assignments"><a href="#Assignments" class="headerlink" title="Assignments"></a>Assignments</h3><p>Visit my <a target="_blank" rel="noopener" href="https://github.com/Bezhuang/IBM-Data-Science">Github Repository</a></p>
 
   
   

@@ -9,21 +9,23 @@ categories: Java
 
 <!--more-->
 
-{% pdf /pdf/Accenture-Coding-Virtual-Experience.pdf %}
+![](https://blog.zhuangzhihao.top/img/Accenture-Coding-Virtual-Experience.png)
 
 ### Task 1: Object Oriented Programming
 
 #### Background Information
 
-- Recently, a company has brought on Accenture to help with the development of its e-commerce website written in Java using the Spring Boot framework. The first task they need help with is searching for products
-- One of the UX designers at Accenture has already implemented the new search capability in the UI
-- My responsibility is to implement the search capability in our backend Java app
+Recently, a company has brought on Accenture to help with the development of its e-commerce website written in Java using the Spring Boot framework. The first task they need help with is searching for products.
+
+One of the UX designers at Accenture has already implemented the new search capability in the UI, My responsibility is to implement the search capability in our backend Java app.
 
 #### Requirements
 
-- Expose an HTTP GET request on the path `/api/products/search`
-- The request should take a single parameter named “`query`” which will be the text that was entered in the search bar
-- The request will return a Collection of `ProductItem` which are the matching products for the search
+Expose an HTTP GET request on the path `/api/products/search`
+
+The request should take a single parameter named “`query`” which will be the text that was entered in the search bar
+
+The request will return a Collection of `ProductItem` which are the matching products for the search
 
 #### Implement a new controller to handle searching
 
@@ -36,22 +38,23 @@ categories: Java
 
 #### Practical skills gained
 
-- Object Oriented Programming
-- Java
-- Spring
+Object Oriented Programming, Java, Spring
 
 ### Task 2: Code Refactoring
 
 #### Background Information
 
-- Now we’ve identified some code in the `ReportController` class that seems to be doing similar product searching
-- I need to refactor the `SearchController` logic into a new `SearchService` class that can be used in the `SearchController` as well as in the `ReportController`
+Now we’ve identified some code in the `ReportController` class that seems to be doing similar product searching
+
+I need to refactor the `SearchController` logic into a new `SearchService` class that can be used in the `SearchController` as well as in the `ReportController`
 
 #### Requirements
 
-- Logic moved from `SearchController` to `SearchService`
-- `SearchController` and `ReportController` both updated to use the `SearchService`
-- All unit tests pass
+Logic moved from `SearchController` to `SearchService`
+
+`SearchController` and `ReportController` both updated to use the `SearchService`
+
+All unit tests pass
 
 ####  Refactor controllers to a shared service
 
@@ -63,26 +66,28 @@ categories: Java
 
 #### Practical skills gained
 
-- Java
-- Spring
+Java, Spring
 
 
 ### Task 3: Continuous Integration
 
 #### Background Information
 
-- Continuous Integration is the practice of automating the integration of code changes from multiple contributors into a single software project
-- It's a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository where building and test runs can occur
-- Use the most popular Continuous Integration tool, Jenkins
-- Creating a `Jenkinsfile` that will build and test the application on all branches of the repository
+Continuous Integration is the practice of automating the integration of code changes from multiple contributors into a single software project
+
+It's a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository where building and test runs can occur. Use the most popular Continuous Integration tool, Jenkins.Creating a `Jenkinsfile` that will build and test the application on all branches of the repository
 
 #### Requirements
 
-- GitHub account created, Git CLI setup, mock-company-webapp repository forked and cloned
-- `Jenkinsfile` defined with stages setting it up to run on commit to any branch in the repository
-- Continuous Integration server runs `build/test` and succeeds
-- Change made to code that breaks test
-- Continuous Integration server runs `build/test` and fails
+GitHub account created, Git CLI setup, mock-company-webapp repository forked and cloned
+
+`Jenkinsfile` defined with stages setting it up to run on commit to any branch in the repository
+
+Continuous Integration server runs `build/test` and succeeds
+
+Change made to code that breaks test
+
+Continuous Integration server runs `build/test` and fails
 
 #### Simulating Jenkins using the `Jenkinsfile` Runner Action in a GitHub Workflow
 
@@ -99,37 +104,37 @@ categories: Java
 
 #### Practical skills gained
 
-- Continuous Integration
-- Jenkins
-- DevOps
+Continuous Integration, Jenkins, DevOps
 
 ### Task 4: Agile Planning
 
 #### Background Information
 
-- In an Agile planning session, developers are given a set of large software features that they then must break up into smaller units of work, called stories, that can be completed within a one to three week period, called a sprint
-- A story is an informal, general explanation of a software feature written from the perspective of the end user or customer and is made up of the following components:
-  - Who the feature is for
-  - What they need
-  - Why they need it
-  - What shows it’s done
+In an Agile planning session, developers are given a set of large software features that they then must break up into smaller units of work, called stories, that can be completed within a one to three week period, called a sprint
 
+A story is an informal, general explanation of a software feature written from the perspective of the end user or customer and is made up of the following components: Who the feature is for, What they need, Why they need it, What shows it’s done
 #### Requirements
 
-- Stories are written in the following format: As a `<who the feature is for>`, I need to be able to `<what they need>` so I can `<why they need it>`
-- The “`what shows it’s done`”, called acceptance criteria, must be provided with the story as well
-- Stories are then pointed or sized which means to assign some kind of value indicating the difficulty of implementing the story
-- Use a T-Shirt size strategy assigning a value of small/medium/large to each story
-- It's very important that stories are broken down as small as they can be so try and keep them either small or medium
-- This allows for better concurrency throughout the sprint and easier completion within a single sprint
+Stories are written in the following format: As a `<who the feature is for>`, I need to be able to `<what they need>` so I can `<why they need it>`
+
+The “`what shows it’s done`”, called acceptance criteria, must be provided with the story as well
+
+Stories are then pointed or sized which means to assign some kind of value indicating the difficulty of implementing the story
+
+Use a T-Shirt size strategy assigning a value of small/medium/large to each story
+
+It's very important that stories are broken down as small as they can be so try and keep them either small or medium
+
+This allows for better concurrency throughout the sprint and easier completion within a single sprint
 
 #### planning a sprint to implement the checkout feature of the site
 
-- Create a document that defines around 10 to 20 stories around the checkout feature
-- Pull in a subset of these stories based on our capacity to work on in the next sprint
-- Make sure the stories are broken up as small as possible, and the acceptance criteria is testable
+Create a document that defines around 10 to 20 stories around the checkout feature
+
+Pull in a subset of these stories based on our capacity to work on in the next sprint
+
+Make sure the stories are broken up as small as possible, and the acceptance criteria is testable
 
 #### Practical skills gained
 
-- Agile Methodology
-- Software Development Lifecycle (SDLC)
+Agile Methodology, Software Development Lifecycle (SDLC)

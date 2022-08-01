@@ -9,7 +9,7 @@ categories: 慕课MOOC
 
 <!--more-->
 
-{%  pdf  /pdf/Coursera-Marketing-Analytics.pdf %}
+![](https://blog.zhuangzhihao.top/img/Coursera-Marketing-Analytics.png)
 
 ### 1. Marketing Analytics
 

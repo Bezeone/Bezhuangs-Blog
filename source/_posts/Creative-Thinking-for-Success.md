@@ -9,7 +9,7 @@ categories: 慕课MOOC
 
 <!--more-->
 
-{% pdf /pdf/creative-thinking.pdf %}
+![](https://blog.zhuangzhihao.top/img/creative-thinking.png)
 
 ### 1. Principle of Creativity
 

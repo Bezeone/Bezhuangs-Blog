@@ -9,7 +9,7 @@ categories: 慕课MOOC
 
 <!--more-->
 
-{% pdf /pdf/Coursera-Managing-Machine-Learning-Projects.pdf %}
+![](https://blog.zhuangzhihao.top/img/Coursera-Managing-Machine-Learning-Projects.png)
 
 ### 1. What is Machine Learning ?
 

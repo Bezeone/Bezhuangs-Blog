@@ -9,37 +9,51 @@ categories: 慕课MOOC
 
 <!--more-->
 
-{% pdf /pdf/michigan-sport-related-concussion-training-certificate.pdf %}
+![](https://blog.zhuangzhihao.top/img/michigan-sport-related-concussion-training-certificate.png)
 
 ### Identifying a Concussion
 
-- A concussion, sometimes called a mild traumatic brain injury, can occur from a sudden fall, a blow from another person or a hit from the piece of equipment that causes the brain to move quickly within the skull. This motion changes the way the brain communicates which can lead to changes in how someone thinks or behaves.
+A concussion, sometimes called a mild traumatic brain injury, can occur from a sudden fall, a blow from another person or a hit from the piece of equipment that causes the brain to move quickly within the skull. This motion changes the way the brain communicates which can lead to changes in how someone thinks or behaves.
 
 #### On-field Signs
 
-- Dazed or stunned
-- Displaying the motions that are uncharacteristic of the athlete
-- Slowly responding to play calls
-- Holding their head
-- Difficulty recalling events
+Dazed or stunned
+
+Displaying the motions that are uncharacteristic of the athlete
+
+Slowly responding to play calls
+
+Holding their head
+
+Difficulty recalling events
 
 #### Concussion symptoms
 
-- Physical
-- Cognitive
-- Emotional
-- Sleep-related
+Physical
+
+Cognitive
+
+Emotional
+
+Sleep-related
 
 #### Emergency "Red Flags"
 
-- Severe or increasing headache
-- Intense neck pain particularly down the middle with weakness or burning into both arms or legs
-- Athlete reporting double vision
-- Seizing or convulsing body movements
-- Loss of consciousness for greater than one minute
-- A deteriorating mental state such as going in and out of consciousness
-- Repetitive vomiting
-- Increasingly combative
+Severe or increasing headache
+
+Intense neck pain particularly down the middle with weakness or burning into both arms or legs
+
+Athlete reporting double vision
+
+Seizing or convulsing body movements
+
+Loss of consciousness for greater than one minute
+
+A deteriorating mental state such as going in and out of consciousness
+
+Repetitive vomiting
+
+Increasingly combative
 
 #### Michigan's Youth Concussion Law
 
@@ -50,16 +64,17 @@ categories: 慕课MOOC
 
 ### Remove from Play
 
-- Do not attempt to diagnose a concussion yourself.
+Do not attempt to diagnose a concussion yourself.
 
 #### Goal of Removal
 
-- The goal is not to diagnose a concussion on the sideline, but to remove the athlete from risk, risk of another concussion, or risk of a more serious brain injury.
+The goal is not to diagnose a concussion on the sideline, but to remove the athlete from risk, risk of another concussion, or risk of a more serious brain injury.
 
 #### For Athletes
 
-- It's important to know that you don't need to be able to diagnose concussion.
-- What we want you to be able to do is recognize signs and symptoms of concussion, so that when a suspected concussion occurs, you'll be able to manage it, and feel calm, and safe during that situation.
+It's important to know that you don't need to be able to diagnose concussion.
+
+What we want you to be able to do is recognize signs and symptoms of concussion, so that when a suspected concussion occurs, you'll be able to manage it, and feel calm, and safe during that situation.
 
 #### Responsibilities of Coaches and Parents
 
@@ -80,10 +95,13 @@ categories: 慕课MOOC
 
 #### Reintroduction of Physical School and Work Activities
 
-- Getting restful sleep
-- Adequate hydration of 60-80 ounces
-- A healthy diet
-- Use of electronic devices during recovery from concussion can be undertaken as long as it doesn't markedly worsen symptoms
+Getting restful sleep
+
+Adequate hydration of 60-80 ounces
+
+A healthy diet
+
+Use of electronic devices during recovery from concussion can be undertaken as long as it doesn't markedly worsen symptoms
 
 ### Return to Learn and Activity
 
@@ -105,8 +123,12 @@ categories: 慕课MOOC
 
 ### Long-Term Effects
 
-- It's important to remember that most people have a normal recovery within 30 days of injury
-- When prolonged recovery occurs, it's very important to identify the factors that cause the symptoms and to initiate treatment immediately
-- Care at a healthcare facility with expertise in concussion can aid in this process
-- Management of prolonged recovery should be individualized, and best takes place by those with expertise in concussion care
-- Studies do not suggest that there's an increased risk of dementia, depression, or suicide later in life
+It's important to remember that most people have a normal recovery within 30 days of injury
+
+When prolonged recovery occurs, it's very important to identify the factors that cause the symptoms and to initiate treatment immediately
+
+Care at a healthcare facility with expertise in concussion can aid in this process
+
+Management of prolonged recovery should be individualized, and best takes place by those with expertise in concussion care
+
+Studies do not suggest that there's an increased risk of dementia, depression, or suicide later in life
