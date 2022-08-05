@@ -9,7 +9,7 @@ categories: 数据科学
 
 <!--more-->
 
-![](https://blog.zhuangzhihao.top/img/what-is-datascience.png)
+![](https://blog.zhuangzhihao.top/img/what-is-DS.png)
 
 ### Defining Data Science
 
