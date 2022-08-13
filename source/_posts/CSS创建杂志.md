@@ -93,8 +93,6 @@ img {
 }
 ```
 
-The default settings for CSS Grid will create additional rows as needed, unlike Flexbox；Give the `.social-icons` selector a `grid-template-columns` property set to `repeat(5, 1fr)` to arrange the icons in a single row：
-
 ```CSS
 .social-icons {
   display: grid;
@@ -166,5 +164,5 @@ The `place-items` property can be used to set the `align-items` and `justify-ite
 ### 三、页面展示
 
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="https://free-code-camp-demo.vercel.app/通过创建杂志学习CSS网格布局/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+    <iframe src="https://free-code-camp-demo.vercel.app/响应式网页设计/通过创建杂志学习CSS网格布局/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
 </div>

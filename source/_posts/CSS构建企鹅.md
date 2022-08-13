@@ -249,20 +249,9 @@ Use the `transform` property to skew the mountain by `0deg` in the x-axis and `4
 CSS animations make the penguin wave：
 
 ```CSS
-@keyframes wave {
-  10% {
-    transform: rotate(110deg) scaleX(-1);
-  }
-  20% {
-    transform: rotate(130deg) scaleX(-1);
-  }
-  30% {
-    transform: rotate(110deg) scaleX(-1);
-  }
-  40% {
-    transform: rotate(130deg) scaleX(-1);
-  }
-}
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="https://free-code-camp-demo.vercel.app/响应式网页设计/通过编写猫咪相册应用学习HTML/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
 ```
 
 Apply animations：
@@ -303,6 +292,5 @@ Target the `.penguin` element when it is active, and increase its size by `50%` 
 ### 二、页面展示
 
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="https://free-code-camp-demo.vercel.app/通过构建企鹅来学习CSS变换/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+    <iframe src="https://free-code-camp-demo.vercel.app/响应式网页设计/通过构建企鹅来学习CSS变换/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
 </div>
-

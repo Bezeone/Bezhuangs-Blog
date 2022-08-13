@@ -106,14 +106,9 @@ body {
 CSS class selector：
 
 ```CSS
-.menu {
-    width: 80%;
-    background-color: burlywood;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    max-width: 500px;
-}
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="https://free-code-camp-demo.vercel.app/响应式网页设计/创建一副毕加索绘画来学习中级CSS/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
 ```
 
 多层 CSS style selector：
@@ -191,5 +186,5 @@ footer {
 ### 三、页面展示
 
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="https://free-code-camp-demo.vercel.app/通过编写咖啡店菜单学习基础CSS/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+    <iframe src="https://free-code-camp-demo.vercel.app/响应式网页设计/通过编写咖啡店菜单学习基础CSS/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
 </div>

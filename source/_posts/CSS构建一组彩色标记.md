@@ -107,8 +107,6 @@ linear-gradient 属性：
 }
 ```
 
-box-shadow 属性：
-
 ```css
 .green {
     background: linear-gradient(#55680D, #71F53E, #116C31);
@@ -128,5 +126,5 @@ HSL color model：
 ### 三、页面展示
 
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="https://free-code-camp-demo.vercel.app/通过构建一组彩色标记学习CSS颜色/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+    <iframe src="https://free-code-camp-demo.vercel.app/响应式网页设计/通过构建一组彩色标记学习CSS颜色/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
 </div>
