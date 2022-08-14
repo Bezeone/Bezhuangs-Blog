@@ -68,7 +68,7 @@ html {
   color: var(--color-text);
   width: 100%;
   height: 100%;
-  font-family: "STKaiti", "Ubuntu", "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "STKaiti", "楷体", "楷体_GB2312", "Varela Round", "Ubuntu", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   font-size: 16px;
 }
 html >::-webkit-scrollbar {
@@ -949,7 +949,7 @@ th {
 }
 .l_header .nav-sub .title {
   font-weight: bold;
-  font-family: "STKaiti", "Ubuntu", "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "STKaiti", "楷体", "楷体_GB2312", "Varela Round", "Ubuntu", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   line-height: 1.2;
   max-height: 64px;
   white-space: normal;

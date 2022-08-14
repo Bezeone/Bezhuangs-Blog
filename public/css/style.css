@@ -3012,7 +3012,7 @@ article#tag .all-tags ul li span:before {
   color: rgba(68,68,68,0.9);
 }
 .article code {
-  font-family: "STKaiti", "Ubuntu", "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "STKaiti", "楷体", "楷体_GB2312", "Varela Round", "Ubuntu", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
 }
 .article code:not([class]) {
   word-break: break-all;
