@@ -1,6 +1,6 @@
 ---
 title: 创建 React 工程
-date: 2022-09-09
+date: 2022-09-18
 tags: [React]
 categories: Web前端
 references: 
@@ -28,9 +28,11 @@ yarn create react-app chat-ui
 # 或者使用 npx create-react-app chat-ui
 ```
 
+`src` 目录下存放所有 React 源代码。`src/index.js` 是程序的入口文件。
+
 ### 二、React 快速回顾
 
-[React](https://reactjs.org/) 是一个声明式，高效且灵活的用于构建用户界面的 JavaScript 库。使用 React 可以将一些简短、独立的代码片段组合成复杂的 UI 界面，这些代码片段被称作“组件”，而组件是通过状态来更新的。
+[React](https://reactjs.org/) 是一个声明式，高效且灵活的用于构建用户界面 UI 的 JavaScript 库。使用 React 可以将一些简短、独立的代码片段组合成复杂的 UI 界面，这些代码片段被称作“组件”，而组件是通过状态来更新的。
 
 #### 创建一个组件
 
@@ -49,9 +51,7 @@ export default Button;
 在 `App.js` 中导入、返回：
 
 ```js
-import logo from './logo.svg';
 import './App.css';
-import './Button.js';
 import Button from './Button.js';
 
 function App() {
@@ -62,6 +62,8 @@ export default App;
 ```
 
 #### JSX 与 HTML
+
+JSX 中所有属性变为驼峰命名法，例如 `onClick`、`className`、`style={{backgroundColor: "red"}}`。
 
 在 JSX 语法中，你可以在大括号内放置任何有效的 [JavaScript 表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)。例如，`2 + 2`，`user.firstName` 或 `formatName(user)` 都是有效的 JavaScript 表达式，例如调用 JavaScript 函数 `formatName(user)` 的结果，并将结果嵌入到 `<h1>` 元素中：
 
@@ -86,7 +88,7 @@ ReactDOM.render(
 );
 ```
 
-注意：JSX 中所有属性变为驼峰命名法，例如 `onClick`、`className`、`style={{backgroundColor: "red"}}`。
+注意：在 React 18 中，`render` 函数已被 `createRoot` 函数所取代。具体请参阅 [createRoot](https://zh-hans.reactjs.org/docs/react-dom-client.html#createroot) 以了解更多。
 
 #### 属性 Props
 
@@ -145,7 +147,34 @@ function Button({ onClick, label, children }) {
 
 ```js
 function App() {
-  const [color, setColor] = useState("#ff0000");
+  const handleButton1Click = () => {
+    alert("点击按钮1事件");
+  }
+  const handleButton2Click = () => {
+    alert("点击按钮2事件");
+  }
+  return (
+    <div>
+      <Button label="按钮" onClick={handleButton1Click}>
+        <span>&gt;</span>
+      </Button>
+      <Button label="点我" onClick={handleButton2Click} />
+    </div>
+  );
+}
+```
+
+#### 状态 State
+
+props 是静态的，在组件渲染后修改 props 的值并不会引起组件的更新。如果想点击后改变字体颜色，需要定义 State 属性：
+
+```js
+import { useState } from 'react';
+import './App.css';
+import Button from './Button.js';
+
+function App() {
+  const [color, setColor] = useState("#ff0000");    // 解构赋值
   const handleButton1Click = () => {
     setColor("#00ff00");
     alert("点击按钮1事件");
@@ -167,19 +196,19 @@ function App() {
 
 #### 自定义 Hooks
 
+Hooks 是 React 的一项新功能提案，可让您在不编写类的情况下使用 state 状态 和其他 React 功能。
+
 React 推荐 Hooks 均以 use 开头，新建一个 useColorSwitch.js 文件：
 
 ```js
 import { useState } from "react";
 
 function useColorSwtich(color1 = "#ff0000", color2 = "#00ff00") {
-  const [color, setColor] = useState(color1);
-
-  const handleButtonClick = () => {
-    setColor(color2);
-  };
-
-  return [color, handleButtonClick];
+    const [color, setColor] = useState(color1);
+    const handleButtonClick = () => {
+        setColor(color2);
+    };
+    return [color, handleButtonClick];
 }
 
 export default useColorSwtich;
@@ -188,15 +217,19 @@ export default useColorSwtich;
 修改 App.js 文件：
 
 ```js
+import './App.css';
+import Button from './Button.js';
+import useColorSwtich from './useColorSwitch';
+
 function App() {
   const [color, handleButton1Click] = useColorSwtich();
   const [color2, handleButton2Click] = useColorSwtich("#0000ff", "#ff00ff");
   return (
     <div>
-      <Button onClick={handleButton1Click} label="label">
+      <Button onClick={handleButton1Click} label="按钮">
         <span>&gt;</span>
       </Button>
-      <p style={{ color }}>这是一段文本</p>
+      <p style={{ color }}>这是第一段文本</p>
       <Button onClick={handleButton2Click} label="点我" />
       <p style={{ color: color2 }}>这是第二段文本</p>
     </div>
@@ -214,7 +247,7 @@ yarn add styled-components  # 安装
 
 #### 配置主题
 
-新建 theme.js 文件：
+`src` 下新建 `theme.js` 文件：
 
 ```js
 export default {
@@ -225,6 +258,9 @@ export default {
 在 index.js 文件中修改：
 
 ```js
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -235,9 +271,11 @@ root.render(
 );
 ```
 
-在 Button.js 文件中使用 tagged template literals：
+在 Button.js 文件中使用 `tagged template literals` 给模板字符串传递参数：
 
 ```js
+import styled from "styled-components";
+
 const StyledButton = styled.div`
     width: ${({ width }) => width || "80px"};
     background-color: ${({ theme }) => theme.primaryColor};
@@ -261,7 +299,7 @@ function App() {
   const [color2, handleButton2Click] = useColorSwtich("#0000ff", "#ff00ff");
   return (
     <div>
-      <Button width="120px" onClick={handleButton1Click} label="label">
+      <Button width="120px" onClick={handleButton1Click} label="按钮">
         <span>&gt;</span>
       </Button>
       <p style={{ color }}>这是一段文本</p>
@@ -274,12 +312,18 @@ function App() {
 
 ### 四、Storybook 简介与配置
 
-Storybook 是一个 UI 组件开发管理的工具，我们可以通过 story 独立创建组件，并且每个组件都有一个独立开发调试环境。Storybook 是运行在主应用程序之外，不依赖于项目，因此我们不必担心开发环境、依赖等问题导致不能开发组件。
+Storybook 是一个 UI 组件开发管理的工具，以文档形式组织和展示组件，我们可以通过 story 独立创建组件，并且每个组件都有一个独立开发调试环境。Storybook 是运行在主应用程序之外，不依赖于项目，因此我们不必担心开发环境、依赖等问题导致不能开发组件。
 
-在项目根目录下运行命令：
+在项目根目录下运行命令进行安装：
 
 ```bash
 npx -p @storybook/cli sb init  # Add Storybook
+```
+
+使用 `yarn` 命令启动：
+
+```
+yarn run storybook
 ```
 
 修改 `.storybook` 目录下的 Preview.js 文件：
@@ -290,8 +334,8 @@ import { addDecorator } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import theme from "../src/theme";
 
-addDecorator((storyFn) => {
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider >;
-});
+addDecorator((storyFn) => (
+  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider >
+));
 ```
 
