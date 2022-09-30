@@ -425,7 +425,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <p class="title">庄之皓 · Bezhuang</p>
     
     
-      <p class="subtitle">欢迎访问我的博客！Welcome to my blog!</p>
+      <p class="subtitle">Welcome to My Blog ！اهلا بك في مدونتي</p>
     
   </div>
   <div class='bottom'>
@@ -497,13 +497,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：26k字</p>
+      <p>字数：26.4k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：89分钟</p>
+      <p>时长：91分钟</p>
     </a>
   </div>
 
@@ -1079,6 +1079,9 @@ C_{\max }=W \log _{2}\left( 1+\dfrac{S}{N}\right)</script><ol>
 </ul>
 <h4 id="网络地址转换-NAT"><a href="#网络地址转换-NAT" class="headerlink" title="网络地址转换 NAT"></a>网络地址转换 NAT</h4><p>路由器对目的地址是私有 IP 地址的数据报一律不进行转发。</p>
 <p>网络地址转换 NAT（Network Address Translation）：在专用网连接到因特网的路由器上安装 NAT 软件，安装了 NAT 软件的路由器叫 NAT 路由器，它至少有一个有效的外部全球 IP 地址。</p>
+<h4 id="子网划分与子网掩码"><a href="#子网划分与子网掩码" class="headerlink" title="子网划分与子网掩码"></a>子网划分与子网掩码</h4><p>两级IP（&lt;网络号&gt;，&lt;主机号&gt;）的缺陷：IP 地址空间的利用率有时很低，两级 IP 地址不够灵活。</p>
+<p>子网划分：将其中二级 IP 的主机号取出并高 x 位变成子网络，形成网络号 + 子网号 + 主机号的地址格式划分为三级 IP 地址。某单位划分子网后，划分子网属于一个单位内部的事情，对外仍表现为一个网络，即本单位外的网络看不见本单位内子网的划分。</p>
+<p>子网掩码：在划分子网的同时，还能通过它知道主机在子网里面的具体 IP 的具体地址。</p>
 <h4 id="互联网络"><a href="#互联网络" class="headerlink" title="互联网络"></a>互联网络</h4><ul>
 <li>因为用户的需求是多种多样的，没有一种单一的网络能够适应所有用户的需求,所以不同的网络之间，将网络互联起来需要使用一些中间设备。  <ul>
 <li>物理层使用的中间设备是转发器</li>
@@ -1088,52 +1091,36 @@ C_{\max }=W \log _{2}\left( 1+\dfrac{S}{N}\right)</script><ol>
 </ul>
 </li>
 </ul>
-<h5 id="IP地址与硬件地址"><a href="#IP地址与硬件地址" class="headerlink" title="IP地址与硬件地址"></a>IP地址与硬件地址</h5><ul>
+<h4 id="无分类编址-CIDR"><a href="#无分类编址-CIDR" class="headerlink" title="无分类编址 CIDR"></a>无分类编址 CIDR</h4><p>CIDR 取消了传统的 A 类、B 类和 C 类地址以及划分子网的概念，并且用网络前缀代替网络号和子网号，后面的部分指明主机。因此，CIDR 使 IP 地址从三级地址（使用子网掩码），又回到了两级地址（无分类的两级编址）。</p>
+<p>CIDR 把网络前缀相同的连续的 IP 地址组成一个”CIDR 地址块”，只要知道 CIDR 地址块中的任何一个地址，就可以知道这地址块的起始地址（即最小地址）和最大地址，以及地址块中的地址数。</p>
+<p>CIDR 记法：IP 地址后加上“<code>/</code>”，然后写上网络前缀（可以任意长度）的位数。例如：<code>128.14.32.0/20</code>。</p>
+<p>地址掩码：是一连串的 1 和 0 组成，而 1 的个数救赎网络前缀长度。在斜线记法中。斜线后面的数字就是地址掩码中 1 的个数。</p>
+<p>构成超网：由于一个 CIDR 地址块中含有很多地址，所以在路由表中就利用 CIDR 地址块来查找目标网络，将多个子网聚合成一个较大的子网，这种地址的聚合常称为路由聚合，也称构成超网。方法：将网络前缀缩短（所有网络地址取交集）。</p>
+<p>最长前缀匹配：使用 CIDR 时，查找路由表可能得到几个匹配结果（跟网络掩码按位相与），应选择具有最长网络前缀的路由。前缀越长，地址块越小，路由越具体。</p>
+<h4 id="地址解析协议-ARP"><a href="#地址解析协议-ARP" class="headerlink" title="地址解析协议 ARP"></a>地址解析协议 ARP</h4><p>由于在实际网络的链路上传送数据帧时，最终必领使用 MAC 地址。ARP 协议的主要内容在于从网络层使用的 IP 地址，解析出在数据链路层使用的硬件地址（完成主机或路由器 IP 地址到 MAC 地址的映射。解決下一跳走哪的问题）。</p>
+<p>工作原理：一个主机都设有一个 ARP 高速缓存，里面有所在的局域网上的各主机和路由器的 IP 地址到硬件地址的映射表。如果所要找的主机和源主机不在同一个局域网上，那么就要通过 ARP 找到一个位于本局域网上的某个路由器的硬件地址，然后把分组发送给这个路由器，让这个路由器把分组转发给下一个网络。</p>
+<p>ARP 协议使用过程：检查 ARP 高速缓存，有对应表项则写入 MAC 帧，没有则用目的 MAC 地址为 FF-FF-FF-FF-FF-FF 的帧封装并广播 ARP 请求分组，同一局域网中所有主机都能收到该请求。目的主机收到请求后就会向源主机单播一个 ARP 响应分组，源主机收到后将此映射写入 ARP 缓存（10-20min更新一次）。ARP 协议自动进行。</p>
+<p>ARP 协议 4 种典型情况：</p>
+<ol>
+<li>﻿﻿主机 A 发给本网络上的主机 B：用 ARP 找到主机 B 的硬件地址；</li>
+<li>﻿﻿主机 A 发给另一网络上的主机 B：用 ARP 找到本网络上一个路由器（网关）的硬件地址；</li>
+<li>﻿﻿路由器发给本网络的主机 A：用 ARP 找到主机 A 的硬件地址；</li>
+<li>﻿﻿路由器发给另一网络的主机 B：用 ARP 找到本网络上的一个路由器的硬件地址。</li>
+</ol>
+<h4 id="DHCP-协议"><a href="#DHCP-协议" class="headerlink" title="DHCP 协议"></a>DHCP 协议</h4><h5 id="IP地址与硬件地址"><a href="#IP地址与硬件地址" class="headerlink" title="IP地址与硬件地址"></a>IP地址与硬件地址</h5><ul>
 <li><p>物理地址是数据链路层和物理层使用的地址，而IP地址是网络层和网络层以上各层使用的地址</p>
 </li>
 <li><p>在发送数据时，数据从高层下到底层，然后才到通信链路上使用IP的IP数据报一旦交给了数据链路层，就被封装成MAC帧（MAC地址）</p>
 </li>
 </ul>
-<h5 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h5><ul>
-<li><p>已知一个机器的IP地址，如何找出其所对应的硬件地址呢？这就是ARP的主要任务。</p>
 <ul>
-<li>ARP协议的主要内容在于从网络层使用的IP地址，解析出在数据链路层使用的硬件地址。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>工作原理：一个主机都设有一个ARP高速缓存，里面有所在的局域网上的各主机和路由器的 IP 地址到硬件地址的映射表。如果所要找的主机和源主机不在同一个局域网上，那么就要通过 ARP 找到一个位于本局域网上的某个路由器的硬件地址，然后把分组发送给这个路由器，让这个路由器把分组转发给下一个网络。</li>
-</ul>
-<ul>
+<li><ul>
 <li></li>
 </ul>
-<h4 id="划分子网和构建超网"><a href="#划分子网和构建超网" class="headerlink" title="划分子网和构建超网"></a>划分子网和构建超网</h4><ul>
-<li><p>两级IP到三级IP</p>
-<ul>
-<li><p>两级IP（&lt;网络号&gt;，&lt;主机号&gt;）的缺陷：</p>
-</li>
-<li><p>IP地址的空间利用率有时很低</p>
-<ul>
-<li>两级IP地址不够灵活</li>
-</ul>
-</li>
-<li><p>给每一个物理网络分配一个网络号会使路由表变得太大而使网络性能变坏。</p>
-</li>
-<li><p>三级IP地址：将其中二级IP的主机号取出并高x位变成子网络，形成网络号+子网号+主机号的地址格式</p>
-</li>
-<li><p>划分子网：划分子网属于一个单位内部的事情，它将二级IP地址变为三级IP地址</p>
 </li>
 </ul>
-</li>
-</ul>
-<h4 id="无分类编制CIDR"><a href="#无分类编制CIDR" class="headerlink" title="无分类编制CIDR"></a>无分类编制CIDR</h4><ul>
-<li>CIDR取消了传统的A类、B类和C类地址以及划分子网的概念，并且用网络前缀代替网络号和子网号，后面的部分指明主机。因此，CIDR使IP地址从三级地址(使用子网掩码)，又回到了两级地址（无分类的两级编址）。</li>
-<li><p>CIDR把网络前缀相同的连续的IP地址组成一个”CIDR地址块”只要知道CIDR地址块中的任何一个地址，就可以知道这地址块的起始地址(即最小地址)和最大地址，以及地址块中的地址数。具体看如下例子</p>
-</li>
-<li><p>地址掩码：是一连串的1和0组成，而1的个数救赎网络前缀长度。在斜线记法中。斜线后面的数字就是地址掩码中1的个数。</p>
-</li>
-<li><p>构成超网：由于一个CIDR地址块中含有很多地址，所以在路由表中就利用CIDR地址块来查找目标网络，这种地址的聚合常称为路由聚合，也称构成超网。</p>
-</li>
+<h4 id><a href="#" class="headerlink" title=" "></a> </h4><ul>
+<li></li>
 </ul>
 <h4 id="最长前缀匹配"><a href="#最长前缀匹配" class="headerlink" title="最长前缀匹配"></a>最长前缀匹配</h4><ul>
 <li><p>最长前缀匹配之前，使用CIDR时，每个项目由网络前缀和下一跳地址组成。但是在查找路由表时会得到不止一个匹配结果该怎么办呢？</p>
@@ -1531,7 +1518,7 @@ The Accenture Know-the-Code Virtual Experience Program covers the fundamentals o
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">一、计算机网络体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">计算机网络的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-text">计算机网络的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">计算机网络性能指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">计算机网络体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO-OSI-%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">ISO&#x2F;OSI 参考模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-IP-%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">TCP&#x2F;IP 参考模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">二、物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">物理层基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80"><span class="toc-text">数据通信基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99%E5%92%8C%E9%A6%99%E5%86%9C%E5%AE%9A%E7%90%86"><span class="toc-text">奈氏准则和香农定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6"><span class="toc-text">编码与调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-text">数据交换方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E4%BB%8B%E8%B4%A8%E5%92%8C%E7%89%A9%E7%90%86%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-text">传输介质和物理层设备</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">三、数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">数据链路层的功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%B8%A7%EF%BC%88%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%EF%BC%89%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="toc-text">组帧（封装成帧）和透明传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%EF%BC%88%E6%A3%80%E9%94%99%E7%BC%96%E7%A0%81%EF%BC%89"><span class="toc-text">差错控制（检错编码）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E6%9C%BA%E5%88%B6"><span class="toc-text">流量控制与可靠传输机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%88%92%E5%88%86%E4%BB%8B%E8%B4%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="toc-text">信道划分介质访问控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-text">局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-text">数据链路层设备</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-text">四、网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-text">网络层提供的服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP-%E6%95%B0%E6%8D%AE%E6%8A%A5"><span class="toc-text">IP 数据报</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv4-%E5%9C%B0%E5%9D%80"><span class="toc-text">IPv4 地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2-NAT"><span class="toc-text">网络地址转换 NAT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%9C"><span class="toc-text">互联网络</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%A1%AC%E4%BB%B6%E5%9C%B0%E5%9D%80"><span class="toc-text">IP地址与硬件地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90%E5%8D%8F%E8%AE%AEARP"><span class="toc-text">地址解析协议ARP</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91%E5%92%8C%E6%9E%84%E5%BB%BA%E8%B6%85%E7%BD%91"><span class="toc-text">划分子网和构建超网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%88%86%E7%B1%BB%E7%BC%96%E5%88%B6CIDR"><span class="toc-text">无分类编制CIDR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E9%95%BF%E5%89%8D%E7%BC%80%E5%8C%B9%E9%85%8D"><span class="toc-text">最长前缀匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E9%99%85%E6%8E%A7%E5%88%B6%E6%8A%A5%E6%96%87%E5%8D%8F%E8%AE%AEICMP"><span class="toc-text">网际控制报文协议ICMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9%E5%8D%8F%E8%AE%AE"><span class="toc-text">互联网的路由选择协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv6"><span class="toc-text">IPv6</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">运输层协议概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">TCP可靠传输的实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-text">应用层协议</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">一、计算机网络体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">计算机网络的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-text">计算机网络的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">计算机网络性能指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">计算机网络体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO-OSI-%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">ISO&#x2F;OSI 参考模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-IP-%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">TCP&#x2F;IP 参考模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">二、物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">物理层基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80"><span class="toc-text">数据通信基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99%E5%92%8C%E9%A6%99%E5%86%9C%E5%AE%9A%E7%90%86"><span class="toc-text">奈氏准则和香农定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6"><span class="toc-text">编码与调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-text">数据交换方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E4%BB%8B%E8%B4%A8%E5%92%8C%E7%89%A9%E7%90%86%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-text">传输介质和物理层设备</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">三、数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">数据链路层的功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%B8%A7%EF%BC%88%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%EF%BC%89%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="toc-text">组帧（封装成帧）和透明传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%EF%BC%88%E6%A3%80%E9%94%99%E7%BC%96%E7%A0%81%EF%BC%89"><span class="toc-text">差错控制（检错编码）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E6%9C%BA%E5%88%B6"><span class="toc-text">流量控制与可靠传输机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%88%92%E5%88%86%E4%BB%8B%E8%B4%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="toc-text">信道划分介质访问控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-text">局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-text">数据链路层设备</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-text">四、网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-text">网络层提供的服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP-%E6%95%B0%E6%8D%AE%E6%8A%A5"><span class="toc-text">IP 数据报</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv4-%E5%9C%B0%E5%9D%80"><span class="toc-text">IPv4 地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2-NAT"><span class="toc-text">网络地址转换 NAT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%8E%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-text">子网划分与子网掩码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%9C"><span class="toc-text">互联网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%88%86%E7%B1%BB%E7%BC%96%E5%9D%80-CIDR"><span class="toc-text">无分类编址 CIDR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90%E5%8D%8F%E8%AE%AE-ARP"><span class="toc-text">地址解析协议 ARP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DHCP-%E5%8D%8F%E8%AE%AE"><span class="toc-text">DHCP 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%A1%AC%E4%BB%B6%E5%9C%B0%E5%9D%80"><span class="toc-text">IP地址与硬件地址</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text"> </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E9%95%BF%E5%89%8D%E7%BC%80%E5%8C%B9%E9%85%8D"><span class="toc-text">最长前缀匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E9%99%85%E6%8E%A7%E5%88%B6%E6%8A%A5%E6%96%87%E5%8D%8F%E8%AE%AEICMP"><span class="toc-text">网际控制报文协议ICMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9%E5%8D%8F%E8%AE%AE"><span class="toc-text">互联网的路由选择协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv6"><span class="toc-text">IPv6</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">运输层协议概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">TCP可靠传输的实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-text">应用层协议</span></a></li></ol>
     </div>
   </section>
 

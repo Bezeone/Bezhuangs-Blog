@@ -1,6 +1,6 @@
 ---
-title: 创建 React 工程
-date: 2022-09-18
+title: 创建 React 即时通信 ChatUI 工程
+date: 2022-09-21
 tags: [React]
 categories: Web前端
 references: 
@@ -330,12 +330,24 @@ yarn run storybook
 
 ```js
 import React from "react";
-import { addDecorator } from "@storybook/react";
+import { addDecorator, addParameters } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import theme from "../src/theme";
 
-addDecorator((storyFn) => (
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider >
-));
+import "story.css";
+
+export const decorators = [
+  (Story) => (
+    <ThemeProvider theme={theme}>
+      <Story />
+    </ThemeProvider>
+  ),
+];
+
+export const parameters = {
+  options: {
+    showRoots: true,
+  },
+};
 ```
 
