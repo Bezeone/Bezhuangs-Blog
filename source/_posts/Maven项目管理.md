@@ -8,7 +8,7 @@ references:
     url: https://www.bilibili.com/video/BV1Qf4y1T7Hx
 ---
 
-> Maven 是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理，也可被用于构建和管理其他语言编写的各种项目，例如 C#，Ruby，Scala。
+> Maven 是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念，Maven 利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行自动化的构建和依赖管理，也可被用于构建和管理其他语言编写的各种项目，例如 C#，Ruby，Scala。
 
 <!--more-->
 
@@ -48,7 +48,7 @@ Maven 模型：
 
 Maven 仓库
 
-* 本地仓库：自己计算机上的一个目录。
+* 本地仓库：自己计算机上的一个目录。在 maven 安装包中 `conf/settings.xml` 中修改 `<localRepository>`。
 * 中央仓库：由 Maven 团队维护的全球唯一的仓库： https://repo1.maven.org/maven2/。
 * 远程仓库(私服)：一般由公司团队搭建的私有仓库。
 * 当项目中使用坐标引入对应依赖 jar 包后，首先会查找本地仓库中是否有对应的 jar 包，如果有，则在项目直接引用；如果没有，则去中央仓库中下载对应的jar包到本地仓库。

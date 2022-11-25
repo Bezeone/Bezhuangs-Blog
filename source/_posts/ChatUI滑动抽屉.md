@@ -74,7 +74,7 @@ const StyledSeperator = styled.div`
 export default StyledSeperator;
 ```
 
-最后编辑 seperator.stories.js` 文件：
+最后编辑 `seperator.stories.js` 文件：
 
 ```JS
 import React from "react";

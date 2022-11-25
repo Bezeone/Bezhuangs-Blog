@@ -29,7 +29,7 @@
 
   
     <meta name="description" content="
-Maven 是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理，也可被用于构建和管理其他语言编写的各种项目，例如 C#，Rub...">
+Maven 是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念，Maven 利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行自动化的构建和依赖管理，也可被用于构建和管理其他语言编写的各种项目，例如 C...">
   
 
   <!-- feed -->
@@ -520,7 +520,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   <blockquote>
-<p>Maven 是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理，也可被用于构建和管理其他语言编写的各种项目，例如 C#，Ruby，Scala。</p>
+<p>Maven 是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念，Maven 利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行自动化的构建和依赖管理，也可被用于构建和管理其他语言编写的各种项目，例如 C#，Ruby，Scala。</p>
 </blockquote>
 <span id="more"></span>
 <h3 id="一、Maven-概述"><a href="#一、Maven-概述" class="headerlink" title="一、Maven 概述"></a>一、Maven 概述</h3><p><img src="https://blog.zhuangzhihao.top/img/maven01.png" alt="maven01"></p>
@@ -540,7 +540,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.32<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Maven 仓库</p>
 <ul>
-<li>本地仓库：自己计算机上的一个目录。</li>
+<li>本地仓库：自己计算机上的一个目录。在 maven 安装包中 <code>conf/settings.xml</code> 中修改 <code>&lt;localRepository&gt;</code>。</li>
 <li>中央仓库：由 Maven 团队维护的全球唯一的仓库： <a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/。">https://repo1.maven.org/maven2/。</a></li>
 <li>远程仓库(私服)：一般由公司团队搭建的私有仓库。</li>
 <li>当项目中使用坐标引入对应依赖 jar 包后，首先会查找本地仓库中是否有对应的 jar 包，如果有，则在项目直接引用；如果没有，则去中央仓库中下载对应的jar包到本地仓库。</li>

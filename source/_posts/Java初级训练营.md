@@ -22,9 +22,9 @@ categories: Java
 7. 数据类型: `String`、`int`、`bool`、链表`List`、数组、哈希表、字典
 8. 控制语句: `if else`、`while`、`for`
 9. 文件操作：调用封装好的类库 `File`
-10. 网络编程：Socket TCP IP、SMTP邮件传输协议等
-11. 数据库连接：ADO.NET , JDBC等连接库NoSQL
-12. 网站框架：```PHP`、ASP、JSP、ASP.NET、Spring MVC、Node
+10. 网络编程：Socket TCP/IP、SMTP邮件传输协议等
+11. 数据库连接：ADO.NET , JDBC 等连接库 NoSQL
+12. 网站框架：PHP、ASP、JSP、ASP.NET、Spring MVC、Node
 
 #### Java语言特性
 
@@ -82,7 +82,7 @@ public class Test {
 5. Enterprise Java Bean（EJB）Java企业开发规范标准，框架重
 6. Pivotal 公司开发一套 Spring 框架：取代EJB框架，简化Java企业级开发
 
-#### JVM Java虚拟机
+#### JVM（Java虚拟机）
 
 1. Java虚拟机： 托管执行Java的中间代码 `.class`，Java Virtual Machine缩写
 2. 虚拟机：linux系统，Window系统虚拟计算机
