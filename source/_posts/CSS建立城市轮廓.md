@@ -1,7 +1,7 @@
 ---
 title: 通过建立城市轮廓学习 CSS 变量
 date: 2022-06-16
-tags: [CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

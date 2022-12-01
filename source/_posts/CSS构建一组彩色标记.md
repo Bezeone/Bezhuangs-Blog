@@ -1,7 +1,7 @@
 ---
 title: 通过构建一组彩色标记来学习 CSS 颜色
 date: 2022-05-19
-tags: [CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

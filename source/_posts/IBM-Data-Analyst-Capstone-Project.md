@@ -1,7 +1,7 @@
 ---
 title: IBM Data Analyst Capstone Project
 date: 2021-04-03
-tags: [SQL]
+tags: []
 categories: 数据科学
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 通过构建企鹅来学习 CSS 变换
 date: 2022-06-18
-tags: [CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

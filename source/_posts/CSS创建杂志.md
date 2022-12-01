@@ -1,7 +1,7 @@
 ---
 title: 通过创建杂志学习 CSS 网格布局
 date: 2022-06-17
-tags: [CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

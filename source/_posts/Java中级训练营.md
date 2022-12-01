@@ -1,7 +1,7 @@
 ---
 title: 2021 阿里云 Java 训练营第二期
 date: 2021-03-12
-tags: [Spring Boot, MySQL, MongoDB, Redis]
+tags: [Spring, MongoDB, Redis]
 categories: Java
 references:
   - title: Spring Boot 2.5.x开发实战

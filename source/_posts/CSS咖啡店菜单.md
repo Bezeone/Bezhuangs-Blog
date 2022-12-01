@@ -1,7 +1,7 @@
 ---
 title: 通过编写咖啡店菜单学习基础 CSS
 date: 2022-05-17
-tags: [CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

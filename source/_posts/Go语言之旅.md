@@ -1,7 +1,7 @@
 ---
 title: Go 语言基础知识总结
 date: 2022-02-13
-tags: []
+tags: [Go]
 categories: 其他开发
 ---
 

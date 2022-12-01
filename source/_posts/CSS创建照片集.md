@@ -1,7 +1,7 @@
 ---
 title: 通过创建照片集来学习 CSS 弹性盒子
 date: 2022-05-24
-tags: [CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

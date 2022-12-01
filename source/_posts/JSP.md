@@ -1,5 +1,5 @@
 ---
-title: JSP - Java Server Pages
+title: Java Server Pages 和 MVC 模式
 date: 2022-04-20
 tags: [JSP]
 categories: Java

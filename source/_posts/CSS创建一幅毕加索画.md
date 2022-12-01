@@ -1,7 +1,7 @@
 ---
 title: 创建一副毕加索绘画来学习中级 CSS
 date: 2022-06-11
-tags: [HTML, CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

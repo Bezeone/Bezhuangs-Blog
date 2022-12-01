@@ -1,7 +1,7 @@
 ---
 title: 通过编写猫咪相册应用学习 HTML
 date: 2022-05-15
-tags: [HTML]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

@@ -1,7 +1,7 @@
 ---
 title: 通过构建资产负债表了解有关 CSS 伪选择器的更多信息
 date: 2022-05-31
-tags: [HTML, CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

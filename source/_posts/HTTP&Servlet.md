@@ -1,7 +1,7 @@
 ---
 title: HTTP 协议和 Servlet
 date: 2022-04-05
-tags: [HTTP, Servlet]
+tags: [Servlet]
 categories: Java
 references: 
   - title: Java web从入门到企业实战

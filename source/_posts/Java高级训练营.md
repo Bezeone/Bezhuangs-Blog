@@ -1,7 +1,7 @@
 ---
 title: 2021 阿里云 Java 训练营第三期
 date: 2021-03-26
-tags: [Spring Cloud]
+tags: [Spring]
 categories: Java
 references:
   - title: Spring Cloud微服务架构设计与开发实战

@@ -1,7 +1,7 @@
 ---
 title: Java 数据库基础知识总结
 date: 2022-03-12
-tags: [MySQL, JDBC]
+tags: [MySQL]
 categories: Java
 references:
   - title: Java web 从入门到企业实战教程

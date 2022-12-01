@@ -1,7 +1,7 @@
 ---
 title: Tools for Data Science
 date: 2021-05-15
-tags: [R Language]
+tags: [R]
 categories: 数据科学
 ---
 

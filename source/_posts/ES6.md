@@ -1,5 +1,5 @@
 ---
-title: ECMAScript 6
+title: ECMAScript 6 标准
 date: 2022-06-22
 tags: [JavaScript]
 categories: Web前端

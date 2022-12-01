@@ -1,7 +1,7 @@
 ---
 title: 通过创作罗斯科绘画学习 CSS 盒子模型
 date: 2022-05-23
-tags: [CSS]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp

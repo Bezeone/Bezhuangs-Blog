@@ -1,7 +1,7 @@
 ---
 title: 通过编写注册表单学习 HTML 表单
 date: 2022-05-20
-tags: [HTML]
+tags: [HTML/CSS]
 categories: Web前端
 references: 
   - title: freeCodeCamp
