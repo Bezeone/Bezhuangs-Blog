@@ -1,7 +1,7 @@
 ---
 title: Data Analysis With Python
 date: 2021-03-27
-tags: []
+tags: [Scikit-learn]
 mathjax: true
 categories: 数据科学
 ---

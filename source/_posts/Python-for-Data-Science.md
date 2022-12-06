@@ -1,7 +1,7 @@
 ---
 title: Python for Data Science, AI & Development
 date: 2021-02-04
-tags: []
+tags: [Pandas, NumPy]
 categories: 数据科学
 ---
 
