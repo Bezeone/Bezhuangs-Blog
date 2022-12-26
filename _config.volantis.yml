@@ -702,13 +702,13 @@ custom_css:
             h1: left
             h2: left
             h3: left
-            h4: center
+            h4: left
             p: justify
     gap:
         h2: 40px # Spacing above H2 (only px unit)
-        h3: 20px # Spacing above H3 (only px unit)
-        h4: 10px # Spacing above H4 (only px unit)
-        p: 1.5em # Paragraph spacing between paragraphs
+        h3: 10px # Spacing above H3 (only px unit)
+        h4: 5px # Spacing above H4 (only px unit)
+        p: 1em # Paragraph spacing between paragraphs
         line_height: 1.5 # normal, 1.5, 1.75, 2 ...
     border_radius:
         card: 8px
@@ -716,7 +716,7 @@ custom_css:
         searchbar: 8px
         button: 4px
     fontsize:
-        root: 16px
+        root: 18px
         h1: 3.5rem # 不推荐用在文章中
         h2: 3rem
         h3: 2.5rem
@@ -750,7 +750,7 @@ custom_css:
 
 ############################### Analytics ############################### > start
 analytics:
-    busuanzi: #/libs/busuanzi/js/busuanzi.pure.mini.js #https://fastly.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+    busuanzi: https://fastly.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
     leancloud: # 请使用自己的 id & key 以防止数据丢失
         app_id: SK7sx66NNd5Bw3O3jvF2MVXq-MdYXbMMI
         app_key: j5I5paEqIfWfOlCg13vU2vNq
