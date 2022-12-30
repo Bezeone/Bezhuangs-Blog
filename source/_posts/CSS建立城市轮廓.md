@@ -8,7 +8,7 @@ references:
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design
 ---
 
-> freeCodeCamp 响应式网页设计的认证课程第十二章。CSS 变量负责帮助组织你的样式和重复使用它们。在通过建立城市轮廓学习 CSS 变量的课程中，建立一座城市的轮廓，学习如何配置 CSS 变量，以便可以随时重复使用它们。
+> freeCodeCamp 响应式网页设计的认证课程第十二章。CSS 变量负责帮助组织你的样式和重复使用它们。在通过建立城市轮廓学习 CSS 变量的课程中，建立一座城市的轮廓，学习如何配置 CSS 变量，以便可以随时重复使用它们。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

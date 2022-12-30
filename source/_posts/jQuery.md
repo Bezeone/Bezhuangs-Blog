@@ -8,7 +8,7 @@ references:
     url: https://chinese.freecodecamp.org/learn/front-end-development-libraries/
 ---
 
-> freeCodeCamp 前端开发库第二章。jQuery 曾是开发者们最常用的 JavaScript 库之一。在 jQuery 于 2006 年发布时，各种常用浏览器处理 JavaScript 的方式都略有不同。jQuery 简化了编写客户端 JavaScript 的过程，并确保代码在所有浏览器中以同样的方式运行。在 jQuery 课程中，学习如何使用 jQuery 选择、移除、克隆和修改页面上的不同元素。
+> freeCodeCamp 前端开发库第二章。jQuery 曾是开发者们最常用的 JavaScript 库之一。在 jQuery 于 2006 年发布时，各种常用浏览器处理 JavaScript 的方式都略有不同。jQuery 简化了编写客户端 JavaScript 的过程，并确保代码在所有浏览器中以同样的方式运行。在 jQuery 课程中，学习如何使用 jQuery 选择、移除、克隆和修改页面上的不同元素。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 
@@ -121,4 +121,3 @@ $("body").addClass("animated fadeOut");  //这是使整个 body 淡出的代码
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
     <iframe src="https://free-code-camp-demo.vercel.app/前端开发库/jQuery游乐场/index.html" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
 </div>
-

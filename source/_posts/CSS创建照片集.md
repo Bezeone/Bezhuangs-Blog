@@ -8,7 +8,7 @@ references:
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design
 ---
 
-> freeCodeCamp 响应式网页设计的认证课程第六章。通过弹性盒子你可以设计适应不同屏幕大小的网页。在通过创建照片集来学习 CSS 弹性盒子的课程中，使用弹性盒子创建一个响应式的照片集网页。
+> freeCodeCamp 响应式网页设计的认证课程第六章。通过弹性盒子你可以设计适应不同屏幕大小的网页。在通过创建照片集来学习 CSS 弹性盒子的课程中，使用弹性盒子创建一个响应式的照片集网页。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

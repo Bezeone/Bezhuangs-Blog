@@ -497,13 +497,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：471字</p>
+      <p>字数：489字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -518,7 +518,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   <blockquote>
-<p>偶然刷到一篇名为<a target="_blank" rel="noopener" href="https://www.cnblogs.com/techflow/p/13998832.html">《一半人写不出冒泡排序，你的同龄人都躺下了》</a>的文章，其中提到轮子哥毕业去参加面试的时候，第一轮笔试考察冒泡排序，结果现场的一半学生都没写出来。冒泡排序（Bubble Sort），是一种最基础的、最简单直观的交换排序，之所以叫做冒泡排序，是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样。</p>
+<p>偶然刷到一篇名为<a target="_blank" rel="noopener" href="https://www.cnblogs.com/techflow/p/13998832.html">《一半人写不出冒泡排序，你的同龄人都躺下了》</a>的文章，其中提到轮子哥毕业去参加面试的时候，第一轮笔试考察冒泡排序，结果现场的一半学生都没写出来。冒泡排序（Bubble Sort），是一种最基础的、最简单直观的交换排序，之所以叫做冒泡排序，是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样。以下为我总结的实现思想和代码，可供参考。</p>
 </blockquote>
 <span id="more"></span>
 <h3 id="一、冒泡排序的思想"><a href="#一、冒泡排序的思想" class="headerlink" title="一、冒泡排序的思想"></a>一、冒泡排序的思想</h3><p>从头开始两两比较，把较大的元素与较小的元素进行交换，每轮把当前最大的一个元素存入到数组当前的末尾。每一趟比较只能确定将一个数归位，如果有 n 个数进行排序，要进行 n-1 趟操作。算法时间复杂度复杂度 <code>O(n)</code> 。</p>

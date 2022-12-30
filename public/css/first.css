@@ -69,7 +69,7 @@ html {
   width: 100%;
   height: 100%;
   font-family: "STKaiti", "楷体", "楷体_GB2312", "Varela Round", "Ubuntu", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 html >::-webkit-scrollbar {
   height: 4px;
@@ -580,7 +580,7 @@ th {
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 .cover-wrapper .cover-body .subtitle {
-  font-size: 20px;
+  font-size: 22.5px;
 }
 .cover-wrapper .cover-body .logo {
   max-height: 120px;

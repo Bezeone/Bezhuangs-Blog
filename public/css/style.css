@@ -353,14 +353,14 @@
 .md .checkbox {
   display: flex;
   align-items: center;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 /* Checkbox */
 /* Radio */
 /* Colors */
 }
 .md .checkbox+.checkbox {
-  margin-top: -1.5em;
+  margin-top: -1em;
 }
 .md .checkbox input {
   transform: translate(0, -1px);
@@ -610,7 +610,7 @@ div.dropmenu .list-v .list-v {
 details {
   display: block;
   padding: 16px;
-  margin: 1.5em 0;
+  margin: 1em 0;
   border-radius: 4px;
   background: var(--color-card);
   font-size: 0.9375rem;
@@ -839,11 +839,11 @@ img.inline {
   transform: translateY(-4px);
 }
 .md .tag.link {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .md .link-card {
-  margin-right: 1.5em;
+  margin-right: 1em;
   background: var(--color-block);
   display: inline-flex;
   align-items: center;
@@ -948,7 +948,7 @@ div.videos {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-end;
-  margin: 1.5em -4px;
+  margin: 1em -4px;
 }
 div.videos .video,
 div.videos iframe {
@@ -990,8 +990,8 @@ div.videos[col='4'] iframe {
 }
 div.note {
   position: relative;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 16px;
   padding-left: calc(16px + 16px);
   border-radius: 4px;
@@ -1014,8 +1014,8 @@ div.note ul,
 div.note ol,
 div.note blockquote,
 div.note img {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 div.note .link-card {
   background: var(--color-card);
@@ -1379,32 +1379,32 @@ span.p.h1,
 p.p.h1 {
   font-size: 3.5rem;
   color: var(--color-h1);
-  padding-top: 3em;
+  padding-top: 2em;
 }
 span.p.h2,
 p.p.h2 {
   font-size: 3rem;
   color: var(--color-h2);
-  padding-top: 3em;
+  padding-top: 2em;
   border-bottom: 1px solid rgba(68,68,68,0.1);
 }
 span.p.h3,
 p.p.h3 {
   font-size: 2.5rem;
   color: var(--color-h3);
-  padding-top: 3em;
+  padding-top: 2em;
 }
 span.p.h4,
 p.p.h4 {
   font-size: 2rem;
   color: var(--color-h4);
-  padding-top: 3em;
+  padding-top: 2em;
 }
 span.p.h5,
 p.p.h5 {
   font-size: 1.25rem;
   color: var(--color-h5);
-  padding-top: 2.25em;
+  padding-top: 1.5em;
 }
 span.p.red,
 p.p.red {
@@ -1436,8 +1436,8 @@ p.p.gray {
 }
 .md .table {
   overflow: auto;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .md .table table {
   display: table;
@@ -1446,8 +1446,8 @@ p.p.gray {
 div.tabs {
   display: block;
   position: relative;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   border-radius: 4px;
   background: var(--color-card);
   border: 1px solid rgba(68,68,68,0.2);
@@ -1459,8 +1459,8 @@ div.tabs ul,
 div.tabs ol,
 div.tabs div.note,
 div.tabs details {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 div.tabs ul.nav-tabs {
   display: flex;
@@ -1612,10 +1612,10 @@ div.timenode .body:empty {
   display: none;
 }
 div.timenode .body >*:first-child {
-  margin-top: 0.375em;
+  margin-top: 0.25em;
 }
 div.timenode .body >*:last-child {
-  margin-bottom: 0.375em;
+  margin-bottom: 0.25em;
 }
 div.timenode .body .highlight {
   border: 1px solid #e4e4e4;
@@ -1743,7 +1743,7 @@ pre {
 .highlight {
   position: relative;
   width: 100%;
-  margin: 1.5em 0;
+  margin: 1em 0;
   display: block;
   background: var(--color-block);
   font-size: 1rem;
@@ -2108,11 +2108,11 @@ pre {
   display: none;
 }
 div.gallery {
-  margin: 1.5em 0;
+  margin: 1em 0;
   overflow: hidden;
 }
 div.gallery+.gallery {
-  margin-top: -1.5em;
+  margin-top: -1em;
 }
 div.gallery >.fancybox,
 div.gallery >p>.fancybox {
@@ -2210,8 +2210,8 @@ div.gallery.stretch>p {
   cursor: zoom-out;
 }
 div.fancybox {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2237,8 +2237,8 @@ div.fancybox .gallery {
 }
 div.fancybox .image-caption {
   font-size: 1rem;
-  padding-top: 0.75em;
-  padding-bottom: 1.5em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
   color: var(--color-meta);
 }
 div.fancybox .image-caption:empty {
@@ -2486,8 +2486,8 @@ article#comments #valine_container .vcards .vcontent {
   padding-top: 0;
 }
 article#comments #valine_container .vcards .vcontent blockquote {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   background: var(--color-block);
   border-left: 4px solid #44d7b6;
   border-radius: 4px;
@@ -2520,8 +2520,8 @@ article#comments #valine_container .vcards .vcontent a:hover {
 }
 article#comments #valine_container .vcards .vcontent p {
   color: var(--color-p);
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   line-height: inherit;
 }
 article#comments #valine_container .vcards .vcontent .vemoji {
@@ -2849,28 +2849,28 @@ article#tag .all-tags ul li span:before {
 .article h3 {
   text-align: left;
   color: var(--color-h3);
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .article h4 {
-  text-align: center;
+  text-align: left;
   color: var(--color-h4);
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .article h5 {
   font-weight: bold;
   color: var(--color-h5);
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 .article h6 {
   color: var(--color-h6);
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 .article center,
 .article center p {
   text-align: center;
 }
 .article .aplayer {
-  margin: 1.5em 0;
+  margin: 1em 0;
   display: inline-block;
   width: 400px;
   max-width: 100%;
@@ -2926,8 +2926,8 @@ article#tag .all-tags ul li span:before {
   padding-right: 4px;
 }
 .article p {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   text-align: justify;
   max-width: 100%;
   line-height: inherit;
@@ -2968,7 +2968,7 @@ article#tag .all-tags ul li span:before {
   text-align: justify;
   color: inherit;
   font-style: italic;
-  margin: 1.5em 0;
+  margin: 1em 0;
 }
 .article blockquote footer cite {
   color: var(--color-meta);
@@ -2989,8 +2989,8 @@ article#tag .all-tags ul li span:before {
   display: block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   overflow: auto;
   background: var(--color-codeblock);
   font-size: 1rem;
@@ -3031,7 +3031,7 @@ article#tag .all-tags ul li span:before {
 }
 .article .widget {
   background: transparent;
-  margin: 1.5em 0;
+  margin: 1em 0;
   box-shadow: none;
   border-radius: 4px;
   cursor: auto;
@@ -3145,8 +3145,8 @@ article#tag .all-tags ul li span:before {
   margin-top: 64px;
 }
 .md .footer >div {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .md .footer .header {
   line-height: 1.75;
@@ -3548,14 +3548,14 @@ footer.footer .copyright p {
 .l_main .widget .content table,
 .l_main .widget .content .tabs,
 .l_main .widget .content details {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .l_main .widget .content .post {
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .l_main .widget.grid .content .grid.fixed a {
   width: calc(100%/8 - 0 * 16px);
@@ -3829,14 +3829,14 @@ footer.footer .copyright p {
 }
 article#comments p[ct] {
   margin-top: 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   font-size: 2rem;
   color: var(--color-text);
   font-weight: 600;
 }
 article#comments p[cst] {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 0.875rem;
 }
 article#comments #load-btns,
@@ -3944,13 +3944,13 @@ img.lazyload:not(.placeholder).loaded {
 .md h4,
 .md h5,
 .md h6 {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 .md h3:before {
-  margin-top: -60px;
+  margin-top: -70px;
 }
 .md h4:before {
-  margin-top: -70px;
+  margin-top: -75px;
 }
 .md h5 {
   font-weight: bold;
@@ -3964,8 +3964,8 @@ img.lazyload:not(.placeholder).loaded {
   list-style: initial;
   padding-left: 8px;
   margin-left: 16px;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .md ul ul,
 .md ol ul,
@@ -4326,11 +4326,11 @@ img.lazyload:not(.placeholder).loaded {
   padding: 8px 0;
 }
 .widget >.content p {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .widget >.content p:first-child {
-  margin-top: 0.75em;
+  margin-top: 0.5em;
 }
 .widget >.content ul>li a {
   color: var(--color-meta);
@@ -4410,7 +4410,7 @@ img.lazyload:not(.placeholder).loaded {
   width: 128px;
   height: 128px;
   margin-top: 32px;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 .widget.blogger .content >.avatar.circle img {
   display: block;

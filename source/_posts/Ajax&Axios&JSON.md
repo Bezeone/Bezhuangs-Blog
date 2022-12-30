@@ -8,7 +8,7 @@ references:
     url: https://www.bilibili.com/video/BV1Qf4y1T7Hx
 ---
 
-> Java Web 核心第六章。`AJAX`（Asynchronous JavaScript And XML）是异步的 JavaScript 和 XML，`JavaScript` 表明该技术和前端相关，`XML` 是指以此进行数据交换。Axios 则是对原生的 AJAX 进行封装，简化书写。JSON（`JavaScript Object Notation`）是 JavaScript 对象表示法，和 js 对象 很像，只不过 js 对象中的属性名可以使用引号（可以是单引号，也可以是双引号），而 `json` 格式中的键要求必须使用双引号括起来。
+> Java Web 核心第六章。`AJAX`（Asynchronous JavaScript And XML）是异步的 JavaScript 和 XML，`JavaScript` 表明该技术和前端相关，`XML` 是指以此进行数据交换。Axios 则是对原生的 AJAX 进行封装，简化书写。JSON（`JavaScript Object Notation`）是 JavaScript 对象表示法，和 js 对象 很像，只不过 js 对象中的属性名可以使用引号（可以是单引号，也可以是双引号），而 `json` 格式中的键要求必须使用双引号括起来。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

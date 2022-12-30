@@ -8,7 +8,7 @@ references:
     url: https://www.jianshu.com/p/fff4a61dee7a
 ---
 
-> Jupyter Notebook 是基于浏览器网页的用于交互计算的应用程序，支持 Python、R、Julia 和 Scala 等多种语言，在数据科学相关领域有着非常大的用途。JupyterLab 是基于 web 的集成开发环境，包含了 Jupyter Notebook 所有功能的同时还支持操作终端、编辑 markdown 文本、打开交互模式、查看 csv 文件及图片等功能，最近在学习的 IBM 数据科学专项课程也都是基于 Jupyter Lab 的，在阿里云主机上部署 Jupyter 环境也能使研究和学习更加方便。
+> Jupyter Notebook 是基于浏览器网页的用于交互计算的应用程序，支持 Python、R、Julia 和 Scala 等多种语言，在数据科学相关领域有着非常大的用途。JupyterLab 是基于 web 的集成开发环境，包含了 Jupyter Notebook 所有功能的同时还支持操作终端、编辑 markdown 文本、打开交互模式、查看 csv 文件及图片等功能，最近在学习的 IBM 数据科学专项课程也都是基于 Jupyter Lab 的，在阿里云主机上部署 Jupyter 环境也能使研究和学习更加方便。以下为我总结的一些操作步骤和流程，可供参考。
 
 <!--more-->
 

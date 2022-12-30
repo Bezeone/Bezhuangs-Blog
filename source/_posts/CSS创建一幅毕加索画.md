@@ -8,7 +8,7 @@ references:
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design
 ---
 
-> freeCodeCamp 响应式网页设计的认证课程第十章。在创建一副毕加索绘画来学习中级 CSS 的课程中，通过代码创建一幅自己的毕加索绘画网页来掌握中级 CSS 技术。课程涉及 SVG 图标、CSS 定位和对已学 CSS 知识的回顾。
+> freeCodeCamp 响应式网页设计的认证课程第十章。在创建一副毕加索绘画来学习中级 CSS 的课程中，通过代码创建一幅自己的毕加索绘画网页来掌握中级 CSS 技术。课程涉及 SVG 图标、CSS 定位和对已学 CSS 知识的回顾。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

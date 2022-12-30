@@ -8,7 +8,7 @@ references:
     url: https://www.cnblogs.com/guoming0000/archive/2012/09/27/2706019.html
 ---
 
-> Open Source Computer Vision Library（OpenCV）是一个跨平台的计算机视觉库，可用于开发实时的图像处理、计算机视觉以及模式识别程序。OpenCV 用 C++ 语言编写，但本次实战项目使用的是 `python-opencv` 库实现的，主要是为了初步了解人脸识别的步骤和算法后面的原理。源代码保存在 [Github 仓库 ](https://github.com/Bezhuang/Learn-CS/tree/main/%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE/Python-OpenCV)中。
+> Open Source Computer Vision Library（OpenCV）是一个跨平台的计算机视觉库，可用于开发实时的图像处理、计算机视觉以及模式识别程序。OpenCV 用 C++ 语言编写，但本次实战项目使用的是 `python-opencv` 库实现的，主要是为了初步了解人脸识别的步骤和算法后面的原理。源代码保存在 [Github 仓库 ](https://github.com/Bezhuang/Learn-CS/tree/main/%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE/Python-OpenCV)中。以下为我在实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

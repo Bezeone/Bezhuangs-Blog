@@ -8,7 +8,7 @@ references:
     url: https://www.bilibili.com/video/BV1Qf4y1T7Hx
 ---
 
-> Java Web 核心第二章。在 Java Servlet 中，Request 对象是用来封装请求数据的对象，Response 对象是用来封装响应数据的对象。Web 服务器收到客户端的 HTTP 请求，会针对每一次请求分别创建一个用于代表请求的 Request 对象和代表响应的 Response 对象。
+> Java Web 核心第二章。在 Java Servlet 中，Request 对象是用来封装请求数据的对象，Response 对象是用来封装响应数据的对象。Web 服务器收到客户端的 HTTP 请求，会针对每一次请求分别创建一个用于代表请求的 Request 对象和代表响应的 Response 对象。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

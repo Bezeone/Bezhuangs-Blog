@@ -5,7 +5,7 @@ tags: []
 categories: 慕课MOOC
 ---
 
-> This course provided by GOOGLE CLOUD is intended to be an introduction to machine learning for business professionals. It teaches me how to translate business problems into machine learning use cases and vet them for feasibility and impact.
+> This course provided by GOOGLE CLOUD is intended to be an introduction to machine learning for business professionals. It teaches me how to translate business problems into machine learning use cases and vet them for feasibility and impact. The following are the notes I took during this course.
 
 <!--more-->
 

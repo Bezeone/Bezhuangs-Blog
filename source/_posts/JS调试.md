@@ -8,7 +8,7 @@ references:
     url: https://chinese.freecodecamp.org/learn/javascript-algorithms-and-data-structures/
 ---
 
-> freeCodeCamp JavaScript 算法和数据结构第四章。调试是检查代码、发现并修复问题的过程。代码中的问题通常有三种形式：1）语法错误导致程序停止运行， 2）代码无法执行或具有意外行为导致运行时错误，3）代码有语义（逻辑）错误，没有实现原来的意图。在 JavaScript 调试的课程中，学习如何使用 JavaScript 控制台来调试程序，防止出现常见问题。
+> freeCodeCamp JavaScript 算法和数据结构第四章。调试是检查代码、发现并修复问题的过程。代码中的问题通常有三种形式：1）语法错误导致程序停止运行， 2）代码无法执行或具有意外行为导致运行时错误，3）代码有语义（逻辑）错误，没有实现原来的意图。在 JavaScript 调试的课程中，学习如何使用 JavaScript 控制台来调试程序，防止出现常见问题。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

@@ -8,7 +8,7 @@ references:
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design
 ---
 
-> freeCodeCamp 响应式网页设计的认证课程第十三章。在网页设计时，CSS 网格布局使你能够控制网页的行、列。在通过创建杂志学习 CSS 网格布局的课程中，编写一篇杂志文章。你将学习如何使用 CSS Grid，其中包括了像网格行和网格列这样的概念。
+> freeCodeCamp 响应式网页设计的认证课程第十三章。在网页设计时，CSS 网格布局使你能够控制网页的行、列。在通过创建杂志学习 CSS 网格布局的课程中，编写一篇杂志文章。你将学习如何使用 CSS Grid，其中包括了像网格行和网格列这样的概念。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

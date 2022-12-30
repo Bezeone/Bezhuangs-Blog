@@ -8,7 +8,7 @@ references:
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design
 ---
 
-> freeCodeCamp 响应式网页设计的认证课程第四章。你可以使用 HTML 表单收集访问网页的用户的信息。在通过编写注册表单学习 HTML 表单的课程中，通过编写一个注册页学习 HTML 表单，学习如何控制人们在表单中可以输入的数据类型，以及使用一些新的 CSS 工具装饰你的页面。
+> freeCodeCamp 响应式网页设计的认证课程第四章。你可以使用 HTML 表单收集访问网页的用户的信息。在通过编写注册表单学习 HTML 表单的课程中，通过编写一个注册页学习 HTML 表单，学习如何控制人们在表单中可以输入的数据类型，以及使用一些新的 CSS 工具装饰你的页面。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 

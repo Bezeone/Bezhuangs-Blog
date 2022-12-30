@@ -8,7 +8,7 @@ references:
     url: https://mp.weixin.qq.com/s/sKQy3MxNiDjlu3HLwrXBJg
 ---
 
-> 现代程序离不开关系数据库，要使用关系数据库就必须掌握 SQL 语言。SQL 是用于访问和处理数据库的标准的计算机语言。常见的关系型数据库包括：MySQL、SQL Server、Access、Oracle、Sybase、DB2 等等，MySQL 是目前使用最多的 SQL 数据库，本文也是以 MySQL 的操作为例阐释 SQL 语法。
+> 现代程序离不开关系数据库，要使用关系数据库就必须掌握 SQL 语言。SQL 是用于访问和处理数据库的标准的计算机语言。常见的关系型数据库包括：MySQL、SQL Server、Access、Oracle、Sybase、DB2 等等，MySQL 是目前使用最多的 SQL 数据库，本文也是以 MySQL 的操作为例阐释 SQL 语法。以下为我在学习和实战练习过程中所做的笔记，可供参考。
 
 <!--more-->
 
