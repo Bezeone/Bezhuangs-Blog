@@ -269,7 +269,7 @@ sidebar:
             display: [desktop, mobile] # [desktop, mobile]
             height: # Automatic height if not set
             images:
-                - https://tva1.sinaimg.cn/large/9150e4e5gy1g6amdgiegcj20hh0cqjux.jpg
+                - /img/加个微信.jpg
                 - /img/微信二维码.jpg
         # ---------------------------------------
         # webinfo widget
