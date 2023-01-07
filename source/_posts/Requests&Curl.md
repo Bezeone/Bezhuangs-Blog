@@ -2,7 +2,7 @@
 title: Requests 和 cURL
 date: 2022-09-05
 tags: [HTTP]
-categories: 其他开发
+categories: 网络与信息安全
 references: 
   - title: 技术蛋老师
     url: https://space.bilibili.com/327247876

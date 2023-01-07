@@ -2,7 +2,7 @@
 title: Data Science Math Skills
 date: 2020-05-25
 tags: []
-categories: 慕课MOOC
+categories: 数学与金融
 mathjax: true
 ---
 
@@ -158,4 +158,4 @@ Binomial theorem used when there are two possible outcomes—a success or a non-
 
 Not limited to fair coins, where the probability of success is 0.5. Probability can be any value > 0 and < 1.
 
-Probability of s successes in n trials, when probability of 1 success is p: (n s) _ p^s _ (1 − p)^(n−s). where n is the number of independent trials (with replacement), s is the number of successes,and p is the probability of one success.
+Probability of s successes in n trials, when probability of 1 success is p: $(n s) - p^s - (1 − p)^(n−s)$. where n is the number of independent trials (with replacement), s is the number of successes,and p is the probability of one success.

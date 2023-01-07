@@ -1,5 +1,5 @@
 ---
-title: gets 函数与 puts 函数
+title: C 语言 gets 函数与 puts 函数
 date: 2022-05-03
 tags: []
 categories: C/C++

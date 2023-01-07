@@ -1,5 +1,5 @@
 ---
-title: 结构体与 typedef 的使用
+title: C 语言结构体与 typedef 的使用
 date: 2022-05-11
 tags: []
 categories: C/C++

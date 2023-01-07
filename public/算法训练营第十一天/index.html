@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,9 +22,14 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：数据科学 - Bezhuang&#39;s Blog</title>
+  <title>代码随想录算法训练营第十一天记录 - Bezhuang&#39;s Blog</title>
+  
+    <meta name="keywords" content="LeetCode">
   
 
+  
+    <meta name="description" content="
+在之前刷力扣的过程中，我每刷道题都是先看题解然后再去边写边看，很多内容根本没消化，在进度上欺骗自己，感觉之前刷的都忘了，能力没有什么提升，现在还是一道都不会做。所以这次报了卡哥的算法训练营，希望能够按计划地有效刷题。本次刷题，我用的是 Java 语言解题，有余力的话也可能会加上 C++ 的题解。以下是算法训练营...">
   
 
   <!-- feed -->
@@ -413,7 +416,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg' style='background-image:url(/img/c言语入门.png)'></div>
           
@@ -454,131 +457,276 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
     
-      
+      <h1 class="title">
+        代码随想录算法训练营第十一天记录
+      </h1>
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/Excel-Basics-%20for-Data-Analysis/">
-        Excel Basics for Data Analysis
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>Excel is an essential tool for working with data - whether for business, marketing, data analytics, or research. Throughout this course provided by IBM, I’ve gained valuable experience in cleansing and wrangling data using functions and then analyze data using techniques like filtering, sorting and creating pivot tables. The following are the notes I took during this course. </p>
-</blockquote>
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='dashed'>
-      <div>
+
+
+          
         
-        <time>2021-01-31</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>本文发布于：2023年1月7日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/">数据科学</a>
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.6k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：6分钟</p>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <blockquote>
+<p>在之前刷力扣的过程中，我每刷道题都是先看题解然后再去边写边看，很多内容根本没消化，在进度上欺骗自己，感觉之前刷的都忘了，能力没有什么提升，现在还是一道都不会做。所以这次报了卡哥的算法训练营，希望能够按计划地有效刷题。本次刷题，我用的是 Java 语言解题，有余力的话也可能会加上 C++ 的题解。以下是算法训练营第十一天的刷题记录和思考笔记。</p>
+</blockquote>
+<span id="more"></span>
+<h3 id="一、20-有效的括号"><a href="#一、20-有效的括号" class="headerlink" title="一、20 有效的括号"></a>一、20 有效的括号</h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给定一个只包括 <code>&#39;(&#39;</code>，<code>&#39;)&#39;</code>，<code>&#39;&#123;&#39;</code>，<code>&#39;&#125;&#39;</code>，<code>&#39;[&#39;</code>，<code>&#39;]&#39;</code> 的字符串 <code>s</code> ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<ol>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>每个右括号都有一个对应的相同类型的左括号。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;()&quot;</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>由于栈结构的特殊性，非常适合做对称匹配类的题目。括号匹配是使用栈解决的经典问题。在匹配左括号的时候，右括号先入栈，就只需要比较当前元素和栈顶相不相等就可以了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Deque&lt;Character&gt; deque = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        <span class="type">char</span> ch;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            ch = s.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">&#x27;(&#x27;</span>) &#123;</span><br><span class="line">                deque.push(<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">&#x27;&#123;&#x27;</span>) &#123;</span><br><span class="line">                deque.push(<span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">&#x27;[&#x27;</span>) &#123;</span><br><span class="line">                deque.push(<span class="string">&#x27;]&#x27;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (deque.isEmpty() || deque.peek() != ch) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;    <span class="comment">// 如果是右括号判断是否和栈顶元素匹配</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;    </span><br><span class="line">                deque.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> deque.isEmpty();    <span class="comment">// 最后判断栈中元素是否一一匹配</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、1047-删除字符串中的所有相邻重复项"><a href="#二、1047-删除字符串中的所有相邻重复项" class="headerlink" title="二、1047 删除字符串中的所有相邻重复项"></a>二、1047 删除字符串中的所有相邻重复项</h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>给出由小写字母组成的字符串 <code>S</code>，重复项删除操作会选择两个相邻且相同的字母，并删除它们。在 S 上反复执行重复项删除操作，直到无法继续删除。在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：&quot;abbaca&quot;</span><br><span class="line">输出：&quot;ca&quot;</span><br><span class="line">解释：</span><br><span class="line">例如，在 &quot;abbaca&quot; 中，我们可以删除 &quot;bb&quot; 由于两字母相邻且相同，这是此时唯一可以执行删除操作的重复项。之后我们得到字符串 &quot;aaca&quot;，其中又只有 &quot;aa&quot; 可以执行重复项删除操作，所以最后的字符串为 &quot;ca&quot;。</span><br></pre></td></tr></table></figure>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><p>用栈来存放遍历过的元素，当遍历当前的这个元素的时候，去栈里看一下我们是不是遍历过相同数值的相邻元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">removeDuplicates</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Deque&lt;Character&gt; deque = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (deque.peek() != <span class="literal">null</span> &amp;&amp; deque.peek() == s.charAt(i)) &#123;</span><br><span class="line">                deque.pop();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                deque.push(s.charAt(i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span> (!deque.isEmpty()) &#123;</span><br><span class="line">            str = deque.pop() + str;    <span class="comment">// 注意 pop 出的元素在前</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本题还可以拿字符串直接作为栈，用<code>StringBuilder</code> 来修改字符串，速度更快，也省去了栈还要转为字符串的操作。</p>
+<p>本题还可以双指针法，直接用 <code>fast</code> 指针覆盖 <code>slow</code> 指针的值，遇到前后相同值的就跳过，即 <code>slow</code> 指针后退一步，下次循环就可以直接被覆盖掉了。</p>
+<p>编程语言的一些功能实现也会使用栈结构，实现函数递归调用就需要栈。递归的实现就是：每一次递归调用都会把函数的局部变量、参数值和返回地址等压入调用栈中，然后递归返回的时候，从栈顶弹出上一次递归的各项参数，所以这就是递归为什么可以返回上一层位置的原因。</p>
+<p>但是在企业项目开发中，尽量不要使用递归。在项目比较大的时候，由于参数多，全局变量等等，使用递归很容易判断不充分 return 的条件，非常容易无限递归（或者递归层级过深），造成栈溢出错误。</p>
+<h3 id="三、150-逆波兰表达式求值"><a href="#三、150-逆波兰表达式求值" class="headerlink" title="三、150 逆波兰表达式求值"></a>三、150 逆波兰表达式求值</h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>给你一个字符串数组 <code>tokens</code> ，表示一个根据 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/逆波兰式/128437">逆波兰表示法</a> 表示的算术表达式。请你计算该表达式。返回一个表示表达式值的整数。</p>
+<ul>
+<li>有效的算符为 <code>&#39;+&#39;</code>、<code>&#39;-&#39;</code>、<code>&#39;*&#39;</code> 和 <code>&#39;/&#39;</code> 。</li>
+<li>每个操作数（运算对象）都可以是一个整数或者另一个表达式。</li>
+<li>两个整数之间的除法总是向零截断 。</li>
+<li>表达式中不含除零运算。</li>
+<li>输入是一个根据逆波兰表示法表示的算术表达式。</li>
+<li>答案及所有中间计算结果可以用 32 位 整数表示。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：tokens = [&quot;2&quot;,&quot;1&quot;,&quot;+&quot;,&quot;3&quot;,&quot;*&quot;]</span><br><span class="line">输出：9</span><br><span class="line">解释：该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9</span><br></pre></td></tr></table></figure>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><p>其实逆波兰表达式相当于是二叉树中的后序遍历。 可以把运算符作为中间节点，按照后序遍历的规则（左右中）画出一个二叉树。</p>
+<p><img src="https://blog.zhuangzhihao.top/img/卡哥训练营16.png" alt></p>
+<p>逆波兰表达式主要有以下两个优点：</p>
+<ul>
+<li>去掉括号后表达式无歧义，图示即便写成 <code>1 2 + 3 4 + *</code> 也可以依据次序计算出正确结果。</li>
+<li>适合用栈操作运算：遇到数字则入栈；遇到运算符则取出栈顶两个数字进行计算，并将结果压入栈中。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">evalRPN</span><span class="params">(String[] tokens)</span> &#123;</span><br><span class="line">        Deque&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String token : tokens) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isNumber(token)) &#123;</span><br><span class="line">                stack.push(Integer.parseInt(token));</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> stack.pop();    <span class="comment">// 先 num2 再 num1</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">                <span class="keyword">switch</span> (token) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;+&quot;</span>:</span><br><span class="line">                        stack.push(num1 + num2);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;-&quot;</span>:</span><br><span class="line">                        stack.push(num1 - num2);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;*&quot;</span>:</span><br><span class="line">                        stack.push(num1 * num2);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;/&quot;</span>:</span><br><span class="line">                        stack.push(num1 / num2);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">default</span>:</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isNumber</span><span class="params">(String token)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> !(<span class="string">&quot;+&quot;</span>.equals(token) || <span class="string">&quot;-&quot;</span>.equals(token) || <span class="string">&quot;*&quot;</span>.equals(token) || <span class="string">&quot;/&quot;</span>.equals(token));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/Excel-Basics-%20for-Data-Analysis/'>
-            阅读全文
-          </a>
+        <div class='references'>
+          <section class='header'>
+            
+              <i class="fas fa-quote-left fa-fw" aria-hidden="true"></i>
+            
+            <span>参考资料（References）：</span>
+          </section>
+          <section class='body'>
+            <ul>
+              
+                <li>
+                  <a href="https://programmercarl.com" rel="external nofollow noopener noreferrer" target="_blank">
+                  代码随想录
+                  </a>
+                </li>
+              
+            </ul>
+          </section>
         </div>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+
+              
+            
+              
+                <p>本文永久地址：<a href=http://blog.zhuangzhihao.top/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/>http://blog.zhuangzhihao.top/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/LeetCode/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>LeetCode</p></a></div>
+
+
+        
+      
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' href="/about" rel="nofollow">
+    <img no-lazy src="https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&cdv=1&dpr=2&pid=16.1">
+    <p>Bezhuang</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/Introduction-to-Data-Analytics/">
-        Introduction to Data Analytics
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>The Introduction to Data Analytics course provided by IBM is the first in a series of courses designed to prepare me for a career as a junior data analyst. The course introduces me to the core concepts, processes, and tools I need to gain entry into data analytics. The following are the notes I took during this course.</p>
-</blockquote>
-    
+          
+
+        
+      
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='dashed'>
-      <div>
-        
-        <time>2021-01-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/">数据科学</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/Introduction-to-Data-Analytics/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%8D%81%E5%A4%A9/'>
+          <p class='title'>代码随想录算法训练营第十天记录<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+在之前刷力扣的过程中，我每刷道题都是先看题解然后再去边写边看，很多内容根本没消化，在进度上欺骗自己，感觉之前刷的都忘了，能力没有什么提升，现在还是一道都不会做。所以这次报了卡哥的算法训练营，希...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -586,204 +734,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='/img/头像.gif'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Mein Blog</h2>
-        
-        
-          <p>Übung macht den Meister!</p>
 
-        
-        
-          <p><span id="jinrishici-sentence">Bezhuang's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:bezhuang@outlook.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Bezhuang/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://space.bilibili.com/30593492"
-              class="social fab fa-youtube flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C-C/" href="/categories/C-C/"
-            id="categoriesC-C"
-            ><div class='name'>C/C++</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            id="categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(21)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Web%E5%89%8D%E7%AB%AF/" href="/categories/Web%E5%89%8D%E7%AB%AF/"
-            id="categoriesWebE5898DE7ABAF"
-            ><div class='name'>Web前端</div><div class='badge'>(33)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96%E5%BC%80%E5%8F%91/" href="/categories/%E5%85%B6%E4%BB%96%E5%BC%80%E5%8F%91/"
-            id="categoriesE585B6E4BB96E5BC80E58F91"
-            ><div class='name'>其他开发</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF/" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF/"
-            id="categoriesE58CBAE59D97E993BEE68A80E69CAF"
-            ><div class='name'>区块链技术</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%85%95%E8%AF%BEMOOC/" href="/categories/%E6%85%95%E8%AF%BEMOOC/"
-            id="categoriesE68595E8AFBEMOOC"
-            ><div class='name'>慕课MOOC</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/"
-            id="categoriesE695B0E68DAEE7A791E5ADA6"
-            ><div class='name'>数据科学</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE69CBAE599A8E5ADA6E4B9A0"
-            ><div class='name'>机器学习</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE7AE97E6B395E4B88EE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>算法与数据结构</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/" href="/categories/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"
-            id="categoriesE8A782E782B9E4B88EE6849FE683B3"
-            ><div class='name'>观点与感想</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"
-            id="categoriesE8AEA1E7AE97E69CBAE7A791E5ADA6E4B88EE68A80E69CAF"
-            ><div class='name'>计算机科学与技术</div><div class='badge'>(7)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%8120-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7"><span class="toc-text">一、20 有效的括号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%811047-%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%9B%B8%E9%82%BB%E9%87%8D%E5%A4%8D%E9%A1%B9"><span class="toc-text">二、1047 删除字符串中的所有相邻重复项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE-1"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-1"><span class="toc-text">解题思路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81150-%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC"><span class="toc-text">三、150 逆波兰表达式求值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE-2"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="toc-text">解题思路</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Automation/" style="font-size: 14px; color: #999">Automation</a> <a href="/tags/BTC/" style="font-size: 14px; color: #999">BTC</a> <a href="/tags/Bootstrap/" style="font-size: 14px; color: #999">Bootstrap</a> <a href="/tags/ETH/" style="font-size: 14px; color: #999">ETH</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Gradle/" style="font-size: 14px; color: #999">Gradle</a> <a href="/tags/HTML-CSS/" style="font-size: 24px; color: #555">HTML/CSS</a> <a href="/tags/HTTP/" style="font-size: 15.43px; color: #8f8f8f">HTTP</a> <a href="/tags/JDBC/" style="font-size: 14px; color: #999">JDBC</a> <a href="/tags/JSP/" style="font-size: 15.43px; color: #8f8f8f">JSP</a> <a href="/tags/JavaScript/" style="font-size: 21.14px; color: #686868">JavaScript</a> <a href="/tags/Jenkins/" style="font-size: 14px; color: #999">Jenkins</a> <a href="/tags/Jupyter/" style="font-size: 14px; color: #999">Jupyter</a> <a href="/tags/LeetCode/" style="font-size: 22.57px; color: #5f5f5f">LeetCode</a> <a href="/tags/LintCode/" style="font-size: 14px; color: #999">LintCode</a> <a href="/tags/Linux/" style="font-size: 18.29px; color: #7c7c7c">Linux</a> <a href="/tags/Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/MyBatis/" style="font-size: 14px; color: #999">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 16.86px; color: #868686">MySQL</a> <a href="/tags/NumPy/" style="font-size: 16.86px; color: #868686">NumPy</a> <a href="/tags/OpenCV/" style="font-size: 14px; color: #999">OpenCV</a> <a href="/tags/Pandas/" style="font-size: 18.29px; color: #7c7c7c">Pandas</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/R-Programming/" style="font-size: 15.43px; color: #8f8f8f">R Programming</a> <a href="/tags/React/" style="font-size: 22.57px; color: #5f5f5f">React</a> <a href="/tags/Redis/" style="font-size: 14px; color: #999">Redis</a> <a href="/tags/SQL/" style="font-size: 15.43px; color: #8f8f8f">SQL</a> <a href="/tags/Scikit-learn/" style="font-size: 14px; color: #999">Scikit-learn</a> <a href="/tags/Servlet/" style="font-size: 16.86px; color: #868686">Servlet</a> <a href="/tags/Spring/" style="font-size: 19.71px; color: #727272">Spring</a> <a href="/tags/Vue/" style="font-size: 14px; color: #999">Vue</a> <a href="/tags/jQuery/" style="font-size: 14px; color: #999">jQuery</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='/img/%E5%8A%A0%E4%B8%AA%E5%BE%AE%E4%BF%A1.jpg'
-      />
-    
-      <img src='/img/%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg'
-      />
-    
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
 		  
@@ -792,8 +764,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="代码随想录算法训练营第十一天记录";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
