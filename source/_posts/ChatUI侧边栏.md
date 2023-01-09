@@ -1,5 +1,5 @@
 ---
-title: React 即时通信 ChatUI 侧边栏
+title: ChatUI-React 侧边栏
 date: 2022-10-05
 tags: [React]
 categories: Web前端

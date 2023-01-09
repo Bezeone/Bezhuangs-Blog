@@ -1,5 +1,5 @@
 ---
-title: React 即时通信 ChatUI 设置页面
+title: ChatUI-React 设置页面
 date: 2022-11-08
 tags: [React]
 categories: Web前端

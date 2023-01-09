@@ -1,5 +1,5 @@
 ---
-title: 创建 React 即时通信 ChatUI 工程
+title: 创建 ChatUI-React 工程
 date: 2022-09-21
 tags: [React]
 categories: Web前端

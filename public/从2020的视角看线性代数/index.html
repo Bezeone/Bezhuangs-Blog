@@ -522,41 +522,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>2020 年 MIT 数学教授 Gilbert Strang 录制了一个关于线性代数的学习和教学的一个新的、启发性的课程，从矩阵 A 的列空间和组合这些列的乘法 Ax 开始，包括了线性代数的概览、正交向量、特征值和特征向量、以及奇异值和奇异向量等方面的内容。以下为我在学习过程中所做的笔记，可供参考。</p>
 </blockquote>
 <span id="more"></span>
-<h3 id="矩阵的列空间"><a href="#矩阵的列空间" class="headerlink" title="矩阵的列空间"></a>矩阵的列空间</h3><h4 id="常用矩阵"><a href="#常用矩阵" class="headerlink" title="常用矩阵"></a>常用矩阵</h4><p>$A_{0}=\begin{bmatrix}<br>1 &amp; 3 &amp; 2 \<br>4 &amp; 12 &amp; 8 \<br>2 &amp; 6 &amp; 4<br>\end{bmatrix}$</p>
-<ul>
-<li>$A_{0}$ 所有的行向量在同一个方向并且所有的列向量在同一个方向</li>
-</ul>
-<p>$A_{1}=\begin{bmatrix}<br>1 &amp; 4 &amp; 2 \<br>4 &amp; 1 &amp; 3 \<br>5 &amp; 5 &amp; 5<br>\end{bmatrix}$</p>
-<ul>
-<li>$A_{1}$ 第一行加第二行等于第三行</li>
-</ul>
-<p>对称矩阵</p>
-<ul>
-<li><p>$S_{2}=\begin{bmatrix}<br>2 &amp; -1 \<br>-1 &amp; 2<br>\end{bmatrix}$</p>
-</li>
-<li><p>$S_{3}=\begin{bmatrix}<br>1 &amp; -1 &amp; 0 \<br>-1 &amp; 2 &amp; -1 \<br>0 &amp; -1 &amp; 1<br>\end{bmatrix}$</p>
-</li>
-<li><p>$S_{4}=\begin{bmatrix}<br>2 &amp; -1 &amp; 0 \<br>-1 &amp; 2 &amp; -1 \<br>0 &amp; -1 &amp; 2<br>\end{bmatrix}$</p>
-</li>
-</ul>
-<p>正交矩阵</p>
-<ul>
-<li>$Q_{5}=\begin{bmatrix}<br>\cos \theta  &amp; -\sin \theta  \<br>sin\theta  &amp; \cos \theta<br>\end{bmatrix}$</li>
-</ul>
-<p>$A_{6}=\begin{bmatrix}<br>3 &amp; 0 \<br>4 &amp; 5<br>\end{bmatrix}$</p>
-<h4 id="A-的列空间（列的所有线性组合）"><a href="#A-的列空间（列的所有线性组合）" class="headerlink" title="A 的列空间（列的所有线性组合）"></a>A 的列空间（列的所有线性组合）</h4><p>将矩阵乘以向量</p>
-<ul>
-<li><p>$Ax=\begin{bmatrix} 1 &amp; 4 &amp; 5 \ 3 &amp; 2 &amp; 5 \ 2 &amp; 1 &amp; 3 \end{bmatrix}\begin{bmatrix} x<em>{1} \ x</em>{2} \ x<em>{3} \end{bmatrix}=\begin{bmatrix} 1 \ 3 \ 2 \end{bmatrix}x</em>{1}+\begin{bmatrix} x \ 2 \ 1 \end{bmatrix}x<em>{2}+\begin{bmatrix} 5 \ 5 \ 3 \end{bmatrix}x</em>{3}$</p>
-</li>
-<li><p>$Ax$ 为一种特殊的列的线性组合</p>
-</li>
-<li><p>$A$ 的列空间 = $C(A)$ = 所有 $Ax$ 向量 = 各列的所有线性组合</p>
-</li>
-<li><p>$C(A)$ 是一个平面</p>
-</li>
-</ul>
-<h4 id="列空间的基"><a href="#列空间的基" class="headerlink" title="列空间的基"></a>列空间的基</h4><p>$A=CR=\begin{bmatrix}<br>1 &amp; 4 \<br>3 &amp; 2 \<br>2 &amp; 1<br>\end{bmatrix}\begin{bmatrix}<br>1 &amp; 0 &amp; 1 \<br>0 &amp; 1 &amp; 1<br>\end{bmatrix}$</p>
-<ul>
+<h3 id="一、矩阵的列空间"><a href="#一、矩阵的列空间" class="headerlink" title="一、矩阵的列空间"></a>一、矩阵的列空间</h3><h4 id="常用矩阵"><a href="#常用矩阵" class="headerlink" title="常用矩阵"></a>常用矩阵</h4><p>$A_{0}$ 所有的行向量在同一个方向并且所有的列向量在同一个方向：</p>
+<script type="math/tex; mode=display">
+A_{0}=\begin{bmatrix}
+1 & 3 & 2 \\
+4 & 12 & 8 \\
+2 & 6 & 4
+\end{bmatrix}</script><p>$A_{1}$ 第一行加第二行等于第三行：</p>
+<script type="math/tex; mode=display">
+A_{1}=\begin{bmatrix}
+1 & 4 & 2 \\
+4 & 1 & 3 \\
+5 & 5 & 5
+\end{bmatrix}</script><p>$S$ 为对称矩阵：</p>
+<script type="math/tex; mode=display">
+S_{2}=\begin{bmatrix}
+2 & -1 \\
+-1 & 2
+\end{bmatrix}</script><script type="math/tex; mode=display">
+S_{3}=\begin{bmatrix}
+1 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 1
+\end{bmatrix}</script><script type="math/tex; mode=display">
+S_{4}=\begin{bmatrix}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2
+\end{bmatrix}</script><p>$Q$ 为正交矩阵：</p>
+<script type="math/tex; mode=display">
+Q_{5}=\begin{bmatrix}
+  \cos \theta  & -\sin \theta  \\
+  sin\theta  & \cos \theta 
+  \end{bmatrix}</script><script type="math/tex; mode=display">
+A_{6}=\begin{bmatrix}
+3 & 0 \\
+4 & 5
+\end{bmatrix}</script><h4 id="A-的列空间（列的所有线性组合）"><a href="#A-的列空间（列的所有线性组合）" class="headerlink" title="A 的列空间（列的所有线性组合）"></a>A 的列空间（列的所有线性组合）</h4><p>$Ax$ 为一种特殊的列的线性组合，将矩阵乘以向量：</p>
+<script type="math/tex; mode=display">
+Ax=\begin{bmatrix} 1 & 4 & 5 \\ 3 & 2 & 5 \\ 2 & 1 & 3 \end{bmatrix}\begin{bmatrix} x_{1} \\ x_{2} \\ x_{3} \end{bmatrix}=\begin{bmatrix} 1 \\ 3 \\ 2 \end{bmatrix}x_{1}+\begin{bmatrix} x \\ 2 \\ 1 \end{bmatrix}x_{2}+\begin{bmatrix} 5 \\ 5 \\ 3 \end{bmatrix}x_{3}</script><p>$A$ 的列空间 = $C(A)$ = 所有 $Ax$ 向量 = 各列的所有线性组合，$C(A)$ 是一个平面。</p>
+<h4 id="列空间的基"><a href="#列空间的基" class="headerlink" title="列空间的基"></a>列空间的基</h4><p>C 中包含了第一列 $\begin{bmatrix} 1 &amp; 3 &amp; 2 \end{bmatrix}^{T}$，也包含第二列 $\begin{bmatrix} 4 &amp; 2 &amp; 1 \end{bmatrix}^{T}$。C 不包含第三列，该列与前两列线性相关：$\begin{bmatrix} 5 &amp; 5 &amp; 3 \end{bmatrix}^{T} = \begin{bmatrix} 1 &amp; 3 &amp; 2 \end{bmatrix}^{T} + \begin{bmatrix} 4 &amp; 2 &amp; 1 \end{bmatrix}^{T}$。</p>
+<script type="math/tex; mode=display">
+A=CR=\begin{bmatrix}
+1 & 4 \\
+3 & 2 \\
+2 & 1
+\end{bmatrix}\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 1
+\end{bmatrix}</script><ul>
 <li><p>行秩 = 列秩 = r = 2</p>
 </li>
 <li><p>C 是平面的两个独立列向量，而 R 则表示了 A 是如何通过 C 中的两个向量重组 A 的</p>
@@ -596,7 +610,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>“行秩 = 列秩”这一结论变得显然：C = 列的基，R = 行的基</p>
 <h4 id="A-CR-不好的性质"><a href="#A-CR-不好的性质" class="headerlink" title="A = CR 不好的性质"></a>A = CR 不好的性质</h4><p>C 和 R 可能是病态矩阵</p>
 <p>如果 A 是可逆的，则有 C = A 和 R = I ⇒ A = AI，原地打转</p>
-<h3 id="线性代数概览"><a href="#线性代数概览" class="headerlink" title="线性代数概览"></a>线性代数概览</h3><h4 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h4><p>若 $Ax = 0$ 则有 $\begin{bmatrix} 1 \ \vdots \ m \end{bmatrix}\left[ x\right]=\begin{bmatrix} 0 \ \vdots \ 0 \end{bmatrix}$，x 与 A 的各列均正交</p>
+<h3 id="二、线性代数概览"><a href="#二、线性代数概览" class="headerlink" title="二、线性代数概览"></a>二、线性代数概览</h3><h4 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h4><p>若 $Ax = 0$ 则有 $\begin{bmatrix} 1 \ \vdots \ m \end{bmatrix}\left[ x\right]=\begin{bmatrix} 0 \ \vdots \ 0 \end{bmatrix}$，x 与 A 的各列均正交</p>
 <ul>
 <li>每个处于 A 的零空间当中的 x 都与 A 的行空间正交 </li>
 <li>每个处于 $A^T$ 的零空间当中的 y 都与 A 的列空间正交</li>
@@ -620,10 +634,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <h4 id="用消元来解Ax-b（因式-A-LU）"><a href="#用消元来解Ax-b（因式-A-LU）" class="headerlink" title="用消元来解Ax = b（因式 A = LU）"></a>用消元来解Ax = b（因式 A = LU）</h4><p>下三角矩阵 L 乘以上三角矩阵 U</p>
 <p><img src="https://blog.zhuangzhihao.top/img/%E4%BB%8E2020%E7%9C%8B%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B003.png" style="zoom:67%;"></p>
-<h3 id="正交向量"><a href="#正交向量" class="headerlink" title="正交向量"></a>正交向量</h3><h4 id="正交向量-–-矩阵-–-子空间"><a href="#正交向量-–-矩阵-–-子空间" class="headerlink" title="正交向量 – 矩阵 – 子空间"></a>正交向量 – 矩阵 – 子空间</h4><p>$X^{T}y=0,y^{T}x=0,\left( x+y\right) ^{T}\left( x+y\right)=x^{T}<em>{x}+y^{T}</em>{y}$ （直角三角形）</p>
+<h3 id="三、正交向量"><a href="#三、正交向量" class="headerlink" title="三、正交向量"></a>三、正交向量</h3><h4 id="正交向量-–-矩阵-–-子空间"><a href="#正交向量-–-矩阵-–-子空间" class="headerlink" title="正交向量 – 矩阵 – 子空间"></a>正交向量 – 矩阵 – 子空间</h4><script type="math/tex; mode=display">
+X^{T}y=0,y^{T}x=0,\left( x+y\right) ^{T}\left( x+y\right)=x^{T}_{x}+y^{T}_{y}</script><p>（直角三角形）</p>
 <p><img src="https://blog.zhuangzhihao.top/img/%E4%BB%8E2020%E7%9C%8B%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B004.png" style="zoom:67%;"></p>
 <p>$Q=\dfrac{1}{3}\begin{bmatrix} -1 &amp; 2 \ 2 &amp; -1 \ 2 &amp; 2 \end{bmatrix}$ ，$Q^{T}Q=I,QQ^{T}\neq I$ ，$QQ^TQQ^T = QQ^T$</p>
-<h4 id="正交矩阵"><a href="#正交矩阵" class="headerlink" title="正交矩阵"></a>正交矩阵</h4><h3 id="特征值和特征向量"><a href="#特征值和特征向量" class="headerlink" title="特征值和特征向量"></a>特征值和特征向量</h3><h3 id="奇异值和奇异向量"><a href="#奇异值和奇异向量" class="headerlink" title="奇异值和奇异向量"></a>奇异值和奇异向量</h3>
+<h4 id="正交矩阵"><a href="#正交矩阵" class="headerlink" title="正交矩阵"></a>正交矩阵</h4><h3 id="四、特征值和特征向量"><a href="#四、特征值和特征向量" class="headerlink" title="四、特征值和特征向量"></a>四、特征值和特征向量</h3><p>特征值和特征向量</p>
+<h3 id="五、奇异值和奇异向量"><a href="#五、奇异值和奇异向量" class="headerlink" title="五、奇异值和奇异向量"></a>五、奇异值和奇异向量</h3><p>奇异值和奇异向量</p>
+
   
   
     
@@ -793,7 +810,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%97%E7%A9%BA%E9%97%B4"><span class="toc-text">矩阵的列空间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9F%A9%E9%98%B5"><span class="toc-text">常用矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-%E7%9A%84%E5%88%97%E7%A9%BA%E9%97%B4%EF%BC%88%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88%EF%BC%89"><span class="toc-text">A 的列空间（列的所有线性组合）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E7%A9%BA%E9%97%B4%E7%9A%84%E5%9F%BA"><span class="toc-text">列空间的基</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%A9%E4%B8%BA-1-%E7%9A%84%E7%9F%A9%E9%98%B5-A"><span class="toc-text">秩为 1 的矩阵 A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-CR-%E7%9A%84%E4%BC%98%E8%89%AF%E6%80%A7%E8%B4%A8"><span class="toc-text">A &#x3D; CR 的优良性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-CR-%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">A &#x3D; CR 不好的性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%A6%82%E8%A7%88"><span class="toc-text">线性代数概览</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-text">线性方程组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8F%E8%A7%82%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"><span class="toc-text">宏观视角下的线性代数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E4%B8%8E%E8%A1%8C%E7%9B%B8%E4%B9%98%EF%BC%88%E5%85%AD%E7%BB%84%E5%9B%A0%E5%BC%8F%EF%BC%89"><span class="toc-text">列与行相乘（六组因式）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%B6%88%E5%85%83%E6%9D%A5%E8%A7%A3Ax-b%EF%BC%88%E5%9B%A0%E5%BC%8F-A-LU%EF%BC%89"><span class="toc-text">用消元来解Ax &#x3D; b（因式 A &#x3D; LU）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F"><span class="toc-text">正交向量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F-%E2%80%93-%E7%9F%A9%E9%98%B5-%E2%80%93-%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="toc-text">正交向量 – 矩阵 – 子空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5"><span class="toc-text">正交矩阵</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-text">特征值和特征向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%87%E5%BC%82%E5%80%BC%E5%92%8C%E5%A5%87%E5%BC%82%E5%90%91%E9%87%8F"><span class="toc-text">奇异值和奇异向量</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%97%E7%A9%BA%E9%97%B4"><span class="toc-text">一、矩阵的列空间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9F%A9%E9%98%B5"><span class="toc-text">常用矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-%E7%9A%84%E5%88%97%E7%A9%BA%E9%97%B4%EF%BC%88%E5%88%97%E7%9A%84%E6%89%80%E6%9C%89%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88%EF%BC%89"><span class="toc-text">A 的列空间（列的所有线性组合）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E7%A9%BA%E9%97%B4%E7%9A%84%E5%9F%BA"><span class="toc-text">列空间的基</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%A9%E4%B8%BA-1-%E7%9A%84%E7%9F%A9%E9%98%B5-A"><span class="toc-text">秩为 1 的矩阵 A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-CR-%E7%9A%84%E4%BC%98%E8%89%AF%E6%80%A7%E8%B4%A8"><span class="toc-text">A &#x3D; CR 的优良性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-CR-%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">A &#x3D; CR 不好的性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%A6%82%E8%A7%88"><span class="toc-text">二、线性代数概览</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-text">线性方程组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8F%E8%A7%82%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"><span class="toc-text">宏观视角下的线性代数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E4%B8%8E%E8%A1%8C%E7%9B%B8%E4%B9%98%EF%BC%88%E5%85%AD%E7%BB%84%E5%9B%A0%E5%BC%8F%EF%BC%89"><span class="toc-text">列与行相乘（六组因式）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%B6%88%E5%85%83%E6%9D%A5%E8%A7%A3Ax-b%EF%BC%88%E5%9B%A0%E5%BC%8F-A-LU%EF%BC%89"><span class="toc-text">用消元来解Ax &#x3D; b（因式 A &#x3D; LU）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F"><span class="toc-text">三、正交向量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F-%E2%80%93-%E7%9F%A9%E9%98%B5-%E2%80%93-%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="toc-text">正交向量 – 矩阵 – 子空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5"><span class="toc-text">正交矩阵</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-text">四、特征值和特征向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%A5%87%E5%BC%82%E5%80%BC%E5%92%8C%E5%A5%87%E5%BC%82%E5%90%91%E9%87%8F"><span class="toc-text">五、奇异值和奇异向量</span></a></li></ol>
     </div>
   </section>
 

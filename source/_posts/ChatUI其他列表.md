@@ -1,5 +1,5 @@
 ---
-title: React 即时通信 ChatUI 其他列表组件
+title: ChatUI-React 其他列表组件
 date: 2022-11-25
 tags: [React]
 categories: Web前端

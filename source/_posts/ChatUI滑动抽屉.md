@@ -1,5 +1,5 @@
 ---
-title: React 即时通信 ChatUI 滑动抽屉
+title: ChatUI-React 滑动抽屉
 date: 2022-10-22
 tags: [React]
 categories: Web前端
