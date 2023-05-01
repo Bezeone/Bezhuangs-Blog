@@ -64,6 +64,9 @@ public class IndexController {
 <!--    <h2 th:text="${user.getUsername()}"></h2>    -->
     <h2 th:text="${user.username}"></h2>
     <p th:text="${user.age}"></p>
+  
+<!--    变量表达式不仅可以写成${...}，而且还可以写成*{...}。
+但是，有一个重要的区别：星号语法对选定对象而不是整个上下文评估表达式。也就是说，只要没有选定的对象，美元(${…})和星号(*{...})的语法就完全一样。    -->
     <div th:object="${user}">
         <h2 th:text="*{username}"></h2>
         <p th:text="*{age}"></p>
@@ -114,6 +117,7 @@ public String basic(Model model){
 -   `th:switch`：选择判断，需要配合 `th:case` 使用。
 -   `th:each`：循环迭代。
 -   `th:href`： 设置链接地址。
+-   `th:src`：设置资源。
 
 ### 三、Thymeleaf 中 CSS、JS 的使用
 
@@ -125,6 +129,12 @@ public String basic(Model model){
 </head>
 <body>
 <div class="nav"></div>
+```
+
+引入 JavaScript：
+
+```html
+ <script type="text/javascript" th:src="@{index.js}"></script>
 ```
 
 动态引入 JavaScript，传入 `user` 参数：

@@ -2,7 +2,7 @@
 title: Python for everybody
 date: 2020-05-14
 tags: []
-categories: Python
+categories: Python & Golang
 references: 
   - title: Python学习-PY4E作业
     url: https://blog.csdn.net/u012348774/article/details/78106407
