@@ -9,7 +9,7 @@ references:
 
 ---
 
-> 吴恩达说：AI 是最新的电力，大约在一百年前，我们社会的电气化改变了每个主要行业，从交通运输行业到制造业、医疗保健、通讯等方面，如今我们见到了 AI 明显的令人惊讶的能量，带来了同样巨大的转变。而在 AI 的各个分支中，发展的最为迅速的就是深度学习。去年初时，我尝试学习过[动手学深度学习](/动手学深度学习/)课程，但是没坚持下来。这次选择李宏毅 2023 年春季最新的机器学习课程，这门课专注于深度学习领域，和最新技术的应用。以下为我在学习作业零：Colab Tutorial and PyTorch Tutorial 时所做的笔记，可供参考。
+> 吴恩达说：AI 是最新的电力，大约在一百年前，我们社会的电气化改变了每个主要行业，从交通运输行业到制造业、医疗保健、通讯等方面，如今我们见到了 AI 明显的令人惊讶的能量，带来了同样巨大的转变。而在 AI 的各个分支中，发展的最为迅速的就是深度学习。去年初时，我尝试学习过[动手学深度学习](/动手学深度学习/)课程，但是没坚持下来。这次选择李宏毅 2023 年春季最新的机器学习课程，这门课专注于深度学习领域，和最新技术的应用。以下为我在学习第二讲：Colab Tutorial and PyTorch Tutorial 时所做的笔记，可供参考。
 
 <!--more-->
 
@@ -108,6 +108,11 @@ const stopping = stopper => clearInterval(stopper);
 
 ### 二、PyTorch Tutorial
 
+#### 视频讲解
+
+-   https://www.youtube.com/watch?v=6dEp6oRN2NE
+-   https://speech.ee.ntu.edu.tw/~hylee/ml/ml2023-course-data/Pytorch_Tutorial_1_rev_1.pdf
+
 #### 什么是 PyTorch？
 
 PyTorch 是 Python 中的机器学习框架。两个主要特点：N-dimensional Tensor computation (like NumPy) on GPUs & Automatic differentiation for training deep neural networks（自动计算微分）。
@@ -121,3 +126,239 @@ PyTorch 是 Python 中的机器学习框架。两个主要特点：N-dimensional
 Dataset：存储数据样本和期望值。
 
 Dataloader：批量分组数据，启用多处理。
+
+```python
+from torch.utils.data import Dataset, DataLoader
+
+# Read data & preprocess
+class MyDataset(Dataset):
+	def init (self, file): 
+		self.data = ...
+
+# Returns one sample at a time
+def __getitem__(self, index): 
+	return self.data[index]
+
+# Returns the size of the dataset
+def __len__(self):
+	return len(self.data)
+
+dataset = MyDataset(file)
+dataloader = DataLoader(dataset, batch_size=5, shuffle=False) # Training: True Testing: False
+```
+
+#### Tensors 
+
+高维矩阵（数组）：`dim in PyTorch == axis in NumPy`。
+
+Creating Tensors：
+
+```python
+# Directly from data (list or numpy.ndarray)
+x = torch.tensor([[1, -1], [-1, 1]])
+x = torch.from_numpy(np.array([[1, -1], [-1, 1]]))
+
+# Tensor of constant zeros & ones
+x = torch.zeros([2, 2])
+x = torch.ones([1, 2, 5])
+```
+
+Tensors – [Common Operations](https://pytorch.org/docs/stable/tensors.html)：
+
+```python
+# Common arithmetic functions are supported, such as
+z = x + y
+z = x - y
+y = x.sum()  # Summation
+y = x.mean() # Mean
+y = x.pow(2) # Power
+
+# Transpose: transpose two specified dimensions
+x = torch.zeros([2, 3])
+x.shape  # torch.Size([2, 3])
+x = x.transpose(0, 1)
+x.shape  # torch.Size([3, 2])
+
+# Squeeze: remove the specified dimension with length = 1
+x = torch.zeros([1, 2, 3])
+x.shape  # torch.Size([1, 2, 3])
+x = x.squeeze(0) # (dim = 0)
+x.shape  # torch.Size([2, 3])
+
+# Unsqueeze: expand a new dimension
+x = torch.zeros([2, 3])
+x.shape  # torch.Size([2, 3])
+x = x.unsqueeze(1)  # (dim = 1)
+x.shape  # torch.Size([2, 1, 3])
+
+# Cat: concatenate multiple tensors
+x = torch.zeros([2, 1, 3])
+y = torch.zeros([2, 3, 3])
+z = torch.zeros([2, 2, 3])
+w = torch.cat([x, y, z], dim=1)
+w.shape  # torch.Size([2, 6, 3])
+```
+
+Tensors – [Data Type](https://pytorch.org/docs/stable/tensors.html)：对模型和数据使用不同的数据类型会导致错误。
+
+Tensors - Devices：Tensors & modules 默认使用 CPU 计算。
+
+```python
+# Use .to() to move tensors to appropriate devices.
+x = x.to(‘cpu’)
+x = x.to(‘cuda’)
+
+# Check if your computer has NVIDIA GPU
+torch.cuda.is_available()
+```
+
+####  Gradient Calculation
+
+![](https://blog.zhuangzhihao.top/img/Pytorch01.png)
+
+#### Training & Testing Neural Networks
+
+torch.nn – Network Layers：
+
+```python
+# Linear Layer (Fully-connected Layer)
+layer = torch.nn.Linear(32, 64)
+layer.weight.shape  # torch.Size([64, 32])
+layer.bias.shape  # torch.Size([64])
+```
+
+#### Build your own neural network
+
+```python
+import torch.nn as nn
+class MyModel(nn.Module): 
+    # Initialize your model & define layers
+    def init(self):
+        super(MyModel, self).init () 
+            self.net = nn.Sequential(
+                nn.Linear(10, 32), 
+                nn.Sigmoid(), 
+                nn.Linear(32, 1)
+        )
+    
+    # Compute output of your NN
+    def forward(self, x): 
+    	return self.net(x)
+```
+
+####  Loss Functions
+
+```python
+# Mean Squared Error (for regression tasks)
+criterion = nn.MSELoss()
+# Cross Entropy (for classification tasks)
+criterion = nn.CrossEntropyLoss()
+loss = criterion(model_output, expected_value)
+```
+
+#### torch.optim
+
+基于梯度的优化算法，调整网络参数以减少错误。
+
+```python
+optimizer = torch.optim.SGD(model.parameters(), lr, momentum = 0)
+```
+
+对于每批数据：
+
+1.   调用 `optimizer.zero_grad()` 重置模型参数的梯度。
+2.   调用 `loss.backward()` 反向传播预测损失的梯度。
+3.   调用 `optimizer.step()` 调整模型参数。
+
+#### Neural Network Training Setup
+
+```python
+dataset = MyDataset(file)  # read data via MyDataset
+tr_set = DataLoader(dataset, 16, shuffle=True)  # put dataset into Dataloader
+model = MyModel().to(device)  # construct model and move to device (cpu/cuda) 
+criterion = nn.MSELoss()  # set loss function
+optimizer = torch.optim.SGD(model.parameters(), 0.1)  # set optimizer
+```
+
+#### Neural Network Training Loop
+
+```python
+for epoch in range(n_epochs):    # iterate n_epochs
+    model.train()  # set model to train mode 
+    for x, y in tr_set:  # iterate through the dataloader
+        optimizer.zero_grad()  # set gradient to zero
+        x, y = x.to(device), y.to(device)   # move data to device (cpu/cuda) 
+        pred = model(x)    # forward pass (compute output)
+        loss = criterion(pred, y)   # compute loss
+        loss.backward()   # compute gradient (backpropagation)
+        optimizer.step()  # update model with optimizer
+```
+
+#### Neural Network Validation Loop
+
+```python
+model.eval()  # set model to evaluation mode
+total_loss = 0
+for x, y in dv_set:  # iterate through the dataloader
+    x, y = x.to(device), y.to(device)  # move data to device (cpu/cuda)
+    with torch.no_grad():  # disable gradient calculation
+        pred = model(x)    # forward pass (compute output)
+        loss = criterion(pred, y)  # compute loss
+    total_loss += loss.cpu().item() * len(x)   # accumulate loss
+    avg_loss = total_loss / len(dv_set.dataset)  # compute averaged loss
+```
+
+#### Neural Network Testing Loop
+
+```python
+model.eval()  # set model to evaluation mode
+preds = []
+for x in tt_set:  # iterate through the dataloader 
+    x = x.to(device)  # move data to device (cpu/cuda) 
+    with torch.no_grad():  # disable gradient calculation 
+        pred = model(x)   # forward pass (compute output) 
+        preds.append(pred.cpu())  # collect prediction
+```
+
+注意：
+
+-   模型 `model.eval()`：更改某些模型层的行为，例如 dropout 和 batch 正常化。
+-   使用 `torch.no_grad()`：防止将计算添加到梯度计算图中。通常用于防止对验证/测试数据进行意外训练。
+
+#### Save/Load Trained Models
+
+```python
+# Save
+torch.save(model.state_dict(), path)
+
+# Load
+ckpt = torch.load(path) 
+model.load_state_dict(ckpt)
+```
+
+#### More About PyTorch
+
+-   torchaudio：speech/audio processing 
+-   torchtext ：natural language processing 
+-   torchvision ：computer vision 
+-   skorch ：scikit-learn + pyTorch
+
+-   Useful github repositories using PyTorch：
+
+    -   Huggingface Transformers (transformer models: BERT, GPT, ...) 
+
+    -   Fairseq (sequence modeling for NLP & speech) 
+
+    -   ESPnet (speech recognition, translation, synthesis, ...) 
+
+    -   Most implementations of recent deep learning papers
+
+### 三、PyTorch 文档和常见错误
+
+#### PyTorch Documentation
+
+https://pytorch.org/docs/stable/ 
+
+-   `torch.nn` -> Neural Network 
+-   `torch.optim` -> Optimization Algorithms 
+-   `torch.utils.data` -> Dataset, Dataloader
