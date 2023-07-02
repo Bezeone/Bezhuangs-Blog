@@ -1,7 +1,7 @@
 ---
 title: Thymeleaf 快速入门
 date: 2023-03-01
-tags: [Thymeleaf]
+tags: []
 categories: Java
 references:
   - title: 模板引擎Thymeleaf快速入门

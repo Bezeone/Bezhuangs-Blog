@@ -1,8 +1,8 @@
 ---
 title: 通过构建企鹅来学习 CSS 变换
 date: 2022-06-18
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

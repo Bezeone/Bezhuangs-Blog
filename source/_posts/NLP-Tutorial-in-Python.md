@@ -1,8 +1,8 @@
 ---
 title: 初学使用 Python 库进行自然语言处理
 date: 2023-02-10
-tags: [NLP]
-categories: Python & Golang
+tags: []
+categories: Artificial Intelligence
 references:
   - title: Complete Natural Language Processing (NLP) Tutorial in Python! (with examples)
     url: https://www.youtube.com/watch?v=M7SWr5xObkA

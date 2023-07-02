@@ -1,7 +1,7 @@
 ---
 title: Spring IOC 核心概念
 date: 2022-08-24
-tags: [Spring]
+tags: []
 categories: Java
 references:
   - title: 黑马程序员2022新版SSM框架教程

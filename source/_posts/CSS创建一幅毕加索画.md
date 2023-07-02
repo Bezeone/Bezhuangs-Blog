@@ -1,8 +1,8 @@
 ---
 title: 创建一副毕加索绘画来学习中级 CSS
 date: 2022-06-11
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

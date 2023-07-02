@@ -1,8 +1,8 @@
 ---
 title: 通过编写咖啡店菜单学习基础 CSS
 date: 2022-05-17
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

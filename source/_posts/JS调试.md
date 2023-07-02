@@ -1,8 +1,8 @@
 ---
 title: JavaScript 调试
 date: 2022-06-27
-tags: [JavaScript]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/javascript-algorithms-and-data-structures/

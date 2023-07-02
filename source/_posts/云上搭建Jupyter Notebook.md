@@ -1,8 +1,8 @@
 ---
 title: 云上搭建基于 Anaconda 的 Jupyter 数据科学环境
 date: 2021-05-09
-tags: [Linux, Jupyter]
-categories: 人工智能与数据科学
+tags: []
+categories: Data Science and Analytics
 references:
   - title: 如何在云服务器上设置可远端访问的jupyter notebook
     url: https://www.jianshu.com/p/fff4a61dee7a

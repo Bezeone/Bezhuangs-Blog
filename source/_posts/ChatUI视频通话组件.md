@@ -1,8 +1,8 @@
 ---
 title: ChatUI-React 视频通话等其他组件
 date: 2022-12-26
-tags: [React]
-categories: Web前端
+tags: [ChatUI]
+categories: Front-End Development
 references: 
   - title: React 即时通信 UI 实战
     url: https://study.163.com/course/courseMain.htm?courseId=1210022809&share=1&shareId=1030428673

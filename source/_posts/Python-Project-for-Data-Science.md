@@ -1,8 +1,8 @@
 ---
 title: Python Project for Data Science
 date: 2021-03-06
-tags: []
-categories: 人工智能与数据科学
+tags: [IBM Data Science]
+categories: Data Science and Analytics
 ---
 
 > This Python Project mini-course provided by IBM is intended to demonstrate basic Python skills by performing specific tasks such as extracting data, web scraping, visualizing data, and creating a dashboard. The following are the notes I took during this course.

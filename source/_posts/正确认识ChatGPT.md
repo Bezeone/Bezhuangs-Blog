@@ -1,8 +1,8 @@
 ---
 title: 正确认识 ChatGPT
 date: 2023-04-22
-tags: [ChatGPT]
-categories: 人工智能与数据科学
+tags: [2023-ML]
+categories: Artificial Intelligence
 references: 
   - title: 李宏毅 2023 春机器学习课程
     url: https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php

@@ -1,8 +1,8 @@
 ---
 title: SQL 语法总结
 date: 2020-07-26
-tags: [SQL, MySQL]
-categories: 数据库与操作系统
+tags: []
+categories: 待分类
 references:
   - title: SQL语法速成手册
     url: https://mp.weixin.qq.com/s/sKQy3MxNiDjlu3HLwrXBJg

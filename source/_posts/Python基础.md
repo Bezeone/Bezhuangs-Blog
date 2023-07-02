@@ -2,7 +2,7 @@
 title: Python 基础知识总结
 date: 2020-10-11
 tags: []
-categories: Python & Golang
+categories: 待分类
 references:
   - title: Python教程
     url: https://www.liaoxuefeng.com/wiki/1016959663602400

@@ -1,7 +1,7 @@
 ---
 title: AJAX、Axios 和 JSON 快速入门
 date: 2022-04-29
-tags: [JavaScript]
+tags: []
 categories: Java
 references: 
   - title: Java web从入门到企业实战

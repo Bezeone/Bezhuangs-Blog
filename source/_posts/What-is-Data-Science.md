@@ -2,7 +2,7 @@
 title: What is Data Science?
 date: 2021-05-02
 tags: []
-categories: 人工智能与数据科学
+categories: Data Science and Analytics
 ---
 
 > The art of uncovering the insights and trends in data has been around since ancient times. The ancient Egyptians used census data to increase efficiency in tax collection and they accurately predicted the flooding of the Nile river every year. Since then, people working in data science have carved out a unique and distinct field for the work they do. This field is data science. This course provided by IBM gives me a chance to get an overview of what data science is today. The following are the notes I took during this course.

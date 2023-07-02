@@ -1,8 +1,8 @@
 ---
 title: Selenium for Python
 date: 2022-12-01
-tags: [Automation]
-categories: Python & Golang
+tags: []
+categories: 待分类
 references:
   - title: Selenium爬虫快速入门（Python版）
     url: https://www.bilibili.com/video/BV1RZ4y147zD

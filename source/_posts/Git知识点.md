@@ -1,8 +1,8 @@
 ---
 title: Git 操作指令总结
 date: 2020-04-13
-tags: [Git]
-categories: 数据库与操作系统
+tags: []
+categories: 待分类
 references:
   - title: Git 教程
     url: https://www.liaoxuefeng.com/wiki/896043488029600/

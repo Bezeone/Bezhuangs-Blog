@@ -2,7 +2,7 @@
 title: Nginx 反向代理
 date: 2023-05-14
 tags: []
-categories: 网络与信息安全
+categories: 待分类
 references:
   - title: nginx一小时入门精讲课程
     url: https://www.bilibili.com/video/BV1rG4y1e7BQ

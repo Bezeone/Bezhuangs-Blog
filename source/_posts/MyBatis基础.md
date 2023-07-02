@@ -1,7 +1,7 @@
 ---
 title: MyBatis 基础知识总结
 date: 2022-03-19
-tags: [MyBatis]
+tags: []
 categories: Java
 references: 
   - title: Java web从入门到企业实战

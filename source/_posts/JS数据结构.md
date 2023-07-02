@@ -1,8 +1,8 @@
 ---
 title: JavaScript 基础数据结构
 date: 2022-07-07
-tags: [JavaScript]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/javascript-algorithms-and-data-structures/

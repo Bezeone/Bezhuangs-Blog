@@ -1,7 +1,7 @@
 ---
 title: Accenture Coding Virtual Experience Program
 date: 2022-01-16
-tags: [Spring, Gradle, Jenkins]
+tags: []
 categories: Java
 ---
 

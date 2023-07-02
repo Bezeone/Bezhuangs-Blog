@@ -1,8 +1,8 @@
 ---
 title: C# 101
 date: 2023-04-09
-tags: [C#]
-categories: .NET
+tags: []
+categories: 待分类
 references:
   - title: C# 101
     url: https://learn.microsoft.com/zh-cn/shows/csharp-101/?wt.mc_id=educationalcsharp-c9-scottha

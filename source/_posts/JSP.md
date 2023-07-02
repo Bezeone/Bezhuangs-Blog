@@ -1,7 +1,7 @@
 ---
 title: Java Server Pages 和 MVC 模式
 date: 2022-04-20
-tags: [JSP]
+tags: []
 categories: Java
 references: 
   - title: Java web从入门到企业实战

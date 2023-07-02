@@ -1,8 +1,8 @@
 ---
 title: 通过创作罗斯科绘画学习 CSS 盒子模型
 date: 2022-05-23
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

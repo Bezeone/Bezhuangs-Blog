@@ -1,8 +1,8 @@
 ---
 title: Data Science Methodology
 date: 2021-05-30
-tags: []
-categories: 人工智能与数据科学
+tags: [IBM Data Science]
+categories: Data Science and Analytics
 ---
 
 > Despite the recent increase in computing power and access to data over the last couple of decades, our ability to use the data within the decision making process is either lost or not maximized at all too often, we don't have a solid understanding of the questions being asked and how to apply the data correctly to the problem at hand. This course provided by IBM shares a methodology that can be used within data science, to ensure that the data used in problem solving is relevant and properly manipulated to address the question at hand. The following are the notes I took during this course.

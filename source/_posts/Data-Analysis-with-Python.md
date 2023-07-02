@@ -1,9 +1,9 @@
 ---
 title: Data Analysis With Python
 date: 2021-03-27
-tags: [Scikit-learn]
+tags: [IBM Data Science]
 mathjax: true
-categories: 人工智能与数据科学
+categories: Data Science and Analytics
 ---
 
 > This Data Analysis with Python course provided by IBM is designed to teach future data analysts how to prepare data for analysis, perform simple statistical analysis, create meaningful data visualizations, predict future trends from data through a number of lecture, lab, and assignments using Python libraries. The following are the notes I took during this course.

@@ -1,8 +1,8 @@
 ---
 title: 通过编写猫咪相册应用学习 HTML
 date: 2022-05-15
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

@@ -1,7 +1,7 @@
 ---
 title: Maven 项目管理知识总结
 date: 2022-03-14
-tags: [Maven]
+tags: []
 categories: Java
 references: 
   - title: Java web从入门到企业实战

@@ -1,7 +1,7 @@
 ---
 title: Request 和 Response 对象详解
 date: 2022-04-10
-tags: [Servlet]
+tags: []
 categories: Java
 references: 
   - title: Java web从入门到企业实战

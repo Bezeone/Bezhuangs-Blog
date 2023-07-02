@@ -2,7 +2,7 @@
 title: 搭建 LAMP 环境安装部署 Wordpress
 date: 2021-05-01
 tags: []
-categories: 网络与信息安全
+categories: 待分类
 references:
   - title: 基于ECS搭建云上博客
     url: https://developer.aliyun.com/adc/scenario/fdecd528be6145dcbe747f0206e361f3

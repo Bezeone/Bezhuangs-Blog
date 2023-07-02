@@ -1,8 +1,8 @@
 ---
 title: Learn NumPy & Pandas
 date: 2022-12-06
-tags: [NumPy, Pandas]
-categories: 人工智能与数据科学
+tags: []
+categories: Data Science and Analytics
 references:
   - title: One Month Python
     url: https://onemonth.com/courses/python/

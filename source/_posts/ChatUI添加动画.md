@@ -1,8 +1,8 @@
 ---
 title: ChatUI-React 添加动画
 date: 2023-01-20
-tags: [React]
-categories: Web前端
+tags: [ChatUI]
+categories: Front-End Development
 references: 
   - title: React 即时通信 UI 实战
     url: https://study.163.com/course/courseMain.htm?courseId=1210022809&share=1&shareId=1030428673

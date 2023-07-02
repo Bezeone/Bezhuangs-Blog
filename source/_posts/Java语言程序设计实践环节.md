@@ -2,7 +2,7 @@
 title: Java 语言程序设计实践性环节
 date: 2022-10-30
 tags: []
-categories: 计算机科学与技术
+categories: Computer Science
 references: 
   - title: 《Java语言程序设计》实践性环节考核大纲
     url: https://ce.sjtu.edu.cn/Home/Tz/859

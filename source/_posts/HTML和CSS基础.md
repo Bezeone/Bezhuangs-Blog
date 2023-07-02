@@ -1,8 +1,8 @@
 ---
 title: HTML 和 CSS 基础知识总结
 date: 2020-09-10
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: 前端学习路线图
     url: https://github.com/kamranahmedse/developer-roadmap

@@ -2,7 +2,7 @@
 title: 使用 Python 程序画画
 date: 2020-06-01
 tags: []
-categories: Python & Golang
+categories: 待分类
 references:
   - title: Posts from Ankur Gajurel
     url: https://copyassignment.com/author/ankur/

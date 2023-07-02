@@ -1,8 +1,8 @@
 ---
 title: 通过创建照片集来学习 CSS 弹性盒子
 date: 2022-05-24
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

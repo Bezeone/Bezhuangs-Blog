@@ -1,8 +1,8 @@
 ---
 title: 通过构建资产负债表了解有关 CSS 伪选择器的更多信息
 date: 2022-05-31
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

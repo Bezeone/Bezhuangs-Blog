@@ -2,7 +2,7 @@
 title: Data Science Math Skills
 date: 2020-05-25
 tags: []
-categories: 数学与金融
+categories: Data Science and Analytics
 mathjax: true
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: 前端开发库 jQuery
 date: 2022-08-06
-tags: [jQuery]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/front-end-development-libraries/

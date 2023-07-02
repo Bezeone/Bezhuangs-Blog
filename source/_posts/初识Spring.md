@@ -1,7 +1,7 @@
 ---
 title: 初识 Spring
 date: 2022-08-22
-tags: [Spring]
+tags: []
 categories: Java
 references:
   - title: 黑马程序员2022新版SSM框架教程

@@ -1,8 +1,8 @@
 ---
 title: Learn Bitcoin & Ethereum
 date: 2022-11-19
-tags: [BTC, ETH]
-categories: 随笔与随记
+tags: []
+categories: 待分类
 references:
   - title: One Month Bitcoin
     url: https://onemonth.com/courses/bitcoin

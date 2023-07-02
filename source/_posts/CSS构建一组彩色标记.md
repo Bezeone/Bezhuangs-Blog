@@ -1,8 +1,8 @@
 ---
 title: 通过构建一组彩色标记来学习 CSS 颜色
 date: 2022-05-19
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design

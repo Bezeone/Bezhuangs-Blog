@@ -1,8 +1,8 @@
 ---
 title: 通过编写注册表单学习 HTML 表单
 date: 2022-05-20
-tags: [HTML/CSS]
-categories: Web前端
+tags: []
+categories: Front-End Development
 references: 
   - title: freeCodeCamp
     url: https://chinese.freecodecamp.org/learn/2022/responsive-web-design
